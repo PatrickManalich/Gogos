@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace TrajectoryExample{
+namespace TrajectoryPrediction
+{
 	[AddComponentMenu("Camera-Control/Mouse Orbit with zoom")]
 	public class MouseOrbit : MonoBehaviour {
 

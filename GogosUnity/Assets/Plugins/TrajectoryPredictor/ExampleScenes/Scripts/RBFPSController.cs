@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TrajectoryExample {
+namespace TrajectoryPrediction 
+{
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(CapsuleCollider))]
     public class RBFPSController : MonoBehaviour {

@@ -1,40 +1,50 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Orbiter : MonoBehaviour {
 
-    public Transform planet;
-    public Vector3 startVelocity;
-    public float maxOrbitDist = 500f;
-    public float gravityMult = 5f;
+namespace TrajectoryPrediction
+{
+    public class Orbiter : MonoBehaviour
+    {
 
-    Rigidbody rb;
+        public Transform planet;
+        public Vector3 startVelocity;
+        public float maxOrbitDist = 500f;
+        public float gravityMult = 5f;
 
-    private void Awake() {
-        TrajectoryPredictor trajectory = GetComponent<TrajectoryPredictor>();        
-        trajectory.OnPredictionIterationStep += HandlePredictionGravity;
+        Rigidbody rb;
 
-        rb = GetComponent<Rigidbody>();
-        rb.velocity = startVelocity;
-    }
+        private void Awake()
+        {
+            TrajectoryPredictor trajectory = GetComponent<TrajectoryPredictor>();
+            trajectory.OnPredictionIterationStep += HandlePredictionGravity;
 
-    void HandlePredictionGravity(ref Vector3 currentIterationVel, Vector3 currentIterationPos, TrajectoryPredictor tpInstance) {
-        currentIterationVel += GetGravForce(currentIterationPos);
-    }
+            rb = GetComponent<Rigidbody>();
+            rb.velocity = startVelocity;
+        }
+
+        void HandlePredictionGravity(ref Vector3 currentIterationVel, Vector3 currentIterationPos, TrajectoryPredictor tpInstance)
+        {
+            currentIterationVel += GetGravForce(currentIterationPos);
+        }
 
 
-    private void FixedUpdate() {
-        rb.AddForce(GetGravForce(transform.position) * Time.fixedDeltaTime, ForceMode.VelocityChange);
-    }
+        private void FixedUpdate()
+        {
+            rb.AddForce(GetGravForce(transform.position) * Time.fixedDeltaTime, ForceMode.VelocityChange);
+        }
 
 
-    Vector3 GetGravForce(Vector3 gravAtPos) {
-        Vector3 dif = planet.position - gravAtPos;
-        float orbitPercentage = 1f - Mathf.Clamp01(dif.sqrMagnitude / maxOrbitDist);
+        Vector3 GetGravForce(Vector3 gravAtPos)
+        {
+            Vector3 dif = planet.position - gravAtPos;
+            float orbitPercentage = 1f - Mathf.Clamp01(dif.sqrMagnitude / maxOrbitDist);
 
-        Vector3 gravForce = dif.normalized * orbitPercentage * gravityMult;
+            Vector3 gravForce = dif.normalized * orbitPercentage * gravityMult;
 
-        return gravForce;
+            return gravForce;
+        }
+
     }
 
 }
