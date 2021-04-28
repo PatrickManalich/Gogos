@@ -1,11 +1,17 @@
 ﻿using Gogos.Extensions;
 using Gogos.Managers;
+using System;
 using UnityEngine;
 
 namespace Gogos
 {
 	public class GogoLauncher : MonoBehaviour
 	{
+        public event Action LaunchPrepared;
+        public event Action Launched;
+
+        public Vector3 LaunchPoint => transform.position;
+        public Vector3 LaunchVector => transform.forward * m_LaunchForce;
 
         [SerializeField]
         private GameObject m_ForcePoint;
@@ -67,6 +73,7 @@ namespace Gogos
             m_GogoRigidbody.isKinematic = false;
             m_GogoRigidbody.AddForceAtPosition(transform.forward * m_LaunchForce * m_GogoRigidbody.mass, m_ForcePoint.transform.position, ForceMode.Impulse);
             m_ReadyForLaunch = false;
+            Launched?.Invoke();
         }
 
         private void PrepareForLaunch()
@@ -76,6 +83,7 @@ namespace Gogos
             m_GogoRigidbody.transform.localPosition = Vector3.zero;
             m_GogoRigidbody.transform.localRotation = Quaternion.identity;
             m_ReadyForLaunch = true;
+            LaunchPrepared?.Invoke();
         }
 
         private void AlignLauncher()
