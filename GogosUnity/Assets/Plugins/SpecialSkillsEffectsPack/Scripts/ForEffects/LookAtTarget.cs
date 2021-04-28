@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LookAtTarget : MonoBehaviour
+namespace SpecialSkillsEffects
 {
-    public Transform Target;
-
-    // Update is called once per frame
-    void Update()
+    public class LookAtTarget : MonoBehaviour
     {
-        transform.LookAt(Target);
+        public Transform Target;
+
+        // Update is called once per frame
+        void Update()
+        {
+            transform.LookAt(Target);
+        }
     }
 }
