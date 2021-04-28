@@ -71,7 +71,7 @@ namespace Gogos
         {
             m_GogoRigidbody.transform.parent = null;
             m_GogoRigidbody.isKinematic = false;
-            m_GogoRigidbody.AddForceAtPosition(transform.forward * m_LaunchForce * m_GogoRigidbody.mass, m_ForcePoint.transform.position, ForceMode.Impulse);
+            m_GogoRigidbody.AddForceAtPosition(LaunchVector * m_GogoRigidbody.mass, m_ForcePoint.transform.position, ForceMode.Impulse);
             m_ReadyForLaunch = false;
             Launched?.Invoke();
         }
