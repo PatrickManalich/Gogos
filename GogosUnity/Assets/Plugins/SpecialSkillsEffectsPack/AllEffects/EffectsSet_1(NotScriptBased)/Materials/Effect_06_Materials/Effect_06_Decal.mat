@@ -120,6 +120,7 @@ Material:
     - _RimLight: 0
     - _RimScale: 1
     - _RimStrength: 1
+    - _SecondColor: 0
     - _SmoothnessTextureChannel: 0
     - _SoftParticle: 1
     - _SpecularHighlights: 1
@@ -145,3 +146,4 @@ Material:
     - _NoiseValue: {r: 1, g: 1, b: 1, a: 0}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _TintColor: {r: 4.30867, g: 0, b: 0.03861702, a: 1}
+    - _TintColor2: {r: 1, g: 1, b: 1, a: 1}
