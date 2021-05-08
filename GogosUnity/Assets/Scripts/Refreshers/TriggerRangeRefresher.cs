@@ -10,14 +10,14 @@ namespace Gogos
         [SerializeField]
         private GameObject m_TriggerRange;
 
-        private void Start()
+        private void OnEnable()
         {
             m_RangeTierTracker.CurrentTierChanged += Refresh;
 
             Refresh();
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
             m_RangeTierTracker.CurrentTierChanged -= Refresh;
         }

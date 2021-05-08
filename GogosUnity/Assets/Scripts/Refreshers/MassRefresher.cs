@@ -10,14 +10,14 @@ namespace Gogos
         [SerializeField]
         private Rigidbody m_Rigidbody;
 
-        private void Start()
+        private void OnEnable()
         {
             m_WeightTierTracker.CurrentTierChanged += Refresh;
 
             Refresh();
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
             m_WeightTierTracker.CurrentTierChanged -= Refresh;
         }
