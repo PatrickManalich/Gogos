@@ -1025,7 +1025,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ForcePoint: {fileID: 1283564788}
   m_LaunchAngle: -45
-  m_LaunchForce: 13.75
+  m_MinLaunchForce: 10
+  m_MaxLaunchForce: 15
+  m_LaunchForceDelta: 5
   m_GogoRigidbody: {fileID: 1053300121}
   m_Target: {fileID: 2077586319}
   m_MovementSpeed: 40

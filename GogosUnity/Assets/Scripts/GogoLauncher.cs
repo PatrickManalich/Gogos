@@ -11,7 +11,7 @@ namespace Gogos
         public event Action Launched;
 
         public Vector3 LaunchPoint => transform.position;
-        public Vector3 LaunchVector => transform.forward * m_LaunchForce;
+        public Vector3 LaunchVector => transform.forward * m_CurrentLaunchForce;
 
         [SerializeField]
         private GameObject m_ForcePoint;
@@ -20,7 +20,13 @@ namespace Gogos
         private float m_LaunchAngle;
 
         [SerializeField]
-        private float m_LaunchForce;
+        private float m_MinLaunchForce;
+
+        [SerializeField]
+        private float m_MaxLaunchForce;
+
+        [SerializeField]
+        private float m_LaunchForceDelta;
 
         [SerializeField]
         private Rigidbody m_GogoRigidbody;
@@ -31,12 +37,14 @@ namespace Gogos
         [SerializeField]
         private float m_MovementSpeed;
 
+        private float m_CurrentLaunchForce;
         private float m_DistanceToTarget;
         private float m_MovementAngle;
         private bool m_ReadyForLaunch;
 
         private void Start()
 		{
+            m_CurrentLaunchForce = m_MinLaunchForce;
             m_DistanceToTarget = Vector3.Distance(transform.position, m_Target.transform.position);
             m_MovementAngle = 270;
             AlignLauncher();
@@ -64,6 +72,16 @@ namespace Gogos
                 m_MovementAngle += Time.deltaTime * m_MovementSpeed;
                 m_MovementAngle = m_MovementAngle.ClampAngle();
                 AlignLauncher();
+            }
+            if (InputManager.IncreaseLaunchForceKey)
+            {
+                m_CurrentLaunchForce += Time.deltaTime * m_LaunchForceDelta;
+                m_CurrentLaunchForce = Mathf.Clamp(m_CurrentLaunchForce, m_MinLaunchForce, m_MaxLaunchForce);
+            }
+            if (InputManager.DecreaseLaunchForceKey)
+            {
+                m_CurrentLaunchForce -= Time.deltaTime * m_LaunchForceDelta;
+                m_CurrentLaunchForce = Mathf.Clamp(m_CurrentLaunchForce, m_MinLaunchForce, m_MaxLaunchForce);
             }
         }
 
