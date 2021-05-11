@@ -17,9 +17,6 @@ namespace Gogos
         {
             m_Accelerometer.StartedMoving += Accelerometer_OnStartedMoving;
             m_Accelerometer.StoppedMoving += Accelerometer_OnStoppedMoving;
-
-            m_TriggerRangeTerrainSnapper.SnapToTerrain();
-            m_SupportTrigger.ProvideSupport();
         }
 
         private void OnDestroy()
