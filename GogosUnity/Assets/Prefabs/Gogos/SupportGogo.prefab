@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Accelerometer: {fileID: 7873789553457013996}
+  m_TriggerRangeTerrainSnapper: {fileID: 6653808010317411223}
   m_SupportTrigger: {fileID: 1026881237225476813}
 --- !u!114 &6653808010317411223
 MonoBehaviour:
