@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Accelerometer: {fileID: 7873789553457013996}
-  m_SupportTriggerAnimator: {fileID: 5622758109938669025}
+  m_SupportTrigger: {fileID: 1026881237225476813}
 --- !u!1 &6026410626606262556
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SupportAbility: {fileID: 6462396173682571881}
+  m_SupportTriggerAnimator: {fileID: 5622758109938669025}
 --- !u!1 &7512794863375871810
 GameObject:
   m_ObjectHideFlags: 0

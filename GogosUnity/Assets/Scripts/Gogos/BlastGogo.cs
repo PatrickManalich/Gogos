@@ -11,9 +11,7 @@ namespace Gogos
         private TriggerRangeRefresher m_TriggerRangeRefresher;
 
         [SerializeField]
-        private Animator m_BlastTriggerAnimator;
-
-        private const string ExpandName = "Expand";
+        private BlastTrigger m_BlastTrigger;
 
         private void Start()
         {
@@ -28,7 +26,7 @@ namespace Gogos
         private void Accelerometer_OnStoppedMoving()
         {
             m_TriggerRangeRefresher.gameObject.SetActive(false);
-            m_BlastTriggerAnimator.SetTrigger(ExpandName);
+            m_BlastTrigger.Blast();
 
             m_Accelerometer.StoppedMoving -= Accelerometer_OnStoppedMoving;
         }

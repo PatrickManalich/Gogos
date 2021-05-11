@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BlastForceTierTracker: {fileID: 8986282785713753722}
+  m_BlastTriggerAnimator: {fileID: 3380466250883966092}
 --- !u!1 &363603347052869996
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Accelerometer: {fileID: 136848791678957878}
   m_TriggerRangeRefresher: {fileID: 3479976213145025052}
-  m_BlastTriggerAnimator: {fileID: 3380466250883966092}
+  m_BlastTrigger: {fileID: 6503915178369320841}
 --- !u!1001 &4885262025157314489
 PrefabInstance:
   m_ObjectHideFlags: 0
