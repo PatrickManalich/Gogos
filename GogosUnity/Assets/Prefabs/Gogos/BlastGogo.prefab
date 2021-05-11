@@ -168,6 +168,18 @@ MonoBehaviour:
   m_Accelerometer: {fileID: 136848791678957878}
   m_TriggerRangeRefresher: {fileID: 3479976213145025052}
   m_BlastTrigger: {fileID: 6503915178369320841}
+--- !u!114 &4201531006430779568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3542763658064233026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660d72e256a205f4087a9e7a9238478e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4885262025157314489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -293,6 +305,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578cca584d8c7364e8a68a79655b5929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3542763658064233026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8278041812638107131, guid: 99a9b25e45821d74fbbc9a7a7672138a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4885262025157314489}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1886914382166234720 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6477378372399600089, guid: 99a9b25e45821d74fbbc9a7a7672138a,
