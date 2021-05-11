@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Accelerometer: {fileID: 136848791678957878}
   m_TriggerRangeRefresher: {fileID: 3479976213145025052}
+  m_TriggerRangeRotationAligner: {fileID: 4201531006430779568}
   m_BlastTrigger: {fileID: 6503915178369320841}
 --- !u!114 &4201531006430779568
 MonoBehaviour:

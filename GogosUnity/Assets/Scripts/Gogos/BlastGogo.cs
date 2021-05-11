@@ -11,10 +11,18 @@ namespace Gogos
         private TriggerRangeRefresher m_TriggerRangeRefresher;
 
         [SerializeField]
+        private RotationAligner m_TriggerRangeRotationAligner;
+
+        [SerializeField]
         private BlastTrigger m_BlastTrigger;
+
+        private Quaternion m_GogoLauncherAlignedRotation; 
 
         private void Start()
         {
+            var gogoLauncher = FindObjectOfType<GogoLauncher>();
+            m_GogoLauncherAlignedRotation = Quaternion.Euler(new Vector3(0, gogoLauncher.transform.rotation.eulerAngles.y, 0));
+
             m_Accelerometer.StoppedMoving += Accelerometer_OnStoppedMoving;
         }
 
@@ -26,6 +34,7 @@ namespace Gogos
         private void Accelerometer_OnStoppedMoving()
         {
             m_TriggerRangeRefresher.gameObject.SetActive(false);
+            m_TriggerRangeRotationAligner.AlignWithRotation(m_GogoLauncherAlignedRotation);
             m_BlastTrigger.Blast();
 
             m_Accelerometer.StoppedMoving -= Accelerometer_OnStoppedMoving;
