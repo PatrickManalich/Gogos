@@ -1,49 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &474753747
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 474753748}
-  - component: {fileID: 8986282785713753722}
-  m_Layer: 10
-  m_Name: BlastForceTierTracker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &474753748
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474753747}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6471372908784842649}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8986282785713753722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474753747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c72bcfb162d16d45b1dffec73fbfdec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CurrentTier: 0
 --- !u!1 &498069941
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a966fe35dd39c43903127078004253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BlastForceTierTracker: {fileID: 8986282785713753722}
+  m_BlastForceTierTracker: {fileID: 9149230429798735167}
   m_BlastTriggerAnimator: {fileID: 3380466250883966092}
 --- !u!1 &363603347052869996
 GameObject:
@@ -153,6 +109,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TriggerAnimator: {fileID: 3380466250883966092}
+--- !u!1 &3166260187172019652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5239497188515761176}
+  - component: {fileID: 9149230429798735167}
+  m_Layer: 10
+  m_Name: BlastForceTierTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5239497188515761176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3166260187172019652}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6471372908784842649}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9149230429798735167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3166260187172019652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c72bcfb162d16d45b1dffec73fbfdec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CurrentTier: 0
 --- !u!114 &49293729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +257,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TierTrackers.Array.data[2]
       value: 
-      objectReference: {fileID: 8986282785713753722}
+      objectReference: {fileID: 9149230429798735167}
     - target: {fileID: 1644098780542994616, guid: 99a9b25e45821d74fbbc9a7a7672138a,
         type: 3}
       propertyPath: m_Name
