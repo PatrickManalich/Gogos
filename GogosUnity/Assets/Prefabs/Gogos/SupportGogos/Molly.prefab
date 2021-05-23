@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TriggerAnimationSubject: {fileID: 4330781214723909245}
   m_VisualEffect: {fileID: 7885304712899828307}
-  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 1, a: 1}
   m_Intensity: 2
   m_ResetVisualEffectDelay: 1.25
 --- !u!1001 &3350916335323978405
@@ -152,7 +152,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ee9105bcfe65c2e49ac377b3889efb4f, type: 2}
+      objectReference: {fileID: 2100000, guid: 88b78fa8823967944941b9810d1e52fb, type: 2}
     - target: {fileID: 3400515112497501746, guid: 6f52d67249a3b534ba0ef6189bbb5d07,
         type: 3}
       propertyPath: m_RootOrder
@@ -211,7 +211,7 @@ PrefabInstance:
     - target: {fileID: 4159516729712939739, guid: 6f52d67249a3b534ba0ef6189bbb5d07,
         type: 3}
       propertyPath: m_Name
-      value: Mosh
+      value: Molly
       objectReference: {fileID: 0}
     - target: {fileID: 5622758109938669025, guid: 6f52d67249a3b534ba0ef6189bbb5d07,
         type: 3}
