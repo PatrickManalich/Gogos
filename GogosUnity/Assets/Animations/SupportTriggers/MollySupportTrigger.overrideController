@@ -6,7 +6,7 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MoshSupportTrigger
+  m_Name: MollySupportTrigger
   m_Controller: {fileID: 9100000, guid: d50cfcd5854e643478c6502b2b58e702, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 8cb70d30aeb485e47942ef4b55a3ae7a, type: 2}
