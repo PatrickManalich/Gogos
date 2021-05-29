@@ -4,8 +4,6 @@ namespace Gogos
 {
 	public class BlastableAttribute : MonoBehaviour
 	{
-        private const float FalloffRate = 1.5f;
-
         [SerializeField]
         private TriggerListener m_TriggerListener;
 
@@ -14,6 +12,8 @@ namespace Gogos
 
         [SerializeField]
         private GameObject m_ForcePoint;
+
+        private const float FalloffRate = 1.5f;
 
         private void Awake()
 		{
