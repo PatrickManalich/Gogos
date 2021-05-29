@@ -8,10 +8,14 @@ namespace Gogos
         private TriggerListener m_TriggerListener;
 
         [SerializeField]
+        private GameObject m_TierTrackerContainer;
+
         private AbstractTierTracker[] m_TierTrackers;
 
         private void Awake()
         {
+            m_TierTrackers = m_TierTrackerContainer.GetComponents<AbstractTierTracker>();
+
             m_TriggerListener.Entered += TriggerListener_OnEntered;
             m_TriggerListener.Exited += TriggerListener_OnExited;
         }
