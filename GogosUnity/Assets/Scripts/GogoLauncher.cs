@@ -44,7 +44,7 @@ namespace Gogos
 
         private void Start()
 		{
-            m_CurrentLaunchForce = m_MinLaunchForce;
+            m_CurrentLaunchForce = (m_MinLaunchForce + m_MaxLaunchForce) / 2;
             m_DistanceToTarget = Vector3.Distance(transform.position, m_Target.transform.position);
             m_MovementAngle = 270;
             AlignLauncher();
