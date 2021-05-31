@@ -16,19 +16,26 @@ namespace Gogos
         [SerializeField]
         private BlastTrigger m_BlastTrigger;
 
+        private GogoLauncher m_GogoLauncher;
         private Quaternion m_GogoLauncherAlignedRotation; 
 
         private void Start()
         {
-            var gogoLauncher = FindObjectOfType<GogoLauncher>();
-            m_GogoLauncherAlignedRotation = Quaternion.Euler(new Vector3(0, gogoLauncher.transform.rotation.eulerAngles.y, 0));
+            m_GogoLauncher = FindObjectOfType<GogoLauncher>();
 
+            m_Accelerometer.StartedMoving += Accelerometer_OnStartedMoving;
             m_Accelerometer.StoppedMoving += Accelerometer_OnStoppedMoving;
         }
 
         private void OnDestroy()
         {
             m_Accelerometer.StoppedMoving -= Accelerometer_OnStoppedMoving;
+            m_Accelerometer.StartedMoving -= Accelerometer_OnStartedMoving;
+        }
+
+        private void Accelerometer_OnStartedMoving()
+        {
+            m_GogoLauncherAlignedRotation = Quaternion.Euler(new Vector3(0, m_GogoLauncher.transform.rotation.eulerAngles.y, 0));
         }
 
         private void Accelerometer_OnStoppedMoving()
