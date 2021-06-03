@@ -6,7 +6,7 @@ namespace GogosEditor
 {
     public static class AssetEditorExtensions
     {
-        [MenuItem("Gogos/Assets/Reserialize Selected")]
+        [MenuItem("Gogos/Assets/Reserialize Selected %#&r")]
         public static void ForceReserializeSelectedAssets()
         {
             var assetPaths = new List<string>();
