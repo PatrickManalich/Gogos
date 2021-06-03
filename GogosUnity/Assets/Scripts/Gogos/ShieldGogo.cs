@@ -2,35 +2,20 @@
 
 namespace Gogos
 {
-    public class ShieldGogo : MonoBehaviour
+    public class ShieldGogo : AbstractGogo
     {
-        [SerializeField]
-        private Accelerometer m_Accelerometer;
-
         [SerializeField]
         private ShieldStrengthTierTracker m_ShieldStrengthTierTracker;
 
         [SerializeField]
         private ShieldTrigger m_ShieldTrigger;
 
-        private void Start()
-        {
-            m_Accelerometer.StartedMoving += Accelerometer_OnStartedMoving;
-            m_Accelerometer.StoppedMoving += Accelerometer_OnStoppedMoving;
-        }
-
-        private void OnDestroy()
-        {
-            m_Accelerometer.StoppedMoving -= Accelerometer_OnStoppedMoving;
-            m_Accelerometer.StartedMoving -= Accelerometer_OnStartedMoving;
-        }
-
-        private void Accelerometer_OnStartedMoving()
+        protected override void OnStartedMoving()
         {
             m_ShieldTrigger.DisableShield();
         }
 
-        private void Accelerometer_OnStoppedMoving()
+        protected override void OnStoppedMoving()
         {
             if (!m_ShieldStrengthTierTracker.IsShieldBroken)
             {
