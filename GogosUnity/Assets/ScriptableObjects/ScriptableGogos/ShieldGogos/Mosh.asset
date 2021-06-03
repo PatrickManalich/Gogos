@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 079a9ea77264948488dfb9755a02565f, type: 3}
+  m_Name: Mosh
+  m_EditorClassIdentifier: 
+  m_Prefab: {fileID: 7593268731678311256, guid: a7bb8f7fb12c6174f92ef141940a8869,
+    type: 3}
+  m_Nickname: Mosh
+  m_Portrait: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Number: 19
+  m_RarityTier: 0
+  m_WeightTier: 0
+  m_RangeTier: 0
+  m_ShieldStrengthTier: 1
