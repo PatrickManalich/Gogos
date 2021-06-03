@@ -16,7 +16,10 @@ namespace Gogos
     {
         public event Action CurrentTierChanged;
 
-        public abstract T CurrentTier { get; protected set; }
+        public T CurrentTier => m_CurrentTier;
+
+        [SerializeField]
+        private T m_CurrentTier;
 
         public override void Modify(int modifier)
         {
@@ -28,7 +31,7 @@ namespace Gogos
             var newTier = (T)values.GetValue(newIndex);
             if(!newTier.Equals(CurrentTier))
             {
-                CurrentTier = newTier;
+                m_CurrentTier = newTier;
                 CurrentTierChanged?.Invoke();
             }
         }

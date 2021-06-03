@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 
 namespace Gogos
 {
@@ -8,7 +7,6 @@ namespace Gogos
 	public class ShieldStrengthTierTracker : AbstractTierTracker<ShieldStrengthTier>
 	{
         public override TierVariant TierVariant => TierVariant.ShieldStrength;
-        public override ShieldStrengthTier CurrentTier { get => m_CurrentTier; protected set => m_CurrentTier = value; }
 
         public bool IsShieldBroken => CurrentTier == ShieldStrengthTier.Broken;
         public float ShieldAlpha => ShieldAlphaByTier[CurrentTier];
@@ -20,8 +18,5 @@ namespace Gogos
             { ShieldStrengthTier.Medium, 0.2f },
             { ShieldStrengthTier.Strong, 0.3f },
         };
-
-        [SerializeField]
-        private ShieldStrengthTier m_CurrentTier;
     }
 }

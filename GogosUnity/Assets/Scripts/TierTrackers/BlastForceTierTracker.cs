@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 
 namespace Gogos
 {
@@ -8,7 +7,6 @@ namespace Gogos
     public class BlastForceTierTracker: AbstractTierTracker<BlastForceTier>
 	{
         public override TierVariant TierVariant => TierVariant.BlastForce;
-        public override BlastForceTier CurrentTier { get => m_CurrentTier; protected set => m_CurrentTier = value; }
        
         public float BlastForce => BlastForceByTier[CurrentTier];
         public float BlastUpwardsModifier => BlastUpwardsModifierByTier[CurrentTier];
@@ -25,8 +23,5 @@ namespace Gogos
             { BlastForceTier.Medium, 2 },
             { BlastForceTier.Strong, 2 },
         };
-
-        [SerializeField]
-        private BlastForceTier m_CurrentTier;
     }
 }
