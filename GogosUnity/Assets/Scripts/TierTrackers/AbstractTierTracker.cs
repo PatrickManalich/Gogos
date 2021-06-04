@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Gogos
 {
-    public enum TierVariant { Rarity, Weight, Range, BlastForce, ShieldStrength }
+    public enum TierVariant { Rarity, Weight, PointValue, Range, BlastForce, ShieldStrength }
 
     public abstract class AbstractTierTracker : MonoBehaviour
     {
