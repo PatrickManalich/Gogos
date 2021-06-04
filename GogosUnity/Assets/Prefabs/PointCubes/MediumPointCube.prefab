@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MediumPointCube
       objectReference: {fileID: 0}
+    - target: {fileID: 3332306094623347069, guid: 01f51cdaac73df4458a52910e19f9751,
+        type: 3}
+      propertyPath: m_CurrentTier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6840688973002445626, guid: 01f51cdaac73df4458a52910e19f9751,
         type: 3}
       propertyPath: m_CurrentTier
