@@ -14,25 +14,25 @@ namespace Gogos
 
     public abstract class AbstractTierTracker<T> : AbstractTierTracker where T : Enum
     {
-        public event Action CurrentTierChanged;
+        public event Action TierChanged;
 
-        public T CurrentTier => m_CurrentTier;
+        public T Tier => m_Tier;
 
         [SerializeField]
-        private T m_CurrentTier;
+        private T m_Tier;
 
         public override void Modify(int modifier)
         {
             var values = Enum.GetValues(typeof(T));
-            var currentIndex = Array.IndexOf(values, CurrentTier);
+            var currentIndex = Array.IndexOf(values, Tier);
             var max = values.Length - 1;
             var min = 0;
             var newIndex = Mathf.Min(Mathf.Max(currentIndex + modifier, min), max);
             var newTier = (T)values.GetValue(newIndex);
-            if(!newTier.Equals(CurrentTier))
+            if(!newTier.Equals(Tier))
             {
-                m_CurrentTier = newTier;
-                CurrentTierChanged?.Invoke();
+                m_Tier = newTier;
+                TierChanged?.Invoke();
             }
         }
     }

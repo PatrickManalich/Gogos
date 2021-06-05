@@ -12,14 +12,14 @@ namespace Gogos
 
         private void OnEnable()
         {
-            m_WeightTierTracker.CurrentTierChanged += Refresh;
+            m_WeightTierTracker.TierChanged += Refresh;
 
             Refresh();
         }
 
         private void OnDisable()
         {
-            m_WeightTierTracker.CurrentTierChanged -= Refresh;
+            m_WeightTierTracker.TierChanged -= Refresh;
         }
 
         public void Refresh()

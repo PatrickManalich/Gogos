@@ -7,7 +7,7 @@ namespace Gogos
     public class WeightTierTracker : AbstractTierTracker<WeightTier>
     {
         public override TierVariant TierVariant => TierVariant.Weight;
-        public float Weight => WeightByTier[CurrentTier];
+        public float Weight => WeightByTier[Tier];
 
         private static readonly Dictionary<WeightTier, float> WeightByTier = new Dictionary<WeightTier, float>()
         {

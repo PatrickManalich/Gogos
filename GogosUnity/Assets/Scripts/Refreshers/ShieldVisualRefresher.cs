@@ -13,14 +13,14 @@ namespace Gogos
 
         private void OnEnable()
         {
-            m_ShieldStrengthTierTracker.CurrentTierChanged += Refresh;
+            m_ShieldStrengthTierTracker.TierChanged += Refresh;
 
             Refresh();
         }
 
         private void OnDisable()
         {
-            m_ShieldStrengthTierTracker.CurrentTierChanged -= Refresh;
+            m_ShieldStrengthTierTracker.TierChanged -= Refresh;
         }
 
         public void Refresh()
