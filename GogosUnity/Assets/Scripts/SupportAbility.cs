@@ -18,7 +18,7 @@ namespace Gogos
         {
             if (tierTracker.TierVariant == m_TierVariant)
             {
-                tierTracker.Modify(m_TierModifier);
+                tierTracker.ModifyTier(m_TierModifier);
             }
         }
 
@@ -26,7 +26,7 @@ namespace Gogos
         {
             if (tierTracker.TierVariant == m_TierVariant)
             {
-                tierTracker.Modify(-m_TierModifier);
+                tierTracker.ModifyTier(-m_TierModifier);
             }
         }
     }

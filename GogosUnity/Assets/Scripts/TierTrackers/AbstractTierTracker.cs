@@ -9,7 +9,7 @@ namespace Gogos
     {
         public abstract TierVariant TierVariant { get; }
 
-        public abstract void Modify(int modifier);
+        public abstract void ModifyTier(int modifier);
     }
 
     public abstract class AbstractTierTracker<T> : AbstractTierTracker where T : Enum
@@ -21,7 +21,7 @@ namespace Gogos
         [SerializeField]
         private T m_Tier;
 
-        public override void Modify(int modifier)
+        public override void ModifyTier(int modifier)
         {
             var values = Enum.GetValues(typeof(T));
             var currentIndex = Array.IndexOf(values, Tier);
