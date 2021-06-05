@@ -7,9 +7,12 @@ namespace Gogos
         [SerializeField]
         private TierVariant m_TierVariant;
 
-        [Range(-3, 3)]
+        [Range(MinSupport, MaxSupport)]
         [SerializeField]
         private int m_TierModifier;
+
+        public const int MinSupport = -3;
+        public const int MaxSupport = 3;
 
         public void ProvideSupport(AbstractTierTracker tierTracker)
         {
