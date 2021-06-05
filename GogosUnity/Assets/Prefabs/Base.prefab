@@ -272,6 +272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4820989411298384181}
+  - component: {fileID: 2574385949018040823}
   - component: {fileID: 254504256265627017}
   m_Layer: 10
   m_Name: TierTrackers
@@ -294,6 +295,18 @@ Transform:
   m_Father: {fileID: 6393712719750604100}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2574385949018040823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8947608037399040524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69a4356883c70b941896575003ef2963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &254504256265627017
 MonoBehaviour:
   m_ObjectHideFlags: 0
