@@ -8,14 +8,10 @@ namespace Gogos
         private TriggerListener m_TriggerListener;
 
         [SerializeField]
-        private GameObject m_TierTrackerContainer;
-
-        private AbstractTierTracker[] m_TierTrackers;
+        private TierTrackerReference m_TierTrackerReference;
 
         private void Awake()
         {
-            m_TierTrackers = m_TierTrackerContainer.GetComponents<AbstractTierTracker>();
-
             m_TriggerListener.Entered += TriggerListener_OnEntered;
             m_TriggerListener.Exited += TriggerListener_OnExited;
         }
@@ -31,7 +27,7 @@ namespace Gogos
             var supportTrigger = e.OtherCollider.GetComponent<SupportTrigger>();
             if (supportTrigger)
             {
-                foreach (var tierTracker in m_TierTrackers)
+                foreach (var tierTracker in m_TierTrackerReference.TierTrackers)
                 {
                     supportTrigger.SupportAbility.ProvideSupport(tierTracker);
                 }
@@ -43,7 +39,7 @@ namespace Gogos
             var supportTrigger = e.OtherCollider.GetComponent<SupportTrigger>();
             if (supportTrigger)
             {
-                foreach (var tierTracker in m_TierTrackers)
+                foreach (var tierTracker in m_TierTrackerReference.TierTrackers)
                 {
                     supportTrigger.SupportAbility.RemoveSupport(tierTracker);
                 }

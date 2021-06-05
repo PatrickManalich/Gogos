@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TriggerListener: {fileID: 7295707980275540114}
-  m_TierTrackerContainer: {fileID: 8947608037399040524}
+  m_TierTrackerReference: {fileID: 2574385949018040823}
 --- !u!1 &1121001816799974895
 GameObject:
   m_ObjectHideFlags: 0
