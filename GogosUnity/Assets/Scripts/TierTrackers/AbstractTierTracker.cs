@@ -42,15 +42,8 @@ namespace Gogos
         {
             var values = Enum.GetValues(typeof(T));
             var currentIndex = Array.IndexOf(values, Tier);
-            var max = values.Length - 1;
-            var min = 0;
-            var newIndex = Mathf.Min(Mathf.Max(currentIndex + modifier, min), max);
-            var newTier = (T)values.GetValue(newIndex);
-            if(!newTier.Equals(Tier))
-            {
-                m_Tier = newTier;
-                TierChanged?.Invoke();
-            }
+            var newTierIndex = currentIndex + modifier;
+            SetTier(newTierIndex);
         }
     }
 }
