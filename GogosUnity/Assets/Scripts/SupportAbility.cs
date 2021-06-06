@@ -14,6 +14,13 @@ namespace Gogos
         public const int MinSupport = -3;
         public const int MaxSupport = 3;
 
+        public void SetAbility(TierVariant tierVariant, int tierModifier)
+        {
+            m_TierVariant = tierVariant;
+            var clampedTierModifier = Mathf.Min(Mathf.Max(tierModifier, MinSupport), MaxSupport);
+            m_TierModifier = clampedTierModifier;
+        }
+
         public void ProvideSupport(AbstractTierTracker tierTracker)
         {
             if (tierTracker.TierVariant == m_TierVariant)
