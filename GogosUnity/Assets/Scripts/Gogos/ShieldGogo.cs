@@ -10,6 +10,13 @@ namespace Gogos
         [SerializeField]
         private ShieldTrigger m_ShieldTrigger;
 
+        protected override void SetTiers(ScriptableGogo scriptableGogo)
+        {
+            base.SetTiers(scriptableGogo);
+            var shieldScriptableGogo = (ShieldScriptableGogo)scriptableGogo;
+            m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength).SetTier((int)shieldScriptableGogo.ShieldStrengthTier);
+        }
+
         protected override void OnStartedMoving()
         {
             m_ShieldTrigger.DisableShield();

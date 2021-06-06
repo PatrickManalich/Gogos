@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 873c6793e7817af45805b0c9209ae123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_TierTrackerReference: {fileID: 8714104985755743690}
   m_Accelerometer: {fileID: 3772126990576529487}
   m_TriggerRangeRefresher: {fileID: 6283313628835807795}
   m_TriggerRangeRotationAligner: {fileID: 4203646358498570031}
@@ -213,6 +214,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2552798221363937141}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8714104985755743690 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6594365123958868671, guid: 32de8a135a87ebe4893b187ac67de5ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 2552798221363937141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2844300429319065137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69a4356883c70b941896575003ef2963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6283313628835807795 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8385574965038316870, guid: 32de8a135a87ebe4893b187ac67de5ef,

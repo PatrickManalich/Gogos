@@ -22,6 +22,13 @@ namespace Gogos
             m_GogoLauncher = FindObjectOfType<GogoLauncher>();
         }
 
+        protected override void SetTiers(ScriptableGogo scriptableGogo)
+        {
+            base.SetTiers(scriptableGogo);
+            var blastScriptableGogo = (BlastScriptableGogo)scriptableGogo;
+            m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastForce).SetTier((int)blastScriptableGogo.BlastForceTier);
+        }
+
         protected override void OnStartedMoving()
         {
             m_GogoLauncherAlignedRotation = Quaternion.Euler(new Vector3(0, m_GogoLauncher.transform.rotation.eulerAngles.y, 0));

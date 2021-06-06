@@ -91,7 +91,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04556bdd51675b642b25609ad88ea58a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_TierTrackerReference: {fileID: 8409757181930479229}
   m_Accelerometer: {fileID: 4035933670510812152}
+  m_SupportAbility: {fileID: 5794869220277705066}
   m_TriggerRangeTerrainSnapper: {fileID: 8774811679384850250}
   m_SupportTrigger: {fileID: 6371626136887626145}
 --- !u!114 &5794869220277705066
@@ -300,6 +302,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 578cca584d8c7364e8a68a79655b5929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8409757181930479229 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6594365123958868671, guid: 32de8a135a87ebe4893b187ac67de5ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 3402066813361231042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69a4356883c70b941896575003ef2963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &948336244088627944 stripped

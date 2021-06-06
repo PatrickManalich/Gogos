@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9739da34ca42544bd229d7b8fe26fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_TierTrackerReference: {fileID: 2147492140513499851}
   m_Accelerometer: {fileID: 5871178146225872718}
   m_ShieldStrengthTierTracker: {fileID: 67661835766975182}
   m_ShieldTrigger: {fileID: 1513401519861276423}
@@ -307,6 +308,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5066136839225282676}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2147492140513499851 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6594365123958868671, guid: 32de8a135a87ebe4893b187ac67de5ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 5066136839225282676}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4781460244517855536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69a4356883c70b941896575003ef2963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2824327890949517589 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7024647700839473505, guid: 32de8a135a87ebe4893b187ac67de5ef,

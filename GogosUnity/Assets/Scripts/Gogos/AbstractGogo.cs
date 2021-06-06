@@ -5,6 +5,9 @@ namespace Gogos
 	public abstract class AbstractGogo : MonoBehaviour
 	{
         [SerializeField]
+        protected TierTrackerReference m_TierTrackerReference;
+
+        [SerializeField]
 		private Accelerometer m_Accelerometer;
 
         protected abstract void OnStartedMoving();
@@ -18,6 +21,14 @@ namespace Gogos
         protected virtual void OnDestroy()
         {
             UnsubscribeFromMovementEvents();
+        }
+
+        protected virtual void SetTiers(ScriptableGogo scriptableGogo)
+        {
+            m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.Rarity).SetTier((int)scriptableGogo.RarityTier);
+            m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.Weight).SetTier((int)scriptableGogo.WeightTier);
+            m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.PointValue).SetTier((int)scriptableGogo.PointValueTier);
+            m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range).SetTier((int)scriptableGogo.RangeTier);
         }
 
         protected void SubscribeToMovementEvents()
