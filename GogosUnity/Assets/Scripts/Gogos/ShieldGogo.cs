@@ -5,10 +5,15 @@ namespace Gogos
     public class ShieldGogo : AbstractGogo
     {
         [SerializeField]
+        private ShieldTrigger m_ShieldTrigger;
+
         private ShieldStrengthTierTracker m_ShieldStrengthTierTracker;
 
-        [SerializeField]
-        private ShieldTrigger m_ShieldTrigger;
+        protected override void Start()
+        {
+            base.Start();
+            m_ShieldStrengthTierTracker = (ShieldStrengthTierTracker)m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength);
+        }
 
         protected override void SetTiers(ScriptableGogo scriptableGogo)
         {

@@ -186,7 +186,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TierTrackerReference: {fileID: 2147492140513499851}
   m_Accelerometer: {fileID: 5871178146225872718}
-  m_ShieldStrengthTierTracker: {fileID: 67661835766975182}
   m_ShieldTrigger: {fileID: 1513401519861276423}
 --- !u!114 &67661835766975182
 MonoBehaviour:
