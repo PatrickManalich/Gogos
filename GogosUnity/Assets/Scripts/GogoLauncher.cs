@@ -1,5 +1,4 @@
 ﻿using Gogos.Extensions;
-using Gogos.Managers;
 using System;
 using UnityEngine;
 
@@ -49,34 +48,6 @@ namespace Gogos
             m_MovementAngle = 270;
             Align();
             PrepareForLaunch();
-        }
-
-        private void Update()
-        {
-            if (InputManager.LaunchGogoKeyDown && ReadyForLaunch)
-            {
-                Launch();
-            }
-            if (InputManager.ResetGogoKeyDown)
-            {
-                PrepareForLaunch();
-            }
-            if (InputManager.MoveLauncherLeftKey)
-            {
-                MoveLeft();
-            }
-            if (InputManager.MoveLauncherRightKey)
-            {
-                MoveRight();
-            }
-            if (InputManager.IncreaseLaunchForceKey)
-            {
-                IncreaseLaunchForce();
-            }
-            if (InputManager.DecreaseLaunchForceKey)
-            {
-                DecreaseLaunchForce();
-            }
         }
 
         public void MoveLeft() => Move(-1);
