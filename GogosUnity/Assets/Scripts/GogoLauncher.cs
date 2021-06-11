@@ -12,6 +12,7 @@ namespace Gogos
 
         public Vector3 LaunchPoint => transform.position;
         public Vector3 LaunchVector => transform.forward * m_CurrentLaunchForce;
+        public bool ReadyForLaunch { get; private set; }
 
         [SerializeField]
         private GameObject m_ForcePoint;
@@ -40,7 +41,6 @@ namespace Gogos
         private float m_CurrentLaunchForce;
         private float m_DistanceToTarget;
         private float m_MovementAngle;
-        private bool m_ReadyForLaunch;
 
         private void Start()
 		{
@@ -53,7 +53,7 @@ namespace Gogos
 
         private void Update()
         {
-            if (InputManager.LaunchGogoKeyDown && m_ReadyForLaunch)
+            if (InputManager.LaunchGogoKeyDown && ReadyForLaunch)
             {
                 Launch();
             }
@@ -63,45 +63,60 @@ namespace Gogos
             }
             if (InputManager.MoveLauncherLeftKey)
             {
-                m_MovementAngle -= Time.deltaTime * m_MovementSpeed;
-                m_MovementAngle = m_MovementAngle.ClampAngle();
-                AlignLauncher();
+                MoveLeft();
             }
             if (InputManager.MoveLauncherRightKey)
             {
-                m_MovementAngle += Time.deltaTime * m_MovementSpeed;
-                m_MovementAngle = m_MovementAngle.ClampAngle();
-                AlignLauncher();
+                MoveRight();
             }
             if (InputManager.IncreaseLaunchForceKey)
             {
-                m_CurrentLaunchForce += Time.deltaTime * m_LaunchForceDelta;
-                m_CurrentLaunchForce = Mathf.Clamp(m_CurrentLaunchForce, m_MinLaunchForce, m_MaxLaunchForce);
+                IncreaseLaunchForce();
             }
             if (InputManager.DecreaseLaunchForceKey)
             {
-                m_CurrentLaunchForce -= Time.deltaTime * m_LaunchForceDelta;
-                m_CurrentLaunchForce = Mathf.Clamp(m_CurrentLaunchForce, m_MinLaunchForce, m_MaxLaunchForce);
+                DecreaseLaunchForce();
             }
         }
 
-        private void Launch()
+        public void MoveLeft() => Move(-1);
+
+        public void MoveRight() => Move(1);
+
+        public void DecreaseLaunchForce() => ChangeLaunchForce(-1);
+
+        public void IncreaseLaunchForce() => ChangeLaunchForce(1);
+
+        public void Launch()
         {
             m_GogoRigidbody.transform.parent = null;
             m_GogoRigidbody.isKinematic = false;
             m_GogoRigidbody.AddForceAtPosition(LaunchVector * m_GogoRigidbody.mass, m_ForcePoint.transform.position, ForceMode.Impulse);
-            m_ReadyForLaunch = false;
+            ReadyForLaunch = false;
             Launched?.Invoke();
         }
 
-        private void PrepareForLaunch()
+        public void PrepareForLaunch()
         {
             m_GogoRigidbody.isKinematic = true;
             m_GogoRigidbody.transform.parent = transform;
             m_GogoRigidbody.transform.localPosition = Vector3.zero;
             m_GogoRigidbody.transform.localRotation = Quaternion.identity;
-            m_ReadyForLaunch = true;
+            ReadyForLaunch = true;
             LaunchPrepared?.Invoke();
+        }
+
+        private void Move(int direction)
+        {
+            m_MovementAngle += Time.deltaTime * m_MovementSpeed * direction;
+            m_MovementAngle = m_MovementAngle.ClampAngle();
+            AlignLauncher();
+        }
+
+        private void ChangeLaunchForce(int direction)
+        {
+            m_CurrentLaunchForce += Time.deltaTime * m_LaunchForceDelta * direction;
+            m_CurrentLaunchForce = Mathf.Clamp(m_CurrentLaunchForce, m_MinLaunchForce, m_MaxLaunchForce);
         }
 
         private void AlignLauncher()
