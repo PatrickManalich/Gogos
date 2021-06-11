@@ -47,7 +47,7 @@ namespace Gogos
             m_CurrentLaunchForce = (m_MinLaunchForce + m_MaxLaunchForce) / 2;
             m_DistanceToTarget = Vector3.Distance(transform.position, m_Target.transform.position);
             m_MovementAngle = 270;
-            AlignLauncher();
+            Align();
             PrepareForLaunch();
         }
 
@@ -110,7 +110,7 @@ namespace Gogos
         {
             m_MovementAngle += Time.deltaTime * m_MovementSpeed * direction;
             m_MovementAngle = m_MovementAngle.ClampAngle();
-            AlignLauncher();
+            Align();
         }
 
         private void ChangeLaunchForce(int direction)
@@ -119,7 +119,7 @@ namespace Gogos
             m_CurrentLaunchForce = Mathf.Clamp(m_CurrentLaunchForce, m_MinLaunchForce, m_MaxLaunchForce);
         }
 
-        private void AlignLauncher()
+        private void Align()
         {
             var x = Mathf.Cos(m_MovementAngle.DegreesToRadians()) * m_DistanceToTarget;
             var y = 0;
