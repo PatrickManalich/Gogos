@@ -1,6 +1,6 @@
 ﻿namespace Gogos
 {
-    public enum RarityTier { Common, Uncommon, Rare, Golden }
+    public enum RarityTier { Common, Rare, Epic, Golden }
 
     public class RarityTierTracker : AbstractTierTracker<RarityTier>
     {
