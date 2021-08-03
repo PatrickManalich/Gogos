@@ -5,12 +5,15 @@ namespace Gogos
 {
 	public class PlayerManager : MonoBehaviour
 	{
+		public Player CurrentPlayer => m_Players[m_CurrentPlayerIndex];
+
         [SerializeField]
         private ScriptableGogoBucket m_Starters;
 
 		private const int PlayerCount = 3;
 
 		private Player[] m_Players = new Player[PlayerCount];
+		private int m_CurrentPlayerIndex;
 
         private void Awake()
 		{
