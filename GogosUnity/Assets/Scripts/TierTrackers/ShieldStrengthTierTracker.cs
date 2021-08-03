@@ -9,9 +9,9 @@ namespace Gogos
         public override TierVariant TierVariant => TierVariant.ShieldStrength;
 
         public bool IsShieldBroken => Tier == ShieldStrengthTier.Broken;
-        public float ShieldAlpha => ShieldAlphaByTier[Tier];
+        public float ShieldAlpha => ShieldAlphasByTier[Tier];
 
-        private static readonly Dictionary<ShieldStrengthTier, float> ShieldAlphaByTier = new Dictionary<ShieldStrengthTier, float>()
+        private static readonly Dictionary<ShieldStrengthTier, float> ShieldAlphasByTier = new Dictionary<ShieldStrengthTier, float>()
         {
             { ShieldStrengthTier.Broken, 0 },
             { ShieldStrengthTier.Weak, 0.1f },

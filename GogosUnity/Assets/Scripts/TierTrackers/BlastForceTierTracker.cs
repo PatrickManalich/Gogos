@@ -8,16 +8,16 @@ namespace Gogos
 	{
         public override TierVariant TierVariant => TierVariant.BlastForce;
        
-        public float BlastForce => BlastForceByTier[Tier];
-        public float BlastUpwardsModifier => BlastUpwardsModifierByTier[Tier];
+        public float BlastForce => BlastForcesByTier[Tier];
+        public float BlastUpwardsModifier => BlastUpwardsModifiersByTier[Tier];
         
-        private static readonly Dictionary<BlastForceTier, float> BlastForceByTier = new Dictionary<BlastForceTier, float>()
+        private static readonly Dictionary<BlastForceTier, float> BlastForcesByTier = new Dictionary<BlastForceTier, float>()
         {
             { BlastForceTier.Weak, 7 },
             { BlastForceTier.Medium, 9 },
             { BlastForceTier.Strong, 11 },
         };
-        private static readonly Dictionary<BlastForceTier, float> BlastUpwardsModifierByTier = new Dictionary<BlastForceTier, float>()
+        private static readonly Dictionary<BlastForceTier, float> BlastUpwardsModifiersByTier = new Dictionary<BlastForceTier, float>()
         {
             { BlastForceTier.Weak, 2 },
             { BlastForceTier.Medium, 2 },

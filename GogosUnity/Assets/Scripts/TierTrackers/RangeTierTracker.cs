@@ -7,9 +7,9 @@ namespace Gogos
     public class RangeTierTracker : AbstractTierTracker<RangeTier>
     {
         public override TierVariant TierVariant => TierVariant.Range;
-        public float Range => RangeByTier[Tier];
+        public float Range => RangesByTier[Tier];
 
-        private static readonly Dictionary<RangeTier, float> RangeByTier = new Dictionary<RangeTier, float>()
+        private static readonly Dictionary<RangeTier, float> RangesByTier = new Dictionary<RangeTier, float>()
         {
             { RangeTier.Small, 10 },
             { RangeTier.Medium, 15 },
