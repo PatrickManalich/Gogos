@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Prefab: {fileID: 7593268731678311256, guid: a7bb8f7fb12c6174f92ef141940a8869,
     type: 3}
   m_Nickname: Mosh
-  m_Portrait: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Portrait: {fileID: 21300000, guid: da44a7d2d9c9750438a7a9853226a9c5, type: 3}
   m_Number: 19
   m_RarityTier: 0
   m_WeightTier: 0
