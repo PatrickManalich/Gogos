@@ -6,7 +6,7 @@ namespace Gogos
     public class ScriptableGogoBucket : ScriptableObject
 	{
         [SerializeField]
-        private ScriptableGogo[] m_ScriptableGogos;
-        public ScriptableGogo[] ScriptableGogos => m_ScriptableGogos;
+        private AbstractScriptableGogo[] m_ScriptableGogos;
+        public AbstractScriptableGogo[] ScriptableGogos => m_ScriptableGogos;
     }
 }

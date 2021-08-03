@@ -10,7 +10,7 @@ namespace Gogos
 
 		public PlayerColor PlayerColor { get; }
 
-		public List<ScriptableGogo> Collection { get; private set; } = new List<ScriptableGogo>();
+		public List<AbstractScriptableGogo> Collection { get; private set; } = new List<AbstractScriptableGogo>();
 
 		public Player(string name, PlayerColor playerColor)
         {
@@ -18,7 +18,7 @@ namespace Gogos
 			PlayerColor = playerColor;
         }
 
-		public void AddToCollection(IEnumerable<ScriptableGogo> scriptableGogos)
+		public void AddToCollection(IEnumerable<AbstractScriptableGogo> scriptableGogos)
         {
 			Collection.AddRange(scriptableGogos);
         }

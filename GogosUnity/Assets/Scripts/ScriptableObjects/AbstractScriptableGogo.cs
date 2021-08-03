@@ -2,8 +2,12 @@
 
 namespace Gogos
 {
-	public class ScriptableGogo : ScriptableObject
+    public enum GogoVariant { Blast, Shield, Support }
+
+    public abstract class AbstractScriptableGogo : ScriptableObject
 	{
+        public abstract GogoVariant GogoVariant { get; }
+
         [SerializeField]
         private GameObject m_Prefab;
         public GameObject Prefab => m_Prefab;

@@ -23,7 +23,7 @@ namespace Gogos
             UnsubscribeFromMovementEvents();
         }
 
-        protected virtual void SetTiers(ScriptableGogo scriptableGogo)
+        protected virtual void SetTiers(AbstractScriptableGogo scriptableGogo)
         {
             m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.Rarity).SetTier((int)scriptableGogo.RarityTier);
             m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.Weight).SetTier((int)scriptableGogo.WeightTier);

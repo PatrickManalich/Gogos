@@ -3,8 +3,10 @@
 namespace Gogos
 {
     [CreateAssetMenu(fileName = "SupportGogo", menuName = "Gogos/Scriptable Gogo/Support")]
-    public class SupportScriptableGogo : ScriptableGogo
+    public class SupportScriptableGogo : AbstractScriptableGogo
     {
+        public override GogoVariant GogoVariant => GogoVariant.Support;
+
         [SerializeField]
         private TierVariant m_SupportAbilityTierVariant;
         public TierVariant SupportAbilityTierVariant => m_SupportAbilityTierVariant;
