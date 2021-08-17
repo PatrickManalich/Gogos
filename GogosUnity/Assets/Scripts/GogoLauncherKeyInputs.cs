@@ -1,5 +1,6 @@
 ﻿using Gogos.Managers;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Gogos
 {
@@ -10,6 +11,11 @@ namespace Gogos
 
         private void Update()
         {
+            if (EventSystem.current.currentSelectedGameObject != null)
+            {
+                return;
+            }
+
             if (InputManager.LaunchGogoKeyDown && m_GogoLauncher.ReadyForLaunch)
             {
                 m_GogoLauncher.Launch();
