@@ -1958,6 +1958,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7e66082051ff0f418568b40ba9b1cd9, type: 3}
+--- !u!1 &598835347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8362218827674353940, guid: d7e66082051ff0f418568b40ba9b1cd9,
+    type: 3}
+  m_PrefabInstance: {fileID: 598835346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &598835348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598835347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cea625e0d87bcb44a08707fa1c6195e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ToggleGroup: {fileID: 713090099}
+  m_GogoSelectionTogglePrefab: {fileID: 7786499999594436859, guid: f0b89a69e3ce50a438768899538f0601,
+    type: 3}
+  m_GogoDetailsPanel: {fileID: 2018693979}
 --- !u!1 &713090095 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5426549255742805422, guid: d7e66082051ff0f418568b40ba9b1cd9,
