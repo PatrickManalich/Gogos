@@ -13,6 +13,6 @@ namespace Gogos
 
         [SerializeField]
         private Sprite m_BlastShapeIllustration;
-        public Sprite BlastShapeImage => m_BlastShapeIllustration;
+        public Sprite BlastShapeIllustration => m_BlastShapeIllustration;
     }
 }
