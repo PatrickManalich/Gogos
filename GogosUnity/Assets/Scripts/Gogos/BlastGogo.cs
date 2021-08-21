@@ -22,7 +22,7 @@ namespace Gogos
             m_GogoLauncher = FindObjectOfType<GogoLauncher>();
         }
 
-        protected override void SetTiers(AbstractScriptableGogo scriptableGogo)
+        public override void SetTiers(AbstractScriptableGogo scriptableGogo)
         {
             base.SetTiers(scriptableGogo);
             var blastScriptableGogo = (BlastScriptableGogo)scriptableGogo;

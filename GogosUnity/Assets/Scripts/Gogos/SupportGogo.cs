@@ -13,7 +13,7 @@ namespace Gogos
         [SerializeField]
         private SupportTrigger m_SupportTrigger;
 
-        protected override void SetTiers(AbstractScriptableGogo scriptableGogo)
+        public override void SetTiers(AbstractScriptableGogo scriptableGogo)
         {
             base.SetTiers(scriptableGogo);
             var supportScriptableGogo = (SupportScriptableGogo)scriptableGogo;
