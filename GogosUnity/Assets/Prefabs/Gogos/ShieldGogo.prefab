@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TierTrackerReference: {fileID: 2147492140513499851}
   m_Accelerometer: {fileID: 5871178146225872718}
+  m_TriggerRangeGroundSnapper: {fileID: 2377298452543999703}
   m_ShieldTrigger: {fileID: 1513401519861276423}
 --- !u!114 &67661835766975182
 MonoBehaviour:
@@ -214,6 +215,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShieldStrengthTierTracker: {fileID: 67661835766975182}
   m_ShieldVisualMeshRenderer: {fileID: 8273866049387384125}
+--- !u!114 &2377298452543999703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7228615960939619934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42f8331e2650d564093d3ed8f94cff34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VerticalOffset: 0
 --- !u!1001 &5066136839225282676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -322,6 +336,12 @@ MonoBehaviour:
 --- !u!1 &2824327890949517589 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7024647700839473505, guid: 32de8a135a87ebe4893b187ac67de5ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 5066136839225282676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7228615960939619934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2458890045437605418, guid: 32de8a135a87ebe4893b187ac67de5ef,
     type: 3}
   m_PrefabInstance: {fileID: 5066136839225282676}
   m_PrefabAsset: {fileID: 0}

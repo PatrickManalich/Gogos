@@ -5,6 +5,9 @@ namespace Gogos
     public class ShieldGogo : AbstractGogo
     {
         [SerializeField]
+        private GroundSnapper m_TriggerRangeGroundSnapper;
+
+        [SerializeField]
         private ShieldTrigger m_ShieldTrigger;
 
         private ShieldStrengthTierTracker m_ShieldStrengthTierTracker;
@@ -31,6 +34,7 @@ namespace Gogos
         {
             if (!m_ShieldStrengthTierTracker.IsShieldBroken)
             {
+                m_TriggerRangeGroundSnapper.SnapToGround();
                 m_ShieldTrigger.EnableShield();
             }
         }
