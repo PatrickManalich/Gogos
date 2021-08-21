@@ -3864,7 +3864,7 @@ GameObject:
   - component: {fileID: 1638789070}
   - component: {fileID: 1638789071}
   m_Layer: 0
-  m_Name: GogoLauncher
+  m_Name: Launcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3887,7 +3887,7 @@ MonoBehaviour:
   m_MinLaunchForce: 10
   m_MaxLaunchForce: 15
   m_LaunchForceDelta: 5
-  m_GogoRigidbody: {fileID: 2143049536}
+  m_ProjectileRigidbody: {fileID: 2143049536}
   m_Target: {fileID: 2077586319}
   m_MovementSpeed: 40
 --- !u!114 &1638789071
@@ -3902,7 +3902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 929d4aff1f8e82f4db278c50a7c3b0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_GogoLauncher: {fileID: 1638789070}
+  m_Launcher: {fileID: 1638789070}
 --- !u!4 &1638789072
 Transform:
   m_ObjectHideFlags: 0
@@ -4553,7 +4553,7 @@ GameObject:
   - component: {fileID: 2016917676}
   - component: {fileID: 2016917677}
   m_Layer: 5
-  m_Name: GogoLauncherButtons
+  m_Name: LauncherButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4592,7 +4592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b8535a297e3714386243c390037f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_GogoLauncher: {fileID: 1638789070}
+  m_Launcher: {fileID: 1638789070}
   m_MoveLeftButton: {fileID: 7666120206535448255}
   m_MoveRightButton: {fileID: 1355671952}
   m_DecreaseLaunchForceButton: {fileID: 445400105}
@@ -5406,7 +5406,7 @@ GameObject:
   - component: {fileID: 8326469070304722191}
   - component: {fileID: 8326469070304722190}
   m_Layer: 0
-  m_Name: GogoTrajectoryPredictor
+  m_Name: LauncherTrajectoryPredictor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5425,7 +5425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrajectoryPredictor: {fileID: 8326469070779933968}
-  m_GogoLauncher: {fileID: 1638789070}
+  m_Launcher: {fileID: 1638789070}
 --- !u!4 &8326469070304722191
 Transform:
   m_ObjectHideFlags: 0

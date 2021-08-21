@@ -13,13 +13,13 @@ namespace Gogos
         [SerializeField]
         private BlastTrigger m_BlastTrigger;
 
-        private GogoLauncher m_GogoLauncher;
-        private Quaternion m_GogoLauncherAlignedRotation; 
+        private Launcher m_Launcher;
+        private Quaternion m_LauncherAlignedRotation; 
 
         protected override void Start()
         {
             base.Start();
-            m_GogoLauncher = FindObjectOfType<GogoLauncher>();
+            m_Launcher = FindObjectOfType<Launcher>();
         }
 
         public override void SetTiers(AbstractScriptableGogo scriptableGogo)
@@ -31,13 +31,13 @@ namespace Gogos
 
         protected override void OnStartedMoving()
         {
-            m_GogoLauncherAlignedRotation = Quaternion.Euler(new Vector3(0, m_GogoLauncher.transform.rotation.eulerAngles.y, 0));
+            m_LauncherAlignedRotation = Quaternion.Euler(new Vector3(0, m_Launcher.transform.rotation.eulerAngles.y, 0));
         }
 
         protected override void OnStoppedMoving()
         {
             m_TriggerRangeRefresher.gameObject.SetActive(false);
-            m_TriggerRangeRotationAligner.AlignWithRotation(m_GogoLauncherAlignedRotation);
+            m_TriggerRangeRotationAligner.AlignWithRotation(m_LauncherAlignedRotation);
             m_BlastTrigger.Blast();
 
             UnsubscribeFromMovementEvents();

@@ -3,10 +3,10 @@ using UnityEngine.UI;
 
 namespace Gogos
 {
-	public class GogoLauncherButtonInputs : MonoBehaviour
+	public class LauncherButtonInputs : MonoBehaviour
 	{
 		[SerializeField]
-		private GogoLauncher m_GogoLauncher;
+		private Launcher m_Launcher;
 
         [SerializeField]
         private HoldDownButton m_MoveLeftButton;
@@ -25,27 +25,27 @@ namespace Gogos
 
         private void Start()
 		{
-			m_MoveLeftButton.Held += m_GogoLauncher.MoveLeft;
-			m_MoveRightButton.Held += m_GogoLauncher.MoveRight;
-			m_DecreaseLaunchForceButton.Held += m_GogoLauncher.DecreaseLaunchForce;
-			m_IncreaseLaunchForceButton.Held += m_GogoLauncher.IncreaseLaunchForce;
+			m_MoveLeftButton.Held += m_Launcher.MoveLeft;
+			m_MoveRightButton.Held += m_Launcher.MoveRight;
+			m_DecreaseLaunchForceButton.Held += m_Launcher.DecreaseLaunchForce;
+			m_IncreaseLaunchForceButton.Held += m_Launcher.IncreaseLaunchForce;
 			m_LaunchButton.onClick.AddListener(LaunchButton_OnClick);
 		}
 
         private void OnDestroy()
 		{
 			m_LaunchButton.onClick.RemoveListener(LaunchButton_OnClick);
-			m_IncreaseLaunchForceButton.Held -= m_GogoLauncher.IncreaseLaunchForce;
-			m_DecreaseLaunchForceButton.Held -= m_GogoLauncher.DecreaseLaunchForce;
-			m_MoveRightButton.Held -= m_GogoLauncher.MoveRight;
-			m_MoveLeftButton.Held -= m_GogoLauncher.MoveLeft;
+			m_IncreaseLaunchForceButton.Held -= m_Launcher.IncreaseLaunchForce;
+			m_DecreaseLaunchForceButton.Held -= m_Launcher.DecreaseLaunchForce;
+			m_MoveRightButton.Held -= m_Launcher.MoveRight;
+			m_MoveLeftButton.Held -= m_Launcher.MoveLeft;
 		}
 
 		private void LaunchButton_OnClick()
         {
-            if (m_GogoLauncher.ReadyForLaunch)
+            if (m_Launcher.ReadyForLaunch)
             {
-				m_GogoLauncher.Launch();
+				m_Launcher.Launch();
 			}
         }
 	}

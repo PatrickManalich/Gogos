@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Gogos
 {
-	public class GogoLauncher : MonoBehaviour
+	public class Launcher : MonoBehaviour
 	{
         public event Action LaunchPrepared;
         public event Action Launched;
@@ -29,7 +29,7 @@ namespace Gogos
         private float m_LaunchForceDelta;
 
         [SerializeField]
-        private Rigidbody m_GogoRigidbody;
+        private Rigidbody m_ProjectileRigidbody;
 
         [SerializeField]
         private GameObject m_Target;
@@ -60,19 +60,19 @@ namespace Gogos
 
         public void Launch()
         {
-            m_GogoRigidbody.transform.parent = null;
-            m_GogoRigidbody.isKinematic = false;
-            m_GogoRigidbody.AddForceAtPosition(LaunchVector * m_GogoRigidbody.mass, m_ForcePoint.transform.position, ForceMode.Impulse);
+            m_ProjectileRigidbody.transform.parent = null;
+            m_ProjectileRigidbody.isKinematic = false;
+            m_ProjectileRigidbody.AddForceAtPosition(LaunchVector * m_ProjectileRigidbody.mass, m_ForcePoint.transform.position, ForceMode.Impulse);
             ReadyForLaunch = false;
             Launched?.Invoke();
         }
 
         public void PrepareForLaunch()
         {
-            m_GogoRigidbody.isKinematic = true;
-            m_GogoRigidbody.transform.parent = transform;
-            m_GogoRigidbody.transform.localPosition = Vector3.zero;
-            m_GogoRigidbody.transform.localRotation = Quaternion.identity;
+            m_ProjectileRigidbody.isKinematic = true;
+            m_ProjectileRigidbody.transform.parent = transform;
+            m_ProjectileRigidbody.transform.localPosition = Vector3.zero;
+            m_ProjectileRigidbody.transform.localRotation = Quaternion.identity;
             ReadyForLaunch = true;
             LaunchPrepared?.Invoke();
         }

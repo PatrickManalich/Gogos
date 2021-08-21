@@ -4,10 +4,10 @@ using UnityEngine.EventSystems;
 
 namespace Gogos
 {
-	public class GogoLauncherKeyInputs : MonoBehaviour
+	public class LauncherKeyInputs : MonoBehaviour
 	{
         [SerializeField]
-        private GogoLauncher m_GogoLauncher;
+        private Launcher m_Launcher;
 
         private void Update()
         {
@@ -16,29 +16,29 @@ namespace Gogos
                 return;
             }
 
-            if (InputManager.LaunchGogoKeyDown && m_GogoLauncher.ReadyForLaunch)
+            if (InputManager.LaunchGogoKeyDown && m_Launcher.ReadyForLaunch)
             {
-                m_GogoLauncher.Launch();
+                m_Launcher.Launch();
             }
             if (InputManager.ResetGogoKeyDown)
             {
-                m_GogoLauncher.PrepareForLaunch();
+                m_Launcher.PrepareForLaunch();
             }
             if (InputManager.MoveLauncherLeftKey)
             {
-                m_GogoLauncher.MoveLeft();
+                m_Launcher.MoveLeft();
             }
             if (InputManager.MoveLauncherRightKey)
             {
-                m_GogoLauncher.MoveRight();
+                m_Launcher.MoveRight();
             }
             if (InputManager.IncreaseLaunchForceKey)
             {
-                m_GogoLauncher.IncreaseLaunchForce();
+                m_Launcher.IncreaseLaunchForce();
             }
             if (InputManager.DecreaseLaunchForceKey)
             {
-                m_GogoLauncher.DecreaseLaunchForce();
+                m_Launcher.DecreaseLaunchForce();
             }
         }
     }
