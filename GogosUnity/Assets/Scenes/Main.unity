@@ -3887,7 +3887,6 @@ MonoBehaviour:
   m_MinLaunchForce: 10
   m_MaxLaunchForce: 15
   m_LaunchForceDelta: 5
-  m_ProjectileRigidbody: {fileID: 2143049536}
   m_Target: {fileID: 2077586319}
   m_MovementSpeed: 40
 --- !u!114 &1638789071
@@ -5188,12 +5187,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8b18565ff40c904fa126a85766668ee, type: 3}
---- !u!54 &2143049536 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 87944331241919118, guid: c8b18565ff40c904fa126a85766668ee,
-    type: 3}
-  m_PrefabInstance: {fileID: 2143049535}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4687371903722347153
 GameObject:
   m_ObjectHideFlags: 0

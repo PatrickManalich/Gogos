@@ -29,9 +29,6 @@ namespace Gogos
         private float m_LaunchForceDelta;
 
         [SerializeField]
-        private Rigidbody m_ProjectileRigidbody;
-
-        [SerializeField]
         private GameObject m_Target;
 
         [SerializeField]
@@ -40,6 +37,7 @@ namespace Gogos
         private float m_CurrentLaunchForce;
         private float m_DistanceToTarget;
         private float m_MovementAngle;
+        private Rigidbody m_ProjectileRigidbody;
 
         private void Start()
 		{
@@ -47,6 +45,12 @@ namespace Gogos
             m_DistanceToTarget = Vector3.Distance(transform.position, m_Target.transform.position);
             m_MovementAngle = 270;
             Align();
+            PrepareForLaunch();
+        }
+
+        public void LoadProjectile(GameObject projectile)
+        {
+            m_ProjectileRigidbody = projectile.GetComponent<Rigidbody>();
             PrepareForLaunch();
         }
 
