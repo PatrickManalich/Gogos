@@ -58,15 +58,6 @@ namespace Gogos
 
         public void IncreaseLaunchForce() => ChangeLaunchForce(1);
 
-        public void Launch()
-        {
-            m_ProjectileRigidbody.transform.parent = null;
-            m_ProjectileRigidbody.isKinematic = false;
-            m_ProjectileRigidbody.AddForceAtPosition(LaunchVector * m_ProjectileRigidbody.mass, m_ForcePoint.transform.position, ForceMode.Impulse);
-            ReadyForLaunch = false;
-            Launched?.Invoke();
-        }
-
         public void PrepareForLaunch()
         {
             m_ProjectileRigidbody.isKinematic = true;
@@ -75,6 +66,15 @@ namespace Gogos
             m_ProjectileRigidbody.transform.localRotation = Quaternion.identity;
             ReadyForLaunch = true;
             LaunchPrepared?.Invoke();
+        }
+
+        public void Launch()
+        {
+            m_ProjectileRigidbody.transform.parent = null;
+            m_ProjectileRigidbody.isKinematic = false;
+            m_ProjectileRigidbody.AddForceAtPosition(LaunchVector * m_ProjectileRigidbody.mass, m_ForcePoint.transform.position, ForceMode.Impulse);
+            ReadyForLaunch = false;
+            Launched?.Invoke();
         }
 
         private void Move(int direction)

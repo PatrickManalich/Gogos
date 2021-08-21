@@ -16,13 +16,13 @@ namespace Gogos
                 return;
             }
 
-            if (InputManager.LaunchGogoKeyDown && m_Launcher.ReadyForLaunch)
-            {
-                m_Launcher.Launch();
-            }
             if (InputManager.ResetGogoKeyDown)
             {
                 m_Launcher.PrepareForLaunch();
+            }
+            if (InputManager.LaunchGogoKeyDown && m_Launcher.ReadyForLaunch)
+            {
+                m_Launcher.Launch();
             }
             if (InputManager.MoveLauncherLeftKey)
             {
