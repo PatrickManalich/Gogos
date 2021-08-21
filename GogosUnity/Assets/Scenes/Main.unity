@@ -5424,8 +5424,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4f796dfe337c6489918b8ee3c4c81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrajectoryPredictor: {fileID: 8326469070779933968}
   m_Launcher: {fileID: 1638789070}
+  m_TrajectoryPredictor: {fileID: 8326469070779933968}
 --- !u!4 &8326469070304722191
 Transform:
   m_ObjectHideFlags: 0

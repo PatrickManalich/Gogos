@@ -6,10 +6,10 @@ namespace Gogos
 	public class LauncherTrajectoryPredictor : MonoBehaviour
 	{
         [SerializeField]
-        private TrajectoryPredictor m_TrajectoryPredictor;
+        private Launcher m_Launcher;
 
         [SerializeField]
-        private Launcher m_Launcher;
+        private TrajectoryPredictor m_TrajectoryPredictor;
 
         private void Awake()
 		{
