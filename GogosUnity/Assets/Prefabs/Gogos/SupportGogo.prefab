@@ -94,7 +94,7 @@ MonoBehaviour:
   m_TierTrackerReference: {fileID: 8409757181930479229}
   m_Accelerometer: {fileID: 4035933670510812152}
   m_SupportAbility: {fileID: 5794869220277705066}
-  m_TriggerRangeTerrainSnapper: {fileID: 8774811679384850250}
+  m_TriggerRangeGroundSnapper: {fileID: 8774811679384850250}
   m_SupportTrigger: {fileID: 6371626136887626145}
 --- !u!114 &5794869220277705066
 MonoBehaviour:

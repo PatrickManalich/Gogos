@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Gogos
 {
-	public class TerrainSnapper : MonoBehaviour
+	public class GroundSnapper : MonoBehaviour
 	{
         [SerializeField]
         private float m_VerticalOffset;
@@ -12,7 +12,7 @@ namespace Gogos
 		private const float MaxRaycastDistance = 1;
 		private const float RaycastOffset = 1;
 
-		public void SnapToTerrain()
+		public void SnapToGround()
 		{
 			transform.localPosition = Vector3.zero;
 

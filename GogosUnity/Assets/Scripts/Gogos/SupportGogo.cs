@@ -8,7 +8,7 @@ namespace Gogos
         private SupportAbility m_SupportAbility;
 
         [SerializeField]
-        private TerrainSnapper m_TriggerRangeTerrainSnapper;
+        private GroundSnapper m_TriggerRangeGroundSnapper;
 
         [SerializeField]
         private SupportTrigger m_SupportTrigger;
@@ -27,7 +27,7 @@ namespace Gogos
 
         protected override void OnStoppedMoving()
         {
-            m_TriggerRangeTerrainSnapper.SnapToTerrain();
+            m_TriggerRangeGroundSnapper.SnapToGround();
             m_SupportTrigger.ProvideSupport();
         }
     }
