@@ -1964,7 +1964,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 598835346}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &598835348
+--- !u!114 &598835348 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3839819532814398931, guid: d7e66082051ff0f418568b40ba9b1cd9,
+    type: 3}
+  m_PrefabInstance: {fileID: 598835346}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598835347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &598835349
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1980,6 +1992,19 @@ MonoBehaviour:
   m_GogoSelectionTogglePrefab: {fileID: 7786499999594436859, guid: f0b89a69e3ce50a438768899538f0601,
     type: 3}
   m_GogoDetailsPanel: {fileID: 2018693979}
+--- !u!114 &598835350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598835347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ce76f49e3984004eb5aaecf4d750b54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ScrollRect: {fileID: 598835348}
 --- !u!1 &713090095 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5426549255742805422, guid: d7e66082051ff0f418568b40ba9b1cd9,
