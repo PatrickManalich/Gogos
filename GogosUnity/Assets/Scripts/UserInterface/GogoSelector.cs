@@ -17,6 +17,9 @@ namespace Gogos
         [SerializeField]
         private GogoDetailsPanel m_GogoDetailsPanel;
 
+        [SerializeField]
+        private GogoCreator m_GogoCreator;
+
         private List<GogoSelectionToggle> m_GogoSelectionToggles = new List<GogoSelectionToggle>();
 
         private void Start()
@@ -52,6 +55,7 @@ namespace Gogos
         {
             var selectedScriptableGogo = e.ScriptableGogo;
             m_GogoDetailsPanel.SetDetails(selectedScriptableGogo);
+            m_GogoCreator.CreateGogo(selectedScriptableGogo);
         }
     }
 }

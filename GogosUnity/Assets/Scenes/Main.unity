@@ -1992,6 +1992,7 @@ MonoBehaviour:
   m_GogoSelectionTogglePrefab: {fileID: 7786499999594436859, guid: f0b89a69e3ce50a438768899538f0601,
     type: 3}
   m_GogoDetailsPanel: {fileID: 2018693979}
+  m_GogoCreator: {fileID: 1986067543}
 --- !u!114 &598835350
 MonoBehaviour:
   m_ObjectHideFlags: 0
