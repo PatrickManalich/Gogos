@@ -1,5 +1,4 @@
-﻿using Gogos.Managers;
-using System;
+﻿using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -19,11 +18,11 @@ namespace Gogos
                 return;
             }
 
-            if (InputManager.SubmitKeyDown)
+            if (InputKeys.SubmitKeyDown)
             {
                 RestartEndlessHold();
             }
-            else if (InputManager.SubmitKeyUp)
+            else if (InputKeys.SubmitKeyUp)
             {
                 StopEndlessHold();
             }

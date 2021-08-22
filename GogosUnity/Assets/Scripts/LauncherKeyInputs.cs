@@ -1,5 +1,4 @@
-﻿using Gogos.Managers;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Gogos
@@ -16,27 +15,27 @@ namespace Gogos
                 return;
             }
 
-            if (InputManager.ResetGogoKeyDown)
+            if (InputKeys.ResetGogoKeyDown)
             {
                 m_Launcher.PrepareForLaunch();
             }
-            if (InputManager.LaunchGogoKeyDown && m_Launcher.ReadyForLaunch)
+            if (InputKeys.LaunchGogoKeyDown && m_Launcher.ReadyForLaunch)
             {
                 m_Launcher.Launch();
             }
-            if (InputManager.MoveLauncherLeftKey)
+            if (InputKeys.MoveLauncherLeftKey)
             {
                 m_Launcher.MoveLeft();
             }
-            if (InputManager.MoveLauncherRightKey)
+            if (InputKeys.MoveLauncherRightKey)
             {
                 m_Launcher.MoveRight();
             }
-            if (InputManager.IncreaseLaunchForceKey)
+            if (InputKeys.IncreaseLaunchForceKey)
             {
                 m_Launcher.IncreaseLaunchForce();
             }
-            if (InputManager.DecreaseLaunchForceKey)
+            if (InputKeys.DecreaseLaunchForceKey)
             {
                 m_Launcher.DecreaseLaunchForce();
             }

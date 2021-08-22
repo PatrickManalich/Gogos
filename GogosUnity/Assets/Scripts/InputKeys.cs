@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-namespace Gogos.Managers
+namespace Gogos
 {
 
-    public class InputManager : MonoBehaviour
+    public static class InputKeys
     {
         public static bool ResetGogoKeyDown => Input.GetKeyDown(KeyCode.R);
         public static bool LaunchGogoKeyDown => Input.GetKeyDown(KeyCode.Space);

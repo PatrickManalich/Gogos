@@ -7,11 +7,7 @@ namespace Gogos.Managers
     {
         public static GameManager Instance { get; private set; }
 
-        public static InputManager InputKeyManager => Instance.m_InputManager;
         public static PlayerManager PlayerManager => Instance.m_PlayerManager;
-
-        [SerializeField]
-        private InputManager m_InputManager;
 
         [SerializeField]
         private PlayerManager m_PlayerManager;
