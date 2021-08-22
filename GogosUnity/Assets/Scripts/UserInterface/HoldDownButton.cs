@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gogos.Managers;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -8,7 +9,26 @@ namespace Gogos
     public class HoldDownButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         public event Action Held;
+
         private Coroutine m_EndlessHoldCoroutine;
+
+        private void Update()
+        {
+            if (EventSystem.current.currentSelectedGameObject != gameObject)
+            {
+                return;
+            }
+
+            if (InputManager.SubmitKeyDown)
+            {
+                StopEndlessHold();
+                StartEndlessHold();
+            }
+            else if (InputManager.SubmitKeyUp)
+            {
+                StopEndlessHold();
+            }
+        }
 
         public void OnPointerDown(PointerEventData eventData)
         {

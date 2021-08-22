@@ -11,5 +11,7 @@ namespace Gogos.Managers
         public static bool MoveLauncherRightKey => Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
         public static bool IncreaseLaunchForceKey => Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
         public static bool DecreaseLaunchForceKey => Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
+        public static bool SubmitKeyDown => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return);
+        public static bool SubmitKeyUp => Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.Return);
     }
 }
