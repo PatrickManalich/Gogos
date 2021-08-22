@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Gogos.Managers
+namespace Gogos
 {
 
     public class GameManager : MonoBehaviour
