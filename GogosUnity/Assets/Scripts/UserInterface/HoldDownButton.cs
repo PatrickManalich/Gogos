@@ -21,8 +21,7 @@ namespace Gogos
 
             if (InputManager.SubmitKeyDown)
             {
-                StopEndlessHold();
-                StartEndlessHold();
+                RestartEndlessHold();
             }
             else if (InputManager.SubmitKeyUp)
             {
@@ -32,13 +31,18 @@ namespace Gogos
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            StopEndlessHold();
-            StartEndlessHold();
+            RestartEndlessHold();
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
             StopEndlessHold();
+        }
+
+        private void RestartEndlessHold()
+        {
+            StopEndlessHold();
+            StartEndlessHold();
         }
 
         private void StartEndlessHold()
