@@ -69,9 +69,13 @@ namespace Gogos
 
 		private void NotifyObservers(List<ITriggerAnimationObserver> observers)
         {
-			foreach (var observer in observers)
+			// Clone list in case observers remove themselves when notifying, which would modify
+			// the list while it's still being iterated upon
+
+			var clonedObservers = new List<ITriggerAnimationObserver>(observers);
+			foreach (var clonedObserver in clonedObservers)
 			{
-				observer.Notify();
+				clonedObserver.Notify();
 			}
 		}
 	}
