@@ -13,21 +13,14 @@ namespace Gogos
         [SerializeField]
         private TriggerAnimation m_TriggerAnimation = default;
 
-        private int m_AnimationLoopCount;
-
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            m_AnimationLoopCount = 0;
             AnimationStarted?.Invoke(this, new TriggerAnimationEventArgs(m_TriggerAnimation));
         }
 
-        public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if (stateInfo.normalizedTime - m_AnimationLoopCount >= 1)
-            {
-                m_AnimationLoopCount++;
-                AnimationFinished?.Invoke(this, new TriggerAnimationEventArgs(m_TriggerAnimation));
-            }
+            AnimationFinished?.Invoke(this, new TriggerAnimationEventArgs(m_TriggerAnimation));
         }
     }
 }
