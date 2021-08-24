@@ -79,6 +79,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4853842286205953042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2824327890949517589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2086556be93ca743a449a5ef90f59c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShieldStrengthTierTracker: {fileID: 67661835766975182}
+  m_ShieldVisualMeshRenderer: {fileID: 8273866049387384125}
 --- !u!1 &3670522647649720268
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,22 +186,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &590493631073750688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8089864712777159313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db9739da34ca42544bd229d7b8fe26fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TierTrackerReference: {fileID: 2147492140513499851}
-  m_Accelerometer: {fileID: 5871178146225872718}
-  m_TriggerRangeGroundSnapper: {fileID: 2377298452543999703}
-  m_ShieldTrigger: {fileID: 1513401519861276423}
 --- !u!114 &67661835766975182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,20 +199,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Tier: 1
---- !u!114 &4853842286205953042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2824327890949517589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2086556be93ca743a449a5ef90f59c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShieldStrengthTierTracker: {fileID: 67661835766975182}
-  m_ShieldVisualMeshRenderer: {fileID: 8273866049387384125}
 --- !u!114 &2377298452543999703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +212,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_VerticalOffset: 0
+--- !u!114 &590493631073750688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8089864712777159313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9739da34ca42544bd229d7b8fe26fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TierTrackerReference: {fileID: 2147492140513499851}
+  m_Accelerometer: {fileID: 85781943510537709}
+  m_TriggerRangeGroundSnapper: {fileID: 2377298452543999703}
+  m_ShieldTrigger: {fileID: 1513401519861276423}
 --- !u!1001 &5066136839225282676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -303,9 +303,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5066136839225282676}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5871178146225872718 stripped
+--- !u!114 &85781943510537709 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1671985515875749690, guid: 32de8a135a87ebe4893b187ac67de5ef,
+  m_CorrespondingSourceObject: {fileID: 5151637092037395865, guid: 32de8a135a87ebe4893b187ac67de5ef,
     type: 3}
   m_PrefabInstance: {fileID: 5066136839225282676}
   m_PrefabAsset: {fileID: 0}

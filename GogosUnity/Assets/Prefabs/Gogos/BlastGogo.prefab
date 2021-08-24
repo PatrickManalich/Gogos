@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TierTrackerReference: {fileID: 8714104985755743690}
-  m_Accelerometer: {fileID: 3772126990576529487}
+  m_Accelerometer: {fileID: 7211132515207674604}
   m_TriggerRangeRefresher: {fileID: 6283313628835807795}
   m_TriggerRangeRotationAligner: {fileID: 4203646358498570031}
   m_BlastTrigger: {fileID: 1194336561}
@@ -196,9 +196,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2552798221363937141}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3772126990576529487 stripped
+--- !u!114 &7211132515207674604 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1671985515875749690, guid: 32de8a135a87ebe4893b187ac67de5ef,
+  m_CorrespondingSourceObject: {fileID: 5151637092037395865, guid: 32de8a135a87ebe4893b187ac67de5ef,
     type: 3}
   m_PrefabInstance: {fileID: 2552798221363937141}
   m_PrefabAsset: {fileID: 0}
