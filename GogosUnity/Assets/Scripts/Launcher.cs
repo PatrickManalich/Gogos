@@ -11,6 +11,7 @@ namespace Gogos
 
         public Vector3 LaunchPoint => transform.position;
         public Vector3 LaunchVector => transform.forward * m_CurrentLaunchForce;
+        public GameObject Projectile => m_ProjectileRigidbody?.gameObject;
         public bool ReadyForLaunch { get; private set; }
 
         [SerializeField]
