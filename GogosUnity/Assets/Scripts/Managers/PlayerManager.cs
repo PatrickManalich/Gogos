@@ -5,14 +5,15 @@ namespace Gogos
 {
 	public class PlayerManager : MonoBehaviour
 	{
-		public Player CurrentPlayer => m_Players[m_CurrentPlayerIndex];
+		public Player CurrentPlayer => Players[m_CurrentPlayerIndex];
 
-        [SerializeField]
+		public Player[] Players { get; private set; } = new Player[PlayerCount];
+
+		[SerializeField]
         private ScriptableGogoBucket m_Starters;
 
 		private const int PlayerCount = 3;
 
-		private Player[] m_Players = new Player[PlayerCount];
 		private int m_CurrentPlayerIndex;
 
         private void Awake()
@@ -24,7 +25,7 @@ namespace Gogos
 				var playerColor = (PlayerColor)playerColors.GetValue(i);
 				var player = new Player(playerName, playerColor);
 				player.AddToCollection(m_Starters.ScriptableGogos);
-				m_Players[i] = player;
+				Players[i] = player;
             }
 		}
 	}
