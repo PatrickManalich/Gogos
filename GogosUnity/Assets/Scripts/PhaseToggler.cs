@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Gogos
 {
-	public class PhaseToggler : MonoBehaviour
-	{
+    public class PhaseToggler : MonoBehaviour
+    {
         [SerializeField]
         private PhaseTracker m_PhaseTracker;
 
@@ -15,14 +15,14 @@ namespace Gogos
         private Phase[] m_ActiveForPhases;
 
         private void Start()
-		{
+        {
             m_PhaseTracker.PhaseChanged += ToggleBasedOnPhase;
 
             ToggleBasedOnPhase();
-		}
+        }
 
         private void OnDestroy()
-		{
+        {
             m_PhaseTracker.PhaseChanged -= ToggleBasedOnPhase;
         }
 

@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 namespace Gogos
 {
-	public class Portrait : MonoBehaviour
-	{
+    public class Portrait : MonoBehaviour
+    {
         [SerializeField]
         private Image m_Image;
 

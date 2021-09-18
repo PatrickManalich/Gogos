@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Gogos
 {
-	public class GogoSelectionToggle : MonoBehaviour, ISelectHandler
+    public class GogoSelectionToggle : MonoBehaviour, ISelectHandler
     {
         public event EventHandler<GogoSelectedEventArgs> GogoSelected;
 

@@ -6,6 +6,7 @@ namespace Gogos
     public class Accelerometer : MonoBehaviour
     {
         public event Action StartedMoving;
+
         public event Action StoppedMoving;
 
         [SerializeField]

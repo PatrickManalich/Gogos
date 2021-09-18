@@ -6,6 +6,7 @@ namespace Gogos
     public class TriggerListener : MonoBehaviour
     {
         public event EventHandler<TriggerEventArgs> Entered;
+
         public event EventHandler<TriggerEventArgs> Exited;
 
         [SerializeField]

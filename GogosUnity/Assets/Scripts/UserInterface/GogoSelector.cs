@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 namespace Gogos
 {
-	public class GogoSelector: MonoBehaviour
-	{
+    public class GogoSelector : MonoBehaviour
+    {
         [SerializeField]
         private ToggleGroup m_ToggleGroup;
 
@@ -25,7 +25,7 @@ namespace Gogos
         private List<GogoSelectionToggle> m_GogoSelectionToggles = new List<GogoSelectionToggle>();
 
         private void Start()
-		{
+        {
             foreach (Transform child in m_ToggleGroup.transform)
             {
                 Destroy(child.gameObject);
@@ -33,9 +33,9 @@ namespace Gogos
 
             foreach (var scriptableGogo in m_PlayerTracker.Player.Collection)
             {
-				var gogoSelectionToggle = Instantiate(m_GogoSelectionTogglePrefab).GetComponent<GogoSelectionToggle>();
-				gogoSelectionToggle.SetToggle(scriptableGogo);
-				gogoSelectionToggle.transform.SetParent(m_ToggleGroup.transform);
+                var gogoSelectionToggle = Instantiate(m_GogoSelectionTogglePrefab).GetComponent<GogoSelectionToggle>();
+                gogoSelectionToggle.SetToggle(scriptableGogo);
+                gogoSelectionToggle.transform.SetParent(m_ToggleGroup.transform);
                 gogoSelectionToggle.Toggle.group = m_ToggleGroup;
 
                 gogoSelectionToggle.GogoSelected += GogoSelectionToggle_OnGogoSelected;
@@ -43,7 +43,7 @@ namespace Gogos
             }
 
             EventSystem.current.SetSelectedGameObject(m_GogoSelectionToggles[0].gameObject);
-		}
+        }
 
         private void OnDestroy()
         {

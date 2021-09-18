@@ -2,8 +2,8 @@
 
 namespace Gogos
 {
-	public class BlastableAttribute : MonoBehaviour
-	{
+    public class BlastableAttribute : MonoBehaviour
+    {
         [SerializeField]
         private TriggerListener m_TriggerListener;
 
@@ -16,17 +16,17 @@ namespace Gogos
         private const float FalloffRate = 1.5f;
 
         private void Awake()
-		{
+        {
             m_TriggerListener.Entered += TriggerListener_OnEntered;
-		}
+        }
 
         private void OnDestroy()
-		{
-			m_TriggerListener.Entered -= TriggerListener_OnEntered;
-		}
+        {
+            m_TriggerListener.Entered -= TriggerListener_OnEntered;
+        }
 
-		private void TriggerListener_OnEntered(object sender, TriggerEventArgs e)
-		{
+        private void TriggerListener_OnEntered(object sender, TriggerEventArgs e)
+        {
             var blastTrigger = e.OtherCollider.GetComponent<BlastTrigger>();
             if (blastTrigger)
             {

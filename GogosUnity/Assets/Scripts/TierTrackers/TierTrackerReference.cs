@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Gogos
 {
-	public class TierTrackerReference : MonoBehaviour
-	{
+    public class TierTrackerReference : MonoBehaviour
+    {
         public IReadOnlyList<AbstractTierTracker> TierTrackers { get; private set; }
 
         private Dictionary<TierVariant, AbstractTierTracker> m_TierTrackersByVariant = new Dictionary<TierVariant, AbstractTierTracker>();
@@ -22,5 +22,5 @@ namespace Gogos
         {
             return m_TierTrackersByVariant[tierVariant];
         }
-	}
+    }
 }

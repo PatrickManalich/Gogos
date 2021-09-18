@@ -5,7 +5,7 @@ namespace Gogos
     public enum GogoVariant { Blast, Shield, Support }
 
     public abstract class AbstractScriptableGogo : ScriptableObject
-	{
+    {
         public abstract GogoVariant GogoVariant { get; }
 
         [SerializeField]

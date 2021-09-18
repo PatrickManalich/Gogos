@@ -14,7 +14,7 @@ namespace Gogos
         private BlastTrigger m_BlastTrigger;
 
         private Launcher m_Launcher;
-        private Quaternion m_LauncherAlignedRotation; 
+        private Quaternion m_LauncherAlignedRotation;
 
         protected override void Start()
         {

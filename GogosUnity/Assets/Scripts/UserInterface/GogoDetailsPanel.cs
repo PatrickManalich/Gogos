@@ -1,22 +1,24 @@
-﻿using TMPro;
+﻿// Copyright 2020-2021 Barron Associates, Inc.
+// Proprietary Information - All Rights Reserved
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Gogos
 {
-	public class GogoDetailsPanel : MonoBehaviour
-	{
-		[SerializeField]
-		private NicknameText m_NicknameText;
+    public class GogoDetailsPanel : MonoBehaviour
+    {
+        [SerializeField]
+        private NicknameText m_NicknameText;
 
-		[SerializeField]
-		private GogoVariantIcon m_GogoVariantIcon;
+        [SerializeField]
+        private GogoVariantIcon m_GogoVariantIcon;
 
         [SerializeField]
         private TierDetails m_WeightTierDetails;
 
-		[SerializeField]
-		private TierDetails m_RangeTierDetails;
+        [SerializeField]
+        private TierDetails m_RangeTierDetails;
 
         [Header("Blast")]
         [SerializeField]
@@ -44,10 +46,10 @@ namespace Gogos
 
         public void SetDetails(AbstractScriptableGogo scriptableGogo)
         {
-			m_NicknameText.SetNickname(scriptableGogo.Nickname, scriptableGogo.RarityTier);
-			m_GogoVariantIcon.SetIcon(scriptableGogo.GogoVariant);
-			m_WeightTierDetails.SetSlots(scriptableGogo.WeightTier);
-			m_RangeTierDetails.SetSlots(scriptableGogo.RangeTier);
+            m_NicknameText.SetNickname(scriptableGogo.Nickname, scriptableGogo.RarityTier);
+            m_GogoVariantIcon.SetIcon(scriptableGogo.GogoVariant);
+            m_WeightTierDetails.SetSlots(scriptableGogo.WeightTier);
+            m_RangeTierDetails.SetSlots(scriptableGogo.RangeTier);
 
             m_BlastDetails.SetActive(false);
             m_ShieldDetails.SetActive(false);
@@ -78,5 +80,5 @@ namespace Gogos
                     break;
             }
         }
-	}
+    }
 }

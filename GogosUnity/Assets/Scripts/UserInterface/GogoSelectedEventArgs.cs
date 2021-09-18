@@ -2,13 +2,13 @@
 
 namespace Gogos
 {
-	public class GogoSelectedEventArgs : EventArgs
-	{
-		public AbstractScriptableGogo ScriptableGogo { get; }
+    public class GogoSelectedEventArgs : EventArgs
+    {
+        public AbstractScriptableGogo ScriptableGogo { get; }
 
-		public GogoSelectedEventArgs(AbstractScriptableGogo scriptableGogo)
+        public GogoSelectedEventArgs(AbstractScriptableGogo scriptableGogo)
         {
-			ScriptableGogo = scriptableGogo;
+            ScriptableGogo = scriptableGogo;
         }
-	}
+    }
 }

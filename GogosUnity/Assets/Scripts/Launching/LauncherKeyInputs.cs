@@ -3,8 +3,8 @@ using UnityEngine.EventSystems;
 
 namespace Gogos
 {
-	public class LauncherKeyInputs : MonoBehaviour
-	{
+    public class LauncherKeyInputs : MonoBehaviour
+    {
         [SerializeField]
         private Launcher m_Launcher;
 

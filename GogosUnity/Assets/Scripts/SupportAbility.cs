@@ -2,8 +2,8 @@
 
 namespace Gogos
 {
-	public class SupportAbility : MonoBehaviour
-	{
+    public class SupportAbility : MonoBehaviour
+    {
         [SerializeField]
         private TierVariant m_TierVariant;
 

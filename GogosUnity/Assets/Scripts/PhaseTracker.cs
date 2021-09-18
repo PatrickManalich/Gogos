@@ -7,7 +7,7 @@ namespace Gogos
 {
     public enum Phase { Selecting, Launching, Settling }
 
-	public class PhaseTracker : MonoBehaviour, ITriggerAnimationObserver
+    public class PhaseTracker : MonoBehaviour, ITriggerAnimationObserver
     {
         public event Action PhaseChanged;
 
@@ -21,12 +21,12 @@ namespace Gogos
         private TriggerAnimationSubject m_TriggerAnimationSubject;
 
         private void Start()
-		{
+        {
             m_Launcher.Launched += Launcher_OnLaunched;
-		}
+        }
 
         private void OnDestroy()
-		{
+        {
             ForgetAllAccelerometers();
             m_Launcher.Launched -= Launcher_OnLaunched;
         }

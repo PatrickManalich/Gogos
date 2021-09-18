@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Gogos
 {
-	public class NicknameText : MonoBehaviour
-	{
+    public class NicknameText : MonoBehaviour
+    {
         [System.Serializable]
         private class ColorsByTier : SerializableDictionary<RarityTier, Color> { }
 
@@ -20,5 +20,5 @@ namespace Gogos
             m_Text.text = text;
             m_Text.color = m_ColorsByTier[rarityTier];
         }
-	}
+    }
 }

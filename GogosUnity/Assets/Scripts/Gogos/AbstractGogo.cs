@@ -2,15 +2,16 @@
 
 namespace Gogos
 {
-	public abstract class AbstractGogo : MonoBehaviour
-	{
+    public abstract class AbstractGogo : MonoBehaviour
+    {
         [SerializeField]
         protected TierTrackerReference m_TierTrackerReference;
 
         [SerializeField]
-		private Accelerometer m_Accelerometer;
+        private Accelerometer m_Accelerometer;
 
         protected abstract void OnStartedMoving();
+
         protected abstract void OnStoppedMoving();
 
         protected virtual void Start()

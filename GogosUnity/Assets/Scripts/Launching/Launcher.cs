@@ -4,9 +4,10 @@ using UnityEngine;
 
 namespace Gogos
 {
-	public class Launcher : MonoBehaviour
-	{
+    public class Launcher : MonoBehaviour
+    {
         public event Action LaunchPrepared;
+
         public event Action Launched;
 
         public Vector3 LaunchPoint => transform.position;
@@ -41,7 +42,7 @@ namespace Gogos
         private Rigidbody m_ProjectileRigidbody;
 
         private void OnEnable()
-		{
+        {
             m_CurrentLaunchForce = (m_MinLaunchForce + m_MaxLaunchForce) / 2;
             m_DistanceToTarget = Vector3.Distance(transform.position, m_Target.transform.position);
             m_MovementAngle = 270;

@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Gogos
 {
-	public class PlayerDetails : MonoBehaviour
-	{
+    public class PlayerDetails : MonoBehaviour
+    {
         [System.Serializable]
         private class ColorsByPlayerColor : SerializableDictionary<PlayerColor, Color> { }
 
@@ -31,5 +31,5 @@ namespace Gogos
             m_NameText.color = m_ColorsByPlayerColor[player.PlayerColor];
             m_SelectedIndicator.SetActive(player == m_PlayerTracker.Player);
         }
-	}
+    }
 }

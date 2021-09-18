@@ -2,7 +2,6 @@
 
 namespace Gogos
 {
-
     public static class InputKeys
     {
         public static bool ResetGogoKeyDown => Input.GetKeyDown(KeyCode.R);

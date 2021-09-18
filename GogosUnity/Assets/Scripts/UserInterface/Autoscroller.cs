@@ -57,7 +57,7 @@ namespace Gogos
             var anchoredPositionY = -selectedRectTransform.localPosition.y - (selectedRectTransform.rect.height / 2);
             var clampedAnchoredPositionY = Mathf.Clamp(anchoredPositionY, 0, m_ContentPanel.sizeDelta.y - m_ScrollRectTransform.sizeDelta.y);
             m_ContentPanel.anchoredPosition = new Vector2(anchoredPositionX, clampedAnchoredPositionY);
-            
+
             m_LastSelected = selected;
         }
 

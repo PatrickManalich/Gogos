@@ -2,10 +2,10 @@
 
 namespace Gogos
 {
-	public enum ShieldStrengthTier { Broken, Weak, Medium, Strong }
+    public enum ShieldStrengthTier { Broken, Weak, Medium, Strong }
 
-	public class ShieldStrengthTierTracker : AbstractTierTracker<ShieldStrengthTier>
-	{
+    public class ShieldStrengthTierTracker : AbstractTierTracker<ShieldStrengthTier>
+    {
         public override TierVariant TierVariant => TierVariant.ShieldStrength;
 
         public bool IsShieldBroken => Tier == ShieldStrengthTier.Broken;

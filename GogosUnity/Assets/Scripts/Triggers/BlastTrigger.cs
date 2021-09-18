@@ -2,8 +2,8 @@
 
 namespace Gogos
 {
-	public class BlastTrigger : MonoBehaviour
-	{
+    public class BlastTrigger : MonoBehaviour
+    {
         public BlastForceTierTracker BlastForceTierTracker => m_BlastForceTierTracker;
 
         [SerializeField]
@@ -18,6 +18,5 @@ namespace Gogos
         {
             m_BlastTriggerAnimator.SetTrigger(ExpandName);
         }
-
     }
 }

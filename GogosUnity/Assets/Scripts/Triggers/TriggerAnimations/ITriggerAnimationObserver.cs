@@ -1,7 +1,7 @@
 ﻿namespace Gogos
 {
-	public interface ITriggerAnimationObserver 
-	{
-		void Notify();
-	}
+    public interface ITriggerAnimationObserver
+    {
+        void Notify();
+    }
 }

@@ -6,6 +6,7 @@ namespace Gogos
     public class TriggerStateMachineBehaviour : StateMachineBehaviour
     {
         public event EventHandler<TriggerAnimationEventArgs> AnimationStarted;
+
         public event EventHandler<TriggerAnimationEventArgs> AnimationFinished;
 
         public TriggerAnimation TriggerAnimation => m_TriggerAnimation;
