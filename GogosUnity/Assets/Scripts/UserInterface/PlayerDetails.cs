@@ -18,11 +18,18 @@ namespace Gogos
         [SerializeField]
         private GameObject m_SelectedIndicator;
 
-		public void SetDetails(Player player)
+        private PlayerTracker m_PlayerTracker;
+
+        private void Awake()
+        {
+            m_PlayerTracker = FindObjectOfType<PlayerTracker>();
+        }
+
+        public void SetDetails(Player player)
         {
             m_NameText.text = player.Name;
             m_NameText.color = m_ColorsByPlayerColor[player.PlayerColor];
-            m_SelectedIndicator.SetActive(player == GameManager.PlayerManager.CurrentPlayer);
+            m_SelectedIndicator.SetActive(player == m_PlayerTracker.Player);
         }
 	}
 }

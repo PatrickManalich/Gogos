@@ -17,6 +17,9 @@ namespace Gogos
         private GogoDetailsPanel m_GogoDetailsPanel;
 
         [SerializeField]
+        private PlayerTracker m_PlayerTracker;
+
+        [SerializeField]
         private GogoCreator m_GogoCreator;
 
         private List<GogoSelectionToggle> m_GogoSelectionToggles = new List<GogoSelectionToggle>();
@@ -28,7 +31,7 @@ namespace Gogos
                 Destroy(child.gameObject);
             }
 
-            foreach (var scriptableGogo in GameManager.PlayerManager.CurrentPlayer.Collection)
+            foreach (var scriptableGogo in m_PlayerTracker.Player.Collection)
             {
 				var gogoSelectionToggle = Instantiate(m_GogoSelectionTogglePrefab).GetComponent<GogoSelectionToggle>();
 				gogoSelectionToggle.SetToggle(scriptableGogo);

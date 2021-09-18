@@ -2013,6 +2013,7 @@ MonoBehaviour:
   m_GogoSelectionTogglePrefab: {fileID: 7786499999594436859, guid: f0b89a69e3ce50a438768899538f0601,
     type: 3}
   m_GogoDetailsPanel: {fileID: 2018693979}
+  m_PlayerTracker: {fileID: 1015826090}
   m_GogoCreator: {fileID: 1986067543}
 --- !u!114 &598835350
 MonoBehaviour:
@@ -3850,6 +3851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerDetailsPrefab: {fileID: 7763689531646623532, guid: dc054c55b1e917d489676fb5eb0a4320,
     type: 3}
+  m_PlayerTracker: {fileID: 1015826090}
 --- !u!1 &1483080379
 GameObject:
   m_ObjectHideFlags: 0
