@@ -47,11 +47,6 @@ namespace Gogos
             m_DistanceToTarget = Vector3.Distance(transform.position, m_Target.transform.position);
             m_MovementAngle = 270;
             Align();
-
-            if (Projectile != null)
-            {
-                PrepareForLaunch();
-            }
         }
 
         public void LoadProjectile(GameObject projectile)
