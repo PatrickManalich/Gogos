@@ -9,6 +9,16 @@ namespace Gogos
 
         private AbstractGogo m_CreatedGogo;
 
+        private void Start()
+        {
+            m_Launcher.Launched += Launcher_OnLaunched;
+        }
+
+        private void OnDestroy()
+        {
+            m_Launcher.Launched -= Launcher_OnLaunched;
+        }
+
         public void CreateGogo(AbstractScriptableGogo scriptableGogo)
         {
             if (m_CreatedGogo != null)
@@ -21,6 +31,11 @@ namespace Gogos
             m_CreatedGogo.name = m_CreatedGogo.name.Replace("(Clone)", "");
 
             m_Launcher.LoadProjectile(m_CreatedGogo.gameObject);
+        }
+
+        private void Launcher_OnLaunched()
+        {
+            m_CreatedGogo = null;
         }
     }
 }
