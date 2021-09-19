@@ -18,6 +18,9 @@ namespace Gogos
         [SerializeField]
         private GameObject m_SelectedIndicator;
 
+        private const float NormalFontSize = 28;
+        private const float SelectedFontSize = 38;
+
         private PlayerTracker m_PlayerTracker;
         private Player m_Player;
 
@@ -41,11 +44,13 @@ namespace Gogos
             m_Player = player;
             m_NameText.text = m_Player.Name;
             m_NameText.color = m_ColorsByPlayerColor[m_Player.PlayerColor];
+            m_NameText.fontSize = m_Player == m_PlayerTracker.Player ? SelectedFontSize : NormalFontSize;
             m_SelectedIndicator.SetActive(m_Player == m_PlayerTracker.Player);
         }
 
         private void PlayerTracker_OnPlayerChanged()
         {
+            m_NameText.fontSize = m_Player == m_PlayerTracker.Player ? SelectedFontSize : NormalFontSize;
             m_SelectedIndicator.SetActive(m_Player == m_PlayerTracker.Player);
         }
     }
