@@ -5,12 +5,17 @@ namespace Gogos
 {
     public class PlayerTracker : MonoBehaviour
     {
+        public event Action PlayerChanged;
+
         public Player Player => Players[m_PlayerIndex];
 
         public Player[] Players { get; private set; } = new Player[PlayerCount];
 
         [SerializeField]
         private ScriptableGogoBucket m_Starters;
+
+        [SerializeField]
+        private PhaseTracker m_PhaseTracker;
 
         private const int PlayerCount = 3;
 
@@ -26,6 +31,25 @@ namespace Gogos
                 var player = new Player(playerName, playerColor);
                 player.AddToCollection(m_Starters.ScriptableGogos);
                 Players[i] = player;
+            }
+        }
+
+        private void Start()
+        {
+            m_PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
+        }
+
+        private void OnDestroy()
+        {
+            m_PhaseTracker.PhaseChanged -= PhaseTracker_OnPhaseChanged;
+        }
+
+        private void PhaseTracker_OnPhaseChanged()
+        {
+            if (m_PhaseTracker.Phase == Phase.Selecting)
+            {
+                m_PlayerIndex = (m_PlayerIndex + 1) % PlayerCount;
+                PlayerChanged?.Invoke();
             }
         }
     }
