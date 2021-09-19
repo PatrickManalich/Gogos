@@ -31,12 +31,12 @@ namespace Gogos
 
         private void Start()
         {
-            m_PlayerTracker.PlayerChanged += PlayerTracker_OnPlayerChanged;
+            m_PlayerTracker.PlayerChanged += RefreshSelectedElements;
         }
 
         private void OnDestroy()
         {
-            m_PlayerTracker.PlayerChanged -= PlayerTracker_OnPlayerChanged;
+            m_PlayerTracker.PlayerChanged -= RefreshSelectedElements;
         }
 
         public void SetDetails(Player player)
@@ -44,14 +44,14 @@ namespace Gogos
             m_Player = player;
             m_NameText.text = m_Player.Name;
             m_NameText.color = m_ColorsByPlayerColor[m_Player.PlayerColor];
-            m_NameText.fontSize = m_Player == m_PlayerTracker.Player ? SelectedFontSize : NormalFontSize;
-            m_SelectedIndicator.SetActive(m_Player == m_PlayerTracker.Player);
+            RefreshSelectedElements();
         }
 
-        private void PlayerTracker_OnPlayerChanged()
+        private void RefreshSelectedElements()
         {
-            m_NameText.fontSize = m_Player == m_PlayerTracker.Player ? SelectedFontSize : NormalFontSize;
-            m_SelectedIndicator.SetActive(m_Player == m_PlayerTracker.Player);
+            var isSelected = m_Player == m_PlayerTracker.Player;
+            m_NameText.fontSize = isSelected ? SelectedFontSize : NormalFontSize;
+            m_SelectedIndicator.SetActive(isSelected);
         }
     }
 }
