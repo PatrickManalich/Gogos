@@ -7,6 +7,8 @@ namespace Gogos
 {
     public class GogoSelector : MonoBehaviour
     {
+        public AbstractScriptableGogo SelectedScriptableGogo { get; private set; }
+
         [SerializeField]
         private ToggleGroup m_ToggleGroup;
 
@@ -39,9 +41,9 @@ namespace Gogos
 
         private void GogoSelectionToggle_OnGogoSelected(object sender, GogoSelectedEventArgs e)
         {
-            var selectedScriptableGogo = e.ScriptableGogo;
-            m_GogoDetailsPanel.SetDetails(selectedScriptableGogo);
-            m_GogoCreator.CreateGogo(selectedScriptableGogo);
+            SelectedScriptableGogo = e.ScriptableGogo;
+            m_GogoDetailsPanel.SetDetails(SelectedScriptableGogo);
+            m_GogoCreator.CreateGogo(SelectedScriptableGogo);
         }
 
         private void RefreshGogoSelectionToggles()
