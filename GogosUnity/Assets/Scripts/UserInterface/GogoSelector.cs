@@ -26,6 +26,28 @@ namespace Gogos
 
         private void Start()
         {
+            m_PlayerTracker.PlayerChanged += RefreshGogoSelectionToggles;
+
+            RefreshGogoSelectionToggles();
+        }
+
+        private void OnDestroy()
+        {
+            UnsubscribeFromSelectedEvents();
+            m_PlayerTracker.PlayerChanged -= RefreshGogoSelectionToggles;
+        }
+
+        private void GogoSelectionToggle_OnGogoSelected(object sender, GogoSelectedEventArgs e)
+        {
+            var selectedScriptableGogo = e.ScriptableGogo;
+            m_GogoDetailsPanel.SetDetails(selectedScriptableGogo);
+            m_GogoCreator.CreateGogo(selectedScriptableGogo);
+        }
+
+        private void RefreshGogoSelectionToggles()
+        {
+            UnsubscribeFromSelectedEvents();
+            m_GogoSelectionToggles.Clear();
             foreach (Transform child in m_ToggleGroup.transform)
             {
                 Destroy(child.gameObject);
@@ -45,19 +67,12 @@ namespace Gogos
             EventSystem.current.SetSelectedGameObject(m_GogoSelectionToggles[0].gameObject);
         }
 
-        private void OnDestroy()
+        private void UnsubscribeFromSelectedEvents()
         {
             foreach (var gogoSelectionToggle in m_GogoSelectionToggles)
             {
                 gogoSelectionToggle.GogoSelected -= GogoSelectionToggle_OnGogoSelected;
             }
-        }
-
-        private void GogoSelectionToggle_OnGogoSelected(object sender, GogoSelectedEventArgs e)
-        {
-            var selectedScriptableGogo = e.ScriptableGogo;
-            m_GogoDetailsPanel.SetDetails(selectedScriptableGogo);
-            m_GogoCreator.CreateGogo(selectedScriptableGogo);
         }
     }
 }
