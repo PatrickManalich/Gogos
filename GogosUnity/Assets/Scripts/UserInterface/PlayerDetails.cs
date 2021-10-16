@@ -21,22 +21,16 @@ namespace Gogos
         private const float NormalFontSize = 28;
         private const float SelectedFontSize = 38;
 
-        private PlayerTracker m_PlayerTracker;
         private Player m_Player;
-
-        private void Awake()
-        {
-            m_PlayerTracker = FindObjectOfType<PlayerTracker>();
-        }
 
         private void Start()
         {
-            m_PlayerTracker.PlayerChanged += RefreshSelectedElements;
+            PlayerTracker.PlayerChanged += RefreshSelectedElements;
         }
 
         private void OnDestroy()
         {
-            m_PlayerTracker.PlayerChanged -= RefreshSelectedElements;
+            PlayerTracker.PlayerChanged -= RefreshSelectedElements;
         }
 
         public void SetDetails(Player player)
@@ -49,7 +43,7 @@ namespace Gogos
 
         private void RefreshSelectedElements()
         {
-            var isSelected = m_Player == m_PlayerTracker.Player;
+            var isSelected = m_Player == PlayerTracker.Player;
             m_NameText.fontSize = isSelected ? SelectedFontSize : NormalFontSize;
             m_SelectedIndicator.SetActive(isSelected);
         }

@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace Gogos
 {
-    public class PlayerTracker : MonoBehaviour
+    public class PlayerTracker : AbstractSingleton<PlayerTracker>
     {
-        public event Action PlayerChanged;
+        public static event Action PlayerChanged;
 
-        public Player Player => Players[m_PlayerIndex];
+        public static Player Player => Players[m_PlayerIndex];
 
-        public Player[] Players { get; private set; } = new Player[PlayerCount];
+        public static Player[] Players { get; private set; } = new Player[PlayerCount];
 
         [SerializeField]
         private ScriptableGogoBucket m_Starters;
@@ -22,10 +22,11 @@ namespace Gogos
 
         private const int PlayerCount = 3;
 
-        private int m_PlayerIndex;
+        private static int m_PlayerIndex;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             var playerColors = Enum.GetValues(typeof(PlayerColor));
             for (int i = 0; i < PlayerCount; i++)
             {

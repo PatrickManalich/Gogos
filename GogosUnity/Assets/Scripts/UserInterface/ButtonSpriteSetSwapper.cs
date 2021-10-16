@@ -18,25 +18,21 @@ namespace Gogos
         [SerializeField]
         private ButtonSpriteSetsByPlayerColor m_ButtonSpriteSetsByPlayerColor;
 
-        private PlayerTracker m_PlayerTracker;
-
         private void Start()
         {
-            m_PlayerTracker = FindObjectOfType<PlayerTracker>();
-
-            m_PlayerTracker.PlayerChanged += RefreshButtonSpriteSet;
+            PlayerTracker.PlayerChanged += RefreshButtonSpriteSet;
 
             RefreshButtonSpriteSet();
         }
 
         private void OnDestroy()
         {
-            m_PlayerTracker.PlayerChanged -= RefreshButtonSpriteSet;
+            PlayerTracker.PlayerChanged -= RefreshButtonSpriteSet;
         }
 
         private void RefreshButtonSpriteSet()
         {
-            var buttonSpriteSet = m_ButtonSpriteSetsByPlayerColor[m_PlayerTracker.Player.PlayerColor];
+            var buttonSpriteSet = m_ButtonSpriteSetsByPlayerColor[PlayerTracker.Player.PlayerColor];
             m_Image.sprite = buttonSpriteSet.ImageSprite;
             m_Button.spriteState = buttonSpriteSet.SpriteState;
         }

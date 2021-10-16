@@ -7,9 +7,6 @@ namespace Gogos
         [SerializeField]
         private GameObject m_PlayerDetailsPrefab;
 
-        [SerializeField]
-        private PlayerTracker m_PlayerTracker;
-
         private void Start()
         {
             foreach (Transform child in transform)
@@ -17,7 +14,7 @@ namespace Gogos
                 Destroy(child.gameObject);
             }
 
-            foreach (var player in m_PlayerTracker.Players)
+            foreach (var player in PlayerTracker.Players)
             {
                 var playerDetails = Instantiate(m_PlayerDetailsPrefab, transform).GetComponent<PlayerDetails>();
                 playerDetails.SetDetails(player);
