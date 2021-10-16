@@ -40,21 +40,21 @@ namespace Gogos
 
         private void Start()
         {
-            m_PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
+            PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
         }
 
         private void OnDestroy()
         {
-            m_PhaseTracker.PhaseChanged -= PhaseTracker_OnPhaseChanged;
+            PhaseTracker.PhaseChanged -= PhaseTracker_OnPhaseChanged;
         }
 
         private void PhaseTracker_OnPhaseChanged()
         {
-            if (m_PhaseTracker.Phase == Phase.Launching)
+            if (PhaseTracker.Phase == Phase.Launching)
             {
                 Player.Collection.Remove(m_GogoSelector.SelectedScriptableGogo);
             }
-            else if (m_PhaseTracker.Phase == Phase.Selecting)
+            else if (PhaseTracker.Phase == Phase.Selecting)
             {
                 m_PlayerIndex = (m_PlayerIndex + 1) % PlayerCount;
                 PlayerChanged?.Invoke();

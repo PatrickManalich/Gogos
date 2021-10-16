@@ -7,11 +7,11 @@ namespace Gogos
 {
     public enum Phase { Selecting, Launching, Settling }
 
-    public class PhaseTracker : MonoBehaviour, ITriggerAnimationObserver
+    public class PhaseTracker : AbstractSingleton<PlayerTracker>, ITriggerAnimationObserver
     {
-        public event Action PhaseChanged;
+        public static event Action PhaseChanged;
 
-        public Phase Phase { get; private set; }
+        public static Phase Phase { get; private set; }
 
         [SerializeField]
         private Launcher m_Launcher;
