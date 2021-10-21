@@ -30,5 +30,14 @@ namespace Gogos
                 StoppedMoving?.Invoke();
             }
         }
+
+        private void OnDestroy()
+        {
+            if (m_Moving)
+            {
+                m_Moving = false;
+                StoppedMoving?.Invoke();
+            }
+        }
     }
 }
