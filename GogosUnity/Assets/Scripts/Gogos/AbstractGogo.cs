@@ -4,6 +4,10 @@ namespace Gogos
 {
     public abstract class AbstractGogo : MonoBehaviour
     {
+        public Player Player { get; private set; }
+
+        public AbstractScriptableGogo ScriptableGogo { get; private set; }
+
         [SerializeField]
         protected TierTrackerReference m_TierTrackerReference;
 
@@ -16,6 +20,7 @@ namespace Gogos
 
         protected virtual void Start()
         {
+            Player = PlayerTracker.Player;
             SubscribeToMovementEvents();
         }
 
@@ -26,10 +31,11 @@ namespace Gogos
 
         public virtual void SetTiers(AbstractScriptableGogo scriptableGogo)
         {
-            m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.Rarity).SetTier((int)scriptableGogo.RarityTier);
-            m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.Weight).SetTier((int)scriptableGogo.WeightTier);
-            m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.PointValue).SetTier((int)scriptableGogo.PointValueTier);
-            m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range).SetTier((int)scriptableGogo.RangeTier);
+            ScriptableGogo = scriptableGogo;
+            m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.Rarity).SetTier((int)ScriptableGogo.RarityTier);
+            m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.Weight).SetTier((int)ScriptableGogo.WeightTier);
+            m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.PointValue).SetTier((int)ScriptableGogo.PointValueTier);
+            m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range).SetTier((int)ScriptableGogo.RangeTier);
         }
 
         protected void SubscribeToMovementEvents()
