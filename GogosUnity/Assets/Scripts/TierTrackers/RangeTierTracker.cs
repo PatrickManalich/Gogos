@@ -11,9 +11,9 @@ namespace Gogos
 
         private static readonly Dictionary<RangeTier, float> RangesByTier = new Dictionary<RangeTier, float>()
         {
-            { RangeTier.Small, 10 },
-            { RangeTier.Medium, 15 },
-            { RangeTier.Large, 20 },
+            { RangeTier.Small, 20 },
+            { RangeTier.Medium, 30 },
+            { RangeTier.Large, 40 },
         };
     }
 }

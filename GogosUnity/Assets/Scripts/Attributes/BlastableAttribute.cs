@@ -13,7 +13,7 @@ namespace Gogos
         [SerializeField]
         private GameObject m_ForcePoint;
 
-        private const float FalloffRate = 1.5f;
+        private const float FalloffRate = 0.4f;
 
         private void Awake()
         {

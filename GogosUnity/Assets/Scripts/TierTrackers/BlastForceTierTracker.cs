@@ -13,9 +13,9 @@ namespace Gogos
 
         private static readonly Dictionary<BlastForceTier, float> BlastForcesByTier = new Dictionary<BlastForceTier, float>()
         {
-            { BlastForceTier.Weak, 7 },
-            { BlastForceTier.Medium, 9 },
-            { BlastForceTier.Strong, 11 },
+            { BlastForceTier.Weak, 10 },
+            { BlastForceTier.Medium, 12 },
+            { BlastForceTier.Strong, 14 },
         };
 
         private static readonly Dictionary<BlastForceTier, float> BlastUpwardsModifiersByTier = new Dictionary<BlastForceTier, float>()
