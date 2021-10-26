@@ -26,11 +26,6 @@ namespace Gogos
 
         private Player m_Player;
 
-        private void Start()
-        {
-            PlayerTracker.PlayerChanged += RefreshSelectedElements;
-        }
-
         private void OnDestroy()
         {
             if (m_Player != null)
@@ -45,7 +40,9 @@ namespace Gogos
             m_Player = player;
             m_NameText.text = m_Player.Name;
             m_NameText.color = m_ColorsByPlayerColor[m_Player.PlayerColor];
+
             RefreshSelectedElements();
+            PlayerTracker.PlayerChanged += RefreshSelectedElements;
 
             RefreshPointsText();
             m_Player.PointsAdded += RefreshPointsText;
