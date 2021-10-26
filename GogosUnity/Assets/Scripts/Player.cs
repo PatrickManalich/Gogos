@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Gogos
@@ -7,6 +8,8 @@ namespace Gogos
 
     public class Player
     {
+        public event Action PointsAdded;
+
         public string Name { get; }
 
         public PlayerColor PlayerColor { get; }
@@ -24,6 +27,7 @@ namespace Gogos
         public void AddPoints(int points)
         {
             Points += Mathf.Max(0, points);
+            PointsAdded?.Invoke();
         }
     }
 }
