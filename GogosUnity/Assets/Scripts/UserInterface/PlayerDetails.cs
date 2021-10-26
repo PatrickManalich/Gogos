@@ -13,6 +13,9 @@ namespace Gogos
         private TextMeshProUGUI m_NameText;
 
         [SerializeField]
+        private TextMeshProUGUI m_PointsText;
+
+        [SerializeField]
         private ColorsByPlayerColor m_ColorsByPlayerColor;
 
         [SerializeField]
@@ -30,6 +33,10 @@ namespace Gogos
 
         private void OnDestroy()
         {
+            if (m_Player != null)
+            {
+                m_Player.PointsAdded -= RefreshPointsText;
+            }
             PlayerTracker.PlayerChanged -= RefreshSelectedElements;
         }
 
@@ -39,6 +46,9 @@ namespace Gogos
             m_NameText.text = m_Player.Name;
             m_NameText.color = m_ColorsByPlayerColor[m_Player.PlayerColor];
             RefreshSelectedElements();
+
+            RefreshPointsText();
+            m_Player.PointsAdded += RefreshPointsText;
         }
 
         private void RefreshSelectedElements()
@@ -46,6 +56,11 @@ namespace Gogos
             var isSelected = m_Player == PlayerTracker.Player;
             m_NameText.fontSize = isSelected ? SelectedFontSize : NormalFontSize;
             m_SelectedIndicator.SetActive(isSelected);
+        }
+
+        private void RefreshPointsText()
+        {
+            m_PointsText.text = m_Player.Points.ToString();
         }
     }
 }
