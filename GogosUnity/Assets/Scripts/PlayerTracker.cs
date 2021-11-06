@@ -30,7 +30,7 @@ namespace Gogos
                 var playerName = $"Player{i + 1}";
                 var playerColor = (PlayerColor)playerColors.GetValue(i);
                 var player = new Player(playerName, playerColor);
-                player.Collection.AddRange(m_Starters.ScriptableGogos);
+                player.Collection.Add(m_Starters.ScriptableGogos);
                 Players[i] = player;
             }
         }

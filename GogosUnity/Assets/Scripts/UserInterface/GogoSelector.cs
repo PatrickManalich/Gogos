@@ -52,10 +52,10 @@ namespace Gogos
                 Destroy(child.gameObject);
             }
 
-            foreach (var scriptableGogo in PlayerTracker.Player.Collection)
+            foreach (var identifiableGogo in PlayerTracker.Player.Collection.IdentifiableGogos)
             {
                 var gogoSelectionToggle = Instantiate(m_GogoSelectionTogglePrefab).GetComponent<GogoSelectionToggle>();
-                gogoSelectionToggle.SetToggle(scriptableGogo);
+                gogoSelectionToggle.SetToggle(identifiableGogo.ScriptableGogo);
                 gogoSelectionToggle.transform.SetParent(m_ToggleGroup.transform);
                 gogoSelectionToggle.Toggle.group = m_ToggleGroup;
 

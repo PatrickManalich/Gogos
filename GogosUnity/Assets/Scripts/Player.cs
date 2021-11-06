@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Gogos
@@ -16,12 +15,13 @@ namespace Gogos
 
         public int Points { get; private set; }
 
-        public List<AbstractScriptableGogo> Collection { get; } = new List<AbstractScriptableGogo>();
+        public Collection Collection { get; }
 
         public Player(string name, PlayerColor playerColor)
         {
             Name = name;
             PlayerColor = playerColor;
+            Collection = new Collection();
         }
 
         public void AddPoints(int points)
