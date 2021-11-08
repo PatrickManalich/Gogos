@@ -2610,7 +2610,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Starters: {fileID: 11400000, guid: deea5f04fda4cb24ab59a14d1e9ff131, type: 2}
   m_PhaseTracker: {fileID: 281254475}
-  m_GogoSelector: {fileID: 598835349}
 --- !u!1001 &1091261396
 PrefabInstance:
   m_ObjectHideFlags: 0

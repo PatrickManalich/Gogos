@@ -17,9 +17,6 @@ namespace Gogos
         [SerializeField]
         private PhaseTracker m_PhaseTracker;
 
-        [SerializeField]
-        private GogoSelector m_GogoSelector;
-
         private const int PlayerCount = 3;
 
         private static int m_PlayerIndex;
@@ -50,11 +47,7 @@ namespace Gogos
 
         private void PhaseTracker_OnPhaseChanged()
         {
-            if (PhaseTracker.Phase == Phase.Launching)
-            {
-                Player.Collection.Remove(m_GogoSelector.SelectedScriptableGogo);
-            }
-            else if (PhaseTracker.Phase == Phase.Selecting)
+            if (PhaseTracker.Phase == Phase.Selecting)
             {
                 m_PlayerIndex = (m_PlayerIndex + 1) % PlayerCount;
                 PlayerChanged?.Invoke();
