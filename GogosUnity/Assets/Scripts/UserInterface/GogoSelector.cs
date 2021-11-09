@@ -7,7 +7,7 @@ namespace Gogos
 {
     public class GogoSelector : MonoBehaviour
     {
-        public AbstractScriptableGogo SelectedScriptableGogo { get; private set; }
+        public IdentifiableGogo SelectedIdentifiableGogo { get; private set; }
 
         [SerializeField]
         private ToggleGroup m_ToggleGroup;
@@ -38,9 +38,11 @@ namespace Gogos
 
         private void GogoSelectionToggle_OnGogoSelected(object sender, GogoSelectedEventArgs e)
         {
-            SelectedScriptableGogo = e.ScriptableGogo;
-            m_GogoDetailsPanel.SetDetails(SelectedScriptableGogo);
-            m_GogoCreator.CreateGogo(SelectedScriptableGogo);
+            SelectedIdentifiableGogo = e.IdentifiableGogo;
+
+            var selectedScriptableGogo = SelectedIdentifiableGogo.ScriptableGogo;
+            m_GogoDetailsPanel.SetDetails(selectedScriptableGogo);
+            m_GogoCreator.CreateGogo(selectedScriptableGogo);
         }
 
         private void RefreshGogoSelectionToggles()
@@ -55,7 +57,7 @@ namespace Gogos
             foreach (var identifiableGogo in PlayerTracker.Player.Collection.IdentifiableGogos)
             {
                 var gogoSelectionToggle = Instantiate(m_GogoSelectionTogglePrefab).GetComponent<GogoSelectionToggle>();
-                gogoSelectionToggle.SetToggle(identifiableGogo.ScriptableGogo);
+                gogoSelectionToggle.SetToggle(identifiableGogo);
                 gogoSelectionToggle.transform.SetParent(m_ToggleGroup.transform);
                 gogoSelectionToggle.Toggle.group = m_ToggleGroup;
 

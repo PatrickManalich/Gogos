@@ -11,7 +11,7 @@ namespace Gogos
 
         public Toggle Toggle => m_Toggle;
 
-        public AbstractScriptableGogo ScriptableGogo { get; private set; }
+        public IdentifiableGogo IdentifiableGogo { get; private set; }
 
         [SerializeField]
         private Toggle m_Toggle;
@@ -25,10 +25,11 @@ namespace Gogos
         [SerializeField]
         private Portrait m_Portrait;
 
-        public void SetToggle(AbstractScriptableGogo scriptableGogo)
+        public void SetToggle(IdentifiableGogo identifiableGogo)
         {
-            ScriptableGogo = scriptableGogo;
+            IdentifiableGogo = identifiableGogo;
 
+            var scriptableGogo = IdentifiableGogo.ScriptableGogo;
             m_NicknameText.SetNickname(scriptableGogo.Nickname, scriptableGogo.RarityTier);
             m_GogoVariantIcon.SetIcon(scriptableGogo.GogoVariant);
             m_Portrait.SetPortrait(scriptableGogo.Portrait);
@@ -37,7 +38,7 @@ namespace Gogos
         public void OnSelect(BaseEventData eventData)
         {
             Toggle.isOn = true;
-            GogoSelected?.Invoke(this, new GogoSelectedEventArgs(ScriptableGogo));
+            GogoSelected?.Invoke(this, new GogoSelectedEventArgs(IdentifiableGogo));
         }
     }
 }
