@@ -19,15 +19,15 @@ namespace Gogos
             m_Launcher.Launched -= Launcher_OnLaunched;
         }
 
-        public void CreateGogo(AbstractScriptableGogo scriptableGogo)
+        public void CreateGogo(IdentifiableGogo identifiableGogo)
         {
             if (m_CreatedGogo != null)
             {
                 Destroy(m_CreatedGogo.gameObject);
             }
 
-            m_CreatedGogo = Instantiate(scriptableGogo.Prefab).GetComponent<AbstractGogo>();
-            m_CreatedGogo.SetTiers(scriptableGogo);
+            m_CreatedGogo = Instantiate(identifiableGogo.ScriptableGogo.Prefab).GetComponent<AbstractGogo>();
+            m_CreatedGogo.SetTiers(identifiableGogo);
             m_CreatedGogo.name = m_CreatedGogo.name.Replace("(Clone)", "");
 
             m_Launcher.LoadProjectile(m_CreatedGogo.gameObject);

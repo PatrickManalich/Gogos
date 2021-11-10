@@ -18,10 +18,11 @@ namespace Gogos
             m_ShieldStrengthTierTracker = (ShieldStrengthTierTracker)m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength);
         }
 
-        public override void SetTiers(AbstractScriptableGogo scriptableGogo)
+        public override void SetTiers(IdentifiableGogo identifiableGogo)
         {
-            base.SetTiers(scriptableGogo);
-            var shieldScriptableGogo = (ShieldScriptableGogo)scriptableGogo;
+            base.SetTiers(identifiableGogo);
+
+            var shieldScriptableGogo = (ShieldScriptableGogo)IdentifiableGogo.ScriptableGogo;
             m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength).SetTier((int)shieldScriptableGogo.ShieldStrengthTier);
         }
 
