@@ -34,6 +34,7 @@ namespace Gogos
             m_NicknameText.SetNickname(scriptableGogo.Nickname, scriptableGogo.RarityTier);
             m_GogoVariantIcon.SetIcon(scriptableGogo.GogoVariant);
             m_Portrait.SetPortrait(scriptableGogo.Portrait, situation);
+            m_Toggle.interactable = situation == Situation.Available;
         }
 
         public void OnSelect(BaseEventData eventData)
