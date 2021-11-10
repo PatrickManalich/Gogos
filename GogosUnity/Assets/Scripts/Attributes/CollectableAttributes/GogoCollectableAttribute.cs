@@ -15,6 +15,7 @@ namespace Gogos
             {
                 PlayerTracker.Player.AddPoints(EnemyGogoPointValue);
             }
+            GogoSituationDatabase.Instance.SetSituation(m_Gogo.IdentifiableGogo, Situation.OffRing);
         }
     }
 }
