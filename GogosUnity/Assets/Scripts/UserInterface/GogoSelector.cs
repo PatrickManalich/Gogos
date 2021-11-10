@@ -7,8 +7,6 @@ namespace Gogos
 {
     public class GogoSelector : MonoBehaviour
     {
-        public IdentifiableGogo SelectedIdentifiableGogo { get; private set; }
-
         [SerializeField]
         private ToggleGroup m_ToggleGroup;
 
@@ -22,6 +20,7 @@ namespace Gogos
         private GogoCreator m_GogoCreator;
 
         private List<GogoSelectionToggle> m_GogoSelectionToggles = new List<GogoSelectionToggle>();
+        private IdentifiableGogo m_SelectedIdentifiableGogo;
 
         private void Start()
         {
@@ -38,10 +37,10 @@ namespace Gogos
 
         private void GogoSelectionToggle_OnGogoSelected(object sender, GogoSelectedEventArgs e)
         {
-            SelectedIdentifiableGogo = e.IdentifiableGogo;
+            m_SelectedIdentifiableGogo = e.IdentifiableGogo;
 
-            m_GogoDetailsPanel.SetDetails(SelectedIdentifiableGogo.ScriptableGogo);
-            m_GogoCreator.CreateGogo(SelectedIdentifiableGogo);
+            m_GogoDetailsPanel.SetDetails(m_SelectedIdentifiableGogo.ScriptableGogo);
+            m_GogoCreator.CreateGogo(m_SelectedIdentifiableGogo);
         }
 
         private void RefreshGogoSelectionToggles()
