@@ -8,10 +8,18 @@ namespace Gogos
         [SerializeField]
         private Image m_Image;
 
-        public void SetPortrait(Sprite sprite)
+        [SerializeField]
+        private GameObject m_InRingIndicator;
+
+        [SerializeField]
+        private GameObject m_OffRingIndicator;
+
+        public void SetPortrait(Sprite sprite, Situation situation)
         {
             m_Image.sprite = sprite;
             m_Image.color = Color.white;
+            m_InRingIndicator.SetActive(situation == Situation.InRing);
+            m_OffRingIndicator.SetActive(situation == Situation.OffRing);
         }
     }
 }

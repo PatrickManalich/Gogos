@@ -30,9 +30,10 @@ namespace Gogos
             IdentifiableGogo = identifiableGogo;
 
             var scriptableGogo = IdentifiableGogo.ScriptableGogo;
+            var situation = GogoSituationDatabase.Instance.GetSituation(IdentifiableGogo);
             m_NicknameText.SetNickname(scriptableGogo.Nickname, scriptableGogo.RarityTier);
             m_GogoVariantIcon.SetIcon(scriptableGogo.GogoVariant);
-            m_Portrait.SetPortrait(scriptableGogo.Portrait);
+            m_Portrait.SetPortrait(scriptableGogo.Portrait, situation);
         }
 
         public void OnSelect(BaseEventData eventData)

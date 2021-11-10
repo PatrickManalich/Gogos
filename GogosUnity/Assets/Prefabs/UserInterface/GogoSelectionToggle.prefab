@@ -238,6 +238,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Image: {fileID: 4391525947274657153}
+  m_InRingIndicator: {fileID: 4391525946341873251}
+  m_OffRingIndicator: {fileID: 4391525946449815075}
 --- !u!1 &7786499999594436859
 GameObject:
   m_ObjectHideFlags: 0
