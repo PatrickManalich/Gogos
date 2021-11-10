@@ -7,7 +7,7 @@ namespace Gogos
 {
     public class GogoSelectionToggle : MonoBehaviour, ISelectHandler
     {
-        public event EventHandler<GogoSelectedEventArgs> GogoSelected;
+        public event EventHandler<IdentifiableGogoEventArgs> GogoSelected;
 
         public Toggle Toggle => m_Toggle;
 
@@ -38,7 +38,7 @@ namespace Gogos
         public void OnSelect(BaseEventData eventData)
         {
             Toggle.isOn = true;
-            GogoSelected?.Invoke(this, new GogoSelectedEventArgs(IdentifiableGogo));
+            GogoSelected?.Invoke(this, new IdentifiableGogoEventArgs(IdentifiableGogo));
         }
     }
 }

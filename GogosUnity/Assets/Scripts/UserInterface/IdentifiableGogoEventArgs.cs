@@ -2,11 +2,11 @@
 
 namespace Gogos
 {
-    public class GogoSelectedEventArgs : EventArgs
+    public class IdentifiableGogoEventArgs : EventArgs
     {
         public IdentifiableGogo IdentifiableGogo { get; }
 
-        public GogoSelectedEventArgs(IdentifiableGogo identifiableGogo)
+        public IdentifiableGogoEventArgs(IdentifiableGogo identifiableGogo)
         {
             IdentifiableGogo = identifiableGogo;
         }

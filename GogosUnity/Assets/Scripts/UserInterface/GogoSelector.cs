@@ -35,7 +35,7 @@ namespace Gogos
             PlayerTracker.PlayerChanged -= RefreshGogoSelectionToggles;
         }
 
-        private void GogoSelectionToggle_OnGogoSelected(object sender, GogoSelectedEventArgs e)
+        private void GogoSelectionToggle_OnGogoSelected(object sender, IdentifiableGogoEventArgs e)
         {
             m_SelectedIdentifiableGogo = e.IdentifiableGogo;
 
