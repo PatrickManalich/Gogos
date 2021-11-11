@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Gogos
 {
-    public enum Phase { Selecting, Launching, Settling, Transitioning }
+    public enum Phase { Selecting, Launching, Settling, Transitioning, Returning }
 
     public class PhaseTracker : AbstractSingleton<PlayerTracker>, ITriggerAnimationObserver
     {
