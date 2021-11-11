@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -22,9 +24,10 @@ namespace Gogos
         private List<GogoSelectionToggle> m_GogoSelectionToggles = new List<GogoSelectionToggle>();
         private IdentifiableGogo m_SelectedIdentifiableGogo;
 
-        private void Start()
+        private IEnumerator Start()
         {
             PlayerTracker.PlayerChanged += RefreshGogoSelectionToggles;
+            yield return null;  // Allow GogoSituationDatabase to initialize
 
             RefreshGogoSelectionToggles();
         }
@@ -52,7 +55,9 @@ namespace Gogos
                 Destroy(child.gameObject);
             }
 
-            foreach (var identifiableGogo in PlayerTracker.Player.Collection.IdentifiableGogos)
+            var identifiableGogos = PlayerTracker.Player.Collection.IdentifiableGogos;
+            var orderedIdentifiableGogos = identifiableGogos.OrderBy(i => GogoSituationDatabase.Instance.GetSituation(i));
+            foreach (var identifiableGogo in orderedIdentifiableGogos)
             {
                 var gogoSelectionToggle = Instantiate(m_GogoSelectionTogglePrefab).GetComponent<GogoSelectionToggle>();
                 gogoSelectionToggle.SetToggle(identifiableGogo);
