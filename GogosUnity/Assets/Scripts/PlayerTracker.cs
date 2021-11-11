@@ -47,7 +47,7 @@ namespace Gogos
 
         private void PhaseTracker_OnPhaseChanged()
         {
-            if (PhaseTracker.Phase == Phase.Selecting)
+            if (PhaseTracker.Phase == Phase.Transitioning)
             {
                 m_PlayerIndex = (m_PlayerIndex + 1) % PlayerCount;
                 PlayerChanged?.Invoke();

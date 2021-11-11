@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Gogos
 {
-    public enum Phase { Selecting, Launching, Settling }
+    public enum Phase { Selecting, Launching, Settling, Transitioning }
 
     public class PhaseTracker : AbstractSingleton<PlayerTracker>, ITriggerAnimationObserver
     {
@@ -23,11 +23,13 @@ namespace Gogos
         private void Start()
         {
             m_Launcher.Launched += Launcher_OnLaunched;
+            PlayerTracker.PlayerChanged += PlayerTracker_OnPlayerChanged;
         }
 
         private void OnDestroy()
         {
             ForgetAllAccelerometers();
+            PlayerTracker.PlayerChanged -= PlayerTracker_OnPlayerChanged;
             m_Launcher.Launched -= Launcher_OnLaunched;
         }
 
@@ -38,7 +40,7 @@ namespace Gogos
                 var hasEverythingSettled = m_AccelerometersMoving == 0;
                 if (hasEverythingSettled)
                 {
-                    Phase = Phase.Selecting;
+                    Phase = Phase.Transitioning;
                     PhaseChanged?.Invoke();
                 }
             }
@@ -72,6 +74,12 @@ namespace Gogos
             m_TriggerAnimationSubject.AddObserverForAnimationFinished(this, TriggerAnimation.Expand);
 
             Phase = Phase.Launching;
+            PhaseChanged?.Invoke();
+        }
+
+        private void PlayerTracker_OnPlayerChanged()
+        {
+            Phase = Phase.Selecting;
             PhaseChanged?.Invoke();
         }
 
