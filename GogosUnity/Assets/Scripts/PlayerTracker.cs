@@ -33,6 +33,7 @@ namespace Gogos
                 player.Collection.Add(m_Starters.ScriptableGogos);
                 Players[i] = player;
             }
+            s_PlayerIndex = 0;
         }
 
         private void Start()

@@ -23,6 +23,12 @@ namespace Gogos
         private int m_AccelerometersMoving;
         private TriggerAnimationSubject m_TriggerAnimationSubject;
 
+        protected override void Awake()
+        {
+            base.Awake();
+            Phase = Phase.Selecting;
+        }
+
         private void Start()
         {
             m_Launcher.Launched += Launcher_OnLaunched;

@@ -8,6 +8,12 @@ namespace Gogos
     {
         private static Dictionary<string, Situation> s_SituationsById = new Dictionary<string, Situation>();
 
+        protected override void Awake()
+        {
+            base.Awake();
+            s_SituationsById.Clear();
+        }
+
         private void Start()
         {
             foreach (var player in PlayerTracker.Players)
