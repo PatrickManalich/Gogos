@@ -11,13 +11,13 @@ namespace Gogos
 
         public static Player[] Players { get; private set; } = new Player[PlayerCount];
 
+        public const int PlayerCount = 3;
+
         [SerializeField]
         private ScriptableGogoBucket m_Starters;
 
         [SerializeField]
         private PhaseTracker m_PhaseTracker;
-
-        private const int PlayerCount = 3;
 
         private static int s_PlayerIndex;
 
