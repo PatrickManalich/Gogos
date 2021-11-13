@@ -16,6 +16,9 @@ namespace Gogos
         [SerializeField]
         private Launcher m_Launcher;
 
+        [SerializeField]
+        private PlayerGogoReturner m_PlayerGogoReturner;
+
         private List<Accelerometer> m_Accelerometers = new List<Accelerometer>();
         private int m_AccelerometersMoving;
         private TriggerAnimationSubject m_TriggerAnimationSubject;
@@ -24,11 +27,13 @@ namespace Gogos
         {
             m_Launcher.Launched += Launcher_OnLaunched;
             PlayerTracker.PlayerChanged += PlayerTracker_OnPlayerChanged;
+            m_PlayerGogoReturner.Returned += PlayerGogoReturner_OnReturned;
         }
 
         private void OnDestroy()
         {
             ForgetAllAccelerometers();
+            m_PlayerGogoReturner.Returned -= PlayerGogoReturner_OnReturned;
             PlayerTracker.PlayerChanged -= PlayerTracker_OnPlayerChanged;
             m_Launcher.Launched -= Launcher_OnLaunched;
         }
@@ -78,6 +83,12 @@ namespace Gogos
         }
 
         private void PlayerTracker_OnPlayerChanged()
+        {
+            Phase = Phase.Returning;
+            PhaseChanged?.Invoke();
+        }
+
+        private void PlayerGogoReturner_OnReturned()
         {
             Phase = Phase.Selecting;
             PhaseChanged?.Invoke();

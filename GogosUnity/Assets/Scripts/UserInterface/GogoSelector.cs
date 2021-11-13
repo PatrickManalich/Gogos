@@ -26,7 +26,7 @@ namespace Gogos
 
         private IEnumerator Start()
         {
-            PlayerTracker.PlayerChanged += RefreshGogoSelectionToggles;
+            PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
             yield return null;  // Allow GogoSituationDatabase to initialize
 
             RefreshGogoSelectionToggles();
@@ -35,7 +35,15 @@ namespace Gogos
         private void OnDestroy()
         {
             UnsubscribeFromSelectedEvents();
-            PlayerTracker.PlayerChanged -= RefreshGogoSelectionToggles;
+            PhaseTracker.PhaseChanged -= PhaseTracker_OnPhaseChanged;
+        }
+
+        private void PhaseTracker_OnPhaseChanged()
+        {
+            if (PhaseTracker.Phase == Phase.Selecting)
+            {
+                RefreshGogoSelectionToggles();
+            }
         }
 
         private void GogoSelectionToggle_OnGogoSelected(object sender, IdentifiableGogoEventArgs e)
