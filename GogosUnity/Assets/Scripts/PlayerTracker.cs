@@ -7,7 +7,7 @@ namespace Gogos
     {
         public static event Action PlayerChanged;
 
-        public static Player Player => Players[m_PlayerIndex];
+        public static Player Player => Players[s_PlayerIndex];
 
         public static Player[] Players { get; private set; } = new Player[PlayerCount];
 
@@ -19,7 +19,7 @@ namespace Gogos
 
         private const int PlayerCount = 3;
 
-        private static int m_PlayerIndex;
+        private static int s_PlayerIndex;
 
         protected override void Awake()
         {
@@ -49,7 +49,7 @@ namespace Gogos
         {
             if (PhaseTracker.Phase == Phase.Transitioning)
             {
-                m_PlayerIndex = (m_PlayerIndex + 1) % PlayerCount;
+                s_PlayerIndex = (s_PlayerIndex + 1) % PlayerCount;
                 PlayerChanged?.Invoke();
             }
         }
