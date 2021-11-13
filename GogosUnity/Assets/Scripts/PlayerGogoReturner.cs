@@ -34,7 +34,7 @@ namespace Gogos
         private IEnumerator FlashTextAndReturn()
         {
             var identifiableGogos = PlayerTracker.Player.Collection.IdentifiableGogos;
-            if (!identifiableGogos.Any(i => GogoSituationDatabase.Instance.GetSituation(i) == Situation.Available))
+            if (!identifiableGogos.Any(i => GogoSituationDatabase.GetSituation(i) == Situation.Available))
             {
                 m_ReturningText.gameObject.SetActive(true);
                 yield return new WaitForSeconds(1);
@@ -47,7 +47,7 @@ namespace Gogos
 
                 foreach (var identifiableGogo in identifiableGogos)
                 {
-                    GogoSituationDatabase.Instance.SetSituation(identifiableGogo, Situation.Available);
+                    GogoSituationDatabase.SetSituation(identifiableGogo, Situation.Available);
                 }
                 yield return new WaitForSeconds(1);
 

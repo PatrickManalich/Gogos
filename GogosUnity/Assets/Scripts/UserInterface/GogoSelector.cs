@@ -64,7 +64,7 @@ namespace Gogos
             }
 
             var identifiableGogos = PlayerTracker.Player.Collection.IdentifiableGogos;
-            var orderedIdentifiableGogos = identifiableGogos.OrderBy(i => GogoSituationDatabase.Instance.GetSituation(i));
+            var orderedIdentifiableGogos = identifiableGogos.OrderBy(i => GogoSituationDatabase.GetSituation(i));
             foreach (var identifiableGogo in orderedIdentifiableGogos)
             {
                 var gogoSelectionToggle = Instantiate(m_GogoSelectionTogglePrefab).GetComponent<GogoSelectionToggle>();

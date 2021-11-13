@@ -6,7 +6,7 @@ namespace Gogos
 
     public class GogoSituationDatabase : AbstractSingleton<GogoSituationDatabase>
     {
-        private Dictionary<string, Situation> m_SituationsById = new Dictionary<string, Situation>();
+        private static Dictionary<string, Situation> s_SituationsById = new Dictionary<string, Situation>();
 
         private void Start()
         {
@@ -14,7 +14,7 @@ namespace Gogos
             {
                 foreach (var identifiableGogo in player.Collection.IdentifiableGogos)
                 {
-                    m_SituationsById.Add(identifiableGogo.Id, Situation.Available);
+                    s_SituationsById.Add(identifiableGogo.Id, Situation.Available);
                 }
                 player.Collection.GogoAdded += Collection_OnGogoAdded;
             }
@@ -28,19 +28,19 @@ namespace Gogos
             }
         }
 
-        public Situation GetSituation(IdentifiableGogo identifiableGogo)
+        public static Situation GetSituation(IdentifiableGogo identifiableGogo)
         {
-            return m_SituationsById[identifiableGogo.Id];
+            return s_SituationsById[identifiableGogo.Id];
         }
 
-        public void SetSituation(IdentifiableGogo identifiableGogo, Situation situation)
+        public static void SetSituation(IdentifiableGogo identifiableGogo, Situation situation)
         {
-            m_SituationsById[identifiableGogo.Id] = situation;
+            s_SituationsById[identifiableGogo.Id] = situation;
         }
 
         private void Collection_OnGogoAdded(object sender, IdentifiableGogoEventArgs e)
         {
-            m_SituationsById.Add(e.IdentifiableGogo.Id, Situation.Available);
+            s_SituationsById.Add(e.IdentifiableGogo.Id, Situation.Available);
         }
     }
 }
