@@ -27,11 +27,11 @@ namespace Gogos
         {
             if (PhaseTracker.Phase == Phase.Returning)
             {
-                StartCoroutine(FlashTextAndReturn());
+                StartCoroutine(FlashTextAndReturnRoutine());
             }
         }
 
-        private IEnumerator FlashTextAndReturn()
+        private IEnumerator FlashTextAndReturnRoutine()
         {
             var identifiableGogos = PlayerTracker.Player.Collection.IdentifiableGogos;
             if (!identifiableGogos.Any(i => GogoSituationDatabase.GetSituation(i) == Situation.Available))

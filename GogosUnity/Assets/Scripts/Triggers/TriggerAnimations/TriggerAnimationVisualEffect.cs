@@ -47,10 +47,10 @@ namespace Gogos
         {
             m_VisualEffect.transform.parent = null;
             m_VisualEffect.SetActive(true);
-            StartCoroutine(ResetVisualEffectAfterDelay());
+            StartCoroutine(ResetVisualEffectAfterDelayRoutine());
         }
 
-        private IEnumerator ResetVisualEffectAfterDelay()
+        private IEnumerator ResetVisualEffectAfterDelayRoutine()
         {
             yield return new WaitForSeconds(m_ResetVisualEffectDelay);
             m_VisualEffect.transform.parent = transform;

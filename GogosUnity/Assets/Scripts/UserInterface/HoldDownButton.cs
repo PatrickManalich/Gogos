@@ -46,7 +46,7 @@ namespace Gogos
 
         private void StartEndlessHold()
         {
-            m_EndlessHoldCoroutine = StartCoroutine(EndlessHold());
+            m_EndlessHoldCoroutine = StartCoroutine(EndlessHoldRoutine());
         }
 
         private void StopEndlessHold()
@@ -58,7 +58,7 @@ namespace Gogos
             }
         }
 
-        private IEnumerator EndlessHold()
+        private IEnumerator EndlessHoldRoutine()
         {
             while (true)
             {
