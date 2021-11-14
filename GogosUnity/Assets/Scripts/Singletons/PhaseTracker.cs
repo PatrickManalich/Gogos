@@ -7,7 +7,7 @@ namespace Gogos
 {
     public enum Phase { Returning, Selecting, Launching, Settling, Transitioning }
 
-    public class PhaseTracker : AbstractSingleton<PlayerTracker>, ITriggerAnimationObserver
+    public class PhaseTracker : AbstractSingleton<PhaseTracker>, ITriggerAnimationObserver
     {
         public static event Action PhaseChanged;
 
