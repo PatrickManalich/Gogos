@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Gogos
@@ -10,6 +11,9 @@ namespace Gogos
         public static event Action PhaseChanged;
 
         public static Phase Phase { get; private set; }
+
+        [SerializeField]
+        private SpawnerRandomizer m_SpawnerRandomizer;
 
         [SerializeField]
         private Launcher m_Launcher;
@@ -26,11 +30,13 @@ namespace Gogos
         protected override void Awake()
         {
             base.Awake();
-            Phase = Phase.Selecting;
+            Phase = Phase.Spawning;
         }
 
         private void Start()
         {
+            m_SpawnerRandomizer.Spawned += SpawnerRandomizer_OnFinished;
+            m_SpawnerRandomizer.Skipped += SpawnerRandomizer_OnFinished;
             m_PlayerGogoReturner.Returned += PlayerGogoReturner_OnFinished;
             m_PlayerGogoReturner.Skipped += PlayerGogoReturner_OnFinished;
             m_Launcher.Launched += Launcher_OnLaunched;
@@ -47,6 +53,14 @@ namespace Gogos
             m_Launcher.Launched -= Launcher_OnLaunched;
             m_PlayerGogoReturner.Skipped -= PlayerGogoReturner_OnFinished;
             m_PlayerGogoReturner.Returned -= PlayerGogoReturner_OnFinished;
+            m_SpawnerRandomizer.Skipped -= SpawnerRandomizer_OnFinished;
+            m_SpawnerRandomizer.Spawned -= SpawnerRandomizer_OnFinished;
+        }
+
+        private void SpawnerRandomizer_OnFinished()
+        {
+            Phase = Phase.Returning;
+            PhaseChanged?.Invoke();
         }
 
         private void PlayerGogoReturner_OnFinished()
@@ -75,7 +89,7 @@ namespace Gogos
 
         private void PlayerTracker_OnPlayerChanged()
         {
-            Phase = Phase.Returning;
+            Phase = Phase.Spawning;
             PhaseChanged?.Invoke();
         }
     }

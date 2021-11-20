@@ -1,3 +1,4 @@
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,10 @@ namespace Gogos
 {
     public class SpawnerRandomizer : MonoBehaviour
     {
+        public event Action Spawned;
+
+        public event Action Skipped;
+
         [SerializeField]
         private Spawner[] m_Spawners;
 
@@ -20,27 +25,34 @@ namespace Gogos
 
         private void Start()
         {
-            TurnTracker.TurnChanged += TurnTracker_OnTurnChanged;
+            PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
 
             StartCoroutine(RandomizeAndSpawn());
         }
 
         private void OnDestroy()
         {
-            TurnTracker.TurnChanged -= TurnTracker_OnTurnChanged;
+            PhaseTracker.PhaseChanged -= PhaseTracker_OnPhaseChanged;
         }
 
-        private void TurnTracker_OnTurnChanged()
+        private void PhaseTracker_OnPhaseChanged()
         {
-            if (TurnTracker.Turn % TurnsToSpawn == 0)
+            if (PhaseTracker.Phase == Phase.Spawning)
             {
-                StartCoroutine(RandomizeAndSpawn());
+                if (TurnTracker.Turn % TurnsToSpawn == 0)
+                {
+                    StartCoroutine(RandomizeAndSpawn());
+                }
+                else
+                {
+                    Skipped?.Invoke();
+                }
             }
         }
 
         private IEnumerator RandomizeAndSpawn()
         {
-            var randomSpawnerCount = Random.Range(1, MaxSpawners + 1);
+            var randomSpawnerCount = UnityEngine.Random.Range(1, MaxSpawners + 1);
             for (int i = 0; i < randomSpawnerCount; i++)
             {
                 if (m_RandomRemainingSpawners.Count == 0)
@@ -51,6 +63,9 @@ namespace Gogos
                 var randomSpawner = m_RandomRemainingSpawners.Dequeue();
                 yield return randomSpawner.RandomlySpawn(m_Spawnables);
             }
+
+            yield return new WaitForSeconds(1);
+            Spawned?.Invoke();
         }
     }
 }

@@ -957,6 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18979fb0c0575e743910e0f2872e6858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SpawnerRandomizer: {fileID: 514499564}
   m_Launcher: {fileID: 1638789070}
   m_LaunchedGogoObserver: {fileID: 1972480346}
   m_AccelerometerSettlingWatcher: {fileID: 36416109}
