@@ -16,9 +16,6 @@ namespace Gogos
         [SerializeField]
         private ScriptableGogoBucket m_Starters;
 
-        [SerializeField]
-        private PhaseTracker m_PhaseTracker;
-
         private static int s_PlayerIndex;
 
         protected override void Awake()
