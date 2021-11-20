@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Gogos
 {
-    public enum Phase { Returning, Selecting, Launching, Settling, Transitioning }
+    public enum Phase { Spawning, Returning, Selecting, Launching, Settling, Transitioning }
 
     public class PhaseTracker : AbstractSingleton<PhaseTracker>
     {
