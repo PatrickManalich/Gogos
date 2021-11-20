@@ -35,12 +35,14 @@ namespace Gogos
             m_LaunchedGogoObserver.Expanded += LaunchedGogoObserver_OnExpanded;
             m_AccelerometerSettlingWatcher.Settled += AccelerometerSettlingWatcher_OnSettled;
             PlayerTracker.PlayerChanged += PlayerTracker_OnPlayerChanged;
-            m_PlayerGogoReturner.Returned += PlayerGogoReturner_OnReturned;
+            m_PlayerGogoReturner.Returned += PlayerGogoReturner_OnFinished;
+            m_PlayerGogoReturner.Skipped += PlayerGogoReturner_OnFinished;
         }
 
         private void OnDestroy()
         {
-            m_PlayerGogoReturner.Returned -= PlayerGogoReturner_OnReturned;
+            m_PlayerGogoReturner.Skipped -= PlayerGogoReturner_OnFinished;
+            m_PlayerGogoReturner.Returned -= PlayerGogoReturner_OnFinished;
             PlayerTracker.PlayerChanged -= PlayerTracker_OnPlayerChanged;
             m_AccelerometerSettlingWatcher.Settled -= AccelerometerSettlingWatcher_OnSettled;
             m_LaunchedGogoObserver.Expanded -= LaunchedGogoObserver_OnExpanded;
@@ -71,7 +73,7 @@ namespace Gogos
             PhaseChanged?.Invoke();
         }
 
-        private void PlayerGogoReturner_OnReturned()
+        private void PlayerGogoReturner_OnFinished()
         {
             Phase = Phase.Selecting;
             PhaseChanged?.Invoke();
