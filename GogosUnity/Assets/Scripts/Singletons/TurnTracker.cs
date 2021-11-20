@@ -1,11 +1,7 @@
-﻿using System;
-
-namespace Gogos
+﻿namespace Gogos
 {
     public class TurnTracker : AbstractSingleton<TurnTracker>
     {
-        public static event Action TurnChanged;
-
         public static int Turn { get; private set; }
 
         protected override void Awake()
@@ -27,7 +23,6 @@ namespace Gogos
         private void PlayerTracker_OnPlayerChanged()
         {
             Turn++;
-            TurnChanged?.Invoke();
         }
     }
 }
