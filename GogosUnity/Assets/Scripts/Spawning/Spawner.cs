@@ -12,6 +12,20 @@ namespace Gogos
         [SerializeField]
         private float m_SpawnRadius;
 
+        [SerializeField]
+        private SpawnMarker m_SpawnMarker;
+
+        public void ShowSpawnMarker()
+        {
+            m_SpawnMarker.gameObject.SetActive(true);
+            m_SpawnMarker.MarkWithRadius(m_SpawnRadius);
+        }
+
+        public void HideSpawnMarker()
+        {
+            m_SpawnMarker.gameObject.SetActive(false);
+        }
+
         public Coroutine RandomlySpawn(Spawnable[] spawnables)
         {
             return StartCoroutine(RandomlySpawnRoutine(spawnables));
@@ -33,12 +47,6 @@ namespace Gogos
                     yield return new WaitForSeconds(0.1f);
                 }
             }
-        }
-
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.blue.WithA(0.3f);
-            Gizmos.DrawSphere(transform.position, m_SpawnRadius);
         }
     }
 }

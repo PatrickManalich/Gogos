@@ -60,8 +60,11 @@ namespace Gogos
                     var random = new System.Random();
                     m_RandomRemainingSpawners = new Queue<Spawner>(m_Spawners.OrderBy(s => random.Next()));
                 }
+
                 var randomSpawner = m_RandomRemainingSpawners.Dequeue();
+                randomSpawner.ShowSpawnMarker();
                 yield return randomSpawner.RandomlySpawn(m_Spawnables);
+                randomSpawner.HideSpawnMarker();
             }
 
             yield return new WaitForSeconds(1);
