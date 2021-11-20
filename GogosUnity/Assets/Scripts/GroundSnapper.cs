@@ -9,7 +9,7 @@ namespace Gogos
         private float m_VerticalOffset;
 
         private const string DefaultLayerName = "Default";
-        private const float MaxRaycastDistance = 1;
+        private const float MaxRaycastDistance = 100;
         private const float RaycastOffset = 1;
 
         public void SnapToGround()
