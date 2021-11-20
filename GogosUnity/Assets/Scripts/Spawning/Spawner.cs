@@ -12,9 +12,9 @@ namespace Gogos
         [SerializeField]
         private float m_SpawnRadius;
 
-        public void RandomlySpawn(Spawnable[] spawnables)
+        public Coroutine RandomlySpawn(Spawnable[] spawnables)
         {
-            StartCoroutine(RandomlySpawnRoutine(spawnables));
+            return StartCoroutine(RandomlySpawnRoutine(spawnables));
         }
 
         private IEnumerator RandomlySpawnRoutine(Spawnable[] spawnables)

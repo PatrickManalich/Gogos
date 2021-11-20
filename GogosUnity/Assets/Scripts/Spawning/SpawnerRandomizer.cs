@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ namespace Gogos
         {
             TurnTracker.TurnChanged += TurnTracker_OnTurnChanged;
 
-            RandomizeAndSpawn();
+            StartCoroutine(RandomizeAndSpawn());
         }
 
         private void OnDestroy()
@@ -33,11 +34,11 @@ namespace Gogos
         {
             if (TurnTracker.Turn % TurnsToSpawn == 0)
             {
-                RandomizeAndSpawn();
+                StartCoroutine(RandomizeAndSpawn());
             }
         }
 
-        private void RandomizeAndSpawn()
+        private IEnumerator RandomizeAndSpawn()
         {
             var randomSpawnerCount = Random.Range(1, MaxSpawners + 1);
             for (int i = 0; i < randomSpawnerCount; i++)
@@ -48,7 +49,7 @@ namespace Gogos
                     m_RandomRemainingSpawners = new Queue<Spawner>(m_Spawners.OrderBy(s => random.Next()));
                 }
                 var randomSpawner = m_RandomRemainingSpawners.Dequeue();
-                randomSpawner.RandomlySpawn(m_Spawnables);
+                yield return randomSpawner.RandomlySpawn(m_Spawnables);
             }
         }
     }
