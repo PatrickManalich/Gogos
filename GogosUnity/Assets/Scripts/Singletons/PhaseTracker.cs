@@ -59,37 +59,43 @@ namespace Gogos
 
         private void SpawnerRandomizer_OnFinished()
         {
-            Phase = Phase.Returning;
-            PhaseChanged?.Invoke();
+            ChangePhase(Phase.Returning);
         }
 
         private void PlayerGogoReturner_OnFinished()
         {
-            Phase = Phase.Selecting;
-            PhaseChanged?.Invoke();
+            ChangePhase(Phase.Selecting);
         }
 
         private void Launcher_OnLaunched()
         {
-            Phase = Phase.Launching;
-            PhaseChanged?.Invoke();
+            ChangePhase(Phase.Launching);
         }
 
         private void LaunchedGogoObserver_OnExpanded()
         {
-            Phase = Phase.Settling;
-            PhaseChanged?.Invoke();
+            ChangePhase(Phase.Settling);
         }
 
         private void AccelerometerSettlingWatcher_OnSettled()
         {
-            Phase = Phase.Transitioning;
-            PhaseChanged?.Invoke();
+            ChangePhase(Phase.Transitioning);
         }
 
         private void PlayerTracker_OnPlayerChanged()
         {
-            Phase = Phase.Spawning;
+            ChangePhase(Phase.Spawning);
+        }
+
+        private void ChangePhase(Phase phase)
+        {
+            StartCoroutine(ChangePhaseRoutine(phase));
+        }
+
+        private IEnumerator ChangePhaseRoutine(Phase phase)
+        {
+            yield return null;  // Wait a frame to ensure other scripts have finished processing events
+            Phase = phase;
             PhaseChanged?.Invoke();
         }
     }
