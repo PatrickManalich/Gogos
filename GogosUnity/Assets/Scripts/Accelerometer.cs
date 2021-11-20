@@ -9,33 +9,33 @@ namespace Gogos
 
         public event Action StoppedMoving;
 
+        public bool IsMoving { get; private set; }
+
         [SerializeField]
         private Rigidbody m_Rigidbody;
 
         private const float MovementThreshold = 1;
         private const float RestThreshold = 0.001f;
 
-        private bool m_Moving;
-
         private void FixedUpdate()
         {
-            if (!m_Moving && m_Rigidbody.velocity.magnitude > MovementThreshold)
+            if (!IsMoving && m_Rigidbody.velocity.magnitude > MovementThreshold)
             {
-                m_Moving = true;
+                IsMoving = true;
                 StartedMoving?.Invoke();
             }
-            else if (m_Moving && m_Rigidbody.velocity.magnitude < RestThreshold)
+            else if (IsMoving && m_Rigidbody.velocity.magnitude < RestThreshold)
             {
-                m_Moving = false;
+                IsMoving = false;
                 StoppedMoving?.Invoke();
             }
         }
 
         private void OnDestroy()
         {
-            if (m_Moving)
+            if (IsMoving)
             {
-                m_Moving = false;
+                IsMoving = false;
                 StoppedMoving?.Invoke();
             }
         }
