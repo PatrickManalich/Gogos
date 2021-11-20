@@ -958,6 +958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Launcher: {fileID: 1638789070}
+  m_AccelerometerSettlingWatcher: {fileID: 36416109}
   m_PlayerGogoReturner: {fileID: 768837653}
 --- !u!4 &281254476
 Transform:
