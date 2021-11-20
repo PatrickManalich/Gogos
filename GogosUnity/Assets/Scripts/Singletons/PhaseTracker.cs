@@ -5,7 +5,7 @@ namespace Gogos
 {
     public enum Phase { Returning, Selecting, Launching, Settling, Transitioning }
 
-    public class PhaseTracker : AbstractSingleton<PhaseTracker>, ITriggerAnimationObserver
+    public class PhaseTracker : AbstractSingleton<PhaseTracker>
     {
         public static event Action PhaseChanged;
 
@@ -15,12 +15,13 @@ namespace Gogos
         private Launcher m_Launcher;
 
         [SerializeField]
+        private LaunchedGogoObserver m_LaunchedGogoObserver;
+
+        [SerializeField]
         private AccelerometerSettlingWatcher m_AccelerometerSettlingWatcher;
 
         [SerializeField]
         private PlayerGogoReturner m_PlayerGogoReturner;
-
-        private TriggerAnimationSubject m_TriggerAnimationSubject;
 
         protected override void Awake()
         {
@@ -31,6 +32,7 @@ namespace Gogos
         private void Start()
         {
             m_Launcher.Launched += Launcher_OnLaunched;
+            m_LaunchedGogoObserver.Expanded += LaunchedGogoObserver_OnExpanded;
             m_AccelerometerSettlingWatcher.Settled += AccelerometerSettlingWatcher_OnSettled;
             PlayerTracker.PlayerChanged += PlayerTracker_OnPlayerChanged;
             m_PlayerGogoReturner.Returned += PlayerGogoReturner_OnReturned;
@@ -41,24 +43,19 @@ namespace Gogos
             m_PlayerGogoReturner.Returned -= PlayerGogoReturner_OnReturned;
             PlayerTracker.PlayerChanged -= PlayerTracker_OnPlayerChanged;
             m_AccelerometerSettlingWatcher.Settled -= AccelerometerSettlingWatcher_OnSettled;
+            m_LaunchedGogoObserver.Expanded -= LaunchedGogoObserver_OnExpanded;
             m_Launcher.Launched -= Launcher_OnLaunched;
-        }
-
-        public void Notify()
-        {
-            m_TriggerAnimationSubject.RemoveObserverForAnimationFinished(this, TriggerAnimation.Expand);
-            m_TriggerAnimationSubject = null;
-
-            Phase = Phase.Settling;
-            PhaseChanged?.Invoke();
         }
 
         private void Launcher_OnLaunched()
         {
-            m_TriggerAnimationSubject = m_Launcher.Projectile.GetComponentInChildren<TriggerAnimationSubject>();
-            m_TriggerAnimationSubject.AddObserverForAnimationFinished(this, TriggerAnimation.Expand);
-
             Phase = Phase.Launching;
+            PhaseChanged?.Invoke();
+        }
+
+        private void LaunchedGogoObserver_OnExpanded()
+        {
+            Phase = Phase.Settling;
             PhaseChanged?.Invoke();
         }
 
