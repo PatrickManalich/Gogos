@@ -21,7 +21,7 @@ namespace Gogos
         private const int TurnsToSpawn = PlayerTracker.PlayerCount + 1;
         private const int MaxSpawners = PlayerTracker.PlayerCount;
 
-        private Queue<Spawner> m_RandomRemainingSpawners = new Queue<Spawner>();
+        private Queue<Spawner> m_UnusedSpawners = new Queue<Spawner>();
 
         private void Start()
         {
@@ -55,13 +55,13 @@ namespace Gogos
             var randomSpawnerCount = UnityEngine.Random.Range(1, MaxSpawners + 1);
             for (int i = 0; i < randomSpawnerCount; i++)
             {
-                if (m_RandomRemainingSpawners.Count == 0)
+                if (m_UnusedSpawners.Count == 0)
                 {
                     var random = new System.Random();
-                    m_RandomRemainingSpawners = new Queue<Spawner>(m_Spawners.OrderBy(s => random.Next()));
+                    m_UnusedSpawners = new Queue<Spawner>(m_Spawners.OrderBy(s => random.Next()));
                 }
 
-                var randomSpawner = m_RandomRemainingSpawners.Dequeue();
+                var randomSpawner = m_UnusedSpawners.Dequeue();
                 randomSpawner.ShowSpawnMarker();
                 yield return randomSpawner.RandomlySpawn(m_Spawnables);
                 randomSpawner.HideSpawnMarker();
