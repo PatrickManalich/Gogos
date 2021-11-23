@@ -183,5 +183,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaxSpawnAmount: 50
-  m_SpawnRadius: 10
+  m_SpawnRadius: 5
   m_SpawnMarker: {fileID: 986260978719830479}
