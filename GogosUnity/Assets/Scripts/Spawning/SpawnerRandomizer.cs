@@ -22,12 +22,19 @@ namespace Gogos
         private const int MaxSpawners = PlayerTracker.PlayerCount;
 
         private Queue<Spawner> m_UnusedSpawners = new Queue<Spawner>();
+        private Queue<Spawner> m_NextSpawners = new Queue<Spawner>();
 
         private void Start()
         {
             PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
 
-            StartCoroutine(RandomizeAndSpawn());
+            foreach (var spawner in m_Spawners)
+            {
+                spawner.ShowSpawnMarker();
+                m_NextSpawners.Enqueue(spawner);
+            }
+
+            StartCoroutine(SpawnNextSpawnersAndRefill());
         }
 
         private void OnDestroy()
@@ -41,7 +48,7 @@ namespace Gogos
             {
                 if (TurnTracker.Turn % TurnsToSpawn == 0)
                 {
-                    StartCoroutine(RandomizeAndSpawn());
+                    StartCoroutine(SpawnNextSpawnersAndRefill());
                 }
                 else
                 {
@@ -50,8 +57,16 @@ namespace Gogos
             }
         }
 
-        private IEnumerator RandomizeAndSpawn()
+        private IEnumerator SpawnNextSpawnersAndRefill()
         {
+            while (m_NextSpawners.Count > 0)
+            {
+                var spawner = m_NextSpawners.Dequeue();
+                yield return spawner.RandomlySpawn(m_Spawnables);
+                spawner.HideSpawnMarker();
+            }
+            yield return new WaitForSeconds(1);
+
             var randomSpawnerCount = UnityEngine.Random.Range(1, MaxSpawners + 1);
             for (int i = 0; i < randomSpawnerCount; i++)
             {
@@ -63,11 +78,11 @@ namespace Gogos
 
                 var randomSpawner = m_UnusedSpawners.Dequeue();
                 randomSpawner.ShowSpawnMarker();
-                yield return randomSpawner.RandomlySpawn(m_Spawnables);
-                randomSpawner.HideSpawnMarker();
+                m_NextSpawners.Enqueue(randomSpawner);
+                yield return new WaitForSeconds(1);
             }
-
             yield return new WaitForSeconds(1);
+
             Spawned?.Invoke();
         }
     }
