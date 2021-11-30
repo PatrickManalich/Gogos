@@ -2693,7 +2693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa6e32923b57de4d9f192f3c50ed494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Starters: {fileID: 11400000, guid: deea5f04fda4cb24ab59a14d1e9ff131, type: 2}
+  m_StarterGogos: {fileID: 11400000, guid: deea5f04fda4cb24ab59a14d1e9ff131, type: 2}
 --- !u!1001 &1166866740
 PrefabInstance:
   m_ObjectHideFlags: 0

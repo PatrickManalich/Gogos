@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9aaca17a71cb2254b884b0a822b2f435, type: 3}
-  m_Name: Starters
+  m_Name: StarterGogos
   m_EditorClassIdentifier: 
   m_ScriptableGogos:
   - {fileID: 11400000, guid: 72505356aa88ec04181fcbc655a07ecf, type: 2}

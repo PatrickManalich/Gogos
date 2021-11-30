@@ -14,7 +14,7 @@ namespace Gogos
         public const int PlayerCount = 3;
 
         [SerializeField]
-        private ScriptableGogoBucket m_Starters;
+        private ScriptableGogoBucket m_StarterGogos;
 
         private static int s_PlayerIndex;
 
@@ -27,7 +27,7 @@ namespace Gogos
                 var playerName = $"Player{i + 1}";
                 var playerColor = (PlayerColor)playerColors.GetValue(i);
                 var player = new Player(playerName, playerColor);
-                player.Collection.Add(m_Starters.ScriptableGogos);
+                player.Collection.Add(m_StarterGogos.ScriptableGogos);
                 Players[i] = player;
             }
             s_PlayerIndex = 0;
