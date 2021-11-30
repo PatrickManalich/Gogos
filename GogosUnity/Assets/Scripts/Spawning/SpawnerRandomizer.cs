@@ -76,9 +76,9 @@ namespace Gogos
                     m_UnusedSpawners = new Queue<Spawner>(m_Spawners.OrderBy(s => random.Next()));
                 }
 
-                var randomSpawner = m_UnusedSpawners.Dequeue();
-                randomSpawner.ShowSpawnMarker();
-                m_NextSpawners.Enqueue(randomSpawner);
+                var spawner = m_UnusedSpawners.Dequeue();
+                spawner.ShowSpawnMarker();
+                m_NextSpawners.Enqueue(spawner);
                 yield return new WaitForSeconds(1);
             }
             yield return new WaitForSeconds(1);
