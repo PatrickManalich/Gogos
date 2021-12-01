@@ -31,11 +31,7 @@ namespace Gogos
             var gogoInstance = Instantiate(identifiableGogo.ScriptableGogo.Prefab).GetComponent<AbstractGogo>();
             gogoInstance.SetTiers(identifiableGogo);
             gogoInstance.enabled = false;
-
-            var randomPositionInCircle = Quaternion.Euler(90, 0, 0) * Random.insideUnitCircle * m_SpawnRadius;
-            gogoInstance.transform.position = transform.position + randomPositionInCircle;
-            gogoInstance.transform.rotation = Random.rotation;
-            gogoInstance.name = gogoInstance.name.Replace("(Clone)", "");
+            PlaceInsideCircle(gogoInstance.gameObject);
         }
 
         public Coroutine RandomlySpawn(Spawnable[] spawnables)
@@ -52,13 +48,17 @@ namespace Gogos
                 if (randomChance <= randomSpawnable.SpawnChance)
                 {
                     var spawnableInstance = Instantiate(randomSpawnable.Prefab, transform);
-                    var randomPositionInCircle = Quaternion.Euler(90, 0, 0) * Random.insideUnitCircle * m_SpawnRadius;
-                    spawnableInstance.transform.position = transform.position + randomPositionInCircle;
-                    spawnableInstance.transform.rotation = Random.rotation;
-                    spawnableInstance.name = spawnableInstance.name.Replace("(Clone)", "");
+                    PlaceInsideCircle(spawnableInstance);
                     yield return new WaitForSeconds(0.1f);
                 }
             }
+        }
+
+        private void PlaceInsideCircle(GameObject instance)
+        {
+            instance.name = instance.name.Replace("(Clone)", "");
+            var randomPositionInCircle = Quaternion.Euler(90, 0, 0) * Random.insideUnitCircle * m_SpawnRadius;
+            instance.transform.SetPositionAndRotation(transform.position + randomPositionInCircle, Random.rotation);
         }
     }
 }
