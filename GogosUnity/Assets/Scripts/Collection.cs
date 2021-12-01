@@ -12,17 +12,8 @@ namespace Gogos
 
         private Dictionary<string, IdentifiableGogo> m_IdentifiableGogosById = new Dictionary<string, IdentifiableGogo>();
 
-        public void Add(IEnumerable<AbstractScriptableGogo> scriptableGogos)
+        public void Add(IdentifiableGogo identifiableGogo)
         {
-            foreach (var scriptableGogo in scriptableGogos)
-            {
-                Add(scriptableGogo);
-            }
-        }
-
-        public void Add(AbstractScriptableGogo scriptableGogo)
-        {
-            var identifiableGogo = new IdentifiableGogo(scriptableGogo);
             m_IdentifiableGogosById.Add(identifiableGogo.Id, identifiableGogo);
             GogoAdded?.Invoke(this, new IdentifiableGogoEventArgs(identifiableGogo));
         }
