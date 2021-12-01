@@ -10,7 +10,14 @@ namespace Gogos
 
         private void Start()
         {
-            color = (int)m_Gogo.Player.PlayerColor;
+            if (m_Gogo.Player != null)
+            {
+                color = (int)m_Gogo.Player.PlayerColor;
+            }
+            else
+            {
+                enabled = false;
+            }
         }
     }
 }
