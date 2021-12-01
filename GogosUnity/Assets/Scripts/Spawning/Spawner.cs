@@ -1,5 +1,4 @@
-﻿using Gogos.Extensions;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 namespace Gogos
@@ -24,6 +23,19 @@ namespace Gogos
         public void HideSpawnMarker()
         {
             m_SpawnMarker.gameObject.SetActive(false);
+        }
+
+        public void Spawn(AbstractScriptableGogo scriptableGogo)
+        {
+            var identifiableGogo = new IdentifiableGogo(scriptableGogo);
+            var gogoInstance = Instantiate(identifiableGogo.ScriptableGogo.Prefab).GetComponent<AbstractGogo>();
+            gogoInstance.SetTiers(identifiableGogo);
+            gogoInstance.enabled = false;
+
+            var randomPositionInCircle = Quaternion.Euler(90, 0, 0) * Random.insideUnitCircle * m_SpawnRadius;
+            gogoInstance.transform.position = transform.position + randomPositionInCircle;
+            gogoInstance.transform.rotation = Random.rotation;
+            gogoInstance.name = gogoInstance.name.Replace("(Clone)", "");
         }
 
         public Coroutine RandomlySpawn(Spawnable[] spawnables)

@@ -1596,6 +1596,7 @@ MonoBehaviour:
   - m_Prefab: {fileID: 7447000072722723997, guid: a6db11d3c165cce4e84815d78fd79548,
       type: 3}
     m_SpawnChance: 10
+  m_SpawnableGogos: {fileID: 11400000, guid: 9c0248e4044baf640bbe7dc1d21d36a5, type: 2}
 --- !u!4 &514499565
 Transform:
   m_ObjectHideFlags: 0

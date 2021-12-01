@@ -8,5 +8,10 @@ namespace Gogos
         [SerializeField]
         private AbstractScriptableGogo[] m_ScriptableGogos;
         public AbstractScriptableGogo[] ScriptableGogos => m_ScriptableGogos;
+
+        public AbstractScriptableGogo GetRandomScriptableGogo()
+        {
+            return ScriptableGogos[Random.Range(0, ScriptableGogos.Length)];
+        }
     }
 }

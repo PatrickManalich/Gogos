@@ -18,6 +18,9 @@ namespace Gogos
         [SerializeField]
         private Spawnable[] m_Spawnables;
 
+        [SerializeField]
+        private ScriptableGogoBucket m_SpawnableGogos;
+
         private const int TurnsToSpawn = PlayerTracker.PlayerCount + 1;
         private const int MaxSpawners = PlayerTracker.PlayerCount;
 
@@ -63,6 +66,7 @@ namespace Gogos
             {
                 var spawner = m_NextSpawners.Dequeue();
                 yield return spawner.RandomlySpawn(m_Spawnables);
+                spawner.Spawn(m_SpawnableGogos.GetRandomScriptableGogo());
                 spawner.HideSpawnMarker();
             }
             yield return new WaitForSeconds(1);
