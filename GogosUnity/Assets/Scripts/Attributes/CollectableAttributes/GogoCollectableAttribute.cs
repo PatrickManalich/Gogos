@@ -11,7 +11,11 @@ namespace Gogos
 
         protected override void Collect()
         {
-            if (m_Gogo.Player != PlayerTracker.Player)
+            if (m_Gogo.Player == null)
+            {
+                PlayerTracker.Player.Collection.Add(m_Gogo.IdentifiableGogo);
+            }
+            else if (m_Gogo.Player != PlayerTracker.Player)
             {
                 PlayerTracker.Player.AddPoints(EnemyGogoPointValue);
             }
