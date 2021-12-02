@@ -4,7 +4,7 @@ namespace Gogos
 {
     public class IdentifiableGogo
     {
-        public string Id { get; set; }
+        public string Id { get; }
         public AbstractScriptableGogo ScriptableGogo { get; }
 
         public IdentifiableGogo(AbstractScriptableGogo scriptableGogo)
