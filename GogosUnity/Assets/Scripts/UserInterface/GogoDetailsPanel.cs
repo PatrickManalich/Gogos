@@ -76,7 +76,6 @@ namespace Gogos
                     var tierModifierText = supportScriptableGogo.SupportAbilityTierModifier.ToString("+0;-#");
                     m_SupportAbilityText.text = $"Ally Gogo {tierVariantText} {tierModifierText}";
                     m_SupportDetails.SetActive(true);
-
                     break;
             }
         }
