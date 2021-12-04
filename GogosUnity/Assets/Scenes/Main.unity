@@ -4242,7 +4242,7 @@ PrefabInstance:
     - target: {fileID: 4154288254753265095, guid: d228f1b4267699d4d87397eecac6c854,
         type: 3}
       propertyPath: m_Name
-      value: GogoDetailsPanel
+      value: CollectionGogoDetailsPanel
       objectReference: {fileID: 0}
     - target: {fileID: 4154288254753265096, guid: d228f1b4267699d4d87397eecac6c854,
         type: 3}
