@@ -41,12 +41,16 @@ namespace Gogos
         private float m_MovementAngle;
         private Rigidbody m_ProjectileRigidbody;
 
-        private void OnEnable()
+        private void Start()
         {
-            m_CurrentLaunchForce = (m_MinLaunchForce + m_MaxLaunchForce) / 2;
             m_DistanceToTarget = Vector3.Distance(transform.position, m_Target.transform.position);
             m_MovementAngle = 270;
             Align();
+        }
+
+        private void OnEnable()
+        {
+            m_CurrentLaunchForce = (m_MinLaunchForce + m_MaxLaunchForce) / 2;
         }
 
         public void LoadProjectile(GameObject projectile)
