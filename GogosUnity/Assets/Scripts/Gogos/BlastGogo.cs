@@ -27,7 +27,7 @@ namespace Gogos
             base.SetTiers(identifiableGogo);
 
             var blastScriptableGogo = (BlastScriptableGogo)IdentifiableGogo.ScriptableGogo;
-            m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastForce).SetTier((int)blastScriptableGogo.BlastForceTier);
+            TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastForce).SetTier((int)blastScriptableGogo.BlastForceTier);
         }
 
         protected override void OnStartedMoving()

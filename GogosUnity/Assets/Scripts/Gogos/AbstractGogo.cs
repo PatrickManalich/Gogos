@@ -8,8 +8,10 @@ namespace Gogos
 
         public IdentifiableGogo IdentifiableGogo { get; private set; }
 
+        public TierTrackerReference TierTrackerReference => m_TierTrackerReference;
+
         [SerializeField]
-        protected TierTrackerReference m_TierTrackerReference;
+        private TierTrackerReference m_TierTrackerReference;
 
         [SerializeField]
         private Accelerometer m_Accelerometer;

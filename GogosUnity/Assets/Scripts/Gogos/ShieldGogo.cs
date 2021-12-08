@@ -15,7 +15,7 @@ namespace Gogos
         protected override void Start()
         {
             base.Start();
-            m_ShieldStrengthTierTracker = (ShieldStrengthTierTracker)m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength);
+            m_ShieldStrengthTierTracker = (ShieldStrengthTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength);
         }
 
         public override void SetTiers(IdentifiableGogo identifiableGogo)
@@ -23,7 +23,7 @@ namespace Gogos
             base.SetTiers(identifiableGogo);
 
             var shieldScriptableGogo = (ShieldScriptableGogo)IdentifiableGogo.ScriptableGogo;
-            m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength).SetTier((int)shieldScriptableGogo.ShieldStrengthTier);
+            TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength).SetTier((int)shieldScriptableGogo.ShieldStrengthTier);
         }
 
         protected override void OnStartedMoving()
