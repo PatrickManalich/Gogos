@@ -15,6 +15,12 @@ namespace Gogos
         private GogoVariantIcon m_GogoVariantIcon;
 
         [SerializeField]
+        private TextMeshProUGUI m_PlayerNameText;
+
+        [SerializeField]
+        private ScriptableColorPalette m_ScriptableColorPalette;
+
+        [SerializeField]
         private TierDetails m_WeightTierDetails;
 
         [SerializeField]
@@ -44,10 +50,14 @@ namespace Gogos
         [SerializeField]
         private TextMeshProUGUI m_SupportAbilityText;
 
-        public void SetDetails(AbstractScriptableGogo scriptableGogo)
+        public void SetDetails(AbstractScriptableGogo scriptableGogo, Player player)
         {
             m_NicknameText.SetNickname(scriptableGogo.Nickname, scriptableGogo.RarityTier);
             m_GogoVariantIcon.SetIcon(scriptableGogo.GogoVariant);
+            var palette = m_ScriptableColorPalette;
+            var isUnclaimed = player == null;
+            m_PlayerNameText.text = isUnclaimed ? "Unclaimed" : player.Name;
+            m_PlayerNameText.color = isUnclaimed ? palette.Grey : palette.GetColorForPlayerColor(player.PlayerColor);
             m_WeightTierDetails.SetSlots(scriptableGogo.WeightTier);
             m_RangeTierDetails.SetSlots(scriptableGogo.RangeTier);
 

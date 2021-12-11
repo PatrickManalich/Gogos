@@ -353,6 +353,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NicknameText: {fileID: 5539467527944929130}
   m_GogoVariantIcon: {fileID: 4254624783736066347}
+  m_PlayerNameText: {fileID: 5636078731242448389}
+  m_ScriptableColorPalette: {fileID: 11400000, guid: b11d06455fb6dc245a9d3bf1bf8f6e9b,
+    type: 2}
   m_WeightTierDetails: {fileID: 7640100243151705112}
   m_RangeTierDetails: {fileID: 7640100243128508012}
   m_BlastDetails: {fileID: 4154288254550966765}
@@ -2694,6 +2697,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d078806331c87a747acc6bf522b2877d, type: 3}
+--- !u!114 &5636078731242448389 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 604470900165999167, guid: d078806331c87a747acc6bf522b2877d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5067918105223846970}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5636078731242448390 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 604470900165999164, guid: d078806331c87a747acc6bf522b2877d,

@@ -37,7 +37,7 @@ namespace Gogos
             {
                 if (firstGogo.Player == null || GogoSituationDatabase.GetSituation(firstGogo.IdentifiableGogo) == Situation.InRing)
                 {
-                    m_GogoDetailsPanel.SetDetails(firstGogo.IdentifiableGogo.ScriptableGogo);
+                    m_GogoDetailsPanel.SetDetails(firstGogo.IdentifiableGogo.ScriptableGogo, firstGogo.Player);
                     m_GogoDetailsPanel.gameObject.SetActive(true);
                 }
                 else
