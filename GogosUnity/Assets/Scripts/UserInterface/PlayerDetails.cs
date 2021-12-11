@@ -1,14 +1,10 @@
-﻿using RotaryHeart.Lib.SerializableDictionaryPro;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 namespace Gogos
 {
     public class PlayerDetails : MonoBehaviour
     {
-        [System.Serializable]
-        private class ColorsByPlayerColor : SerializableDictionary<PlayerColor, Color> { }
-
         [SerializeField]
         private TextMeshProUGUI m_NameText;
 
@@ -16,7 +12,7 @@ namespace Gogos
         private TextMeshProUGUI m_PointsText;
 
         [SerializeField]
-        private ColorsByPlayerColor m_ColorsByPlayerColor;
+        private ScriptableColorPalette m_ScriptableColorPalette;
 
         [SerializeField]
         private GameObject m_SelectedIndicator;
@@ -39,7 +35,7 @@ namespace Gogos
         {
             m_Player = player;
             m_NameText.text = m_Player.Name;
-            m_NameText.color = m_ColorsByPlayerColor[m_Player.PlayerColor];
+            m_NameText.color = m_ScriptableColorPalette.GetColorForPlayerColor(m_Player.PlayerColor);
 
             RefreshSelectedElements();
             PlayerTracker.PlayerChanged += RefreshSelectedElements;

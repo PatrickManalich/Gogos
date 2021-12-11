@@ -55,13 +55,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NameText: {fileID: 5926414287721993854}
   m_PointsText: {fileID: 367683716253482630}
-  m_ColorsByPlayerColor:
-    m_val: 7
-    m_keys: 000000000100000002000000
-    m_values:
-    - {r: 0.9294118, g: 0.12941177, b: 0.227451, a: 1}
-    - {r: 0.39607847, g: 0.81568635, b: 0, a: 1}
-    - {r: 0.20000002, g: 0.50980395, b: 0.9686275, a: 1}
+  m_ScriptableColorPalette: {fileID: 11400000, guid: b11d06455fb6dc245a9d3bf1bf8f6e9b,
+    type: 2}
   m_SelectedIndicator: {fileID: 7763689531863480757}
 --- !u!1 &7763689531765249766
 GameObject:
