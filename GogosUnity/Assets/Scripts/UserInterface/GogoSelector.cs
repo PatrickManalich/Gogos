@@ -50,8 +50,8 @@ namespace Gogos
         {
             m_SelectedIdentifiableGogo = e.IdentifiableGogo;
 
-            m_GogoDetailsPanel.SetDetails(m_SelectedIdentifiableGogo.ScriptableGogo, PlayerTracker.Player);
             m_GogoCreator.CreateGogo(m_SelectedIdentifiableGogo);
+            m_GogoDetailsPanel.SetDetails(m_GogoCreator.CreatedGogo);
         }
 
         private void RefreshGogoSelectionToggles()

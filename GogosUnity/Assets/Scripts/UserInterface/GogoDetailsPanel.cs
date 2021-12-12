@@ -50,8 +50,11 @@ namespace Gogos
         [SerializeField]
         private TextMeshProUGUI m_SupportAbilityText;
 
-        public void SetDetails(AbstractScriptableGogo scriptableGogo, Player player)
+        public void SetDetails(AbstractGogo gogo)
         {
+            var scriptableGogo = gogo.IdentifiableGogo.ScriptableGogo;
+            var player = gogo.Player;
+
             m_NicknameText.SetNickname(scriptableGogo.Nickname, scriptableGogo.RarityTier);
             m_GogoVariantIcon.SetIcon(scriptableGogo.GogoVariant);
             var palette = m_ScriptableColorPalette;
