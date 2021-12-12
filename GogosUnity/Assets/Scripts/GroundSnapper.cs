@@ -8,9 +8,20 @@ namespace Gogos
         [SerializeField]
         private float m_VerticalOffset;
 
+        [SerializeField]
+        private bool m_SnapOnEnable;
+
         private const string DefaultLayerName = "Default";
         private const float MaxRaycastDistance = 100;
         private const float RaycastOffset = 1;
+
+        public void OnEnable()
+        {
+            if (m_SnapOnEnable)
+            {
+                SnapToGround();
+            }
+        }
 
         public void SnapToGround()
         {

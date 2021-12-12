@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_VerticalOffset: 0.01
+  m_SnapOnEnable: 0
 --- !u!1 &7668378983958492270
 GameObject:
   m_ObjectHideFlags: 0
