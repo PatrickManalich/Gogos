@@ -238,5 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Image: {fileID: 6524575367733718787}
+  m_PlusIcon: {fileID: 882974821207553011}
+  m_MinusIcon: {fileID: 3611834517154022695}
   m_FilledColor: {r: 1, g: 0.64705884, b: 0, a: 1}
   m_EmptyColor: {r: 0.53333336, g: 0.53333336, b: 0.53333336, a: 1}
