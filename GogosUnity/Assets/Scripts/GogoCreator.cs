@@ -4,10 +4,10 @@ namespace Gogos
 {
     public class GogoCreator : MonoBehaviour
     {
+        public AbstractGogo CreatedGogo { get; private set; }
+
         [SerializeField]
         private Launcher m_Launcher;
-
-        private AbstractGogo m_CreatedGogo;
 
         private void Start()
         {
@@ -21,22 +21,22 @@ namespace Gogos
 
         public void CreateGogo(IdentifiableGogo identifiableGogo)
         {
-            if (m_CreatedGogo != null)
+            if (CreatedGogo != null)
             {
-                Destroy(m_CreatedGogo.gameObject);
+                Destroy(CreatedGogo.gameObject);
             }
 
-            m_CreatedGogo = Instantiate(identifiableGogo.ScriptableGogo.Prefab).GetComponent<AbstractGogo>();
-            m_CreatedGogo.SetTiers(identifiableGogo);
-            m_CreatedGogo.name = m_CreatedGogo.name.Replace("(Clone)", "");
+            CreatedGogo = Instantiate(identifiableGogo.ScriptableGogo.Prefab).GetComponent<AbstractGogo>();
+            CreatedGogo.SetTiers(identifiableGogo);
+            CreatedGogo.name = CreatedGogo.name.Replace("(Clone)", "");
 
-            m_Launcher.LoadProjectile(m_CreatedGogo.gameObject);
+            m_Launcher.LoadProjectile(CreatedGogo.gameObject);
         }
 
         private void Launcher_OnLaunched()
         {
-            GogoSituationDatabase.SetSituation(m_CreatedGogo.IdentifiableGogo, Situation.InRing);
-            m_CreatedGogo = null;
+            GogoSituationDatabase.SetSituation(CreatedGogo.IdentifiableGogo, Situation.InRing);
+            CreatedGogo = null;
         }
     }
 }
