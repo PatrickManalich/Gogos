@@ -22,13 +22,17 @@ namespace Gogos
 
         protected virtual void Start()
         {
-            Player = PlayerTracker.Player;
             SubscribeToMovementEvents();
         }
 
         protected virtual void OnDestroy()
         {
             UnsubscribeFromMovementEvents();
+        }
+
+        public void SetPlayer(Player player)
+        {
+            Player = player;
         }
 
         public virtual void SetTiers(IdentifiableGogo identifiableGogo)
