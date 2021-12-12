@@ -25,7 +25,7 @@ namespace Gogos
         private void TriggerListener_OnEntered(object sender, TriggerEventArgs e)
         {
             var collectTrigger = e.OtherCollider.GetComponent<CollectTrigger>();
-            if (collectTrigger)
+            if (collectTrigger != null)
             {
                 Collect();
                 Destroy(m_TriggerListener.gameObject);

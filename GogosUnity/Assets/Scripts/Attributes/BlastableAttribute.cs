@@ -28,7 +28,7 @@ namespace Gogos
         private void TriggerListener_OnEntered(object sender, TriggerEventArgs e)
         {
             var blastTrigger = e.OtherCollider.GetComponent<BlastTrigger>();
-            if (blastTrigger)
+            if (blastTrigger != null)
             {
                 var blastCenterPosition = e.OtherCollider.transform.position;
                 var oppositeDirection = (transform.position - blastCenterPosition).normalized;

@@ -25,7 +25,7 @@ namespace Gogos
         private void TriggerListener_OnEntered(object sender, TriggerEventArgs e)
         {
             var supportTrigger = e.OtherCollider.GetComponent<SupportTrigger>();
-            if (supportTrigger)
+            if (supportTrigger != null)
             {
                 foreach (var tierTracker in m_TierTrackerReference.TierTrackers)
                 {
@@ -37,7 +37,7 @@ namespace Gogos
         private void TriggerListener_OnExited(object sender, TriggerEventArgs e)
         {
             var supportTrigger = e.OtherCollider.GetComponent<SupportTrigger>();
-            if (supportTrigger)
+            if (supportTrigger != null)
             {
                 foreach (var tierTracker in m_TierTrackerReference.TierTrackers)
                 {

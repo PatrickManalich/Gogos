@@ -28,7 +28,7 @@ namespace Gogos
         private void TriggerListener_OnEntered(object sender, TriggerEventArgs e)
         {
             var shieldTrigger = e.OtherCollider.GetComponent<ShieldTrigger>();
-            if (shieldTrigger)
+            if (shieldTrigger != null)
             {
                 var shieldPosition = e.OtherCollider.transform.position;
                 var oppositeDirection = (transform.position - shieldPosition).normalized;
