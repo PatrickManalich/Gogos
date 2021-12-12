@@ -27,9 +27,13 @@ namespace Gogos
             var supportTrigger = e.OtherCollider.GetComponent<SupportTrigger>();
             if (supportTrigger != null)
             {
+                var supportAbility = supportTrigger.SupportAbility;
                 foreach (var tierTracker in m_TierTrackerReference.TierTrackers)
                 {
-                    supportTrigger.SupportAbility.ProvideSupport(tierTracker);
+                    if (supportAbility.CanSupport(tierTracker))
+                    {
+                        supportAbility.ProvideSupport(tierTracker);
+                    }
                 }
             }
         }
@@ -39,9 +43,13 @@ namespace Gogos
             var supportTrigger = e.OtherCollider.GetComponent<SupportTrigger>();
             if (supportTrigger != null)
             {
+                var supportAbility = supportTrigger.SupportAbility;
                 foreach (var tierTracker in m_TierTrackerReference.TierTrackers)
                 {
-                    supportTrigger.SupportAbility.RemoveSupport(tierTracker);
+                    if (supportAbility.CanSupport(tierTracker))
+                    {
+                        supportAbility.RemoveSupport(tierTracker);
+                    }
                 }
             }
         }

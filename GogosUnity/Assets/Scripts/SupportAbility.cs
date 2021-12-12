@@ -21,20 +21,19 @@ namespace Gogos
             m_TierModifier = clampedTierModifier;
         }
 
+        public bool CanSupport(AbstractTierTracker tierTracker)
+        {
+            return tierTracker.TierVariant == m_TierVariant;
+        }
+
         public void ProvideSupport(AbstractTierTracker tierTracker)
         {
-            if (tierTracker.TierVariant == m_TierVariant)
-            {
-                tierTracker.ModifyTier(m_TierModifier);
-            }
+            tierTracker.ModifyTier(m_TierModifier);
         }
 
         public void RemoveSupport(AbstractTierTracker tierTracker)
         {
-            if (tierTracker.TierVariant == m_TierVariant)
-            {
-                tierTracker.ModifyTier(-m_TierModifier);
-            }
+            tierTracker.ModifyTier(-m_TierModifier);
         }
     }
 }
