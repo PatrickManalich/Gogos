@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed4faace21e0a647b25f262441ba338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_GroundSnapper: {fileID: 2816677461941483018}
 --- !u!114 &2816677461941483018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_VerticalOffset: 0.01
-  m_SnapOnEnable: 0
+  m_SnapOnEnable: 1
 --- !u!1 &7668378983958492270
 GameObject:
   m_ObjectHideFlags: 0
