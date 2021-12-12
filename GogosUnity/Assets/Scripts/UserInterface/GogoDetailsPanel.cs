@@ -57,12 +57,16 @@ namespace Gogos
 
             m_NicknameText.SetNickname(scriptableGogo.Nickname, scriptableGogo.RarityTier);
             m_GogoVariantIcon.SetIcon(scriptableGogo.GogoVariant);
+
             var palette = m_ScriptableColorPalette;
             var isUnclaimed = player == null;
             m_PlayerNameText.text = isUnclaimed ? "Unclaimed" : player.Name;
             m_PlayerNameText.color = isUnclaimed ? palette.Grey : palette.GetColorForPlayerColor(player.PlayerColor);
-            m_WeightTierDetails.SetSlots(scriptableGogo.WeightTier);
-            m_RangeTierDetails.SetSlots(scriptableGogo.RangeTier);
+
+            var weightTierTracker = (WeightTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.Weight);
+            m_WeightTierDetails.SetSlots(weightTierTracker.Tier, scriptableGogo.WeightTier);
+            var rangeTierTracker = (RangeTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range);
+            m_RangeTierDetails.SetSlots(rangeTierTracker.Tier, scriptableGogo.RangeTier);
 
             m_BlastDetails.SetActive(false);
             m_ShieldDetails.SetActive(false);
@@ -72,14 +76,16 @@ namespace Gogos
             {
                 case GogoVariant.Blast:
                     var blastScriptableGogo = (BlastScriptableGogo)scriptableGogo;
-                    m_BlastForceTierDetails.SetSlots(blastScriptableGogo.BlastForceTier);
+                    var blastForceTierTracker = (BlastForceTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastForce);
+                    m_BlastForceTierDetails.SetSlots(blastForceTierTracker.Tier, blastScriptableGogo.BlastForceTier);
                     m_BlastShapeIllustration.sprite = blastScriptableGogo.BlastShapeIllustration;
                     m_BlastDetails.SetActive(true);
                     break;
 
                 case GogoVariant.Shield:
                     var shieldScriptableGogo = (ShieldScriptableGogo)scriptableGogo;
-                    m_ShieldStrengthTierDetails.SetSlots(shieldScriptableGogo.ShieldStrengthTier);
+                    var shieldStrengthTierTracker = (ShieldStrengthTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength);
+                    m_ShieldStrengthTierDetails.SetSlots(shieldStrengthTierTracker.Tier, shieldScriptableGogo.ShieldStrengthTier);
                     m_ShieldDetails.SetActive(true);
                     break;
 
