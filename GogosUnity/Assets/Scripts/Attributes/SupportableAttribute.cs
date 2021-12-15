@@ -4,11 +4,15 @@ namespace Gogos
 {
     public class SupportableAttribute : MonoBehaviour
     {
+        public bool IsSupported => m_SupportProviderCount > 0;
+
         [SerializeField]
         private TriggerListener m_TriggerListener;
 
         [SerializeField]
         private TierTrackerReference m_TierTrackerReference;
+
+        private int m_SupportProviderCount;
 
         private void Awake()
         {
@@ -33,6 +37,7 @@ namespace Gogos
                     if (supportAbility.CanSupport(tierTracker))
                     {
                         supportAbility.ProvideSupport(tierTracker);
+                        m_SupportProviderCount++;
                     }
                 }
             }
@@ -49,6 +54,7 @@ namespace Gogos
                     if (supportAbility.CanSupport(tierTracker))
                     {
                         supportAbility.RemoveSupport(tierTracker);
+                        m_SupportProviderCount--;
                     }
                 }
             }
