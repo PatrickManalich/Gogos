@@ -79,6 +79,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4853842286205953042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2824327890949517589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2086556be93ca743a449a5ef90f59c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShieldStrengthTierTracker: {fileID: 67661835766975182}
+  m_ShieldVisualMeshRenderer: {fileID: 8273866049387384125}
 --- !u!1 &3670522647649720268
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,6 +186,33 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &67661835766975182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4781460244517855536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9323ce256f7fff45bfb234bc6bd72ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Tier: 1
+--- !u!114 &2377298452543999703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7228615960939619934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42f8331e2650d564093d3ed8f94cff34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VerticalOffset: 0
+  m_SnapOnEnable: 0
 --- !u!114 &590493631073750688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,47 +229,6 @@ MonoBehaviour:
   m_Accelerometer: {fileID: 85781943510537709}
   m_TriggerRangeGroundSnapper: {fileID: 2377298452543999703}
   m_ShieldTrigger: {fileID: 1513401519861276423}
---- !u!114 &67661835766975182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4781460244517855536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9323ce256f7fff45bfb234bc6bd72ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Tier: 1
---- !u!114 &4853842286205953042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2824327890949517589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2086556be93ca743a449a5ef90f59c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShieldStrengthTierTracker: {fileID: 67661835766975182}
-  m_ShieldVisualMeshRenderer: {fileID: 8273866049387384125}
---- !u!114 &2377298452543999703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7228615960939619934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42f8331e2650d564093d3ed8f94cff34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_VerticalOffset: 0
-  m_SnapOnEnable: 0
 --- !u!1001 &5066136839225282676
 PrefabInstance:
   m_ObjectHideFlags: 0
