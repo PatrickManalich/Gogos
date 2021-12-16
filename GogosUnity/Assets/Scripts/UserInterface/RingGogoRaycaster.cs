@@ -29,6 +29,8 @@ namespace Gogos
                 return;
             }
 
+            m_GogoDetailsPanel.gameObject.SetActive(false);
+
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             var hits = Physics.RaycastAll(ray, 100, LayerMasks.Triggerable);
             var gogoHits = hits.Where(h => h.collider.GetComponent<AbstractGogo>() != null);
@@ -40,14 +42,6 @@ namespace Gogos
                     m_GogoDetailsPanel.SetDetails(firstGogo);
                     m_GogoDetailsPanel.gameObject.SetActive(true);
                 }
-                else
-                {
-                    m_GogoDetailsPanel.gameObject.SetActive(false);
-                }
-            }
-            else
-            {
-                m_GogoDetailsPanel.gameObject.SetActive(false);
             }
         }
 
