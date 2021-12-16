@@ -9,11 +9,15 @@ namespace Gogos
         [SerializeField]
         private GogoDetailsPanel m_GogoDetailsPanel;
 
+        [SerializeField]
+        private GameObject m_RaycastHitVisual;
+
         private void Start()
         {
             PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
 
             m_GogoDetailsPanel.gameObject.SetActive(false);
+            m_RaycastHitVisual.SetActive(false);
         }
 
         private void OnDestroy()
@@ -30,6 +34,7 @@ namespace Gogos
             }
 
             m_GogoDetailsPanel.gameObject.SetActive(false);
+            m_RaycastHitVisual.SetActive(false);
 
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             var hits = Physics.RaycastAll(ray, 100, LayerMasks.Triggerable);
@@ -41,6 +46,8 @@ namespace Gogos
                 {
                     m_GogoDetailsPanel.SetDetails(firstGogo);
                     m_GogoDetailsPanel.gameObject.SetActive(true);
+                    m_RaycastHitVisual.transform.position = firstGogo.transform.position;
+                    m_RaycastHitVisual.SetActive(true);
                 }
             }
         }
@@ -50,6 +57,7 @@ namespace Gogos
             if (PhaseTracker.Phase != Phase.Selecting)
             {
                 m_GogoDetailsPanel.gameObject.SetActive(false);
+                m_RaycastHitVisual.SetActive(false);
             }
         }
     }
