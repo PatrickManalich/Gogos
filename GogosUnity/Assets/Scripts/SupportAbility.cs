@@ -17,8 +17,7 @@ namespace Gogos
         public void SetAbility(TierVariant tierVariant, int tierModifier)
         {
             m_TierVariant = tierVariant;
-            var clampedTierModifier = Mathf.Min(Mathf.Max(tierModifier, MinSupport), MaxSupport);
-            m_TierModifier = clampedTierModifier;
+            m_TierModifier = Mathf.Min(Mathf.Max(tierModifier, MinSupport), MaxSupport);
         }
 
         public bool CanSupport(AbstractTierTracker tierTracker)
