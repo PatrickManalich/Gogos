@@ -122,16 +122,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: 39a3d8206a5614d4eb9becf06761b227,
         type: 2}
-    - target: {fileID: 5794869220277705066, guid: 358761b6af6238a4bbc84783fc1a25df,
-        type: 3}
-      propertyPath: m_TierVariant
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5794869220277705066, guid: 358761b6af6238a4bbc84783fc1a25df,
-        type: 3}
-      propertyPath: m_TierModifier
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9077140501661113395, guid: 358761b6af6238a4bbc84783fc1a25df,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
