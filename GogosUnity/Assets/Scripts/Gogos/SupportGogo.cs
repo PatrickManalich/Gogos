@@ -18,7 +18,7 @@ namespace Gogos
             base.SetTiers(identifiableGogo);
 
             var supportScriptableGogo = (SupportScriptableGogo)IdentifiableGogo.ScriptableGogo;
-            m_SupportAbility.SetAbility(supportScriptableGogo.SupportAbilityTierVariant, supportScriptableGogo.SupportAbilityTierModifier);
+            m_SupportAbility.SetAbility(supportScriptableGogo.SupportableGroups, supportScriptableGogo.SupportAbilityTierVariant, supportScriptableGogo.SupportAbilityTierModifier);
         }
 
         protected override void OnStartedMoving()

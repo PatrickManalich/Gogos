@@ -9,6 +9,9 @@ namespace Gogos
     public class SupportAbility : MonoBehaviour
     {
         [SerializeField]
+        private SupportableGroups m_SupportableGroups;
+
+        [SerializeField]
         private TierVariant m_TierVariant;
 
         [Range(MinSupport, MaxSupport)]
@@ -18,8 +21,9 @@ namespace Gogos
         public const int MinSupport = -3;
         public const int MaxSupport = 3;
 
-        public void SetAbility(TierVariant tierVariant, int tierModifier)
+        public void SetAbility(SupportableGroups supportableGroups, TierVariant tierVariant, int tierModifier)
         {
+            m_SupportableGroups = supportableGroups;
             m_TierVariant = tierVariant;
             m_TierModifier = Mathf.Min(Mathf.Max(tierModifier, MinSupport), MaxSupport);
         }

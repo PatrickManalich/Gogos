@@ -1,50 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &8774811679384850250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 948336244088627944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42f8331e2650d564093d3ed8f94cff34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_VerticalOffset: 0
-  m_SnapOnEnable: 0
---- !u!114 &223830331214465320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818574884214494759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04556bdd51675b642b25609ad88ea58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TierTrackerReference: {fileID: 8409757181930479229}
-  m_Accelerometer: {fileID: 7514496882615718235}
-  m_SupportAbility: {fileID: 5794869220277705066}
-  m_TriggerRangeGroundSnapper: {fileID: 8774811679384850250}
-  m_SupportTrigger: {fileID: 6371626136887626145}
---- !u!114 &5794869220277705066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818574884214494759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46ed6bd3bdf7312439575b9e9d79c22c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TierVariant: 0
-  m_TierModifier: 0
 --- !u!1 &2420745522618568115
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +79,52 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &223830331214465320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818574884214494759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04556bdd51675b642b25609ad88ea58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TierTrackerReference: {fileID: 8409757181930479229}
+  m_Accelerometer: {fileID: 7514496882615718235}
+  m_SupportAbility: {fileID: 5794869220277705066}
+  m_TriggerRangeGroundSnapper: {fileID: 8774811679384850250}
+  m_SupportTrigger: {fileID: 6371626136887626145}
+--- !u!114 &5794869220277705066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818574884214494759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ed6bd3bdf7312439575b9e9d79c22c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SupportableGroups: 0
+  m_TierVariant: 0
+  m_TierModifier: 0
+--- !u!114 &8774811679384850250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948336244088627944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42f8331e2650d564093d3ed8f94cff34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VerticalOffset: 0
+  m_SnapOnEnable: 0
 --- !u!1 &7220410930847777692
 GameObject:
   m_ObjectHideFlags: 0
