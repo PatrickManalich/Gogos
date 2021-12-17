@@ -4,6 +4,8 @@ namespace Gogos
 {
     public class SupportableAttribute : MonoBehaviour
     {
+        public Player Player { get; set; }
+
         public bool IsSupported => m_SupportProviderCount > 0;
 
         [SerializeField]
@@ -34,7 +36,7 @@ namespace Gogos
                 var supportAbility = supportTrigger.SupportAbility;
                 foreach (var tierTracker in m_TierTrackerReference.TierTrackers)
                 {
-                    if (supportAbility.CanSupport(tierTracker))
+                    if (supportAbility.CanSupport(Player, tierTracker))
                     {
                         supportAbility.ProvideSupport(tierTracker);
                         m_SupportProviderCount++;
@@ -51,7 +53,7 @@ namespace Gogos
                 var supportAbility = supportTrigger.SupportAbility;
                 foreach (var tierTracker in m_TierTrackerReference.TierTrackers)
                 {
-                    if (supportAbility.CanSupport(tierTracker))
+                    if (supportAbility.CanSupport(Player, tierTracker))
                     {
                         supportAbility.RemoveSupport(tierTracker);
                         m_SupportProviderCount--;

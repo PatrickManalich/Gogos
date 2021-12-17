@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04556bdd51675b642b25609ad88ea58a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SupportableAttribute: {fileID: 7614291032879833643}
   m_TierTrackerReference: {fileID: 8409757181930479229}
   m_Accelerometer: {fileID: 7514496882615718235}
   m_SupportAbility: {fileID: 5794869220277705066}
@@ -108,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ed6bd3bdf7312439575b9e9d79c22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Gogo: {fileID: 223830331214465320}
   m_SupportableGroups: 0
   m_TierVariant: 0
   m_TierModifier: 0
@@ -314,6 +316,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 578cca584d8c7364e8a68a79655b5929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7614291032879833643 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5088492430457845481, guid: 32de8a135a87ebe4893b187ac67de5ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 3402066813361231042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc0f0c09b6522144980621c309c6936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &8409757181930479229 stripped

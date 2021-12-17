@@ -9,6 +9,9 @@ namespace Gogos
     public class SupportAbility : MonoBehaviour
     {
         [SerializeField]
+        private AbstractGogo m_Gogo;
+
+        [SerializeField]
         private SupportableGroups m_SupportableGroups;
 
         [SerializeField]
@@ -28,9 +31,23 @@ namespace Gogos
             m_TierModifier = Mathf.Min(Mathf.Max(tierModifier, MinSupport), MaxSupport);
         }
 
-        public bool CanSupport(AbstractTierTracker tierTracker)
+        public bool CanSupport(Player player, AbstractTierTracker tierTracker)
         {
-            return tierTracker.TierVariant == m_TierVariant;
+            var canSupport = false;
+            if (m_SupportableGroups.HasFlag(SupportableGroups.AllyGogos) && player == m_Gogo.Player)
+            {
+                canSupport = true;
+            }
+            if (m_SupportableGroups.HasFlag(SupportableGroups.EnemyGogos) && player != null && player != m_Gogo.Player)
+            {
+                canSupport = true;
+            }
+            if (m_SupportableGroups.HasFlag(SupportableGroups.UnclaimedGogos) && player == null)
+            {
+                canSupport = true;
+            }
+            canSupport = canSupport && tierTracker.TierVariant == m_TierVariant;
+            return canSupport;
         }
 
         public void ProvideSupport(AbstractTierTracker tierTracker)
