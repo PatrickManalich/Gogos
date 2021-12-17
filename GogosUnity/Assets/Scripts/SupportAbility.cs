@@ -1,7 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Gogos
 {
+    [Flags]
+    public enum SupportableGroups { None = 0, AllyGogos = 1, EnemyGogos = 2, UnclaimedGogos = 4 }
+
     public class SupportAbility : MonoBehaviour
     {
         [SerializeField]

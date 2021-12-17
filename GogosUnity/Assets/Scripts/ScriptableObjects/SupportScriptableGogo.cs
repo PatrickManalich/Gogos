@@ -8,6 +8,10 @@ namespace Gogos
         public override GogoVariant GogoVariant => GogoVariant.Support;
 
         [SerializeField]
+        private SupportableGroups m_SupportableGroups;
+        public SupportableGroups SupportableGroups => m_SupportableGroups;
+
+        [SerializeField]
         private TierVariant m_SupportAbilityTierVariant;
         public TierVariant SupportAbilityTierVariant => m_SupportAbilityTierVariant;
 
