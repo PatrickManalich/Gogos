@@ -45,7 +45,7 @@ namespace Gogos
         private GameObject m_SupportDetails;
 
         [SerializeField]
-        private TextMeshProUGUI m_SupportAbilityText;
+        private SupportAbilityText m_SupportAbilityText;
 
         public void SetDetails(AbstractGogo gogo)
         {
@@ -82,9 +82,7 @@ namespace Gogos
 
                 case GogoVariant.Support:
                     var supportScriptableGogo = (SupportScriptableGogo)scriptableGogo;
-                    var tierVariantText = supportScriptableGogo.SupportAbilityTierVariant.ToString().SplitOnCamelCase();
-                    var tierModifierText = supportScriptableGogo.SupportAbilityTierModifier.ToString("+0;-#");
-                    m_SupportAbilityText.text = $"Ally Gogo {tierVariantText} {tierModifierText}";
+                    m_SupportAbilityText.SetSupportAbility(supportScriptableGogo.SupportAbilityTierVariant, supportScriptableGogo.SupportAbilityTierModifier);
                     m_SupportDetails.SetActive(true);
                     break;
             }
