@@ -15,10 +15,7 @@ namespace Gogos
         private GogoVariantIcon m_GogoVariantIcon;
 
         [SerializeField]
-        private TextMeshProUGUI m_PlayerNameText;
-
-        [SerializeField]
-        private ScriptableColorPalette m_ScriptableColorPalette;
+        private PlayerNameText m_PlayerNameText;
 
         [SerializeField]
         private TierDetails m_WeightTierDetails;
@@ -53,16 +50,10 @@ namespace Gogos
         public void SetDetails(AbstractGogo gogo)
         {
             var scriptableGogo = gogo.IdentifiableGogo.ScriptableGogo;
-            var player = gogo.Player;
 
             m_NicknameText.SetNickname(scriptableGogo.Nickname, scriptableGogo.RarityTier);
             m_GogoVariantIcon.SetIcon(scriptableGogo.GogoVariant);
-
-            var palette = m_ScriptableColorPalette;
-            var isUnclaimed = player == null;
-            m_PlayerNameText.text = isUnclaimed ? "Unclaimed" : player.Name;
-            m_PlayerNameText.color = isUnclaimed ? palette.Grey : palette.GetColorForPlayerColor(player.PlayerColor);
-
+            m_PlayerNameText.SetPlayerName(gogo.Player);
             var weightTierTracker = (WeightTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.Weight);
             m_WeightTierDetails.SetSlots(weightTierTracker.Tier, scriptableGogo.WeightTier);
             var rangeTierTracker = (RangeTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range);
