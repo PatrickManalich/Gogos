@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Gogos
 {
     [Flags]
-    public enum SupportableGroups { None = 0, AllyGogos = 1, EnemyGogos = 2, UnclaimedGogos = 4 }
+    public enum SupportableGroups { AllyGogos = 1, EnemyGogos = 2, UnclaimedGogos = 4 } // Index 0 is for "Nothing" in the editor
 
     public class SupportAbility : MonoBehaviour
     {
