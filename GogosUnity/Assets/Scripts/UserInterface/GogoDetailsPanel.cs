@@ -82,7 +82,7 @@ namespace Gogos
 
                 case GogoVariant.Support:
                     var supportScriptableGogo = (SupportScriptableGogo)scriptableGogo;
-                    m_SupportAbilityText.SetSupportAbility(supportScriptableGogo.SupportAbilityTierVariant, supportScriptableGogo.SupportAbilityTierModifier);
+                    m_SupportAbilityText.SetSupportAbility(supportScriptableGogo.SupportableGroups, supportScriptableGogo.SupportAbilityTierVariant, supportScriptableGogo.SupportAbilityTierModifier);
                     m_SupportDetails.SetActive(true);
                     break;
             }
