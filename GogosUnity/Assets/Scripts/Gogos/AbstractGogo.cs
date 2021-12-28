@@ -11,7 +11,7 @@ namespace Gogos
         public TierTrackerReference TierTrackerReference => m_TierTrackerReference;
 
         [SerializeField]
-        private SupportableAttribute m_SupportableAttribute;
+        private AttributesReference m_AttributesReference;
 
         [SerializeField]
         private TierTrackerReference m_TierTrackerReference;
@@ -36,7 +36,10 @@ namespace Gogos
         public void SetPlayer(Player player)
         {
             Player = player;
-            m_SupportableAttribute.Player = Player;
+            foreach (var attribute in m_AttributesReference.Attributes)
+            {
+                attribute.Player = Player;
+            }
         }
 
         public virtual void SetTiers(IdentifiableGogo identifiableGogo)
