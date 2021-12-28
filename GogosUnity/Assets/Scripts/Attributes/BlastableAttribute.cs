@@ -15,7 +15,7 @@ namespace Gogos
         protected override void OnTriggerEntered(TriggerEventArgs e)
         {
             var blastTrigger = e.OtherCollider.GetComponent<BlastTrigger>();
-            if (blastTrigger != null)
+            if (blastTrigger != null && blastTrigger.Player != Player)
             {
                 var blastCenterPosition = e.OtherCollider.transform.position;
                 var oppositeDirection = (transform.position - blastCenterPosition).normalized;
