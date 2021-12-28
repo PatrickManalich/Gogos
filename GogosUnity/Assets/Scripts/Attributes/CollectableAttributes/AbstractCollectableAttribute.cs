@@ -9,9 +9,6 @@ namespace Gogos
         [SerializeField]
         private TriggerListener m_TriggerListener;
 
-        [SerializeField]
-        protected TierTrackerReference m_TierTrackerReference;
-
         private void Awake()
         {
             m_TriggerListener.Entered += TriggerListener_OnEntered;
