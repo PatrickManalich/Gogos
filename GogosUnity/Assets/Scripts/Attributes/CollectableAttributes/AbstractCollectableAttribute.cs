@@ -1,25 +1,10 @@
-﻿using UnityEngine;
-
-namespace Gogos
+﻿namespace Gogos
 {
-    public abstract class AbstractCollectableAttribute : MonoBehaviour
+    public abstract class AbstractCollectableAttribute : AbstractAttribute
     {
         protected abstract void Collect();
 
-        [SerializeField]
-        private TriggerListener m_TriggerListener;
-
-        private void Awake()
-        {
-            m_TriggerListener.Entered += TriggerListener_OnEntered;
-        }
-
-        private void OnDestroy()
-        {
-            m_TriggerListener.Entered -= TriggerListener_OnEntered;
-        }
-
-        private void TriggerListener_OnEntered(object sender, TriggerEventArgs e)
+        protected override void OnTriggerEntered(TriggerEventArgs e)
         {
             var collectTrigger = e.OtherCollider.GetComponent<CollectTrigger>();
             if (collectTrigger != null)
@@ -28,5 +13,8 @@ namespace Gogos
                 Destroy(m_TriggerListener.gameObject);
             }
         }
+
+        protected override void OnTriggerExited(TriggerEventArgs e)
+        { }
     }
 }

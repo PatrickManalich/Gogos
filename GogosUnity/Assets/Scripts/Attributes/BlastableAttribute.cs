@@ -2,11 +2,8 @@
 
 namespace Gogos
 {
-    public class BlastableAttribute : MonoBehaviour
+    public class BlastableAttribute : AbstractAttribute
     {
-        [SerializeField]
-        private TriggerListener m_TriggerListener;
-
         [SerializeField]
         private Rigidbody m_Rigidbody;
 
@@ -15,17 +12,7 @@ namespace Gogos
 
         private const float FalloffRate = 0.4f;
 
-        private void Awake()
-        {
-            m_TriggerListener.Entered += TriggerListener_OnEntered;
-        }
-
-        private void OnDestroy()
-        {
-            m_TriggerListener.Entered -= TriggerListener_OnEntered;
-        }
-
-        private void TriggerListener_OnEntered(object sender, TriggerEventArgs e)
+        protected override void OnTriggerEntered(TriggerEventArgs e)
         {
             var blastTrigger = e.OtherCollider.GetComponent<BlastTrigger>();
             if (blastTrigger != null)
@@ -41,5 +28,8 @@ namespace Gogos
                 m_Rigidbody.AddForceAtPosition(forceDirection * distanceMultiplier, m_ForcePoint.transform.position, ForceMode.Impulse);
             }
         }
+
+        protected override void OnTriggerExited(TriggerEventArgs e)
+        { }
     }
 }

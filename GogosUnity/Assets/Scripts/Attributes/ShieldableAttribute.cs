@@ -2,11 +2,8 @@
 
 namespace Gogos
 {
-    public class ShieldableAttribute : MonoBehaviour
+    public class ShieldableAttribute : AbstractAttribute
     {
-        [SerializeField]
-        private TriggerListener m_TriggerListener;
-
         [SerializeField]
         private Rigidbody m_Rigidbody;
 
@@ -15,17 +12,7 @@ namespace Gogos
 
         private const float DeflectForce = 10;
 
-        private void Awake()
-        {
-            m_TriggerListener.Entered += TriggerListener_OnEntered;
-        }
-
-        private void OnDestroy()
-        {
-            m_TriggerListener.Entered -= TriggerListener_OnEntered;
-        }
-
-        private void TriggerListener_OnEntered(object sender, TriggerEventArgs e)
+        protected override void OnTriggerEntered(TriggerEventArgs e)
         {
             var shieldTrigger = e.OtherCollider.GetComponent<ShieldTrigger>();
             if (shieldTrigger != null)
@@ -36,5 +23,8 @@ namespace Gogos
                 m_Rigidbody.AddForceAtPosition(oppositeDirection * DeflectForce, m_ForcePoint.transform.position, ForceMode.Impulse);
             }
         }
+
+        protected override void OnTriggerExited(TriggerEventArgs e)
+        { }
     }
 }
