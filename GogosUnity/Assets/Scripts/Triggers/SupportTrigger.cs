@@ -4,6 +4,8 @@ namespace Gogos
 {
     public class SupportTrigger : MonoBehaviour
     {
+        public Player Player { get; set; }
+
         public SupportAbility SupportAbility => m_SupportAbility;
 
         [SerializeField]

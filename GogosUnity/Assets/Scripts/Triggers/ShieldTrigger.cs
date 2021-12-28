@@ -4,6 +4,8 @@ namespace Gogos
 {
     public class ShieldTrigger : MonoBehaviour
     {
+        public Player Player { get; set; }
+
         [SerializeField]
         private Animator m_ShieldTriggerAnimator;
 

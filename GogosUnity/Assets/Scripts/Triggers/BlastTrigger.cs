@@ -4,6 +4,8 @@ namespace Gogos
 {
     public class BlastTrigger : MonoBehaviour
     {
+        public Player Player { get; set; }
+
         public BlastForceTierTracker BlastForceTierTracker => m_BlastForceTierTracker;
 
         [SerializeField]

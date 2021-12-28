@@ -22,10 +22,15 @@ namespace Gogos
             m_Launcher = FindObjectOfType<Launcher>();
         }
 
+        public override void SetPlayer(Player player)
+        {
+            base.SetPlayer(player);
+            m_BlastTrigger.Player = Player;
+        }
+
         public override void SetTiers(IdentifiableGogo identifiableGogo)
         {
             base.SetTiers(identifiableGogo);
-
             var blastScriptableGogo = (BlastScriptableGogo)IdentifiableGogo.ScriptableGogo;
             TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastForce).SetTier((int)blastScriptableGogo.BlastForceTier);
         }

@@ -33,7 +33,7 @@ namespace Gogos
             UnsubscribeFromMovementEvents();
         }
 
-        public void SetPlayer(Player player)
+        public virtual void SetPlayer(Player player)
         {
             Player = player;
             foreach (var attribute in m_AttributesReference.Attributes)
