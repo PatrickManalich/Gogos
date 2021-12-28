@@ -15,7 +15,7 @@ namespace Gogos
         protected override void OnTriggerEntered(TriggerEventArgs e)
         {
             var shieldTrigger = e.OtherCollider.GetComponent<ShieldTrigger>();
-            if (shieldTrigger != null)
+            if (shieldTrigger != null && Player != null && shieldTrigger.Player != Player)
             {
                 var shieldPosition = e.OtherCollider.transform.position;
                 var oppositeDirection = (transform.position - shieldPosition).normalized;
