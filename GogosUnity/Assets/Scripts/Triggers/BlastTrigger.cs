@@ -6,18 +6,16 @@ namespace Gogos
     {
         public Player Player { get; set; }
 
-        public BlastForceTierTracker BlastForceTierTracker => m_BlastForceTierTracker;
-
-        [SerializeField]
-        private BlastForceTierTracker m_BlastForceTierTracker;
+        public BlastForceTierTracker BlastForceTierTracker { get; private set; }
 
         [SerializeField]
         private Animator m_BlastTriggerAnimator;
 
         private const string ExpandName = "Expand";
 
-        public void Blast()
+        public void Blast(BlastForceTierTracker blastForceTierTracker)
         {
+            BlastForceTierTracker = blastForceTierTracker;
             m_BlastTriggerAnimator.SetTrigger(ExpandName);
         }
     }

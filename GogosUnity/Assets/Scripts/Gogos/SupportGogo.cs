@@ -34,7 +34,7 @@ namespace Gogos
         protected override void OnStoppedMoving()
         {
             m_TriggerRangeGroundSnapper.SnapToGround();
-            m_SupportTrigger.ProvideSupport();
+            m_SupportTrigger.ProvideSupport(m_SupportAbility);
         }
     }
 }

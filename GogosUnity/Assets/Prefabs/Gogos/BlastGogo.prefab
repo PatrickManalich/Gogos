@@ -77,7 +77,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a966fe35dd39c43903127078004253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BlastForceTierTracker: {fileID: 4203646358498570030}
   m_BlastTriggerAnimator: {fileID: 1194336562}
 --- !u!114 &4203646358498570029
 MonoBehaviour:

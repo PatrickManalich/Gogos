@@ -206,7 +206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000f8496dab7cc24381e83cf0f74a4b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SupportAbility: {fileID: 5794869220277705066}
   m_SupportTriggerAnimator: {fileID: 4744309330080816374}
 --- !u!135 &2895562169272542973
 SphereCollider:

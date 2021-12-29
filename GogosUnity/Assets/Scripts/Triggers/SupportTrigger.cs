@@ -6,18 +6,16 @@ namespace Gogos
     {
         public Player Player { get; set; }
 
-        public SupportAbility SupportAbility => m_SupportAbility;
-
-        [SerializeField]
-        private SupportAbility m_SupportAbility;
+        public SupportAbility SupportAbility { get; private set; }
 
         [SerializeField]
         private Animator m_SupportTriggerAnimator;
 
         private const string ExpandName = "Expand";
 
-        public void ProvideSupport()
+        public void ProvideSupport(SupportAbility supportAbility)
         {
+            SupportAbility = supportAbility;
             m_SupportTriggerAnimator.SetBool(ExpandName, true);
         }
 
