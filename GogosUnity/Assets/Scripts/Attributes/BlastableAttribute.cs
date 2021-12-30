@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Gogos
 {
     public class BlastableAttribute : AbstractAttribute
     {
+        public event Action Blasted;
+
         [SerializeField]
         private Rigidbody m_Rigidbody;
 
@@ -17,6 +20,7 @@ namespace Gogos
             var blastTrigger = e.OtherCollider.GetComponent<BlastTrigger>();
             if (blastTrigger != null && (blastTrigger.Player == null || blastTrigger.Player != Player))
             {
+                Blasted?.Invoke();
                 var blastCenterPosition = e.OtherCollider.transform.position;
                 var oppositeDirection = (transform.position - blastCenterPosition).normalized;
                 var upwardsDirection = Vector3.up * blastTrigger.BlastForceTierTracker.BlastUpwardsModifier;
