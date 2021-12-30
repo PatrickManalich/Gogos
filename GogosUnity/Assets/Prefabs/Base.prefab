@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7090690207065770100}
   - component: {fileID: 2437726711927117160}
   - component: {fileID: 4513766407774999969}
+  - component: {fileID: 5861547601513900914}
   - component: {fileID: 3742057706918318998}
   m_Layer: 10
   m_Name: Attributes
@@ -75,6 +76,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TriggerListener: {fileID: 7295707980275540114}
   m_TierTrackerReference: {fileID: 2574385949018040823}
+--- !u!114 &5861547601513900914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848322824887143475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb20153d52edae2408cfef1d703ddea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TriggerListener: {fileID: 7295707980275540114}
+  m_Rigidbody: {fileID: 711291440928357360}
+  m_ForcePoint: {fileID: 1121001816799974895}
 --- !u!114 &3742057706918318998
 MonoBehaviour:
   m_ObjectHideFlags: 0
