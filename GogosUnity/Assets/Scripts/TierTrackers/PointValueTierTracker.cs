@@ -2,7 +2,7 @@
 
 namespace Gogos
 {
-    public enum PointValueTier { Low, Medium, High, Immense }
+    public enum PointValueTier { Low, Medium, High }
 
     public class PointValueTierTracker : AbstractTierTracker<PointValueTier>
     {
@@ -15,7 +15,6 @@ namespace Gogos
             { PointValueTier.Low, 100 },
             { PointValueTier.Medium, 200 },
             { PointValueTier.High, 400 },
-            { PointValueTier.Immense, 1000 },
         };
     }
 }
