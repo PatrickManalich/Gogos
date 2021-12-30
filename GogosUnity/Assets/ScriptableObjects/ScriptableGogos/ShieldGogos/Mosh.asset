@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079a9ea77264948488dfb9755a02565f, type: 3}
   m_Name: Mosh
   m_EditorClassIdentifier: 
-  m_Prefab: {fileID: 7593268731678311256, guid: a7bb8f7fb12c6174f92ef141940a8869,
+  m_Prefab: {fileID: 7919096510195914385, guid: fdb13011b3231744d801b9a82ad2f50f,
     type: 3}
   m_Nickname: Mosh
   m_Portrait: {fileID: 21300000, guid: da44a7d2d9c9750438a7a9853226a9c5, type: 3}

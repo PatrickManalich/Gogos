@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec8675558ba5be44b88539e79d2b3aab, type: 3}
   m_Name: Sato
   m_EditorClassIdentifier: 
-  m_Prefab: {fileID: 5103960377110464723, guid: c8b18565ff40c904fa126a85766668ee,
+  m_Prefab: {fileID: 3782179996502974070, guid: dc2750be0b2606b4a8fc0d3c3a4d1ddd,
     type: 3}
   m_Nickname: Sato
   m_Portrait: {fileID: 21300000, guid: 9bf82fcda23a8564e9b4cd05c9e662df, type: 3}

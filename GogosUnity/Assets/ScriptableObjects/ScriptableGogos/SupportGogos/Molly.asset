@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19378426e6fe4744946fb6bafb2882c, type: 3}
   m_Name: Molly
   m_EditorClassIdentifier: 
-  m_Prefab: {fileID: 7617510042951655898, guid: 6b05398151e9d604c8261f22d6ab4305,
+  m_Prefab: {fileID: 7446804729452260876, guid: 9e0dfd7d6bbac4040989f4a4d9bef648,
     type: 3}
   m_Nickname: Molly
   m_Portrait: {fileID: 21300000, guid: 9de60a7546d85c3408401db05fc73cf2, type: 3}
