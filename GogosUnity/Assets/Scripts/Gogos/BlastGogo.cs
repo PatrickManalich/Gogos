@@ -42,7 +42,7 @@ namespace Gogos
 
         protected override void OnStoppedMoving()
         {
-            m_TriggerRangeRefresher.gameObject.SetActive(false);
+            m_TriggerRangeRefresher.enabled = false;
             m_TriggerRangeRotationAligner.AlignWithRotation(m_LauncherAlignedRotation);
             var blastForceTierTracker = (BlastForceTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastForce);
             m_BlastTrigger.Blast(blastForceTierTracker);
