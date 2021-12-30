@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TriggerAnimationSubject: {fileID: 5452535293137745588}
   m_VisualEffect: {fileID: 7922229921425608928}
+  m_AdjustColorAndIntensity: 1
   m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_Intensity: 2
   m_ResetVisualEffectDelay: 1.5

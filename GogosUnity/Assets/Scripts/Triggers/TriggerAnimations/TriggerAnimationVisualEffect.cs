@@ -12,6 +12,9 @@ namespace Gogos
         private GameObject m_VisualEffect;
 
         [SerializeField]
+        private bool m_AdjustColorAndIntensity;
+
+        [SerializeField]
         private Color m_Color;
 
         [SerializeField]
@@ -24,14 +27,17 @@ namespace Gogos
         {
             m_VisualEffect.SetActive(false);
 
-            var renderers = m_VisualEffect.GetComponentsInChildren<Renderer>(true);
-            foreach (var renderer in renderers)
+            if (m_AdjustColorAndIntensity)
             {
-                foreach (var material in renderer.materials)
+                var renderers = m_VisualEffect.GetComponentsInChildren<Renderer>(true);
+                foreach (var renderer in renderers)
                 {
-                    material.SetColor("_TintColor", m_Color * m_Intensity);
-                    material.SetColor("_Color", m_Color * m_Intensity);
-                    material.SetColor("_RimColor", m_Color * m_Intensity);
+                    foreach (var material in renderer.materials)
+                    {
+                        material.SetColor("_TintColor", m_Color * m_Intensity);
+                        material.SetColor("_Color", m_Color * m_Intensity);
+                        material.SetColor("_RimColor", m_Color * m_Intensity);
+                    }
                 }
             }
 
