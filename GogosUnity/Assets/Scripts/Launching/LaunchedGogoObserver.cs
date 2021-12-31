@@ -7,10 +7,13 @@ namespace Gogos
     {
         public event Action Expanded;
 
+        public event Action Collected;
+
         [SerializeField]
         private Launcher m_Launcher;
 
         private TriggerAnimationSubject m_TriggerAnimationSubject;
+        private CollectableAttribute m_CollectableAttribute;
 
         private void Start()
         {
@@ -26,6 +29,9 @@ namespace Gogos
         {
             m_TriggerAnimationSubject.RemoveObserverForAnimationFinished(this, TriggerAnimation.Expand);
             m_TriggerAnimationSubject = null;
+            m_CollectableAttribute.Collected -= CollectableAttribute_OnCollected;
+            m_CollectableAttribute = null;
+
             Expanded?.Invoke();
         }
 
@@ -33,9 +39,23 @@ namespace Gogos
         {
             if (PhaseTracker.Phase == Phase.Launching)
             {
-                m_TriggerAnimationSubject = m_Launcher.Projectile.GetComponentInChildren<TriggerAnimationSubject>();
+                var launcherProjectile = m_Launcher.Projectile;
+                m_TriggerAnimationSubject = launcherProjectile.GetComponentInChildren<TriggerAnimationSubject>();
                 m_TriggerAnimationSubject.AddObserverForAnimationFinished(this, TriggerAnimation.Expand);
+
+                m_CollectableAttribute = launcherProjectile.GetComponentInChildren<CollectableAttribute>();
+                m_CollectableAttribute.Collected += CollectableAttribute_OnCollected;
             }
+        }
+
+        private void CollectableAttribute_OnCollected()
+        {
+            m_TriggerAnimationSubject.RemoveObserverForAnimationFinished(this, TriggerAnimation.Expand);
+            m_TriggerAnimationSubject = null;
+            m_CollectableAttribute.Collected -= CollectableAttribute_OnCollected;
+            m_CollectableAttribute = null;
+
+            Collected?.Invoke();
         }
     }
 }

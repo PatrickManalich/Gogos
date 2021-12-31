@@ -40,7 +40,8 @@ namespace Gogos
             m_PlayerGogoReturner.Returned += PlayerGogoReturner_OnFinished;
             m_PlayerGogoReturner.Skipped += PlayerGogoReturner_OnFinished;
             m_Launcher.Launched += Launcher_OnLaunched;
-            m_LaunchedGogoObserver.Expanded += LaunchedGogoObserver_OnExpanded;
+            m_LaunchedGogoObserver.Expanded += LaunchedGogoObserver_OnFinished;
+            m_LaunchedGogoObserver.Collected += LaunchedGogoObserver_OnFinished;
             m_AccelerometerSettlingWatcher.Settled += AccelerometerSettlingWatcher_OnSettled;
             PlayerTracker.PlayerChanged += PlayerTracker_OnPlayerChanged;
         }
@@ -49,7 +50,8 @@ namespace Gogos
         {
             PlayerTracker.PlayerChanged -= PlayerTracker_OnPlayerChanged;
             m_AccelerometerSettlingWatcher.Settled -= AccelerometerSettlingWatcher_OnSettled;
-            m_LaunchedGogoObserver.Expanded -= LaunchedGogoObserver_OnExpanded;
+            m_LaunchedGogoObserver.Collected -= LaunchedGogoObserver_OnFinished;
+            m_LaunchedGogoObserver.Expanded -= LaunchedGogoObserver_OnFinished;
             m_Launcher.Launched -= Launcher_OnLaunched;
             m_PlayerGogoReturner.Skipped -= PlayerGogoReturner_OnFinished;
             m_PlayerGogoReturner.Returned -= PlayerGogoReturner_OnFinished;
@@ -72,7 +74,7 @@ namespace Gogos
             ChangePhase(Phase.Launching);
         }
 
-        private void LaunchedGogoObserver_OnExpanded()
+        private void LaunchedGogoObserver_OnFinished()
         {
             ChangePhase(Phase.Settling);
         }
