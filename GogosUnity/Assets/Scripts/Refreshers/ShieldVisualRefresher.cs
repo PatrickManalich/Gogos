@@ -25,8 +25,10 @@ namespace Gogos
 
         public void Refresh()
         {
+            var shieldAlpha = m_ShieldStrengthTierTracker.ShieldAlpha;
             var material = m_ShieldVisualMeshRenderer.material;
-            material.color = material.color.WithA(m_ShieldStrengthTierTracker.ShieldAlpha);
+            material.color = material.color.WithA(shieldAlpha);
+            m_ShieldVisualMeshRenderer.gameObject.SetActive(shieldAlpha > 0);
         }
     }
 }
