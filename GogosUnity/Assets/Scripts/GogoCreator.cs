@@ -29,7 +29,7 @@ namespace Gogos
             CreatedGogo = Instantiate(identifiableGogo.ScriptableGogo.Prefab).GetComponent<AbstractGogo>();
             CreatedGogo.SetPlayer(PlayerTracker.Player);
             CreatedGogo.SetTiers(identifiableGogo);
-            CreatedGogo.name = CreatedGogo.name.Replace("(Clone)", "");
+            CreatedGogo.name = CreatedGogo.Player.Name + "-" + CreatedGogo.name.Replace("(Clone)", "");
 
             m_Launcher.LoadProjectile(CreatedGogo.gameObject);
         }
