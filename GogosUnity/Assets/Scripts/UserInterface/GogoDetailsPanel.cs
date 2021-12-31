@@ -74,9 +74,10 @@ namespace Gogos
                     break;
 
                 case GogoVariant.Shield:
+                    // Account for Broken tier
                     var shieldScriptableGogo = (ShieldScriptableGogo)scriptableGogo;
                     var shieldStrengthTierTracker = (ShieldStrengthTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength);
-                    m_ShieldStrengthTierDetails.SetSlots(shieldStrengthTierTracker.Tier, shieldScriptableGogo.ShieldStrengthTier);
+                    m_ShieldStrengthTierDetails.SetSlots(shieldStrengthTierTracker.Tier - 1, shieldScriptableGogo.ShieldStrengthTier - 1);
                     m_ShieldDetails.SetActive(true);
                     break;
 
