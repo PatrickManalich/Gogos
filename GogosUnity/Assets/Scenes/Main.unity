@@ -892,6 +892,9 @@ MonoBehaviour:
   - m_Prefab: {fileID: 8170206028113113337, guid: a75896cdeb0b19d4dbfd79eb48ae63b7,
       type: 3}
     m_SpawnChance: 10
+  - m_Prefab: {fileID: 4318178237187457172, guid: 79f449c13dbcf4543a415b83e506137e,
+      type: 3}
+    m_SpawnChance: 30
   - m_Prefab: {fileID: 4643961640780505808, guid: f46ce7a707105af4abb6622ca688a5eb,
       type: 3}
     m_SpawnChance: 30
