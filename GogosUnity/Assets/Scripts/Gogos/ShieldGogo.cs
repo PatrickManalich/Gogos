@@ -41,7 +41,7 @@ namespace Gogos
             if (!m_ShieldStrengthTierTracker.IsShieldBroken)
             {
                 m_TriggerRangeGroundSnapper.SnapToGround();
-                m_ShieldTrigger.EnableShield();
+                m_ShieldTrigger.EnableShield(m_ShieldStrengthTierTracker);
             }
         }
     }

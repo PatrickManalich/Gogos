@@ -19,8 +19,8 @@ namespace Gogos
             {
                 var shieldPosition = e.OtherCollider.transform.position;
                 var oppositeDirection = (transform.position - shieldPosition).normalized;
-
                 m_Rigidbody.AddForceAtPosition(oppositeDirection * DeflectForce, m_ForcePoint.transform.position, ForceMode.Impulse);
+                shieldTrigger.ShieldStrengthTierTracker.ModifyTier(-1);
             }
         }
 
