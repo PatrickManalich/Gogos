@@ -157,4 +157,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a966fe35dd39c43903127078004253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Collider: {fileID: 0}
   m_BlastTriggerAnimator: {fileID: 6948309417212137466}

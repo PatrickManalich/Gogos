@@ -171,6 +171,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3630112515543895845, guid: 914e2e53c22a9114b9f4e8cf235f4b30,
+        type: 3}
+      propertyPath: m_Collider
+      value: 
+      objectReference: {fileID: 2160857855204796040}
     - target: {fileID: 3630112515543895846, guid: 914e2e53c22a9114b9f4e8cf235f4b30,
         type: 3}
       propertyPath: m_Controller

@@ -518,6 +518,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlastTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 6948309417212137465, guid: 344b682428eb69949990451fcb3f954b,
+        type: 3}
+      propertyPath: m_Collider
+      value: 
+      objectReference: {fileID: 1889452499667328495}
     - target: {fileID: 6948309417212137466, guid: 344b682428eb69949990451fcb3f954b,
         type: 3}
       propertyPath: m_Controller
