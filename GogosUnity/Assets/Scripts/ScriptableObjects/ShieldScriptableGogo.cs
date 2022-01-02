@@ -10,5 +10,9 @@ namespace Gogos
         [SerializeField]
         private ShieldStrengthTier m_ShieldStrengthTier;
         public ShieldStrengthTier ShieldStrengthTier => m_ShieldStrengthTier;
+
+        [SerializeField]
+        private GroupsByShieldResponse m_GroupsByShieldResponse;
+        public GroupsByShieldResponse ShieldResponsesByGroups => m_GroupsByShieldResponse;
     }
 }

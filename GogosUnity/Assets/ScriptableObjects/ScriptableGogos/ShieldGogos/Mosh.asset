@@ -21,3 +21,7 @@ MonoBehaviour:
   m_WeightTier: 0
   m_RangeTier: 0
   m_ShieldStrengthTier: 2
+  m_GroupsByShieldResponse:
+    m_val: 7
+    m_keys: 00000000
+    m_values: 02000000
