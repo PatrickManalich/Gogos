@@ -5,6 +5,9 @@ namespace Gogos
     public class ShieldGogo : AbstractGogo
     {
         [SerializeField]
+        private ShieldAbility m_ShieldAbility;
+
+        [SerializeField]
         private GroundSnapper m_TriggerRangeGroundSnapper;
 
         [SerializeField]
@@ -29,6 +32,7 @@ namespace Gogos
             base.SetTiers(identifiableGogo);
             var shieldScriptableGogo = (ShieldScriptableGogo)IdentifiableGogo.ScriptableGogo;
             TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength).SetTier((int)shieldScriptableGogo.ShieldStrengthTier);
+            m_ShieldAbility.SetAbility(shieldScriptableGogo.ShieldResponsesByGroups);
         }
 
         protected override void OnStartedMoving()
@@ -41,7 +45,7 @@ namespace Gogos
             if (!m_ShieldStrengthTierTracker.IsShieldBroken)
             {
                 m_TriggerRangeGroundSnapper.SnapToGround();
-                m_ShieldTrigger.EnableShield(m_ShieldStrengthTierTracker);
+                m_ShieldTrigger.EnableShield(m_ShieldStrengthTierTracker, m_ShieldAbility);
             }
         }
     }
