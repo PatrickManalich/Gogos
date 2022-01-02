@@ -10,14 +10,14 @@ namespace Gogos
         [SerializeField]
         private TextMeshProUGUI m_Text;
 
-        public void SetSupportAbility(SupportableGroups supportableGroups, TierVariant tierVariant, int tierModifier)
+        public void SetSupportAbility(Groups supportableGroups, TierVariant tierVariant, int tierModifier)
         {
             var supportableGroupNames = new List<string>();
-            foreach (SupportableGroups supportableGroup in Enum.GetValues(typeof(SupportableGroups)))
+            foreach (Groups group in Enum.GetValues(typeof(Groups)))
             {
-                if (supportableGroups.HasFlag(supportableGroup))
+                if (supportableGroups.HasFlag(group))
                 {
-                    supportableGroupNames.Add(supportableGroup.ToString());
+                    supportableGroupNames.Add(group.ToString());
                 }
             }
             var supportableGroupsText = string.Join("/", supportableGroupNames).SplitOnCamelCase();

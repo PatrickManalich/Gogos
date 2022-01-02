@@ -27,7 +27,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Gogo: {fileID: 7415381055048773360}
-  m_SupportableGroups: 0
+  m_Groups: 0
   m_TierVariant: 0
   m_TierModifier: 0
 --- !u!114 &7415381055048773360

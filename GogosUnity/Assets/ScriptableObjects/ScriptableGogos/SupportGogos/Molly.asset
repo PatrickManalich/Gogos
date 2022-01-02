@@ -20,6 +20,6 @@ MonoBehaviour:
   m_RarityTier: 0
   m_WeightTier: 0
   m_RangeTier: 0
-  m_SupportableGroups: 1
+  m_Groups: 1
   m_SupportAbilityTierVariant: 3
   m_SupportAbilityTierModifier: 1
