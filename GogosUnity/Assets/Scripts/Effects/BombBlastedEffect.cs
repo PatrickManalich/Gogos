@@ -18,7 +18,7 @@ namespace Gogos
         private RangeTierTracker m_RangeTierTracker;
 
         [SerializeField]
-        private BlastForceTierTracker m_BlastForceTierTracker;
+        private BlastPowerTierTracker m_BlastPowerTierTracker;
 
         [SerializeField]
         private BlastTrigger m_BlastTrigger;
@@ -39,7 +39,7 @@ namespace Gogos
             m_TriggerRangeRefresher.enabled = false;
 
             m_TriggerAnimationSubject.AddObserverForAnimationFinished(this, TriggerAnimation.Expand);
-            m_BlastTrigger.Blast(m_RangeTierTracker, m_BlastForceTierTracker);
+            m_BlastTrigger.Blast(m_RangeTierTracker, m_BlastPowerTierTracker);
         }
     }
 }

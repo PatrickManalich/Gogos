@@ -28,7 +28,7 @@ namespace Gogos
         private GameObject m_BlastDetails;
 
         [SerializeField]
-        private TierDetails m_BlastForceTierDetails;
+        private TierDetails m_BlastPowerTierDetails;
 
         [SerializeField]
         private Image m_BlastShapeIllustration;
@@ -67,8 +67,8 @@ namespace Gogos
             {
                 case GogoVariant.Blast:
                     var blastScriptableGogo = (BlastScriptableGogo)scriptableGogo;
-                    var blastForceTierTracker = (BlastForceTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastForce);
-                    m_BlastForceTierDetails.SetSlots(blastForceTierTracker.Tier, blastScriptableGogo.BlastForceTier);
+                    var blastPowerTierTracker = (BlastPowerTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastPower);
+                    m_BlastPowerTierDetails.SetSlots(blastPowerTierTracker.Tier, blastScriptableGogo.BlastPowerTier);
                     m_BlastShapeIllustration.sprite = blastScriptableGogo.BlastShapeIllustration;
                     m_BlastDetails.SetActive(true);
                     break;

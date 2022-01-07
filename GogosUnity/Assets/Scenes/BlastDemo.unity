@@ -3183,7 +3183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RangeTierTracker: {fileID: 1757075246}
-  m_BlastForceTierTracker: {fileID: 1757075244}
+  m_BlastPowerTierTracker: {fileID: 1757075244}
   m_BlastTrigger: {fileID: 998724980}
 --- !u!4 &2046958977
 Transform:

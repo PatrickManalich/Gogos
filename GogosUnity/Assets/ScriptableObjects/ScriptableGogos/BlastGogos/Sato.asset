@@ -20,6 +20,6 @@ MonoBehaviour:
   m_RarityTier: 0
   m_WeightTier: 0
   m_RangeTier: 0
-  m_BlastForceTier: 0
+  m_BlastPowerTier: 0
   m_BlastShapeIllustration: {fileID: 21300000, guid: ee7aef91e7e9c964d803749b9a6cf7ec,
     type: 3}

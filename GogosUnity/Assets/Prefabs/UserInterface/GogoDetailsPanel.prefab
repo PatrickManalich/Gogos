@@ -357,7 +357,7 @@ MonoBehaviour:
   m_WeightTierDetails: {fileID: 7640100243151705112}
   m_RangeTierDetails: {fileID: 7640100243128508012}
   m_BlastDetails: {fileID: 4154288254550966765}
-  m_BlastForceTierDetails: {fileID: 7640100244159076785}
+  m_BlastPowerTierDetails: {fileID: 7640100244159076785}
   m_BlastShapeIllustration: {fileID: 4154288255621574549}
   m_ShieldDetails: {fileID: 4154288253831935395}
   m_ShieldStrengthTierDetails: {fileID: 7640100243818261455}
@@ -1978,7 +1978,7 @@ PrefabInstance:
     - target: {fileID: 4258663197151747708, guid: 60b2e5dbdd8f9694298ca579971deee4,
         type: 3}
       propertyPath: m_text
-      value: 'Blast Force:'
+      value: 'Blast Power:'
       objectReference: {fileID: 0}
     - target: {fileID: 4258663197151747708, guid: 60b2e5dbdd8f9694298ca579971deee4,
         type: 3}
@@ -2068,7 +2068,7 @@ PrefabInstance:
     - target: {fileID: 8774127021121508776, guid: 60b2e5dbdd8f9694298ca579971deee4,
         type: 3}
       propertyPath: m_Name
-      value: BlastForceTierDetails
+      value: BlastPowerTierDetails
       objectReference: {fileID: 0}
     - target: {fileID: 8774127021121508779, guid: 60b2e5dbdd8f9694298ca579971deee4,
         type: 3}

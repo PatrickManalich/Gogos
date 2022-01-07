@@ -8,7 +8,7 @@ namespace Gogos
 
         public RangeTierTracker RangeTierTracker { get; private set; }
 
-        public BlastForceTierTracker BlastForceTierTracker { get; private set; }
+        public BlastPowerTierTracker BlastPowerTierTracker { get; private set; }
 
         public Vector3 CenterPosition { get; private set; }
 
@@ -25,10 +25,10 @@ namespace Gogos
             m_Collider.enabled = false;
         }
 
-        public void Blast(RangeTierTracker rangeTierTracker, BlastForceTierTracker blastForceTierTracker)
+        public void Blast(RangeTierTracker rangeTierTracker, BlastPowerTierTracker blastPowerTierTracker)
         {
             RangeTierTracker = rangeTierTracker;
-            BlastForceTierTracker = blastForceTierTracker;
+            BlastPowerTierTracker = blastPowerTierTracker;
             CenterPosition = transform.position;
             m_Collider.enabled = true;
             m_BlastTriggerAnimator.SetTrigger(ExpandName);

@@ -8,8 +8,8 @@ namespace Gogos
         public override GogoVariant GogoVariant => GogoVariant.Blast;
 
         [SerializeField]
-        private BlastForceTier m_BlastForceTier;
-        public BlastForceTier BlastForceTier => m_BlastForceTier;
+        private BlastPowerTier m_BlastPowerTier;
+        public BlastPowerTier BlastPowerTier => m_BlastPowerTier;
 
         [SerializeField]
         private Sprite m_BlastShapeIllustration;

@@ -32,7 +32,7 @@ namespace Gogos
         {
             base.SetTiers(identifiableGogo);
             var blastScriptableGogo = (BlastScriptableGogo)IdentifiableGogo.ScriptableGogo;
-            TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastForce).SetTier((int)blastScriptableGogo.BlastForceTier);
+            TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastPower).SetTier((int)blastScriptableGogo.BlastPowerTier);
         }
 
         protected override void OnStartedMoving()
@@ -45,8 +45,8 @@ namespace Gogos
             m_TriggerRangeRefresher.enabled = false;
             m_TriggerRangeRotationAligner.AlignWithRotation(m_LauncherAlignedRotation);
             var rangeTierTracker = (RangeTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range);
-            var blastForceTierTracker = (BlastForceTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastForce);
-            m_BlastTrigger.Blast(rangeTierTracker, blastForceTierTracker);
+            var blastPowerTierTracker = (BlastPowerTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastPower);
+            m_BlastTrigger.Blast(rangeTierTracker, blastPowerTierTracker);
 
             UnsubscribeFromMovementEvents();
         }
