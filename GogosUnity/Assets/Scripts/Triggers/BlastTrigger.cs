@@ -10,6 +10,8 @@ namespace Gogos
 
         public BlastForceTierTracker BlastForceTierTracker { get; private set; }
 
+        public Vector3 CenterPosition { get; private set; }
+
         [SerializeField]
         private Collider m_Collider;
 
@@ -27,6 +29,7 @@ namespace Gogos
         {
             RangeTierTracker = rangeTierTracker;
             BlastForceTierTracker = blastForceTierTracker;
+            CenterPosition = transform.position;
             m_Collider.enabled = true;
             m_BlastTriggerAnimator.SetTrigger(ExpandName);
         }
