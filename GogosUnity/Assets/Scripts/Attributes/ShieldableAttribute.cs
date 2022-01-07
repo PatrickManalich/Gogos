@@ -20,8 +20,9 @@ namespace Gogos
                 var shieldAbility = shieldTrigger.ShieldAbility;
                 if (shieldAbility.CanDeflect(Player))
                 {
-                    var awayFromCenterDirection = (transform.position - shieldTrigger.CenterPosition).normalized;
-                    m_Rigidbody.AddForceAtPosition(awayFromCenterDirection * DeflectPower, m_ForcePoint.transform.position, ForceMode.Impulse);
+                    var outwardDirection = (transform.position - shieldTrigger.CenterPosition).normalized;
+                    var outwardForce = outwardDirection * DeflectPower;
+                    m_Rigidbody.AddForceAtPosition(outwardForce, m_ForcePoint.transform.position, ForceMode.Impulse);
 
                     var shieldStrengthTierTracker = shieldTrigger.ShieldStrengthTierTracker;
                     if (shieldStrengthTierTracker.LastTurnModified != TurnTracker.Turn)
