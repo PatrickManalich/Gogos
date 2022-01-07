@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Gogos
 {
@@ -12,6 +13,9 @@ namespace Gogos
 
         [SerializeField]
         private TriggerRangeRefresher m_TriggerRangeRefresher;
+
+        [SerializeField]
+        private RangeTierTracker m_RangeTierTracker;
 
         [SerializeField]
         private BlastForceTierTracker m_BlastForceTierTracker;
@@ -35,7 +39,7 @@ namespace Gogos
             m_TriggerRangeRefresher.enabled = false;
 
             m_TriggerAnimationSubject.AddObserverForAnimationFinished(this, TriggerAnimation.Expand);
-            m_BlastTrigger.Blast(m_BlastForceTierTracker);
+            m_BlastTrigger.Blast(m_RangeTierTracker, m_BlastForceTierTracker);
         }
     }
 }

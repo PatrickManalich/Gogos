@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Rigidbody: {fileID: 548931786222778509}
   m_Visuals: {fileID: 6515864784311866436}
   m_TriggerRangeRefresher: {fileID: 1889452499747304835}
+  m_RangeTierTracker: {fileID: 1889452499747304834}
   m_BlastForceTierTracker: {fileID: 1889452499747304837}
   m_BlastTrigger: {fileID: 2433857613121331455}
   m_TriggerAnimationSubject: {fileID: 2433857613121331453}

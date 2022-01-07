@@ -6,6 +6,8 @@ namespace Gogos
     {
         public Player Player { get; set; }
 
+        public RangeTierTracker RangeTierTracker { get; private set; }
+
         public BlastForceTierTracker BlastForceTierTracker { get; private set; }
 
         [SerializeField]
@@ -21,8 +23,9 @@ namespace Gogos
             m_Collider.enabled = false;
         }
 
-        public void Blast(BlastForceTierTracker blastForceTierTracker)
+        public void Blast(RangeTierTracker rangeTierTracker, BlastForceTierTracker blastForceTierTracker)
         {
+            RangeTierTracker = rangeTierTracker;
             BlastForceTierTracker = blastForceTierTracker;
             m_Collider.enabled = true;
             m_BlastTriggerAnimator.SetTrigger(ExpandName);
