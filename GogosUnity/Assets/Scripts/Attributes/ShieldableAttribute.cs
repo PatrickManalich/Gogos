@@ -10,7 +10,7 @@ namespace Gogos
         [SerializeField]
         private GameObject m_ForcePoint;
 
-        private const float DeflectForce = 10;
+        private const float DeflectPower = 10;
 
         protected override void OnTriggerEntered(TriggerEventArgs e)
         {
@@ -21,7 +21,7 @@ namespace Gogos
                 if (shieldAbility.CanDeflect(Player))
                 {
                     var awayFromCenterDirection = (transform.position - shieldTrigger.CenterPosition).normalized;
-                    m_Rigidbody.AddForceAtPosition(awayFromCenterDirection * DeflectForce, m_ForcePoint.transform.position, ForceMode.Impulse);
+                    m_Rigidbody.AddForceAtPosition(awayFromCenterDirection * DeflectPower, m_ForcePoint.transform.position, ForceMode.Impulse);
 
                     var shieldStrengthTierTracker = shieldTrigger.ShieldStrengthTierTracker;
                     if (shieldStrengthTierTracker.LastTurnModified != TurnTracker.Turn)
