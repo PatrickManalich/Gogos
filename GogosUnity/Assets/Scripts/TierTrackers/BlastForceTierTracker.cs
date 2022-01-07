@@ -14,15 +14,15 @@ namespace Gogos
         private static readonly Dictionary<BlastForceTier, float> BlastForcesByTier = new Dictionary<BlastForceTier, float>()
         {
             { BlastForceTier.Weak, 10 },
-            { BlastForceTier.Medium, 12 },
-            { BlastForceTier.Strong, 14 },
+            { BlastForceTier.Medium, 15 },
+            { BlastForceTier.Strong, 20 },
         };
 
         private static readonly Dictionary<BlastForceTier, float> BlastUpwardsModifiersByTier = new Dictionary<BlastForceTier, float>()
         {
-            { BlastForceTier.Weak, 2 },
-            { BlastForceTier.Medium, 2 },
-            { BlastForceTier.Strong, 2 },
+            { BlastForceTier.Weak, 15 },
+            { BlastForceTier.Medium, 20 },
+            { BlastForceTier.Strong, 25 },
         };
     }
 }
