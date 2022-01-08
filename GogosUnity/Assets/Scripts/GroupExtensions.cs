@@ -9,20 +9,10 @@ namespace Gogos
     {
         public static bool IsInGroup(this Groups groups, Player player, Player allyPlayer)
         {
-            var isInGroup = false;
-            if (groups.HasFlag(Groups.AllyGogos) && player == allyPlayer)
-            {
-                isInGroup = true;
-            }
-            if (groups.HasFlag(Groups.EnemyGogos) && player != null && player != allyPlayer)
-            {
-                isInGroup = true;
-            }
-            if (groups.HasFlag(Groups.UnclaimedGogos) && player == null)
-            {
-                isInGroup = true;
-            }
-            return isInGroup;
+            var isInAllyGogosGroup = groups.HasFlag(Groups.AllyGogos) && player == allyPlayer;
+            var isInEnemyGogosGroup = groups.HasFlag(Groups.EnemyGogos) && player != null && player != allyPlayer;
+            var isInUnclaimedGogosGroup = groups.HasFlag(Groups.UnclaimedGogos) && player == null;
+            return isInAllyGogosGroup || isInEnemyGogosGroup || isInUnclaimedGogosGroup;
         }
     }
 }
