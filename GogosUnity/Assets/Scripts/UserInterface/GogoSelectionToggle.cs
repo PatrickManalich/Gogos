@@ -31,7 +31,7 @@ namespace Gogos
 
             var scriptableGogo = IdentifiableGogo.ScriptableGogo;
             var situation = GogoSituationDatabase.GetSituation(IdentifiableGogo);
-            m_NicknameText.SetNickname(scriptableGogo.Nickname, scriptableGogo.RarityTier);
+            m_NicknameText.SetText(scriptableGogo.Nickname, scriptableGogo.RarityTier);
             m_GogoVariantIcon.SetIcon(scriptableGogo.GogoVariant);
             m_Portrait.SetPortrait(scriptableGogo.Portrait, situation);
             m_Toggle.interactable = situation == Situation.Available;

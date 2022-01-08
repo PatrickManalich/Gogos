@@ -11,7 +11,7 @@ namespace Gogos
         [SerializeField]
         private ScriptableColorPalette m_ScriptableColorPalette;
 
-        public void SetPlayerName(Player player)
+        public void SetText(Player player)
         {
             var palette = m_ScriptableColorPalette;
             var isUnclaimed = player == null;

@@ -10,7 +10,7 @@ namespace Gogos
         [SerializeField]
         private TextMeshProUGUI m_Text;
 
-        public void SetSupportAbility(Groups supportableGroups, TierVariant tierVariant, int tierModifier)
+        public void SetText(Groups supportableGroups, TierVariant tierVariant, int tierModifier)
         {
             var supportableGroupNames = new List<string>();
             foreach (Groups group in Enum.GetValues(typeof(Groups)))

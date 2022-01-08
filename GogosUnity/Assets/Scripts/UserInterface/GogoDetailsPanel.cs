@@ -51,9 +51,9 @@ namespace Gogos
         {
             var scriptableGogo = gogo.IdentifiableGogo.ScriptableGogo;
 
-            m_NicknameText.SetNickname(scriptableGogo.Nickname, scriptableGogo.RarityTier);
+            m_NicknameText.SetText(scriptableGogo.Nickname, scriptableGogo.RarityTier);
             m_GogoVariantIcon.SetIcon(scriptableGogo.GogoVariant);
-            m_PlayerNameText.SetPlayerName(gogo.Player);
+            m_PlayerNameText.SetText(gogo.Player);
             var weightTierTracker = (WeightTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.Weight);
             m_WeightTierDetails.SetSlots(weightTierTracker.Tier, scriptableGogo.WeightTier);
             var rangeTierTracker = (RangeTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range);
@@ -83,7 +83,7 @@ namespace Gogos
 
                 case GogoVariant.Support:
                     var supportScriptableGogo = (SupportScriptableGogo)scriptableGogo;
-                    m_SupportAbilityText.SetSupportAbility(supportScriptableGogo.Groups, supportScriptableGogo.SupportAbilityTierVariant, supportScriptableGogo.SupportAbilityTierModifier);
+                    m_SupportAbilityText.SetText(supportScriptableGogo.Groups, supportScriptableGogo.SupportAbilityTierVariant, supportScriptableGogo.SupportAbilityTierModifier);
                     m_SupportDetails.SetActive(true);
                     break;
             }

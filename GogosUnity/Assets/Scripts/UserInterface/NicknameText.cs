@@ -15,7 +15,7 @@ namespace Gogos
         [SerializeField]
         private ColorsByTier m_ColorsByTier;
 
-        public void SetNickname(string text, RarityTier rarityTier)
+        public void SetText(string text, RarityTier rarityTier)
         {
             m_Text.text = text;
             m_Text.color = m_ColorsByTier[rarityTier];
