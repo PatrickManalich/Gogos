@@ -4,6 +4,8 @@ namespace Gogos
 {
     public abstract class AbstractAttribute : MonoBehaviour
     {
+        public GroupTag GroupTag { get; private set; }
+
         public Player Player { get; set; }
 
         protected abstract void OnTriggerEntered(TriggerEventArgs e);
@@ -15,6 +17,8 @@ namespace Gogos
 
         private void Awake()
         {
+            GroupTag = GroupExtensions.GetGroupTag(m_TriggerListener.tag);
+
             m_TriggerListener.Entered += TriggerListener_OnEntered;
             m_TriggerListener.Exited += TriggerListener_OnExited;
         }
