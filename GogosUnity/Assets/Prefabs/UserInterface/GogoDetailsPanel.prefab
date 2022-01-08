@@ -980,7 +980,7 @@ PrefabInstance:
     - target: {fileID: 604470900165999167, guid: d078806331c87a747acc6bf522b2877d,
         type: 3}
       propertyPath: m_text
-      value: Ally Gogos Range +1
+      value: Ally Gogos <u>Range</u> +1
       objectReference: {fileID: 0}
     - target: {fileID: 604470900165999167, guid: d078806331c87a747acc6bf522b2877d,
         type: 3}

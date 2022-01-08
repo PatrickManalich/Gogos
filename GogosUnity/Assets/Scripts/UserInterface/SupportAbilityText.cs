@@ -23,7 +23,7 @@ namespace Gogos
             var supportableGroupsText = string.Join("/", supportableGroupNames).SplitOnCamelCase();
             var tierVariantText = tierVariant.ToString().SplitOnCamelCase();
             var tierModifierText = tierModifier.ToString("+0;-#");
-            m_Text.text = $"{supportableGroupsText} {tierVariantText} {tierModifierText}";
+            m_Text.text = $"{supportableGroupsText} <u>{tierVariantText}</u> {tierModifierText}";
         }
     }
 }
