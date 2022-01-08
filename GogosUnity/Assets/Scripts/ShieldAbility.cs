@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Gogos
 {
-    public enum ShieldResponse { Deflect }
+    public enum ShieldResponse { Deflect, Attract }
 
     [Serializable]
     public class GroupsByShieldResponse : SerializableDictionary<ShieldResponse, Groups> { }
@@ -26,6 +26,12 @@ namespace Gogos
         {
             var hasDeflectGroups = m_GroupsByShieldResponse.ContainsKey(ShieldResponse.Deflect);
             return hasDeflectGroups && m_GroupsByShieldResponse[ShieldResponse.Deflect].IsInGroup(player, m_Gogo.Player);
+        }
+
+        public bool CanAttract(Player player)
+        {
+            var hasAttractGroups = m_GroupsByShieldResponse.ContainsKey(ShieldResponse.Attract);
+            return hasAttractGroups && m_GroupsByShieldResponse[ShieldResponse.Attract].IsInGroup(player, m_Gogo.Player);
         }
     }
 }
