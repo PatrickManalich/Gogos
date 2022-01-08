@@ -22,16 +22,16 @@ namespace Gogos
             m_GroupsByShieldResponse = groupsByShieldResponse;
         }
 
-        public bool CanDeflect(Player player)
+        public bool CanDeflect(GroupTag groupTag, Player player)
         {
             var hasDeflectGroups = m_GroupsByShieldResponse.ContainsKey(ShieldResponse.Deflect);
-            return hasDeflectGroups && m_GroupsByShieldResponse[ShieldResponse.Deflect].IsInGroup(player, m_Gogo.Player);
+            return hasDeflectGroups && m_GroupsByShieldResponse[ShieldResponse.Deflect].IsInGroup(groupTag, player, m_Gogo.Player);
         }
 
-        public bool CanAttract(Player player)
+        public bool CanAttract(GroupTag groupTag, Player player)
         {
             var hasAttractGroups = m_GroupsByShieldResponse.ContainsKey(ShieldResponse.Attract);
-            return hasAttractGroups && m_GroupsByShieldResponse[ShieldResponse.Attract].IsInGroup(player, m_Gogo.Player);
+            return hasAttractGroups && m_GroupsByShieldResponse[ShieldResponse.Attract].IsInGroup(groupTag, player, m_Gogo.Player);
         }
     }
 }

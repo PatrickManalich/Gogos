@@ -27,9 +27,9 @@ namespace Gogos
             m_TierModifier = Mathf.Min(Mathf.Max(tierModifier, MinSupport), MaxSupport);
         }
 
-        public bool CanSupport(Player player, AbstractTierTracker tierTracker)
+        public bool CanSupport(GroupTag groupTag, Player player, AbstractTierTracker tierTracker)
         {
-            return m_Groups.IsInGroup(player, m_Gogo.Player) && tierTracker.TierVariant == m_TierVariant;
+            return m_Groups.IsInGroup(groupTag, player, m_Gogo.Player) && tierTracker.TierVariant == m_TierVariant;
         }
 
         public void ProvideSupport(AbstractTierTracker tierTracker)

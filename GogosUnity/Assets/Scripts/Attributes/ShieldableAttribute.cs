@@ -21,7 +21,7 @@ namespace Gogos
             if (shieldTrigger != null)
             {
                 var shieldAbility = shieldTrigger.ShieldAbility;
-                if (shieldAbility.CanDeflect(Player))
+                if (shieldAbility.CanDeflect(GroupTag, Player))
                 {
                     var outwardDirection = (transform.position - shieldTrigger.CenterPosition).normalized;
                     var outwardForce = outwardDirection * DeflectPower;
@@ -33,7 +33,7 @@ namespace Gogos
                         shieldStrengthTierTracker.ModifyTier(-1);
                     }
                 }
-                else if (shieldAbility.CanAttract(Player))
+                else if (shieldAbility.CanAttract(GroupTag, Player))
                 {
                     var centerPosition = shieldTrigger.CenterPosition;
                     var radius = shieldTrigger.RangeTierTracker.Range / 2;

@@ -19,7 +19,7 @@ namespace Gogos
                 var supportAbility = supportTrigger.SupportAbility;
                 foreach (var tierTracker in m_TierTrackerReference.TierTrackers)
                 {
-                    if (supportAbility.CanSupport(Player, tierTracker))
+                    if (supportAbility.CanSupport(GroupTag, Player, tierTracker))
                     {
                         supportAbility.ProvideSupport(tierTracker);
                         m_SupportProviderCount++;
@@ -36,7 +36,7 @@ namespace Gogos
                 var supportAbility = supportTrigger.SupportAbility;
                 foreach (var tierTracker in m_TierTrackerReference.TierTrackers)
                 {
-                    if (supportAbility.CanSupport(Player, tierTracker))
+                    if (supportAbility.CanSupport(GroupTag, Player, tierTracker))
                     {
                         supportAbility.RemoveSupport(tierTracker);
                         m_SupportProviderCount--;
