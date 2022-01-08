@@ -6,6 +6,8 @@ namespace Gogos
     {
         public Player Player { get; set; }
 
+        public RangeTierTracker RangeTierTracker { get; private set; }
+
         public ShieldStrengthTierTracker ShieldStrengthTierTracker { get; private set; }
 
         public ShieldAbility ShieldAbility { get; private set; }
@@ -25,8 +27,9 @@ namespace Gogos
             m_Collider.enabled = false;
         }
 
-        public void EnableShield(ShieldStrengthTierTracker shieldStrengthTierTracker, ShieldAbility shieldAbility)
+        public void EnableShield(RangeTierTracker rangeTierTracker, ShieldStrengthTierTracker shieldStrengthTierTracker, ShieldAbility shieldAbility)
         {
+            RangeTierTracker = rangeTierTracker;
             ShieldStrengthTierTracker = shieldStrengthTierTracker;
             ShieldAbility = shieldAbility;
             CenterPosition = transform.position;
