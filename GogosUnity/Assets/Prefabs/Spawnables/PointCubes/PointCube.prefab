@@ -131,6 +131,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PointCube
       objectReference: {fileID: 0}
+    - target: {fileID: 5635018811778720173, guid: a4e3ee3e6885e98459956f65029217ff,
+        type: 3}
+      propertyPath: m_TagString
+      value: PointCube
+      objectReference: {fileID: 0}
     - target: {fileID: 6393712719750604100, guid: a4e3ee3e6885e98459956f65029217ff,
         type: 3}
       propertyPath: m_RootOrder
