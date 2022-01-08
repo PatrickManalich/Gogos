@@ -40,6 +40,9 @@ namespace Gogos
         [SerializeField]
         private TierDetails m_ShieldStrengthTierDetails;
 
+        [SerializeField]
+        private ShieldAbilityText m_ShieldAbilityText;
+
         [Header("Support")]
         [SerializeField]
         private GameObject m_SupportDetails;
@@ -78,6 +81,7 @@ namespace Gogos
                     var shieldScriptableGogo = (ShieldScriptableGogo)scriptableGogo;
                     var shieldStrengthTierTracker = (ShieldStrengthTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength);
                     m_ShieldStrengthTierDetails.SetSlots(shieldStrengthTierTracker.Tier - 1, shieldScriptableGogo.ShieldStrengthTier - 1);
+                    m_ShieldAbilityText.SetText(shieldScriptableGogo.ShieldResponsesByGroups);
                     m_ShieldDetails.SetActive(true);
                     break;
 
