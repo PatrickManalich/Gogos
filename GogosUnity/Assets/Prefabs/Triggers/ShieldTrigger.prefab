@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5955972728301892920}
   - component: {fileID: 7902440074814652379}
   - component: {fileID: 7334806762794369824}
+  - component: {fileID: 6197757593136297761}
   - component: {fileID: 1943078695658579794}
   m_Layer: 9
   m_Name: ShieldTrigger
@@ -81,6 +82,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 1943078695658579794}
   m_ShieldTriggerAnimator: {fileID: 5955972728301892920}
+--- !u!114 &6197757593136297761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4772278130344971243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03ffbd3596031c34b9f7cdf0ae2232f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Collider: {fileID: 1943078695658579794}
 --- !u!135 &1943078695658579794
 SphereCollider:
   m_ObjectHideFlags: 0

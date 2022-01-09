@@ -518,6 +518,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6515581113765479377}
     m_Modifications:
+    - target: {fileID: 6487223615303349259, guid: 344b682428eb69949990451fcb3f954b,
+        type: 3}
+      propertyPath: m_Collider
+      value: 
+      objectReference: {fileID: 1889452499667328495}
     - target: {fileID: 6948309417212137464, guid: 344b682428eb69949990451fcb3f954b,
         type: 3}
       propertyPath: m_Name

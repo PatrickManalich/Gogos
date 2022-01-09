@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6948309417212137466}
   - component: {fileID: 6948309417212137467}
   - component: {fileID: 6948309417212137465}
+  - component: {fileID: 6487223615303349259}
   m_Layer: 9
   m_Name: BlastTrigger
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 0}
   m_BlastTriggerAnimator: {fileID: 6948309417212137466}
+--- !u!114 &6487223615303349259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6948309417212137464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03ffbd3596031c34b9f7cdf0ae2232f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Collider: {fileID: 0}
