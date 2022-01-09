@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5623534508148240945}
-  m_Father: {fileID: 5502864657008335263}
+  m_Father: {fileID: 6503397694430692254}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9052878921778818655
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de132fdc36c9d94897e84312784b390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TriggerAnimationSubject: {fileID: 7569435664113089353}
+  m_TriggerAnimationSubject: {fileID: 6503397694430692249}
   m_VisualEffect: {fileID: 5623534508148240947}
   m_AdjustColorAndIntensity: 1
   m_Color: {r: 0, g: 1, b: 1, a: 1}
@@ -228,7 +228,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4286049290393447443, guid: a078dd6d955ea6c4e934ee44a091c0c4,
+    - target: {fileID: 3979882185922305569, guid: a078dd6d955ea6c4e934ee44a091c0c4,
         type: 3}
       propertyPath: m_Controller
       value: 
@@ -241,15 +241,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ee9105bcfe65c2e49ac377b3889efb4f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a078dd6d955ea6c4e934ee44a091c0c4, type: 3}
---- !u!4 &5502864657008335263 stripped
+--- !u!4 &6503397694430692254 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2388541935194702886, guid: a078dd6d955ea6c4e934ee44a091c0c4,
+  m_CorrespondingSourceObject: {fileID: 3979882185922305575, guid: a078dd6d955ea6c4e934ee44a091c0c4,
     type: 3}
   m_PrefabInstance: {fileID: 7889132801888296377}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7569435664113089353 stripped
+--- !u!114 &6503397694430692249 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 321969843526772464, guid: a078dd6d955ea6c4e934ee44a091c0c4,
+  m_CorrespondingSourceObject: {fileID: 3979882185922305568, guid: a078dd6d955ea6c4e934ee44a091c0c4,
     type: 3}
   m_PrefabInstance: {fileID: 7889132801888296377}
   m_PrefabAsset: {fileID: 0}
