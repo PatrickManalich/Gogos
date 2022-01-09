@@ -14,7 +14,7 @@ namespace Gogos
         [SerializeField]
         private GameObject m_ForcePoint;
 
-        private const float MinBlastOutwardPower = 5;
+        private const float MinBlastOutwardPower = 8;
         private const float MinBlastUpwardPower = 10;
 
         protected override void OnTriggerEntered(TriggerEventArgs e)
