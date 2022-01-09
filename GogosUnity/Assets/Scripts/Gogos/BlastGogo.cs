@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Gogos
 {
@@ -11,7 +12,7 @@ namespace Gogos
         private RotationAligner m_TriggerRangeRotationAligner;
 
         [SerializeField]
-        private BlastTrigger m_BlastTrigger;
+        private List<BlastTrigger> m_BlastTriggers;
 
         private Launcher m_Launcher;
         private Quaternion m_LauncherAlignedRotation;
@@ -25,7 +26,7 @@ namespace Gogos
         public override void SetPlayer(Player player)
         {
             base.SetPlayer(player);
-            m_BlastTrigger.Player = Player;
+            m_BlastTriggers.ForEach(t => t.Player = Player);
         }
 
         public override void SetTiers(IdentifiableGogo identifiableGogo)
@@ -48,7 +49,7 @@ namespace Gogos
 
             var rangeTierTracker = (RangeTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range);
             var blastPowerTierTracker = (BlastPowerTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastPower);
-            m_BlastTrigger.Blast(rangeTierTracker, blastPowerTierTracker);
+            m_BlastTriggers.ForEach(t => t.Blast(rangeTierTracker, blastPowerTierTracker));
 
             UnsubscribeFromMovementEvents();
         }

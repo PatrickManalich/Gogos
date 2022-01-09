@@ -18,7 +18,8 @@ MonoBehaviour:
   m_TriggerRange: {fileID: 256999965922282365}
   m_TriggerRangeRefresher: {fileID: 4282728269017090885}
   m_TriggerRangeRotationAligner: {fileID: 25436058178282595}
-  m_BlastTrigger: {fileID: 6040586050711054379}
+  m_BlastTriggers:
+  - {fileID: 6040586050711054379}
 --- !u!114 &8819823901546428843
 MonoBehaviour:
   m_ObjectHideFlags: 0
