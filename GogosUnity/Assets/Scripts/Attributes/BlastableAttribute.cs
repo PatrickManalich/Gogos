@@ -14,7 +14,8 @@ namespace Gogos
         [SerializeField]
         private GameObject m_ForcePoint;
 
-        private const float MinBlastPower = 5;
+        private const float MinBlastOutwardPower = 5;
+        private const float MinBlastUpwardPower = 10;
 
         protected override void OnTriggerEntered(TriggerEventArgs e)
         {
@@ -25,12 +26,15 @@ namespace Gogos
                 var centerPosition = blastTrigger.CenterPosition;
                 var distance = Vector3.Distance(transform.position, centerPosition);
                 var radius = blastTrigger.RangeTierTracker.Range / 2;
-                var blastPower = distance.ConvertValueToDifferentRange(0, radius, blastTrigger.BlastPowerTierTracker.BlastOutwardPower, MinBlastPower);
-                var outwardDirection = (transform.position - centerPosition).normalized;
-                var outwardForce = outwardDirection * blastPower;
-                var upwardForce = Vector3.up * blastTrigger.BlastPowerTierTracker.BlastUpwardPower;
-                var force = outwardForce + upwardForce;
 
+                var blastOutwardPower = distance.ConvertValueToDifferentRange(0, radius, blastTrigger.BlastPowerTierTracker.BlastOutwardPower, MinBlastOutwardPower);
+                var outwardDirection = (transform.position - centerPosition).normalized;
+                var outwardForce = outwardDirection * blastOutwardPower;
+
+                var blastUpwardPower = distance.ConvertValueToDifferentRange(0, radius, blastTrigger.BlastPowerTierTracker.BlastUpwardPower, MinBlastUpwardPower);
+                var upwardForce = Vector3.up * blastUpwardPower;
+
+                var force = outwardForce + upwardForce;
                 m_Rigidbody.AddForceAtPosition(force, m_ForcePoint.transform.position, ForceMode.Impulse);
             }
         }
