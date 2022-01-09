@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 0}
   m_BlastTriggerAnimator: {fileID: 4864258171202324612}
+  m_CenterPoint: {fileID: 7793159107229254674}
 --- !u!1001 &507463772929693438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -97,6 +98,12 @@ GameObject:
 --- !u!95 &4864258171202324612 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4939198182775381626, guid: 707e259c5505b8d4795b3e5f35d92c9a,
+    type: 3}
+  m_PrefabInstance: {fileID: 507463772929693438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7793159107229254674 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7722551274584576748, guid: 707e259c5505b8d4795b3e5f35d92c9a,
     type: 3}
   m_PrefabInstance: {fileID: 507463772929693438}
   m_PrefabAsset: {fileID: 0}

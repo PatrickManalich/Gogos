@@ -10,13 +10,16 @@ namespace Gogos
 
         public BlastPowerTierTracker BlastPowerTierTracker { get; private set; }
 
-        public Vector3 CenterPosition { get; private set; }
+        public Vector3 CenterPosition => m_CenterPoint.transform.position;
 
         [SerializeField]
         private Collider m_Collider;
 
         [SerializeField]
         private Animator m_BlastTriggerAnimator;
+
+        [SerializeField]
+        private GameObject m_CenterPoint;
 
         private const string ExpandName = "Expand";
 
@@ -29,7 +32,6 @@ namespace Gogos
         {
             RangeTierTracker = rangeTierTracker;
             BlastPowerTierTracker = blastPowerTierTracker;
-            CenterPosition = transform.position;
             m_Collider.enabled = true;
             m_BlastTriggerAnimator.SetTrigger(ExpandName);
         }

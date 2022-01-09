@@ -27,6 +27,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2337255101807616154}
   m_SupportTriggerAnimator: {fileID: 5285119914891561996}
+  m_CenterPoint: {fileID: 7421661072483549338}
 --- !u!1 &4884356566962860358
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +211,12 @@ Transform:
 --- !u!95 &5285119914891561996 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4939198182775381626, guid: 707e259c5505b8d4795b3e5f35d92c9a,
+    type: 3}
+  m_PrefabInstance: {fileID: 996151056173929078}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7421661072483549338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7722551274584576748, guid: 707e259c5505b8d4795b3e5f35d92c9a,
     type: 3}
   m_PrefabInstance: {fileID: 996151056173929078}
   m_PrefabAsset: {fileID: 0}

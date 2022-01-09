@@ -8,11 +8,16 @@ namespace Gogos
 
         public SupportAbility SupportAbility { get; private set; }
 
+        public Vector3 CenterPosition => m_CenterPoint.transform.position;
+
         [SerializeField]
         private Collider m_Collider;
 
         [SerializeField]
         private Animator m_SupportTriggerAnimator;
+
+        [SerializeField]
+        private GameObject m_CenterPoint;
 
         private const string ExpandName = "Expand";
 
