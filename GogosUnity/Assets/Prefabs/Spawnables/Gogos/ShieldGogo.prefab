@@ -32,6 +32,7 @@ MonoBehaviour:
   m_AttributesReference: {fileID: 3227170813444989681}
   m_TierTrackerReference: {fileID: 7859917750685172594}
   m_Accelerometer: {fileID: 8208275468981767252}
+  m_TriggerRange: {fileID: 5672876855480068016}
   m_ShieldAbility: {fileID: 176925268747412581}
   m_TriggerRangeGroundSnapper: {fileID: 8491893478094934885}
   m_ShieldTrigger: {fileID: 871078600622971403}

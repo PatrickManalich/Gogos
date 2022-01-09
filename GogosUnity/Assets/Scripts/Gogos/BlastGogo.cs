@@ -44,6 +44,8 @@ namespace Gogos
         {
             m_TriggerRangeRefresher.enabled = false;
             m_TriggerRangeRotationAligner.AlignWithRotation(m_LauncherAlignedRotation);
+            UnparentTriggerRange();
+
             var rangeTierTracker = (RangeTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range);
             var blastPowerTierTracker = (BlastPowerTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastPower);
             m_BlastTrigger.Blast(rangeTierTracker, blastPowerTierTracker);

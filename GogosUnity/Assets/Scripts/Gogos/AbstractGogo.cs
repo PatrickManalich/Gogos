@@ -19,18 +19,29 @@ namespace Gogos
         [SerializeField]
         private Accelerometer m_Accelerometer;
 
+        [SerializeField]
+        private GameObject m_TriggerRange;
+
+        private Transform m_TriggerRangeParent;
+
         protected abstract void OnStartedMoving();
 
         protected abstract void OnStoppedMoving();
 
         protected virtual void Start()
         {
+            m_TriggerRangeParent = m_TriggerRange.transform.parent;
+
             SubscribeToMovementEvents();
         }
 
         protected virtual void OnDestroy()
         {
             UnsubscribeFromMovementEvents();
+            if (m_TriggerRange != null)
+            {
+                Destroy(m_TriggerRange);
+            }
         }
 
         public virtual void SetPlayer(Player player)
@@ -63,6 +74,16 @@ namespace Gogos
         {
             m_Accelerometer.StoppedMoving -= Accelerometer_OnStoppedMoving;
             m_Accelerometer.StartedMoving -= Accelerometer_OnStartedMoving;
+        }
+
+        protected void UnparentTriggerRange()
+        {
+            m_TriggerRange.transform.parent = null;
+        }
+
+        protected void ReparentTriggerRange()
+        {
+            m_TriggerRange.transform.parent = m_TriggerRangeParent;
         }
 
         private void Accelerometer_OnStartedMoving()

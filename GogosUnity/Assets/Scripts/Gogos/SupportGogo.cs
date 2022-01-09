@@ -28,12 +28,14 @@ namespace Gogos
 
         protected override void OnStartedMoving()
         {
+            ReparentTriggerRange();
             m_SupportTrigger.RemoveSupport();
         }
 
         protected override void OnStoppedMoving()
         {
             m_TriggerRangeGroundSnapper.SnapToGround();
+            UnparentTriggerRange();
             m_SupportTrigger.ProvideSupport(m_SupportAbility);
         }
     }

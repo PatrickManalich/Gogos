@@ -39,6 +39,7 @@ namespace Gogos
 
         protected override void OnStartedMoving()
         {
+            ReparentTriggerRange();
             m_ShieldTrigger.DisableShield();
         }
 
@@ -47,6 +48,7 @@ namespace Gogos
             if (!m_ShieldStrengthTierTracker.IsShieldBroken)
             {
                 m_TriggerRangeGroundSnapper.SnapToGround();
+                UnparentTriggerRange();
                 m_ShieldTrigger.EnableShield(m_RangeTierTracker, m_ShieldStrengthTierTracker, m_ShieldAbility);
             }
         }
