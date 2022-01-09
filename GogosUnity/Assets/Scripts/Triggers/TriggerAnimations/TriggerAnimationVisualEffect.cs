@@ -51,7 +51,6 @@ namespace Gogos
 
         public void Notify()
         {
-            m_VisualEffect.transform.parent = null;
             m_VisualEffect.SetActive(true);
             StartCoroutine(ResetVisualEffectAfterDelayRoutine());
         }
@@ -59,7 +58,6 @@ namespace Gogos
         private IEnumerator ResetVisualEffectAfterDelayRoutine()
         {
             yield return new WaitForSeconds(m_ResetVisualEffectDelay);
-            m_VisualEffect.transform.parent = transform;
             m_VisualEffect.SetActive(false);
         }
     }
