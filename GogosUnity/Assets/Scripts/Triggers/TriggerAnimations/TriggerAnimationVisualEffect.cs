@@ -21,7 +21,7 @@ namespace Gogos
         private float m_Intensity;
 
         [SerializeField]
-        private float m_ResetVisualEffectDelay;
+        private float m_ResetDelay;
 
         private void Start()
         {
@@ -52,12 +52,12 @@ namespace Gogos
         public void Notify()
         {
             m_VisualEffect.SetActive(true);
-            StartCoroutine(ResetVisualEffectAfterDelayRoutine());
+            StartCoroutine(ResetAfterDelayRoutine());
         }
 
-        private IEnumerator ResetVisualEffectAfterDelayRoutine()
+        private IEnumerator ResetAfterDelayRoutine()
         {
-            yield return new WaitForSeconds(m_ResetVisualEffectDelay);
+            yield return new WaitForSeconds(m_ResetDelay);
             m_VisualEffect.SetActive(false);
         }
     }
