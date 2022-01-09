@@ -35,3 +35,6 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+# Find Reference 2 asset cache
+GogosUnity/Assets/FR2_Cache.asset
+GogosUnity/Assets/FR2_Cache.asset.meta
