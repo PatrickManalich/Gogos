@@ -80,7 +80,6 @@ MonoBehaviour:
   m_AdjustColorAndIntensity: 0
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_Intensity: 0
-  m_ResetDelay: 1.75
 --- !u!65 &1889452499747304836
 BoxCollider:
   m_ObjectHideFlags: 0

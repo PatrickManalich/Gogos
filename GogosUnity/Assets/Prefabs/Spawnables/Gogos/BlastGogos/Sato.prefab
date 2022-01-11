@@ -49,7 +49,6 @@ MonoBehaviour:
   m_AdjustColorAndIntensity: 1
   m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_Intensity: 2
-  m_ResetDelay: 1.5
 --- !u!135 &8821750033288466822
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -49,7 +49,6 @@ MonoBehaviour:
   m_AdjustColorAndIntensity: 1
   m_Color: {r: 1, g: 0.3515994, b: 0, a: 1}
   m_Intensity: 10
-  m_ResetDelay: 3
 --- !u!136 &3373409863089108846
 CapsuleCollider:
   m_ObjectHideFlags: 0

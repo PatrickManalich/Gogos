@@ -62,7 +62,6 @@ MonoBehaviour:
   m_AdjustColorAndIntensity: 1
   m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_Intensity: 1
-  m_ResetDelay: 1.5
 --- !u!1001 &1864626057481844279
 PrefabInstance:
   m_ObjectHideFlags: 0
