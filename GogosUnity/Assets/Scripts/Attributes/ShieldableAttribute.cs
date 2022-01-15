@@ -18,32 +18,34 @@ namespace Gogos
         protected override void OnTriggerEntered(TriggerEventArgs e)
         {
             var shieldTrigger = e.OtherCollider.GetComponent<ShieldTrigger>();
-            if (shieldTrigger != null)
+            if (shieldTrigger == null)
             {
-                var shieldAbility = shieldTrigger.ShieldAbility;
-                if (shieldAbility.CanDeflect(GroupTag, Player))
-                {
-                    var outwardDirection = (transform.position - shieldTrigger.CenterPosition).normalized;
-                    var outwardForce = outwardDirection * DeflectPower;
-                    m_Rigidbody.AddForceAtPosition(outwardForce, m_ForcePoint.transform.position, ForceMode.Impulse);
+                return;
+            }
 
-                    var shieldStrengthTierTracker = shieldTrigger.ShieldStrengthTierTracker;
-                    if (GroupTag == GroupTag.Gogo && shieldStrengthTierTracker.LastTurnModified != TurnTracker.Turn)
-                    {
-                        shieldStrengthTierTracker.ModifyTier(-1);
-                    }
-                }
-                else if (shieldAbility.CanAttract(GroupTag, Player))
+            var shieldAbility = shieldTrigger.ShieldAbility;
+            if (shieldAbility.CanDeflect(GroupTag, Player))
+            {
+                var outwardDirection = (transform.position - shieldTrigger.CenterPosition).normalized;
+                var outwardForce = outwardDirection * DeflectPower;
+                m_Rigidbody.AddForceAtPosition(outwardForce, m_ForcePoint.transform.position, ForceMode.Impulse);
+
+                var shieldStrengthTierTracker = shieldTrigger.ShieldStrengthTierTracker;
+                if (GroupTag == GroupTag.Gogo && shieldStrengthTierTracker.LastTurnModified != TurnTracker.Turn)
                 {
-                    var centerPosition = shieldTrigger.CenterPosition;
-                    var radius = shieldTrigger.RangeTierTracker.Range / 2;
-                    var collisionHeight = Mathf.Clamp(transform.position.y - centerPosition.y, 0, radius);
-                    var attractPower = collisionHeight.ConvertValueToDifferentRange(0, radius, MaxAttractPower, MinAttractPower);
-                    var inwardDirection = (centerPosition - transform.position).normalized;
-                    var inwardForce = inwardDirection * attractPower;
-                    m_Rigidbody.velocity = m_Rigidbody.velocity.WithXZ(0, 0);
-                    m_Rigidbody.AddForceAtPosition(inwardForce, m_ForcePoint.transform.position, ForceMode.Impulse);
+                    shieldStrengthTierTracker.ModifyTier(-1);
                 }
+            }
+            else if (shieldAbility.CanAttract(GroupTag, Player))
+            {
+                var centerPosition = shieldTrigger.CenterPosition;
+                var radius = shieldTrigger.RangeTierTracker.Range / 2;
+                var collisionHeight = Mathf.Clamp(transform.position.y - centerPosition.y, 0, radius);
+                var attractPower = collisionHeight.ConvertValueToDifferentRange(0, radius, MaxAttractPower, MinAttractPower);
+                var inwardDirection = (centerPosition - transform.position).normalized;
+                var inwardForce = inwardDirection * attractPower;
+                m_Rigidbody.velocity = m_Rigidbody.velocity.WithXZ(0, 0);
+                m_Rigidbody.AddForceAtPosition(inwardForce, m_ForcePoint.transform.position, ForceMode.Impulse);
             }
         }
 

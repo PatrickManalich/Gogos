@@ -9,11 +9,13 @@ namespace Gogos
         protected override void OnTriggerEntered(TriggerEventArgs e)
         {
             var collectTrigger = e.OtherCollider.GetComponent<CollectTrigger>();
-            if (collectTrigger != null)
+            if (collectTrigger == null)
             {
-                Collected?.Invoke();
-                Destroy(m_TriggerListener.gameObject);
+                return;
             }
+
+            Collected?.Invoke();
+            Destroy(m_TriggerListener.gameObject);
         }
 
         protected override void OnTriggerExited(TriggerEventArgs e)

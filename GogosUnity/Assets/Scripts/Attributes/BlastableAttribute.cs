@@ -20,23 +20,30 @@ namespace Gogos
         protected override void OnTriggerEntered(TriggerEventArgs e)
         {
             var blastTrigger = e.OtherCollider.GetComponent<BlastTrigger>();
-            if (blastTrigger != null && (blastTrigger.Player == null || blastTrigger.Player != Player))
+            if (blastTrigger == null)
             {
-                Blasted?.Invoke();
-                var centerPosition = blastTrigger.CenterPosition;
-                var distance = Vector3.Distance(transform.position, centerPosition);
-                var radius = blastTrigger.RangeTierTracker.Range / 2;
-
-                var blastOutwardPower = distance.ConvertValueToDifferentRange(0, radius, blastTrigger.BlastPowerTierTracker.BlastOutwardPower, MinBlastOutwardPower);
-                var outwardDirection = (transform.position - centerPosition).normalized;
-                var outwardForce = outwardDirection * blastOutwardPower;
-
-                var blastUpwardPower = distance.ConvertValueToDifferentRange(0, radius, blastTrigger.BlastPowerTierTracker.BlastUpwardPower, MinBlastUpwardPower);
-                var upwardForce = Vector3.up * blastUpwardPower;
-
-                var force = outwardForce + upwardForce;
-                m_Rigidbody.AddForceAtPosition(force, m_ForcePoint.transform.position, ForceMode.Impulse);
+                return;
             }
+
+            if (blastTrigger.Player != null && blastTrigger.Player == Player)
+            {
+                return;
+            }
+
+            Blasted?.Invoke();
+            var centerPosition = blastTrigger.CenterPosition;
+            var distance = Vector3.Distance(transform.position, centerPosition);
+            var radius = blastTrigger.RangeTierTracker.Range / 2;
+
+            var blastOutwardPower = distance.ConvertValueToDifferentRange(0, radius, blastTrigger.BlastPowerTierTracker.BlastOutwardPower, MinBlastOutwardPower);
+            var outwardDirection = (transform.position - centerPosition).normalized;
+            var outwardForce = outwardDirection * blastOutwardPower;
+
+            var blastUpwardPower = distance.ConvertValueToDifferentRange(0, radius, blastTrigger.BlastPowerTierTracker.BlastUpwardPower, MinBlastUpwardPower);
+            var upwardForce = Vector3.up * blastUpwardPower;
+
+            var force = outwardForce + upwardForce;
+            m_Rigidbody.AddForceAtPosition(force, m_ForcePoint.transform.position, ForceMode.Impulse);
         }
 
         protected override void OnTriggerExited(TriggerEventArgs e)

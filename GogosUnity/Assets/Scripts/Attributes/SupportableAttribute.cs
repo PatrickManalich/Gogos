@@ -14,16 +14,18 @@ namespace Gogos
         protected override void OnTriggerEntered(TriggerEventArgs e)
         {
             var supportTrigger = e.OtherCollider.GetComponent<SupportTrigger>();
-            if (supportTrigger != null)
+            if (supportTrigger == null)
             {
-                var supportAbility = supportTrigger.SupportAbility;
-                foreach (var tierTracker in m_TierTrackerReference.TierTrackers)
+                return;
+            }
+
+            var supportAbility = supportTrigger.SupportAbility;
+            foreach (var tierTracker in m_TierTrackerReference.TierTrackers)
+            {
+                if (supportAbility.CanSupport(GroupTag, Player, tierTracker))
                 {
-                    if (supportAbility.CanSupport(GroupTag, Player, tierTracker))
-                    {
-                        supportAbility.ProvideSupport(tierTracker);
-                        m_SupportProviderCount++;
-                    }
+                    supportAbility.ProvideSupport(tierTracker);
+                    m_SupportProviderCount++;
                 }
             }
         }
