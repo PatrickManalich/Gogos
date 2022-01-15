@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 079a9ea77264948488dfb9755a02565f, type: 3}
+  m_Name: Tut
+  m_EditorClassIdentifier: 
+  m_Prefab: {fileID: 1226803167018861954, guid: 9b4623be8f688da4db178cc33c8b772c,
+    type: 3}
+  m_Nickname: Tut
+  m_Portrait: {fileID: 21300000, guid: da44a7d2d9c9750438a7a9853226a9c5, type: 3}
+  m_Number: 63
+  m_RarityTier: 0
+  m_WeightTier: 1
+  m_RangeTier: 0
+  m_ShieldStrengthTier: 2
+  m_GroupsByShieldResponse:
+    m_val: 7
+    m_keys: 0000000001000000
+    m_values: 0200000020000000
