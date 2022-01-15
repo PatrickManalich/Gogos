@@ -23,14 +23,18 @@ namespace Gogos
                 return;
             }
 
+            var shieldStrengthTierTracker = shieldTrigger.ShieldStrengthTierTracker;
+            if (shieldStrengthTierTracker.IsShieldBroken)
+            {
+                return;
+            }
+
             var shieldAbility = shieldTrigger.ShieldAbility;
             if (shieldAbility.CanDeflect(GroupTag, Player))
             {
                 var outwardDirection = (transform.position - shieldTrigger.CenterPosition).normalized;
                 var outwardForce = outwardDirection * DeflectPower;
                 m_Rigidbody.AddForceAtPosition(outwardForce, m_ForcePoint.transform.position, ForceMode.Impulse);
-
-                var shieldStrengthTierTracker = shieldTrigger.ShieldStrengthTierTracker;
                 if (GroupTag == GroupTag.Gogo && shieldStrengthTierTracker.LastTurnModified != TurnTracker.Turn)
                 {
                     shieldStrengthTierTracker.ModifyTier(-1);
