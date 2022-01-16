@@ -569,7 +569,7 @@ PrefabInstance:
     - target: {fileID: 5557052085324531307, guid: dd241a8a386a28445b3ac031fd6d51d1,
         type: 3}
       propertyPath: m_Name
-      value: DecreaseLaunchForceButton
+      value: DecreaseLaunchPowerButton
       objectReference: {fileID: 0}
     - target: {fileID: 6857459521307910610, guid: dd241a8a386a28445b3ac031fd6d51d1,
         type: 3}
@@ -888,7 +888,7 @@ PrefabInstance:
     - target: {fileID: 5557052085324531307, guid: dd241a8a386a28445b3ac031fd6d51d1,
         type: 3}
       propertyPath: m_Name
-      value: IncreaseLaunchForceButton
+      value: IncreaseLaunchPowerButton
       objectReference: {fileID: 0}
     - target: {fileID: 6857459521307910610, guid: dd241a8a386a28445b3ac031fd6d51d1,
         type: 3}
@@ -3057,9 +3057,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ForcePoint: {fileID: 1283564788}
   m_LaunchAngle: -45
-  m_MinLaunchForce: 10
-  m_MaxLaunchForce: 15
-  m_LaunchForceDelta: 5
+  m_MinLaunchPower: 10
+  m_MaxLaunchPower: 15
+  m_LaunchPowerDelta: 5
   m_Target: {fileID: 2077586319}
   m_MovementSpeed: 40
 --- !u!114 &1638789071
@@ -3719,8 +3719,8 @@ MonoBehaviour:
   m_Launcher: {fileID: 1638789070}
   m_MoveLeftButton: {fileID: 7666120206535448255}
   m_MoveRightButton: {fileID: 1355671952}
-  m_DecreaseLaunchForceButton: {fileID: 445400105}
-  m_IncreaseLaunchForceButton: {fileID: 575955625}
+  m_DecreaseLaunchPowerButton: {fileID: 445400105}
+  m_IncreaseLaunchPowerButton: {fileID: 575955625}
   m_LaunchButton: {fileID: 1229201990}
 --- !u!1 &2018693975 stripped
 GameObject:

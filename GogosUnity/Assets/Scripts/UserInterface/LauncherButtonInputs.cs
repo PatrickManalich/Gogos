@@ -15,10 +15,10 @@ namespace Gogos
         private HoldDownButton m_MoveRightButton;
 
         [SerializeField]
-        private HoldDownButton m_DecreaseLaunchForceButton;
+        private HoldDownButton m_DecreaseLaunchPowerButton;
 
         [SerializeField]
-        private HoldDownButton m_IncreaseLaunchForceButton;
+        private HoldDownButton m_IncreaseLaunchPowerButton;
 
         [SerializeField]
         private Button m_LaunchButton;
@@ -27,16 +27,16 @@ namespace Gogos
         {
             m_MoveLeftButton.Held += m_Launcher.MoveLeft;
             m_MoveRightButton.Held += m_Launcher.MoveRight;
-            m_DecreaseLaunchForceButton.Held += m_Launcher.DecreaseLaunchForce;
-            m_IncreaseLaunchForceButton.Held += m_Launcher.IncreaseLaunchForce;
+            m_DecreaseLaunchPowerButton.Held += m_Launcher.DecreaseLaunchPower;
+            m_IncreaseLaunchPowerButton.Held += m_Launcher.IncreaseLaunchPower;
             m_LaunchButton.onClick.AddListener(LaunchButton_OnClick);
         }
 
         private void OnDestroy()
         {
             m_LaunchButton.onClick.RemoveListener(LaunchButton_OnClick);
-            m_IncreaseLaunchForceButton.Held -= m_Launcher.IncreaseLaunchForce;
-            m_DecreaseLaunchForceButton.Held -= m_Launcher.DecreaseLaunchForce;
+            m_IncreaseLaunchPowerButton.Held -= m_Launcher.IncreaseLaunchPower;
+            m_DecreaseLaunchPowerButton.Held -= m_Launcher.DecreaseLaunchPower;
             m_MoveRightButton.Held -= m_Launcher.MoveRight;
             m_MoveLeftButton.Held -= m_Launcher.MoveLeft;
         }

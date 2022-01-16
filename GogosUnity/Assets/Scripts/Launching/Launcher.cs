@@ -11,7 +11,7 @@ namespace Gogos
         public event Action Launched;
 
         public Vector3 LaunchPoint => transform.position;
-        public Vector3 LaunchVector => transform.forward * m_CurrentLaunchForce;
+        public Vector3 LaunchForce => transform.forward * m_CurrentLaunchPower;
         public GameObject Projectile => m_ProjectileRigidbody?.gameObject;
         public bool ReadyForLaunch { get; private set; }
 
@@ -22,13 +22,13 @@ namespace Gogos
         private float m_LaunchAngle;
 
         [SerializeField]
-        private float m_MinLaunchForce;
+        private float m_MinLaunchPower;
 
         [SerializeField]
-        private float m_MaxLaunchForce;
+        private float m_MaxLaunchPower;
 
         [SerializeField]
-        private float m_LaunchForceDelta;
+        private float m_LaunchPowerDelta;
 
         [SerializeField]
         private GameObject m_Target;
@@ -36,7 +36,7 @@ namespace Gogos
         [SerializeField]
         private float m_MovementSpeed;
 
-        private float m_CurrentLaunchForce;
+        private float m_CurrentLaunchPower;
         private float m_DistanceToTarget;
         private float m_MovementAngle;
         private Rigidbody m_ProjectileRigidbody;
@@ -50,7 +50,7 @@ namespace Gogos
 
         private void OnEnable()
         {
-            m_CurrentLaunchForce = (m_MinLaunchForce + m_MaxLaunchForce) / 2;
+            m_CurrentLaunchPower = (m_MinLaunchPower + m_MaxLaunchPower) / 2;
         }
 
         public void LoadProjectile(GameObject projectile)
@@ -63,9 +63,9 @@ namespace Gogos
 
         public void MoveRight() => Move(1);
 
-        public void DecreaseLaunchForce() => ChangeLaunchForce(-1);
+        public void DecreaseLaunchPower() => ChangeLaunchPower(-1);
 
-        public void IncreaseLaunchForce() => ChangeLaunchForce(1);
+        public void IncreaseLaunchPower() => ChangeLaunchPower(1);
 
         public void PrepareForLaunch()
         {
@@ -81,7 +81,7 @@ namespace Gogos
         {
             m_ProjectileRigidbody.transform.parent = null;
             m_ProjectileRigidbody.isKinematic = false;
-            m_ProjectileRigidbody.AddForceAtPosition(LaunchVector * m_ProjectileRigidbody.mass, m_ForcePoint.transform.position, ForceMode.Impulse);
+            m_ProjectileRigidbody.AddForceAtPosition(LaunchForce * m_ProjectileRigidbody.mass, m_ForcePoint.transform.position, ForceMode.Impulse);
             ReadyForLaunch = false;
             Launched?.Invoke();
         }
@@ -93,10 +93,10 @@ namespace Gogos
             Align();
         }
 
-        private void ChangeLaunchForce(int direction)
+        private void ChangeLaunchPower(int direction)
         {
-            m_CurrentLaunchForce += Time.deltaTime * m_LaunchForceDelta * direction;
-            m_CurrentLaunchForce = Mathf.Clamp(m_CurrentLaunchForce, m_MinLaunchForce, m_MaxLaunchForce);
+            m_CurrentLaunchPower += Time.deltaTime * m_LaunchPowerDelta * direction;
+            m_CurrentLaunchPower = Mathf.Clamp(m_CurrentLaunchPower, m_MinLaunchPower, m_MaxLaunchPower);
         }
 
         private void Align()

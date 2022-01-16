@@ -28,7 +28,7 @@ namespace Gogos
             if (m_TrajectoryPredictor.gameObject.activeSelf)
             {
                 m_TrajectoryPredictor.debugLineDuration = Time.unscaledDeltaTime;
-                m_TrajectoryPredictor.Predict3D(m_Launcher.LaunchPoint, m_Launcher.LaunchVector, Physics.gravity);
+                m_TrajectoryPredictor.Predict3D(m_Launcher.LaunchPoint, m_Launcher.LaunchForce, Physics.gravity);
             }
         }
 

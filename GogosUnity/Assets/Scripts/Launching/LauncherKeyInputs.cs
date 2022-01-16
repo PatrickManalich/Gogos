@@ -33,11 +33,11 @@ namespace Gogos
             }
             if (InputKeys.IncreaseLaunchForceKey)
             {
-                m_Launcher.IncreaseLaunchForce();
+                m_Launcher.IncreaseLaunchPower();
             }
             if (InputKeys.DecreaseLaunchForceKey)
             {
-                m_Launcher.DecreaseLaunchForce();
+                m_Launcher.DecreaseLaunchPower();
             }
         }
     }
