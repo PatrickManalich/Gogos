@@ -36,7 +36,7 @@ namespace Gogos
 
         private void Launcher_OnLaunched()
         {
-            GogoSituationDatabase.SetSituation(CreatedGogo.IdentifiableGogo, Situation.InRing);
+            GogoSituationDatabase.SetSituation(CreatedGogo.IdentifiableGogo, Situation.Launched);
             CreatedGogo = null;
         }
     }

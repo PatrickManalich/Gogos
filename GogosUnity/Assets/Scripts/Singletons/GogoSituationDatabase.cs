@@ -2,7 +2,7 @@
 
 namespace Gogos
 {
-    public enum Situation { Available, InRing, OffRing }
+    public enum Situation { Available, Launched, Collected }
 
     public class GogoSituationDatabase : AbstractSingleton<GogoSituationDatabase>
     {

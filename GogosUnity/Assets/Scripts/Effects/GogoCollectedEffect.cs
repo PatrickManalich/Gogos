@@ -19,7 +19,7 @@ namespace Gogos
             {
                 PlayerTracker.Player.AddPoints(EnemyGogoPointValue);
             }
-            GogoSituationDatabase.SetSituation(m_Gogo.IdentifiableGogo, Situation.OffRing);
+            GogoSituationDatabase.SetSituation(m_Gogo.IdentifiableGogo, Situation.Collected);
         }
     }
 }

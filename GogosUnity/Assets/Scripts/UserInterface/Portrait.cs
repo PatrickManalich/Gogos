@@ -9,17 +9,17 @@ namespace Gogos
         private Image m_Image;
 
         [SerializeField]
-        private GameObject m_InRingIndicator;
+        private GameObject m_LaunchedIndicator;
 
         [SerializeField]
-        private GameObject m_OffRingIndicator;
+        private GameObject m_CollectedIndicator;
 
         public void SetPortrait(Sprite sprite, Situation situation)
         {
             m_Image.sprite = sprite;
             m_Image.color = Color.white;
-            m_InRingIndicator.SetActive(situation == Situation.InRing);
-            m_OffRingIndicator.SetActive(situation == Situation.OffRing);
+            m_LaunchedIndicator.SetActive(situation == Situation.Launched);
+            m_CollectedIndicator.SetActive(situation == Situation.Collected);
         }
     }
 }

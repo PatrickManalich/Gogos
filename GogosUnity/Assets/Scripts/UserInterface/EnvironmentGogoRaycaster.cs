@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 namespace Gogos
 {
-    public class RingGogoRaycaster : MonoBehaviour
+    public class EnvironmentGogoRaycaster : MonoBehaviour
     {
         [SerializeField]
         private GogoDetailsPanel m_GogoDetailsPanel;
@@ -42,7 +42,7 @@ namespace Gogos
             var firstGogo = gogoHits.OrderBy(h => h.distance).Select(h => h.collider.GetComponent<AbstractGogo>()).FirstOrDefault();
             if (firstGogo != null)
             {
-                if (firstGogo.Player == null || GogoSituationDatabase.GetSituation(firstGogo.IdentifiableGogo) == Situation.InRing)
+                if (firstGogo.Player == null || GogoSituationDatabase.GetSituation(firstGogo.IdentifiableGogo) == Situation.Launched)
                 {
                     m_GogoDetailsPanel.SetDetails(firstGogo);
                     m_GogoDetailsPanel.gameObject.SetActive(true);

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4391525946341873248}
   - component: {fileID: 4391525946341873249}
   m_Layer: 5
-  m_Name: InRingIndicator
+  m_Name: LaunchedIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 4391525946449815072}
   - component: {fileID: 4391525946449815073}
   m_Layer: 5
-  m_Name: OffRingIndicator
+  m_Name: CollectedIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,8 +238,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Image: {fileID: 4391525947274657153}
-  m_InRingIndicator: {fileID: 4391525946341873251}
-  m_OffRingIndicator: {fileID: 4391525946449815075}
+  m_LaunchedIndicator: {fileID: 4391525946341873251}
+  m_CollectedIndicator: {fileID: 4391525946449815075}
 --- !u!1 &7786499999594436859
 GameObject:
   m_ObjectHideFlags: 0
