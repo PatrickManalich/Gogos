@@ -9,10 +9,10 @@ namespace Gogos
         private Launcher m_Launcher;
 
         [SerializeField]
-        private HoldDownButton m_MoveLeftButton;
+        private HoldDownButton m_TurnLeftButton;
 
         [SerializeField]
-        private HoldDownButton m_MoveRightButton;
+        private HoldDownButton m_TurnRightButton;
 
         [SerializeField]
         private HoldDownButton m_DecreaseLaunchPowerButton;
@@ -25,8 +25,8 @@ namespace Gogos
 
         private void Start()
         {
-            m_MoveLeftButton.Held += m_Launcher.MoveLeft;
-            m_MoveRightButton.Held += m_Launcher.MoveRight;
+            m_TurnLeftButton.Held += m_Launcher.TurnLeft;
+            m_TurnRightButton.Held += m_Launcher.TurnRight;
             m_DecreaseLaunchPowerButton.Held += m_Launcher.DecreaseLaunchPower;
             m_IncreaseLaunchPowerButton.Held += m_Launcher.IncreaseLaunchPower;
             m_LaunchButton.onClick.AddListener(LaunchButton_OnClick);
@@ -37,8 +37,8 @@ namespace Gogos
             m_LaunchButton.onClick.RemoveListener(LaunchButton_OnClick);
             m_IncreaseLaunchPowerButton.Held -= m_Launcher.IncreaseLaunchPower;
             m_DecreaseLaunchPowerButton.Held -= m_Launcher.DecreaseLaunchPower;
-            m_MoveRightButton.Held -= m_Launcher.MoveRight;
-            m_MoveLeftButton.Held -= m_Launcher.MoveLeft;
+            m_TurnRightButton.Held -= m_Launcher.TurnRight;
+            m_TurnLeftButton.Held -= m_Launcher.TurnLeft;
         }
 
         private void LaunchButton_OnClick()

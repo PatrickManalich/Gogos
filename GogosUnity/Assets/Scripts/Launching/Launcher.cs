@@ -40,7 +40,7 @@ namespace Gogos
         private float m_LaunchPowerDelta;
 
         [SerializeField]
-        private float m_MovementSpeed;
+        private float m_TurnSpeed;
 
         private float m_LaunchPower;
         private Rigidbody m_ProjectileRigidbody;
@@ -64,9 +64,9 @@ namespace Gogos
             PrepareForLaunch();
         }
 
-        public void MoveLeft() => Move(-1);
+        public void TurnLeft() => Turn(-1);
 
-        public void MoveRight() => Move(1);
+        public void TurnRight() => Turn(1);
 
         public void DecreaseLaunchPower() => ChangeLaunchPower(-1);
 
@@ -91,9 +91,9 @@ namespace Gogos
             Launched?.Invoke();
         }
 
-        private void Move(int direction)
+        private void Turn(int direction)
         {
-            transform.Rotate(direction * m_MovementSpeed * Time.deltaTime * Vector3.up, Space.World);
+            transform.Rotate(direction * m_TurnSpeed * Time.deltaTime * Vector3.up, Space.World);
         }
 
         private void ChangeLaunchPower(int direction)

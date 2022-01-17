@@ -23,13 +23,13 @@ namespace Gogos
             {
                 m_Launcher.Launch();
             }
-            if (InputKeys.MoveLauncherLeftKey)
+            if (InputKeys.TurnLauncherLeftKey)
             {
-                m_Launcher.MoveLeft();
+                m_Launcher.TurnLeft();
             }
-            if (InputKeys.MoveLauncherRightKey)
+            if (InputKeys.TurnLauncherRightKey)
             {
-                m_Launcher.MoveRight();
+                m_Launcher.TurnRight();
             }
             if (InputKeys.IncreaseLaunchForceKey)
             {
