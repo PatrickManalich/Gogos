@@ -22,6 +22,12 @@ namespace Gogos
         private GameObject m_EnvironmentCenter;
 
         [SerializeField]
+        private LaunchPointTracker m_LaunchPointTracker;
+
+        [SerializeField]
+        private float m_VerticalOffset;
+
+        [SerializeField]
         private float m_LaunchAngle;
 
         [SerializeField]
@@ -37,20 +43,19 @@ namespace Gogos
         private float m_MovementSpeed;
 
         private float m_LaunchPower;
-        private float m_DistanceToTarget;
-        private float m_MovementAngle;
         private Rigidbody m_ProjectileRigidbody;
-
-        private void Start()
-        {
-            m_DistanceToTarget = Vector3.Distance(transform.position, m_EnvironmentCenter.transform.position);
-            m_MovementAngle = 270;
-            Align();
-        }
 
         private void OnEnable()
         {
             m_LaunchPower = (m_MinLaunchPower + m_MaxLaunchPower) / 2;
+
+            if (m_LaunchPointTracker.LaunchPoints.Count > 0)
+            {
+                transform.position = m_LaunchPointTracker.LaunchPoints[0];
+                transform.position = transform.position.WithY(transform.position.y + m_VerticalOffset);
+                transform.LookAt(m_EnvironmentCenter.transform);
+                transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.WithX(m_LaunchAngle));
+            }
         }
 
         public void LoadProjectile(GameObject projectile)
@@ -88,25 +93,13 @@ namespace Gogos
 
         private void Move(int direction)
         {
-            m_MovementAngle += Time.deltaTime * m_MovementSpeed * direction;
-            m_MovementAngle = m_MovementAngle.ClampAngle();
-            Align();
+            transform.Rotate(direction * m_MovementSpeed * Time.deltaTime * Vector3.up, Space.World);
         }
 
         private void ChangeLaunchPower(int direction)
         {
             m_LaunchPower += Time.deltaTime * m_LaunchPowerDelta * direction;
             m_LaunchPower = Mathf.Clamp(m_LaunchPower, m_MinLaunchPower, m_MaxLaunchPower);
-        }
-
-        private void Align()
-        {
-            var x = Mathf.Cos(m_MovementAngle.DegreesToRadians()) * m_DistanceToTarget;
-            var y = 0;
-            var z = Mathf.Sin(m_MovementAngle.DegreesToRadians()) * m_DistanceToTarget;
-            transform.position = new Vector3(x, y, z);
-            transform.LookAt(m_EnvironmentCenter.transform);
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.WithX(m_LaunchAngle));
         }
     }
 }

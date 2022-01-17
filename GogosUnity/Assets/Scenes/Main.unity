@@ -4876,6 +4876,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ForcePoint: {fileID: 1283564788}
   m_EnvironmentCenter: {fileID: 2077586319}
+  m_LaunchPointTracker: {fileID: 1258243681}
+  m_VerticalOffset: 2
   m_LaunchAngle: -45
   m_MinLaunchPower: 10
   m_MaxLaunchPower: 15
