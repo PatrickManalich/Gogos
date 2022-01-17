@@ -11,7 +11,7 @@ namespace Gogos
         public event Action Launched;
 
         public Vector3 LaunchPoint => transform.position;
-        public Vector3 LaunchForce => transform.forward * m_CurrentLaunchPower;
+        public Vector3 LaunchForce => transform.forward * m_LaunchPower;
         public GameObject Projectile => m_ProjectileRigidbody?.gameObject;
         public bool ReadyForLaunch { get; private set; }
 
@@ -36,7 +36,7 @@ namespace Gogos
         [SerializeField]
         private float m_MovementSpeed;
 
-        private float m_CurrentLaunchPower;
+        private float m_LaunchPower;
         private float m_DistanceToTarget;
         private float m_MovementAngle;
         private Rigidbody m_ProjectileRigidbody;
@@ -50,7 +50,7 @@ namespace Gogos
 
         private void OnEnable()
         {
-            m_CurrentLaunchPower = (m_MinLaunchPower + m_MaxLaunchPower) / 2;
+            m_LaunchPower = (m_MinLaunchPower + m_MaxLaunchPower) / 2;
         }
 
         public void LoadProjectile(GameObject projectile)
@@ -95,8 +95,8 @@ namespace Gogos
 
         private void ChangeLaunchPower(int direction)
         {
-            m_CurrentLaunchPower += Time.deltaTime * m_LaunchPowerDelta * direction;
-            m_CurrentLaunchPower = Mathf.Clamp(m_CurrentLaunchPower, m_MinLaunchPower, m_MaxLaunchPower);
+            m_LaunchPower += Time.deltaTime * m_LaunchPowerDelta * direction;
+            m_LaunchPower = Mathf.Clamp(m_LaunchPower, m_MinLaunchPower, m_MaxLaunchPower);
         }
 
         private void Align()
