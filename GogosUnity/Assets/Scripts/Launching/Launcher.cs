@@ -19,6 +19,9 @@ namespace Gogos
         private GameObject m_ForcePoint;
 
         [SerializeField]
+        private GameObject m_EnvironmentCenter;
+
+        [SerializeField]
         private float m_LaunchAngle;
 
         [SerializeField]
@@ -31,9 +34,6 @@ namespace Gogos
         private float m_LaunchPowerDelta;
 
         [SerializeField]
-        private GameObject m_Target;
-
-        [SerializeField]
         private float m_MovementSpeed;
 
         private float m_CurrentLaunchPower;
@@ -43,7 +43,7 @@ namespace Gogos
 
         private void Start()
         {
-            m_DistanceToTarget = Vector3.Distance(transform.position, m_Target.transform.position);
+            m_DistanceToTarget = Vector3.Distance(transform.position, m_EnvironmentCenter.transform.position);
             m_MovementAngle = 270;
             Align();
         }
@@ -105,7 +105,7 @@ namespace Gogos
             var y = 0;
             var z = Mathf.Sin(m_MovementAngle.DegreesToRadians()) * m_DistanceToTarget;
             transform.position = new Vector3(x, y, z);
-            transform.LookAt(m_Target.transform);
+            transform.LookAt(m_EnvironmentCenter.transform);
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.WithX(m_LaunchAngle));
         }
     }
