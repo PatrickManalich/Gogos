@@ -9,6 +9,9 @@ namespace Gogos
 
         public event EventHandler<TriggerEventArgs> Exited;
 
+        [SerializeField]
+        private Collider m_Collider;
+
         private void OnTriggerEnter(Collider otherCollider)
         {
             Entered?.Invoke(this, new TriggerEventArgs(otherCollider));
@@ -17,6 +20,16 @@ namespace Gogos
         private void OnTriggerExit(Collider otherCollider)
         {
             Exited?.Invoke(this, new TriggerEventArgs(otherCollider));
+        }
+
+        public void EnableTrigger()
+        {
+            m_Collider.enabled = true;
+        }
+
+        public void DisableTrigger()
+        {
+            m_Collider.enabled = false;
         }
     }
 }
