@@ -43,6 +43,7 @@ namespace Gogos
         private float m_TurnSpeed;
 
         private float m_LaunchPower;
+        private int m_LaunchPointIndex;
         private Rigidbody m_ProjectileRigidbody;
 
         private void OnEnable()
@@ -51,10 +52,7 @@ namespace Gogos
 
             if (m_LaunchPointTracker.LaunchPoints.Count > 0)
             {
-                transform.position = m_LaunchPointTracker.LaunchPoints[0];
-                transform.position = transform.position.WithY(transform.position.y + m_VerticalOffset);
-                transform.LookAt(m_EnvironmentCenter.transform);
-                transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.WithX(m_LaunchAngle));
+                CycleLaunchPoint(0);
             }
         }
 
@@ -71,6 +69,10 @@ namespace Gogos
         public void DecreaseLaunchPower() => ChangeLaunchPower(-1);
 
         public void IncreaseLaunchPower() => ChangeLaunchPower(1);
+
+        public void CyclePreviousLaunchPoint() => CycleLaunchPoint(-1);
+
+        public void CycleNextLaunchPoint() => CycleLaunchPoint(1);
 
         public void PrepareForLaunch()
         {
@@ -100,6 +102,24 @@ namespace Gogos
         {
             m_LaunchPower += Time.deltaTime * m_LaunchPowerDelta * direction;
             m_LaunchPower = Mathf.Clamp(m_LaunchPower, m_MinLaunchPower, m_MaxLaunchPower);
+        }
+
+        private void CycleLaunchPoint(int direction)
+        {
+            m_LaunchPointIndex += direction;
+            if (m_LaunchPointIndex > m_LaunchPointTracker.LaunchPoints.Count - 1)
+            {
+                m_LaunchPointIndex = 0;
+            }
+            else if (m_LaunchPointIndex < 0)
+            {
+                m_LaunchPointIndex = m_LaunchPointTracker.LaunchPoints.Count - 1;
+            }
+
+            transform.position = m_LaunchPointTracker.LaunchPoints[m_LaunchPointIndex];
+            transform.position = transform.position.WithY(transform.position.y + m_VerticalOffset);
+            transform.LookAt(m_EnvironmentCenter.transform);
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.WithX(m_LaunchAngle));
         }
     }
 }

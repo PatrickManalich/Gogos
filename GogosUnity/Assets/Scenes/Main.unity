@@ -164,6 +164,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c92f1ff6c2caec428fae3383959526a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &69568922 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1500019107662661162, guid: dd241a8a386a28445b3ac031fd6d51d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 869126885}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &77423482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6308,8 +6320,8 @@ MonoBehaviour:
   m_TurnRightButton: {fileID: 1355671952}
   m_DecreaseLaunchPowerButton: {fileID: 445400105}
   m_IncreaseLaunchPowerButton: {fileID: 575955625}
-  m_CyclePreviousLaunchPointButton: {fileID: 0}
-  m_CycleNextLaunchPointButton: {fileID: 0}
+  m_CyclePreviousLaunchPointButton: {fileID: 69568922}
+  m_CycleNextLaunchPointButton: {fileID: 2055290945}
   m_LaunchButton: {fileID: 1229201990}
 --- !u!1 &2018693975 stripped
 GameObject:
@@ -6501,6 +6513,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68fd81682b04d3746be711735d5e89a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2055290945 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1500019107662661162, guid: dd241a8a386a28445b3ac031fd6d51d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 277585682}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2064285899
