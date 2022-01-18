@@ -31,6 +31,14 @@ namespace Gogos
             {
                 m_Launcher.DecreaseLaunchPower();
             }
+            if (InputKeys.CyclePreviousLaunchPointKey)
+            {
+                m_Launcher.CyclePreviousLaunchPoint();
+            }
+            if (InputKeys.CycleNextLaunchPointKey)
+            {
+                m_Launcher.CycleNextLaunchPoint();
+            }
             if (InputKeys.ResetGogoKeyDown)
             {
                 m_Launcher.PrepareForLaunch();
