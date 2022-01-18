@@ -15,14 +15,6 @@ namespace Gogos
                 return;
             }
 
-            if (InputKeys.ResetGogoKeyDown)
-            {
-                m_Launcher.PrepareForLaunch();
-            }
-            if (InputKeys.LaunchGogoKeyDown && m_Launcher.ReadyForLaunch)
-            {
-                m_Launcher.Launch();
-            }
             if (InputKeys.TurnLauncherLeftKey)
             {
                 m_Launcher.TurnLeft();
@@ -38,6 +30,14 @@ namespace Gogos
             if (InputKeys.DecreaseLaunchForceKey)
             {
                 m_Launcher.DecreaseLaunchPower();
+            }
+            if (InputKeys.ResetGogoKeyDown)
+            {
+                m_Launcher.PrepareForLaunch();
+            }
+            if (InputKeys.LaunchGogoKeyDown && m_Launcher.ReadyForLaunch)
+            {
+                m_Launcher.Launch();
             }
         }
     }
