@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Gogos
@@ -32,7 +33,7 @@ namespace Gogos
             m_CollectableAttribute.Collected -= CollectableAttribute_OnCollected;
             m_CollectableAttribute = null;
 
-            Expanded?.Invoke();
+            StartCoroutine(InvokeExpandedAfterDelayRoutine());
         }
 
         private void PhaseTracker_OnPhaseChanged()
@@ -56,6 +57,12 @@ namespace Gogos
             m_CollectableAttribute = null;
 
             Collected?.Invoke();
+        }
+
+        private IEnumerator InvokeExpandedAfterDelayRoutine()
+        {
+            yield return new WaitForSeconds(2);
+            Expanded?.Invoke();
         }
     }
 }
