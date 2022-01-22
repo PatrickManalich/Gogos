@@ -116,7 +116,7 @@ namespace Gogos
                 m_LaunchPointIndex = m_LaunchPointTracker.LaunchPoints.Count - 1;
             }
 
-            transform.position = m_LaunchPointTracker.LaunchPoints[m_LaunchPointIndex];
+            transform.position = m_LaunchPointTracker.LaunchPoints[m_LaunchPointIndex].Position;
             transform.position = transform.position.WithY(transform.position.y + m_VerticalOffset);
             transform.LookAt(m_EnvironmentCenter.transform);
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.WithX(m_LaunchAngle));

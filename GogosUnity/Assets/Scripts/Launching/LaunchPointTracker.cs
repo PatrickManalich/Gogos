@@ -6,7 +6,7 @@ namespace Gogos
 {
     public class LaunchPointTracker : MonoBehaviour
     {
-        public List<Vector3> LaunchPoints { get; private set; } = new List<Vector3>();
+        public List<LaunchPoint> LaunchPoints { get; private set; } = new List<LaunchPoint>();
 
         [SerializeField]
         private Checkpoint[] m_Checkpoints;
@@ -41,12 +41,20 @@ namespace Gogos
         {
             LaunchPoints.Clear();
 
-            var checkpoints = m_Checkpoints.Where(c => c.Player == PlayerTracker.Player);
-            LaunchPoints.AddRange(checkpoints.Select(c => c.transform.position));
-
             var playersGogos = FindObjectsOfType<AbstractGogo>().Where(g => g.Player == PlayerTracker.Player);
             var launchedPlayerGogos = playersGogos.Where(p => GogoSituationDatabase.GetSituation(p.IdentifiableGogo) == Situation.Launched);
-            LaunchPoints.AddRange(launchedPlayerGogos.Select(l => l.transform.position));
+            foreach (var launchedPlayerGogo in launchedPlayerGogos)
+            {
+                LaunchPoints.Add(new LaunchPoint(launchedPlayerGogo.TurnLaunched, launchedPlayerGogo.transform.position));
+            }
+
+            var checkpoints = m_Checkpoints.Where(c => c.Player == PlayerTracker.Player);
+            foreach (var checkpoint in checkpoints)
+            {
+                LaunchPoints.Add(new LaunchPoint(checkpoint.TurnReached, checkpoint.transform.position));
+            }
+
+            LaunchPoints = LaunchPoints.OrderByDescending(l => l.Turn).ToList();
         }
     }
 }
