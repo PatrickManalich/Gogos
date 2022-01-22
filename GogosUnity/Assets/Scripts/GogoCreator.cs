@@ -36,6 +36,7 @@ namespace Gogos
 
         private void Launcher_OnLaunched()
         {
+            CreatedGogo.SetTurnLaunched(TurnTracker.Turn);
             GogoSituationDatabase.SetSituation(CreatedGogo.IdentifiableGogo, Situation.Launched);
             CreatedGogo = null;
         }

@@ -8,6 +8,8 @@ namespace Gogos
 
         public IdentifiableGogo IdentifiableGogo { get; private set; }
 
+        public int TurnLaunched { get; private set; }
+
         public TierTrackerReference TierTrackerReference => m_TierTrackerReference;
 
         [SerializeField]
@@ -62,6 +64,11 @@ namespace Gogos
             m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.Weight).SetTier((int)scriptableGogo.WeightTier);
             m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.PointValue).SetTier((int)scriptableGogo.PointValueTier);
             m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range).SetTier((int)scriptableGogo.RangeTier);
+        }
+
+        public virtual void SetTurnLaunched(int turnlaunched)
+        {
+            TurnLaunched = turnlaunched;
         }
 
         protected void SubscribeToMovementEvents()
