@@ -6,6 +6,8 @@ namespace Gogos
     {
         public Player Player { get; private set; }
 
+        public int TurnReached { get; private set; }
+
         public bool IsStartingCheckpoint => m_IsStartingCheckpoint;
 
         [SerializeField]
@@ -34,6 +36,11 @@ namespace Gogos
             m_CheckpointMarker.SetActive(false);
         }
 
+        public void SetTurnReached(int turnReached)
+        {
+            TurnReached = turnReached;
+        }
+
         private void TriggerListener_OnEntered(object sender, TriggerEventArgs e)
         {
             var gogo = e.OtherCollider.GetComponent<AbstractGogo>();
@@ -48,6 +55,7 @@ namespace Gogos
             }
 
             SetPlayer(gogo.Player);
+            SetTurnReached(TurnTracker.Turn);
         }
     }
 }

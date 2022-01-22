@@ -20,6 +20,7 @@ namespace Gogos
             {
                 var randomStartingCheckpoint = startingCheckpoints[Random.Range(0, startingCheckpoints.Count)];
                 randomStartingCheckpoint.SetPlayer(player);
+                randomStartingCheckpoint.SetTurnReached(TurnTracker.Turn);
                 startingCheckpoints.Remove(randomStartingCheckpoint);
             }
 
