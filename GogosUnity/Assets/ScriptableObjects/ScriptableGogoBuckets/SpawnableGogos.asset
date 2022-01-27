@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: SpawnableGogos
   m_EditorClassIdentifier: 
   m_ScriptableGogos:
-  - {fileID: 11400000, guid: 72505356aa88ec04181fcbc655a07ecf, type: 2}
-  - {fileID: 11400000, guid: 0e8ce1525d3ef0449945a87acc065782, type: 2}
-  - {fileID: 11400000, guid: 83b2c28732847a24c9d124b2aa2f67a6, type: 2}
+  - {fileID: 11400000, guid: ddab786e673d9354a80e5ccd6ef5fcf0, type: 2}
+  - {fileID: 11400000, guid: af0e5c280c5d17b4c954d5bce554963f, type: 2}
+  - {fileID: 11400000, guid: 8a55a98364bcd7247a2b1b45d3fd0938, type: 2}
+  - {fileID: 11400000, guid: e9cded3626c1e8e46b978705bdabca5f, type: 2}
+  - {fileID: 11400000, guid: 39484dd8d22cc964aa0b3ca58ac97247, type: 2}
+  - {fileID: 11400000, guid: e916e412c3e73064db9ea269996485b1, type: 2}
+  - {fileID: 11400000, guid: e6e1f52eadee8df4099ea1a588e1e094, type: 2}
+  - {fileID: 11400000, guid: 5326bf379da6ffd4b8ff6ce1dd6bffb9, type: 2}
+  - {fileID: 11400000, guid: 7168b5a993b82ad4fb4b6e4b6432f7ee, type: 2}
