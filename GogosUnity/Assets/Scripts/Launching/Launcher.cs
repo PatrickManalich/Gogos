@@ -118,7 +118,8 @@ namespace Gogos
 
             transform.position = m_LaunchPointTracker.LaunchPoints[m_LaunchPointIndex].Position;
             transform.position = transform.position.WithY(transform.position.y + m_VerticalOffset);
-            transform.LookAt(m_EnvironmentCenter.transform);
+            var lookAtTarget = m_LaunchPointIndex == 0 ? m_EnvironmentCenter.transform.position : m_LaunchPointTracker.LaunchPoints[m_LaunchPointIndex - 1].Position;
+            transform.LookAt(lookAtTarget);
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.WithX(m_LaunchAngle));
         }
     }
