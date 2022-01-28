@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace BarronAssociatesEditor
+namespace GogosEditor
 {
     public class TimeScaleWindow : EditorWindow
     {
