@@ -16,7 +16,7 @@ namespace GogosEditor
         private int m_StartNumber;
         private int m_CurrentIncrement;
 
-        [MenuItem("Gogos/Window/Rename Window")]
+        [MenuItem("Gogos/Window/Rename")]
         public static void ShowWindow()
         {
             GetWindow<RenameWindow>(false, "Rename");

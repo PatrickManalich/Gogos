@@ -11,7 +11,7 @@ namespace GogosEditor
         private float m_MinTimeScale = DefaultMinTimeScale;
         private float m_MaxTimeScale = DefaultMaxTimeScale;
 
-        [MenuItem("Gogos/Window/Time Scale Window")]
+        [MenuItem("Gogos/Window/Time Scale")]
         public static void ShowWindow()
         {
             GetWindow<TimeScaleWindow>(false, "Time Scale");
