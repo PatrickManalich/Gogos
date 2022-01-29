@@ -19,12 +19,18 @@ namespace Gogos
         private Vector3 m_LastLauncherPosition;
         private Quaternion m_LastLauncherRotation;
 
+        private void Awake()
+        {
+            m_SelectingTransposer = m_SelectingVirtualCamera.GetCinemachineComponent<CinemachineTransposer>();
+            m_SelectingComposer = m_SelectingVirtualCamera.GetCinemachineComponent<CinemachineComposer>();
+
+            m_SpawningVirtualCamera.gameObject.SetActive(true);
+            m_SelectingVirtualCamera.gameObject.SetActive(false);
+        }
+
         private void Start()
         {
             PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
-
-            m_SelectingTransposer = m_SelectingVirtualCamera.GetCinemachineComponent<CinemachineTransposer>();
-            m_SelectingComposer = m_SelectingVirtualCamera.GetCinemachineComponent<CinemachineComposer>();
         }
 
         private void OnDestroy()
