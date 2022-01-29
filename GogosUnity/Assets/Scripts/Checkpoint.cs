@@ -17,6 +17,15 @@ namespace Gogos
         private GameObject m_CheckpointMarker;
 
         [SerializeField]
+        private ShieldAbility m_ShieldAbility;
+
+        [SerializeField]
+        private TierTrackerReference m_TierTrackerReference;
+
+        [SerializeField]
+        private ShieldTrigger m_ShieldTrigger;
+
+        [SerializeField]
         private bool m_IsStartingCheckpoint;
 
         private void Start()
@@ -34,6 +43,12 @@ namespace Gogos
             Player = player;
             m_TriggerListener.DisableTrigger();
             m_CheckpointMarker.SetActive(false);
+
+            m_ShieldAbility.SetPlayer(Player);
+            m_ShieldTrigger.SetPlayer(Player);
+            var rangeTierTracker = (RangeTierTracker)m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range);
+            var shieldStrengthTierTracker = (ShieldStrengthTierTracker)m_TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength);
+            m_ShieldTrigger.EnableShield(rangeTierTracker, shieldStrengthTierTracker, m_ShieldAbility);
         }
 
         public void SetTurnReached(int turnReached)
