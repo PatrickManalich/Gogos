@@ -14,6 +14,9 @@ namespace Gogos
         [SerializeField]
         private CinemachineVirtualCamera m_SelectingVirtualCamera;
 
+        [SerializeField]
+        private CinemachineVirtualCamera m_LaunchingVirtualCamera;
+
         private CinemachineTransposer m_SelectingTransposer;
         private CinemachineComposer m_SelectingComposer;
         private Vector3 m_LastLauncherPosition;
@@ -26,6 +29,7 @@ namespace Gogos
 
             m_SpawningVirtualCamera.gameObject.SetActive(true);
             m_SelectingVirtualCamera.gameObject.SetActive(false);
+            m_LaunchingVirtualCamera.gameObject.SetActive(false);
         }
 
         private void Start()
@@ -72,7 +76,9 @@ namespace Gogos
             if (PhaseTracker.Phase == Phase.Spawning)
             {
                 m_SpawningVirtualCamera.gameObject.SetActive(true);
-                m_SelectingVirtualCamera.gameObject.SetActive(false);
+                m_LaunchingVirtualCamera.gameObject.SetActive(false);
+                m_LaunchingVirtualCamera.Follow = null;
+                m_LaunchingVirtualCamera.LookAt = null;
             }
             else if (PhaseTracker.Phase == Phase.Selecting)
             {
@@ -80,6 +86,13 @@ namespace Gogos
                 m_SpawningVirtualCamera.gameObject.SetActive(false);
                 m_LastLauncherPosition = m_Launcher.transform.position;
                 m_LastLauncherRotation = m_Launcher.transform.rotation;
+            }
+            else if (PhaseTracker.Phase == Phase.Launching)
+            {
+                m_LaunchingVirtualCamera.Follow = m_Launcher.Projectile.transform;
+                m_LaunchingVirtualCamera.LookAt = m_Launcher.Projectile.transform;
+                m_LaunchingVirtualCamera.gameObject.SetActive(true);
+                m_SpawningVirtualCamera.gameObject.SetActive(false);
             }
         }
     }
