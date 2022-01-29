@@ -24,7 +24,10 @@ namespace Gogos
 
         public void Refresh()
         {
+            var triggerRangeParent = m_TriggerRange.transform.parent;
+            m_TriggerRange.transform.parent = null; // Work around for changing global scale
             m_TriggerRange.transform.localScale = transform.localScale * m_RangeTierTracker.Range;
+            m_TriggerRange.transform.parent = triggerRangeParent;
         }
     }
 }
