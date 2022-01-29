@@ -26,6 +26,7 @@ namespace Gogos
         public override void SetPlayer(Player player)
         {
             base.SetPlayer(player);
+            m_ShieldAbility.SetPlayer(Player);
             m_ShieldTrigger.SetPlayer(Player);
         }
 

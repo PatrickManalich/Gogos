@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf64112e005873449b0f38edeebb0f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Gogo: {fileID: 5018871198931018577}
   m_GroupsByShieldResponse:
     m_val: 7
     m_keys: 

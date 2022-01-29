@@ -16,6 +16,7 @@ namespace Gogos
         public override void SetPlayer(Player player)
         {
             base.SetPlayer(player);
+            m_SupportAbility.SetPlayer(Player);
             m_SupportTrigger.SetPlayer(Player);
         }
 

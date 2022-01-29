@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ed6bd3bdf7312439575b9e9d79c22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Gogo: {fileID: 7415381055048773360}
   m_Groups: 0
   m_TierVariant: 0
   m_TierModifier: 0
