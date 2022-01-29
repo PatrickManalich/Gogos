@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3596060673194362477}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 40, y: 40, z: 40}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 1600620932922682738}
   - {fileID: 715334622534736063}
@@ -234,6 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 582b7f4fd3d8d73429a8fa9cad5a122c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxSpawnAmount: 50
-  m_SpawnRadius: 20
+  m_MaxSpawnAmount: 0
+  m_SpawnRadius: 10
   m_SpawnMarker: {fileID: 3596060673194362477}
