@@ -12417,7 +12417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accuracy: 0.99
-  iterationLimit: 300
+  iterationLimit: 500
   predictionType: 3
   raycastMask:
     serializedVersion: 2
