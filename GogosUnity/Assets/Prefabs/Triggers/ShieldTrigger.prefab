@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 8248749844501669163}
-  m_ShieldTriggerAnimator: {fileID: 1295893774343901638}
+  m_TriggerAnimator: {fileID: 1295893774343901638}
   m_CenterPoint: {fileID: 4493604407273250128}
 --- !u!1001 &6156559304544243644
 PrefabInstance:

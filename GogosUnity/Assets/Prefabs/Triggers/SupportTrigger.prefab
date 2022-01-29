@@ -26,7 +26,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Collider: {fileID: 2337255101807616154}
-  m_SupportTriggerAnimator: {fileID: 5285119914891561996}
+  m_TriggerAnimator: {fileID: 5285119914891561996}
   m_CenterPoint: {fileID: 7421661072483549338}
 --- !u!1 &4884356566962860358
 GameObject:
