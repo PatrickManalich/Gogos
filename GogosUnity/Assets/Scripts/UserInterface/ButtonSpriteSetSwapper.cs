@@ -20,17 +20,17 @@ namespace Gogos
 
         private void Start()
         {
-            PlayerTracker.PlayerChanged += RefreshButtonSpriteSet;
+            PlayerTracker.PlayerChanged += Refresh;
 
-            RefreshButtonSpriteSet();
+            Refresh();
         }
 
         private void OnDestroy()
         {
-            PlayerTracker.PlayerChanged -= RefreshButtonSpriteSet;
+            PlayerTracker.PlayerChanged -= Refresh;
         }
 
-        private void RefreshButtonSpriteSet()
+        private void Refresh()
         {
             var buttonSpriteSet = m_ButtonSpriteSetsByPlayerColor[PlayerTracker.Player.PlayerColor];
             m_Image.sprite = buttonSpriteSet.ImageSprite;
