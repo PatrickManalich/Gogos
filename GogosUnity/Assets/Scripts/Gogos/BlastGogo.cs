@@ -26,7 +26,7 @@ namespace Gogos
         public override void SetPlayer(Player player)
         {
             base.SetPlayer(player);
-            m_BlastTriggers.ForEach(t => t.Player = Player);
+            m_BlastTriggers.ForEach(b => b.SetPlayer(Player));
         }
 
         public override void SetTiers(IdentifiableGogo identifiableGogo)

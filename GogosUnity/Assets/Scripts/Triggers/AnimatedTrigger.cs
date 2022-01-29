@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Gogos
 {
     public class AnimatedTrigger : MonoBehaviour
     {
-        public Player Player { get; set; }
+        public event Action PlayerChanged;
+
+        public Player Player { get; private set; }
 
         public Vector3 CenterPosition => m_CenterPoint.transform.position;
 
@@ -18,6 +21,12 @@ namespace Gogos
         private GameObject m_CenterPoint;
 
         private const string ExpandName = "Expand";
+
+        public void SetPlayer(Player player)
+        {
+            Player = player;
+            PlayerChanged?.Invoke();
+        }
 
         public void Expand()
         {

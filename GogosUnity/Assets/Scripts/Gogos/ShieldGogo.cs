@@ -26,7 +26,7 @@ namespace Gogos
         public override void SetPlayer(Player player)
         {
             base.SetPlayer(player);
-            m_ShieldTrigger.Player = Player;
+            m_ShieldTrigger.SetPlayer(Player);
         }
 
         public override void SetTiers(IdentifiableGogo identifiableGogo)
