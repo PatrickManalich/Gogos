@@ -11,6 +11,11 @@ namespace Gogos
 
         protected override void OnCollected()
         {
+            if (PhaseTracker.Phase == Phase.Spawning)
+            {
+                return;
+            }
+
             if (m_Gogo.Player == null)
             {
                 PlayerTracker.Player.Collection.Add(m_Gogo.IdentifiableGogo);

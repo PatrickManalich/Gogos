@@ -9,6 +9,11 @@ namespace Gogos
 
         protected override void OnCollected()
         {
+            if (PhaseTracker.Phase == Phase.Spawning)
+            {
+                return;
+            }
+
             PlayerTracker.Player.AddPoints(m_PointValueTierTracker.PointValue);
         }
     }
