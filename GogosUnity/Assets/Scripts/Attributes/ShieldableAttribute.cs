@@ -35,7 +35,9 @@ namespace Gogos
                 var outwardDirection = (transform.position - shieldTrigger.CenterPosition).normalized;
                 var outwardForce = outwardDirection * DeflectPower;
                 m_Rigidbody.AddForceAtPosition(outwardForce, m_ForcePoint.transform.position, ForceMode.Impulse);
-                if (GroupTag == GroupTag.Gogo && shieldStrengthTierTracker.LastTurnModified != TurnTracker.Turn)
+
+                var modifiedThisTurn = shieldStrengthTierTracker.LastTurnModified != TurnTracker.Turn;
+                if (GroupTag == GroupTag.Gogo && !modifiedThisTurn)
                 {
                     shieldStrengthTierTracker.ModifyTier(-1);
                 }
