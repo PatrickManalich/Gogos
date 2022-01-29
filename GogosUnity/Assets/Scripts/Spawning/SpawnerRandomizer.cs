@@ -69,7 +69,7 @@ namespace Gogos
                 spawner.Spawn(m_SpawnableGogos.GetRandomScriptableGogo());
                 spawner.HideSpawnMarker();
             }
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.25f);
 
             var randomSpawnerCount = UnityEngine.Random.Range(1, MaxSpawners + 1);
             for (int i = 0; i < randomSpawnerCount; i++)
@@ -83,9 +83,9 @@ namespace Gogos
                 var spawner = m_UnusedSpawners.Dequeue();
                 spawner.ShowSpawnMarker();
                 m_NextSpawners.Enqueue(spawner);
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(0.25f);
             }
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.25f);
 
             Spawned?.Invoke();
         }
