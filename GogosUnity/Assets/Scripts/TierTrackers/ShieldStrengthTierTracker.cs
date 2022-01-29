@@ -2,7 +2,7 @@
 
 namespace Gogos
 {
-    public enum ShieldStrengthTier { Broken, Weak, Medium, Strong }
+    public enum ShieldStrengthTier { Broken, Weak, Medium, Strong, Unbreakable }
 
     public class ShieldStrengthTierTracker : AbstractTierTracker<ShieldStrengthTier>
     {
@@ -10,6 +10,7 @@ namespace Gogos
 
         public int LastTurnModified { get; private set; }
         public bool IsShieldBroken => Tier == ShieldStrengthTier.Broken;
+        public bool IsShieldUnbreakable => Tier == ShieldStrengthTier.Unbreakable;
         public float ShieldAlpha => ShieldAlphasByTier[Tier];
 
         public override void ModifyTier(int modifier)
@@ -24,6 +25,7 @@ namespace Gogos
             { ShieldStrengthTier.Weak, 0.1f },
             { ShieldStrengthTier.Medium, 0.2f },
             { ShieldStrengthTier.Strong, 0.3f },
+            { ShieldStrengthTier.Unbreakable, 0.3f },
         };
     }
 }
