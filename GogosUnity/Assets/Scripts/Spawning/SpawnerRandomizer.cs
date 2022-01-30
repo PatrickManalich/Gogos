@@ -21,7 +21,7 @@ namespace Gogos
         [SerializeField]
         private ScriptableGogoBucket m_SpawnableGogos;
 
-        private const int TurnsToSpawn = PlayerTracker.PlayerCount + 1;
+        private const int TurnsToSpawn = PlayerTracker.PlayerCount * 2 + 1;
         private const int MaxSpawners = PlayerTracker.PlayerCount;
         private const int MinSpawners = 6;
 
