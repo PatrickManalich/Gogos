@@ -48,8 +48,6 @@ namespace Gogos
 
         private void OnEnable()
         {
-            m_LaunchPower = (m_MinLaunchPower + m_MaxLaunchPower) / 2;
-
             if (m_LaunchPointTracker.LaunchPoints.Count > 0)
             {
                 CycleLaunchPoint(0);
@@ -106,6 +104,8 @@ namespace Gogos
 
         private void CycleLaunchPoint(int direction)
         {
+            m_LaunchPower = m_MinLaunchPower;
+
             m_LaunchPointIndex += direction;
             if (m_LaunchPointIndex > m_LaunchPointTracker.LaunchPoints.Count - 1)
             {
