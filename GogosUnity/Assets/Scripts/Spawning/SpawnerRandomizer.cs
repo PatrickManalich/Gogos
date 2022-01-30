@@ -23,6 +23,7 @@ namespace Gogos
 
         private const int TurnsToSpawn = PlayerTracker.PlayerCount + 1;
         private const int MaxSpawners = PlayerTracker.PlayerCount;
+        private const int MinSpawners = 6;
 
         private Queue<Spawner> m_UnusedSpawners = new Queue<Spawner>();
         private Queue<Spawner> m_NextSpawners = new Queue<Spawner>();
@@ -71,7 +72,7 @@ namespace Gogos
             }
             yield return new WaitForSeconds(0.25f);
 
-            var randomSpawnerCount = UnityEngine.Random.Range(1, MaxSpawners + 1);
+            var randomSpawnerCount = UnityEngine.Random.Range(MinSpawners, MaxSpawners + 1);
             for (int i = 0; i < randomSpawnerCount; i++)
             {
                 if (m_UnusedSpawners.Count == 0)
