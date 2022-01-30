@@ -5,11 +5,8 @@ namespace GogosEditor
 {
     public class TimeScaleWindow : EditorWindow
     {
-        private const int DefaultMinTimeScale = 0;
-        private const int DefaultMaxTimeScale = 2;
-
-        private float m_MinTimeScale = DefaultMinTimeScale;
-        private float m_MaxTimeScale = DefaultMaxTimeScale;
+        private float m_MinTimeScale = 0;
+        private float m_MaxTimeScale = 2;
 
         [MenuItem("Gogos/Window/Time Scale")]
         public static void ShowWindow()
@@ -23,10 +20,8 @@ namespace GogosEditor
             m_MinTimeScale = EditorGUILayout.FloatField("Min Time Scale", m_MinTimeScale);
             m_MaxTimeScale = EditorGUILayout.FloatField("Max Time Scale", m_MaxTimeScale);
             GUILayout.BeginHorizontal();
-            if (GUILayout.Button("Default"))
+            if (GUILayout.Button("Normal"))
             {
-                m_MinTimeScale = DefaultMinTimeScale;
-                m_MaxTimeScale = DefaultMaxTimeScale;
                 Time.timeScale = 1;
             }
             if (GUILayout.Button("Min Speed"))
