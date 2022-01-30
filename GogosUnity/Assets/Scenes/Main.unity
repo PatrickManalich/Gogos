@@ -14100,7 +14100,7 @@ MonoBehaviour:
   reuseLine: 1
   lineSortingLayerName: 
   lineSortingOrder: 0
-  lineWidth: 0.2
+  lineWidth: 0.4
   lineStartColor: {r: 1, g: 1, b: 1, a: 1}
   lineEndColor: {r: 1, g: 1, b: 1, a: 1}
   lineShader: {fileID: 0}
