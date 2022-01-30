@@ -11,6 +11,9 @@ namespace Gogos
         [SerializeField]
         private TrajectoryPredictor m_TrajectoryPredictor;
 
+        [SerializeField]
+        private GameObject m_HitPoint;
+
         private void Awake()
         {
             m_Launcher.LaunchPrepared += Launcher_OnLaunchPrepared;
@@ -29,6 +32,11 @@ namespace Gogos
             {
                 m_TrajectoryPredictor.debugLineDuration = Time.unscaledDeltaTime;
                 m_TrajectoryPredictor.Predict3D(m_Launcher.LaunchPoint, m_Launcher.LaunchForce, Physics.gravity);
+
+                if (m_TrajectoryPredictor.hitInfo3D.collider != null)
+                {
+                    m_HitPoint.transform.position = m_TrajectoryPredictor.hitInfo3D.point;
+                }
             }
         }
 
