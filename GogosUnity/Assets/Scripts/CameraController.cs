@@ -6,9 +6,6 @@ namespace Gogos
     public class CameraController : MonoBehaviour
     {
         [SerializeField]
-        private Launcher m_Launcher;
-
-        [SerializeField]
         private CinemachineVirtualCamera m_SpawningVirtualCamera;
 
         [SerializeField]
@@ -16,6 +13,9 @@ namespace Gogos
 
         [SerializeField]
         private CinemachineVirtualCamera m_LaunchingVirtualCamera;
+
+        [SerializeField]
+        private Launcher m_Launcher;
 
         private CinemachineTransposer m_SelectingTransposer;
         private CinemachineComposer m_SelectingComposer;
