@@ -10031,6 +10031,7 @@ MonoBehaviour:
   m_SelectingVirtualCamera: {fileID: 2074938246}
   m_LaunchingVirtualCamera: {fileID: 2093054237}
   m_Launcher: {fileID: 1638789070}
+  m_HitPoint: {fileID: 1722694538}
 --- !u!1001 &1775890549
 PrefabInstance:
   m_ObjectHideFlags: 0

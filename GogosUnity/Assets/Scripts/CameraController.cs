@@ -17,14 +17,14 @@ namespace Gogos
         [SerializeField]
         private Launcher m_Launcher;
 
-        private CinemachineTransposer m_SelectingTransposer;
+        [SerializeField]
+        private GameObject m_HitPoint;
+
         private CinemachineComposer m_SelectingComposer;
-        private Vector3 m_LastLauncherPosition;
-        private Quaternion m_LastLauncherRotation;
+        private Vector3 m_LastHitPointPosition;
 
         private void Awake()
         {
-            m_SelectingTransposer = m_SelectingVirtualCamera.GetCinemachineComponent<CinemachineTransposer>();
             m_SelectingComposer = m_SelectingVirtualCamera.GetCinemachineComponent<CinemachineComposer>();
 
             m_SpawningVirtualCamera.gameObject.SetActive(true);
@@ -46,28 +46,13 @@ namespace Gogos
         {
             if (PhaseTracker.Phase == Phase.Selecting)
             {
-                var isLauncherTurning = m_Launcher.transform.position == m_LastLauncherPosition && m_Launcher.transform.rotation != m_LastLauncherRotation;
-                if (isLauncherTurning)
-                {
-                    m_SelectingTransposer.m_XDamping = 0;
-                    m_SelectingTransposer.m_YDamping = 0;
-                    m_SelectingTransposer.m_ZDamping = 0;
-                    m_SelectingTransposer.m_YawDamping = 0;
-                    m_SelectingComposer.m_SoftZoneWidth = 0.05f;
-                    m_SelectingComposer.m_SoftZoneHeight = 0.05f;
-                }
-                else
-                {
-                    m_SelectingTransposer.m_XDamping = 2;
-                    m_SelectingTransposer.m_YDamping = 2;
-                    m_SelectingTransposer.m_ZDamping = 2;
-                    m_SelectingTransposer.m_YawDamping = 2;
-                    m_SelectingComposer.m_SoftZoneWidth = 0.5f;
-                    m_SelectingComposer.m_SoftZoneHeight = 0.5f;
-                }
+                var isHitPointMoving = m_HitPoint.transform.position != m_LastHitPointPosition;
+                m_SelectingComposer.m_DeadZoneWidth = isHitPointMoving ? 0 : 0.5f;
+                m_SelectingComposer.m_DeadZoneHeight = isHitPointMoving ? 0 : 0.5f;
+                m_SelectingComposer.m_SoftZoneWidth = isHitPointMoving ? 0.3f : 1;
+                m_SelectingComposer.m_SoftZoneHeight = isHitPointMoving ? 0.3f : 1;
 
-                m_LastLauncherPosition = m_Launcher.transform.position;
-                m_LastLauncherRotation = m_Launcher.transform.rotation;
+                m_LastHitPointPosition = m_HitPoint.transform.position;
             }
         }
 
@@ -84,8 +69,7 @@ namespace Gogos
             {
                 m_SelectingVirtualCamera.gameObject.SetActive(true);
                 m_SpawningVirtualCamera.gameObject.SetActive(false);
-                m_LastLauncherPosition = m_Launcher.transform.position;
-                m_LastLauncherRotation = m_Launcher.transform.rotation;
+                m_LastHitPointPosition = m_Launcher.transform.position;
             }
             else if (PhaseTracker.Phase == Phase.Launching)
             {
