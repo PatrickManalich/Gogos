@@ -9,6 +9,9 @@ namespace Gogos
         private Launcher m_Launcher;
 
         [SerializeField]
+        private LaunchPointTracker m_LaunchPointTracker;
+
+        [SerializeField]
         private HoldDownButton m_TurnLeftButton;
 
         [SerializeField]
@@ -38,6 +41,13 @@ namespace Gogos
             m_CyclePreviousLaunchPointButton.onClick.AddListener(m_Launcher.CyclePreviousLaunchPoint);
             m_CycleNextLaunchPointButton.onClick.AddListener(m_Launcher.CycleNextLaunchPoint);
             m_LaunchButton.onClick.AddListener(LaunchButton_OnClick);
+        }
+
+        private void OnEnable()
+        {
+            var hasMultipleLaunchPoints = m_LaunchPointTracker.LaunchPoints.Count > 1;
+            m_CyclePreviousLaunchPointButton.gameObject.SetActive(hasMultipleLaunchPoints);
+            m_CycleNextLaunchPointButton.gameObject.SetActive(hasMultipleLaunchPoints);
         }
 
         private void OnDestroy()
