@@ -9,11 +9,15 @@ namespace Gogos
         public List<LaunchPoint> LaunchPoints { get; private set; } = new List<LaunchPoint>();
 
         [SerializeField]
+        private PlayerGogoReturner m_PlayerGogoReturner;
+
+        [SerializeField]
         private Checkpoint[] m_Checkpoints;
 
         private void Start()
         {
-            PlayerTracker.PlayerChanged += PlayerTracker_OnPlayerChanged;
+            m_PlayerGogoReturner.Returned += GetLaunchPoints;
+            m_PlayerGogoReturner.Skipped += GetLaunchPoints;
 
             var startingCheckpoints = m_Checkpoints.Where(c => c.IsStartingCheckpoint).ToList();
             foreach (var player in PlayerTracker.Players)
@@ -29,12 +33,8 @@ namespace Gogos
 
         private void OnDestroy()
         {
-            PlayerTracker.PlayerChanged -= PlayerTracker_OnPlayerChanged;
-        }
-
-        private void PlayerTracker_OnPlayerChanged()
-        {
-            GetLaunchPoints();
+            m_PlayerGogoReturner.Skipped -= GetLaunchPoints;
+            m_PlayerGogoReturner.Returned -= GetLaunchPoints;
         }
 
         private void GetLaunchPoints()

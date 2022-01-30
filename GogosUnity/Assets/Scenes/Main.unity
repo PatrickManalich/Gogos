@@ -7103,6 +7103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca868292434e4842845d280ef596923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PlayerGogoReturner: {fileID: 768837653}
   m_Checkpoints:
   - {fileID: 1862822057}
   - {fileID: 1566895523}
