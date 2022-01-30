@@ -49,10 +49,12 @@ namespace Gogos
             var playersGogos = FindObjectsOfType<AbstractGogo>().Where(g => g.Player == PlayerTracker.Player);
             foreach (var playerGogo in playersGogos)
             {
-                GogoSituationDatabase.SetSituation(playerGogo.IdentifiableGogo, Situation.Available);
                 Destroy(playerGogo.gameObject);
             }
-
+            foreach (var identifiableGogo in PlayerTracker.Player.Collection.IdentifiableGogos)
+            {
+                GogoSituationDatabase.SetSituation(identifiableGogo, Situation.Available);
+            }
             yield return new WaitForSeconds(1);
 
             m_ReturningText.gameObject.SetActive(false);
