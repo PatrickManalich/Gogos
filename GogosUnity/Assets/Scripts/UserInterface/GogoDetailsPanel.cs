@@ -69,26 +69,26 @@ namespace Gogos
             switch (scriptableGogo.GogoVariant)
             {
                 case GogoVariant.Blast:
+                    m_BlastDetails.SetActive(true);
                     var blastScriptableGogo = (BlastScriptableGogo)scriptableGogo;
                     var blastPowerTierTracker = (BlastPowerTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastPower);
                     m_BlastPowerTierDetails.SetSlots(blastPowerTierTracker.Tier, blastScriptableGogo.BlastPowerTier);
                     m_BlastShapeIllustration.sprite = blastScriptableGogo.BlastShapeIllustration;
-                    m_BlastDetails.SetActive(true);
                     break;
 
                 case GogoVariant.Shield:
                     // Account for Broken tier
+                    m_ShieldDetails.SetActive(true);
                     var shieldScriptableGogo = (ShieldScriptableGogo)scriptableGogo;
                     var shieldStrengthTierTracker = (ShieldStrengthTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength);
                     m_ShieldStrengthTierDetails.SetSlots(shieldStrengthTierTracker.Tier - 1, shieldScriptableGogo.ShieldStrengthTier - 1);
                     m_ShieldAbilityText.SetText(shieldScriptableGogo.ShieldResponsesByGroups);
-                    m_ShieldDetails.SetActive(true);
                     break;
 
                 case GogoVariant.Support:
+                    m_SupportDetails.SetActive(true);
                     var supportScriptableGogo = (SupportScriptableGogo)scriptableGogo;
                     m_SupportAbilityText.SetText(supportScriptableGogo.Groups, supportScriptableGogo.SupportAbilityTierVariant, supportScriptableGogo.SupportAbilityTierModifier);
-                    m_SupportDetails.SetActive(true);
                     break;
             }
         }

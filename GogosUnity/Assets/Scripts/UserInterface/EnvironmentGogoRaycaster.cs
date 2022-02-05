@@ -44,8 +44,8 @@ namespace Gogos
             {
                 if (firstGogo.Player == null || GogoSituationDatabase.GetSituation(firstGogo.IdentifiableGogo) == Situation.Launched)
                 {
-                    m_GogoDetailsPanel.SetDetails(firstGogo);
                     m_GogoDetailsPanel.gameObject.SetActive(true);
+                    m_GogoDetailsPanel.SetDetails(firstGogo);
                     m_RaycastHitVisual.transform.position = firstGogo.transform.position;
                     m_RaycastHitVisual.SetActive(true);
                 }
