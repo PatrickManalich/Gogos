@@ -20,6 +20,9 @@ namespace Gogos
         [SerializeField]
         private GameObject m_HitPoint;
 
+        [SerializeField]
+        private GameObject m_ProjectilePoint;
+
         private CinemachineComposer m_SelectingComposer;
         private Vector3 m_LastHitPointPosition;
 
@@ -54,6 +57,14 @@ namespace Gogos
 
                 m_LastHitPointPosition = m_HitPoint.transform.position;
             }
+            else if (PhaseTracker.Phase == Phase.Launching || PhaseTracker.Phase == Phase.Settling)
+            {
+                if (m_Launcher.ProjectileRigidbody != null)
+                {
+                    m_ProjectilePoint.transform.position = m_Launcher.ProjectileRigidbody.transform.position;
+                    m_ProjectilePoint.transform.rotation = Quaternion.Euler(new Vector3(0, m_Launcher.transform.rotation.eulerAngles.y, 0));
+                }
+            }
         }
 
         private void PhaseTracker_OnPhaseChanged()
@@ -62,8 +73,6 @@ namespace Gogos
             {
                 m_SpawningVirtualCamera.gameObject.SetActive(true);
                 m_LaunchingVirtualCamera.gameObject.SetActive(false);
-                m_LaunchingVirtualCamera.Follow = null;
-                m_LaunchingVirtualCamera.LookAt = null;
             }
             else if (PhaseTracker.Phase == Phase.Selecting)
             {
@@ -72,8 +81,6 @@ namespace Gogos
             }
             else if (PhaseTracker.Phase == Phase.Launching)
             {
-                m_LaunchingVirtualCamera.Follow = m_Launcher.Projectile.transform;
-                m_LaunchingVirtualCamera.LookAt = m_Launcher.Projectile.transform;
                 m_LaunchingVirtualCamera.gameObject.SetActive(true);
                 m_SpawningVirtualCamera.gameObject.SetActive(false);
             }
