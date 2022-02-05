@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using Gogos;
+using UnityEditor;
 using UnityEngine;
 
 namespace GogosEditor
@@ -6,12 +7,23 @@ namespace GogosEditor
     public class TimeScaleWindow : EditorWindow
     {
         private float m_MinTimeScale = 0;
-        private float m_MaxTimeScale = 2;
+        private float m_MaxTimeScale = 10;
 
         [MenuItem("Gogos/Window/Time Scale")]
         public static void ShowWindow()
         {
             GetWindow<TimeScaleWindow>(false, "Time Scale");
+        }
+
+        private void OnEnable()
+        {
+            EditorApplication.playModeStateChanged -= EditorApplication_OnPlayModeStateChanged;
+            EditorApplication.playModeStateChanged += EditorApplication_OnPlayModeStateChanged;
+        }
+
+        private void OnDisable()
+        {
+            EditorApplication.playModeStateChanged -= EditorApplication_OnPlayModeStateChanged;
         }
 
         private void OnGUI()
@@ -33,6 +45,27 @@ namespace GogosEditor
                 Time.timeScale = m_MaxTimeScale;
             }
             GUILayout.EndHorizontal();
+        }
+
+        private void EditorApplication_OnPlayModeStateChanged(PlayModeStateChange playModeStateChange)
+        {
+            if (playModeStateChange == PlayModeStateChange.EnteredPlayMode)
+            {
+                PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
+                Time.timeScale = m_MaxTimeScale;
+            }
+            else if (playModeStateChange == PlayModeStateChange.ExitingPlayMode)
+            {
+                PhaseTracker.PhaseChanged -= PhaseTracker_OnPhaseChanged;
+            }
+        }
+
+        private void PhaseTracker_OnPhaseChanged()
+        {
+            if (PhaseTracker.Phase == Phase.Selecting)
+            {
+                Time.timeScale = 1;
+            }
         }
     }
 }
