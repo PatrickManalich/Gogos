@@ -19,7 +19,7 @@ namespace Gogos
             {
                 var pointCube = m_PointCubes[i];
                 pointCube.SetActive(true);
-                pointCube.transform.parent = null;
+                pointCube.transform.parent = m_Root.transform.parent;
             }
             Destroy(m_Root);
         }
