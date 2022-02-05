@@ -15,6 +15,9 @@ namespace Gogos
         private CinemachineVirtualCamera m_LaunchingVirtualCamera;
 
         [SerializeField]
+        private CinemachineVirtualCamera m_SettlingVirtualCamera;
+
+        [SerializeField]
         private Launcher m_Launcher;
 
         [SerializeField]
@@ -22,6 +25,9 @@ namespace Gogos
 
         [SerializeField]
         private GameObject m_ProjectilePoint;
+
+        [SerializeField]
+        private LaunchedGogoObserver m_LaunchedGogoObserver;
 
         private CinemachineComposer m_SelectingComposer;
         private Vector3 m_LastHitPointPosition;
@@ -33,15 +39,18 @@ namespace Gogos
             m_SpawningVirtualCamera.gameObject.SetActive(true);
             m_SelectingVirtualCamera.gameObject.SetActive(false);
             m_LaunchingVirtualCamera.gameObject.SetActive(false);
+            m_SettlingVirtualCamera.gameObject.SetActive(false);
         }
 
         private void Start()
         {
             PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
+            m_LaunchedGogoObserver.StartedExpanding += LaunchedGogoObserver_OnStartedExpanding;
         }
 
         private void OnDestroy()
         {
+            m_LaunchedGogoObserver.StartedExpanding -= LaunchedGogoObserver_OnStartedExpanding;
             PhaseTracker.PhaseChanged -= PhaseTracker_OnPhaseChanged;
         }
 
@@ -72,7 +81,7 @@ namespace Gogos
             if (PhaseTracker.Phase == Phase.Spawning)
             {
                 m_SpawningVirtualCamera.gameObject.SetActive(true);
-                m_LaunchingVirtualCamera.gameObject.SetActive(false);
+                m_SettlingVirtualCamera.gameObject.SetActive(false);
             }
             else if (PhaseTracker.Phase == Phase.Selecting)
             {
@@ -82,8 +91,14 @@ namespace Gogos
             else if (PhaseTracker.Phase == Phase.Launching)
             {
                 m_LaunchingVirtualCamera.gameObject.SetActive(true);
-                m_SpawningVirtualCamera.gameObject.SetActive(false);
+                m_SelectingVirtualCamera.gameObject.SetActive(false);
             }
+        }
+
+        private void LaunchedGogoObserver_OnStartedExpanding()
+        {
+            m_SettlingVirtualCamera.gameObject.SetActive(true);
+            m_LaunchingVirtualCamera.gameObject.SetActive(false);
         }
     }
 }
