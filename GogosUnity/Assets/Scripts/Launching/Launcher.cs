@@ -12,7 +12,7 @@ namespace Gogos
 
         public Vector3 LaunchPoint => transform.position;
         public Vector3 LaunchForce => transform.forward * m_LaunchPower;
-        public GameObject Projectile => m_ProjectileRigidbody?.gameObject;
+        public Rigidbody ProjectileRigidbody => m_ProjectileRigidbody;
         public bool ReadyForLaunch { get; private set; }
 
         [SerializeField]

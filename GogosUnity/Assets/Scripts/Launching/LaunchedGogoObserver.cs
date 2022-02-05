@@ -40,7 +40,7 @@ namespace Gogos
         {
             if (PhaseTracker.Phase == Phase.Launching)
             {
-                var launcherProjectile = m_Launcher.Projectile;
+                var launcherProjectile = m_Launcher.ProjectileRigidbody.gameObject;
                 m_TriggerAnimationSubject = launcherProjectile.GetComponentInChildren<TriggerAnimationSubject>();
                 m_TriggerAnimationSubject.AddObserverForAnimationFinished(this, TriggerAnimation.Expand);
 
