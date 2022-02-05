@@ -12,7 +12,7 @@ namespace Gogos
         public BlastPowerTier BlastPowerTier => m_BlastPowerTier;
 
         [SerializeField]
-        private Sprite m_BlastShapeIllustration;
-        public Sprite BlastShapeIllustration => m_BlastShapeIllustration;
+        private Sprite[] m_BlastShapeSprites;
+        public Sprite[] BlastShapeSprites => m_BlastShapeSprites;
     }
 }

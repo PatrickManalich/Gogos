@@ -21,5 +21,9 @@ MonoBehaviour:
   m_WeightTier: 0
   m_RangeTier: 0
   m_BlastPowerTier: 0
-  m_BlastShapeIllustration: {fileID: 21300000, guid: ee7aef91e7e9c964d803749b9a6cf7ec,
-    type: 3}
+  m_BlastShapeSprites:
+  - {fileID: 21300000, guid: ab233da5ab9fcd041bcd0f3cf7cc9865, type: 3}
+  - {fileID: 21300000, guid: f4bf8543a0b94324ba53c46270723810, type: 3}
+  - {fileID: 21300000, guid: 395ee3e277ac0964f8c249eda87da2dd, type: 3}
+  - {fileID: 21300000, guid: 0f19c4a1111698443a03dabc3a86a613, type: 3}
+  - {fileID: 21300000, guid: a204c8d4557cdb447a815fb047ae1a98, type: 3}
