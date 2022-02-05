@@ -69,7 +69,6 @@ namespace Gogos
             {
                 m_SelectingVirtualCamera.gameObject.SetActive(true);
                 m_SpawningVirtualCamera.gameObject.SetActive(false);
-                m_LastHitPointPosition = m_Launcher.transform.position;
             }
             else if (PhaseTracker.Phase == Phase.Launching)
             {
