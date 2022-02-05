@@ -90,6 +90,8 @@ namespace Gogos
             }
             else if (PhaseTracker.Phase == Phase.Launching)
             {
+                m_LaunchingVirtualCamera.transform.position = m_SelectingVirtualCamera.transform.position;
+                m_LaunchingVirtualCamera.transform.rotation = m_SelectingVirtualCamera.transform.rotation;
                 m_LaunchingVirtualCamera.gameObject.SetActive(true);
                 m_SelectingVirtualCamera.gameObject.SetActive(false);
             }
