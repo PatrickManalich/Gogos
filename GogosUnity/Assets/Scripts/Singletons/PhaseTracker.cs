@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Gogos
 {
-    public enum Phase { Spawning, Returning, Selecting, Launching, Settling, Transitioning }
+    public enum Phase { Transitioning, Spawning, Returning, Selecting, Launching, Settling }
 
     public class PhaseTracker : AbstractSingleton<PhaseTracker>
     {
@@ -33,7 +33,7 @@ namespace Gogos
         protected override void Awake()
         {
             base.Awake();
-            Phase = Phase.Spawning;
+            Phase = Phase.Transitioning;
         }
 
         private void Start()

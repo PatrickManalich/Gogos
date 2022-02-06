@@ -1529,7 +1529,7 @@ MonoBehaviour:
   - {fileID: 2016917675}
   - {fileID: 2018693975}
   - {fileID: 598835347}
-  m_ActiveForPhases: 02000000
+  m_ActiveForPhases: 03000000
 --- !u!1 &328053605
 GameObject:
   m_ObjectHideFlags: 0
