@@ -1497,6 +1497,7 @@ MonoBehaviour:
   m_LaunchedGogoObserver: {fileID: 1972480346}
   m_AccelerometerSettlingWatcher: {fileID: 36416109}
   m_PlayerGogoReturner: {fileID: 768837653}
+  m_PlayerTransitioner: {fileID: 1478736919}
 --- !u!4 &281254476
 Transform:
   m_ObjectHideFlags: 0

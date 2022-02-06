@@ -27,6 +27,9 @@ namespace Gogos
         [SerializeField]
         private PlayerGogoReturner m_PlayerGogoReturner;
 
+        [SerializeField]
+        private PlayerTransitioner m_PlayerTransitioner;
+
         protected override void Awake()
         {
             base.Awake();
@@ -43,12 +46,12 @@ namespace Gogos
             m_LaunchedGogoObserver.Expanded += LaunchedGogoObserver_OnFinished;
             m_LaunchedGogoObserver.Collected += LaunchedGogoObserver_OnFinished;
             m_AccelerometerSettlingWatcher.Settled += AccelerometerSettlingWatcher_OnSettled;
-            PlayerTracker.PlayerChanged += PlayerTracker_OnPlayerChanged;
+            m_PlayerTransitioner.Transitioned += PlayerTransitioner_OnTransitioned;
         }
 
         private void OnDestroy()
         {
-            PlayerTracker.PlayerChanged -= PlayerTracker_OnPlayerChanged;
+            m_PlayerTransitioner.Transitioned -= PlayerTransitioner_OnTransitioned;
             m_AccelerometerSettlingWatcher.Settled -= AccelerometerSettlingWatcher_OnSettled;
             m_LaunchedGogoObserver.Collected -= LaunchedGogoObserver_OnFinished;
             m_LaunchedGogoObserver.Expanded -= LaunchedGogoObserver_OnFinished;
@@ -84,7 +87,7 @@ namespace Gogos
             ChangePhase(Phase.Transitioning);
         }
 
-        private void PlayerTracker_OnPlayerChanged()
+        private void PlayerTransitioner_OnTransitioned()
         {
             ChangePhase(Phase.Spawning);
         }
