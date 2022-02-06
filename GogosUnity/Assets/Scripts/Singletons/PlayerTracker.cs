@@ -36,29 +36,10 @@ namespace Gogos
             s_PlayerIndex = 0;
         }
 
-        private void Start()
-        {
-            PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
-        }
-
-        private void OnDestroy()
-        {
-            PhaseTracker.PhaseChanged -= PhaseTracker_OnPhaseChanged;
-        }
-
         public void TransitionToNextPlayer()
         {
             s_PlayerIndex = (s_PlayerIndex + 1) % PlayerCount;
             PlayerChanged?.Invoke();
-        }
-
-        private void PhaseTracker_OnPhaseChanged()
-        {
-            if (PhaseTracker.Phase == Phase.Transitioning)
-            {
-                s_PlayerIndex = (s_PlayerIndex + 1) % PlayerCount;
-                PlayerChanged?.Invoke();
-            }
         }
     }
 }
