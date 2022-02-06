@@ -1,6 +1,6 @@
 ﻿namespace Gogos
 {
-    public class ShieldTrigger : AnimatedTrigger
+    public class ShieldTrigger : ExpandTrigger
     {
         public RangeTierTracker RangeTierTracker { get; private set; }
 

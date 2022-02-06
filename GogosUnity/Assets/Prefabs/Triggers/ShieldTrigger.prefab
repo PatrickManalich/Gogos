@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MeshRenderer: {fileID: 3867665620468541239}
-  m_AnimatedTrigger: {fileID: 855500151342116619}
+  m_ExpandTrigger: {fileID: 855500151342116619}
   m_ScriptableColorPalette: {fileID: 11400000, guid: b11d06455fb6dc245a9d3bf1bf8f6e9b,
     type: 2}
 --- !u!135 &8248749844501669163

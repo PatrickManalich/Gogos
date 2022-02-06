@@ -9,26 +9,26 @@ namespace Gogos
         private MeshRenderer m_MeshRenderer;
 
         [SerializeField]
-        private AnimatedTrigger m_AnimatedTrigger;
+        private ExpandTrigger m_ExpandTrigger;
 
         [SerializeField]
         private ScriptableColorPalette m_ScriptableColorPalette;
 
         private void Start()
         {
-            m_AnimatedTrigger.PlayerChanged += Refresh;
+            m_ExpandTrigger.PlayerChanged += Refresh;
 
             Refresh();
         }
 
         private void OnDestroy()
         {
-            m_AnimatedTrigger.PlayerChanged -= Refresh;
+            m_ExpandTrigger.PlayerChanged -= Refresh;
         }
 
         private void Refresh()
         {
-            var player = m_AnimatedTrigger.Player;
+            var player = m_ExpandTrigger.Player;
             if (player == null)
             {
                 return;

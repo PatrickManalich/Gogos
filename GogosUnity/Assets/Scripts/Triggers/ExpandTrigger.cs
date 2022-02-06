@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Gogos
 {
-    public class AnimatedTrigger : MonoBehaviour
+    public class ExpandTrigger : MonoBehaviour
     {
         public event Action PlayerChanged;
 

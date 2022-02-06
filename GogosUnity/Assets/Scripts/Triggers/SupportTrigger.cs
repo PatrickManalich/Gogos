@@ -1,6 +1,6 @@
 ﻿namespace Gogos
 {
-    public class SupportTrigger : AnimatedTrigger
+    public class SupportTrigger : ExpandTrigger
     {
         public SupportAbility SupportAbility { get; private set; }
 
