@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 
 namespace Gogos
@@ -13,7 +12,7 @@ namespace Gogos
         public event Action Skipped;
 
         [SerializeField]
-        private TextMeshProUGUI m_ReturningText;
+        private GameObject m_Announcement;
 
         private void Start()
         {
@@ -43,7 +42,7 @@ namespace Gogos
 
         private IEnumerator FlashTextAndReturnRoutine()
         {
-            m_ReturningText.gameObject.SetActive(true);
+            m_Announcement.gameObject.SetActive(true);
             yield return new WaitForSeconds(1);
 
             var playersGogos = FindObjectsOfType<AbstractGogo>().Where(g => g.Player == PlayerTracker.Player);
@@ -57,7 +56,7 @@ namespace Gogos
             }
             yield return new WaitForSeconds(1);
 
-            m_ReturningText.gameObject.SetActive(false);
+            m_Announcement.SetActive(false);
             Returned?.Invoke();
         }
     }

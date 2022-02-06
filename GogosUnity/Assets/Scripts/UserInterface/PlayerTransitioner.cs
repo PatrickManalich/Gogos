@@ -10,7 +10,10 @@ namespace Gogos
         public event Action Transitioned;
 
         [SerializeField]
-        private TextMeshProUGUI m_TransitioningText;
+        private GameObject m_Announcement;
+
+        [SerializeField]
+        private TextMeshProUGUI m_AnnouncementText;
 
         private bool m_IsFirstTransition;
 
@@ -47,11 +50,11 @@ namespace Gogos
                 PlayerTracker.Instance.TransitionToNextPlayer();
             }
 
-            m_TransitioningText.text = $"{PlayerTracker.Player.Name}'s Turn!";
-            m_TransitioningText.gameObject.SetActive(true);
+            m_AnnouncementText.text = $"{PlayerTracker.Player.Name}'s Turn!";
+            m_Announcement.SetActive(true);
             yield return new WaitForSeconds(2);
 
-            m_TransitioningText.gameObject.SetActive(false);
+            m_Announcement.gameObject.SetActive(false);
             Transitioned?.Invoke();
         }
     }
