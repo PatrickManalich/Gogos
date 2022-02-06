@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Gogos
 {
-    public class PhaseToggler : MonoBehaviour
+    public class PhaseGameObjectToggler : MonoBehaviour
     {
         [SerializeField]
-        private GameObject[] m_ItemsToToggle;
+        private GameObject[] m_GameObjectsToToggle;
 
         [SerializeField]
         private Phase[] m_ActiveForPhases;
@@ -26,7 +26,7 @@ namespace Gogos
         private void ToggleBasedOnPhase()
         {
             var active = m_ActiveForPhases.Contains(PhaseTracker.Phase);
-            foreach (var item in m_ItemsToToggle)
+            foreach (var item in m_GameObjectsToToggle)
             {
                 item.SetActive(active);
             }

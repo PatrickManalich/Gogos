@@ -1523,7 +1523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 034b5b47c433dc7449ee08643d82331d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ItemsToToggle:
+  m_GameObjectsToToggle:
   - {fileID: 1638789069}
   - {fileID: 2016917675}
   - {fileID: 2018693975}
