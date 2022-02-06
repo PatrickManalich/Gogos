@@ -2,7 +2,7 @@
 
 namespace Gogos
 {
-    public class TriggerVisualColorSwapper : MonoBehaviour
+    public class ExpandTriggerVisual : MonoBehaviour
     {
         [SerializeField]
         private ExpandTrigger m_ExpandTrigger;
