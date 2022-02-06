@@ -12,9 +12,14 @@ namespace Gogos
         [SerializeField]
         private TextMeshProUGUI m_TransitioningText;
 
+        private bool m_IsFirstTransition;
+
         private void Start()
         {
             PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
+
+            m_IsFirstTransition = true;
+            StartCoroutine(FlashTextAndTransitionRoutine());
         }
 
         private void OnDestroy()
@@ -32,7 +37,16 @@ namespace Gogos
 
         private IEnumerator FlashTextAndTransitionRoutine()
         {
-            PlayerTracker.Instance.TransitionToNextPlayer();
+            // Skip transitioning for the first transition since first player is already set
+            if (m_IsFirstTransition)
+            {
+                m_IsFirstTransition = false;
+            }
+            else
+            {
+                PlayerTracker.Instance.TransitionToNextPlayer();
+            }
+
             m_TransitioningText.text = $"{PlayerTracker.Player.Name}'s Turn!";
             m_TransitioningText.gameObject.SetActive(true);
             yield return new WaitForSeconds(2);
