@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Gogos
 {
-    public class LaunchedGogoObserver : MonoBehaviour, ITriggerAnimationObserver
+    public class LaunchedGogoObserver : MonoBehaviour
     {
         public event Action StartedExpanding;
 
@@ -15,9 +15,8 @@ namespace Gogos
         [SerializeField]
         private Launcher m_Launcher;
 
-        private TriggerAnimationSubject m_TriggerAnimationSubject;
+        private TriggerAnimationsReference m_TriggerAnimationsReference;
         private CollectableAttribute m_CollectableAttribute;
-        private bool m_HasAnimationStarted;
 
         private void Start()
         {
@@ -26,26 +25,8 @@ namespace Gogos
 
         private void OnDestroy()
         {
+            UnsubscribeFromProjectileEvents();
             PhaseTracker.PhaseChanged -= PhaseTracker_OnPhaseChanged;
-        }
-
-        public void Notify()
-        {
-            if (!m_HasAnimationStarted)
-            {
-                m_TriggerAnimationSubject.RemoveObserverForAnimationStarted(this, TriggerAnimation.Expand);
-                m_HasAnimationStarted = true;
-                StartedExpanding?.Invoke();
-            }
-            else
-            {
-                m_TriggerAnimationSubject.RemoveObserverForAnimationFinished(this, TriggerAnimation.Expand);
-                m_TriggerAnimationSubject = null;
-                m_CollectableAttribute.Collected -= CollectableAttribute_OnCollected;
-                m_CollectableAttribute = null;
-
-                StartCoroutine(InvokeExpandedAfterDelayRoutine());
-            }
         }
 
         private void PhaseTracker_OnPhaseChanged()
@@ -53,24 +34,57 @@ namespace Gogos
             if (PhaseTracker.Phase == Phase.Launching)
             {
                 var launcherProjectile = m_Launcher.ProjectileRigidbody.gameObject;
-                m_TriggerAnimationSubject = launcherProjectile.GetComponentInChildren<TriggerAnimationSubject>();
-                m_TriggerAnimationSubject.AddObserverForAnimationStarted(this, TriggerAnimation.Expand);
-                m_TriggerAnimationSubject.AddObserverForAnimationFinished(this, TriggerAnimation.Expand);
-                m_HasAnimationStarted = false;
+                SubscribeToProjectileEvents(launcherProjectile);
+            }
+        }
 
-                m_CollectableAttribute = launcherProjectile.GetComponentInChildren<CollectableAttribute>();
-                m_CollectableAttribute.Collected += CollectableAttribute_OnCollected;
+        private void TriggerAnimationsReference_OnAnimationStarted(object sender, TriggerAnimationEventArgs e)
+        {
+            if (e.TriggerAnimation == TriggerAnimation.Expand)
+            {
+                StartedExpanding?.Invoke();
+            }
+        }
+
+        private void TriggerAnimationsReference_OnAnimationFinished(object sender, TriggerAnimationEventArgs e)
+        {
+            if (e.TriggerAnimation == TriggerAnimation.Expand)
+            {
+                UnsubscribeFromProjectileEvents();
+                StartCoroutine(InvokeExpandedAfterDelayRoutine());
             }
         }
 
         private void CollectableAttribute_OnCollected()
         {
-            m_TriggerAnimationSubject.RemoveObserverForAnimationFinished(this, TriggerAnimation.Expand);
-            m_TriggerAnimationSubject = null;
-            m_CollectableAttribute.Collected -= CollectableAttribute_OnCollected;
-            m_CollectableAttribute = null;
-
+            UnsubscribeFromProjectileEvents();
             Collected?.Invoke();
+        }
+
+        private void SubscribeToProjectileEvents(GameObject launcherProjectile)
+        {
+            m_TriggerAnimationsReference = launcherProjectile.GetComponentInChildren<TriggerAnimationsReference>();
+            m_TriggerAnimationsReference.AnimationStarted += TriggerAnimationsReference_OnAnimationStarted;
+            m_TriggerAnimationsReference.AnimationFinished += TriggerAnimationsReference_OnAnimationFinished;
+
+            m_CollectableAttribute = launcherProjectile.GetComponentInChildren<CollectableAttribute>();
+            m_CollectableAttribute.Collected += CollectableAttribute_OnCollected;
+        }
+
+        private void UnsubscribeFromProjectileEvents()
+        {
+            if (m_TriggerAnimationsReference != null)
+            {
+                m_TriggerAnimationsReference.AnimationFinished -= TriggerAnimationsReference_OnAnimationFinished;
+                m_TriggerAnimationsReference.AnimationStarted -= TriggerAnimationsReference_OnAnimationStarted;
+                m_TriggerAnimationsReference = null;
+            }
+
+            if (m_CollectableAttribute != null)
+            {
+                m_CollectableAttribute.Collected -= CollectableAttribute_OnCollected;
+                m_CollectableAttribute = null;
+            }
         }
 
         private IEnumerator InvokeExpandedAfterDelayRoutine()

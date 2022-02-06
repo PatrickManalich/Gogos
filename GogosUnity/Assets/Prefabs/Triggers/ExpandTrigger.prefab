@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de132fdc36c9d94897e84312784b390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TriggerAnimationSubject: {fileID: 4939198182775381627}
+  m_TriggerAnimationsReference: {fileID: 4939198182775381627}
   m_VisualEffect: {fileID: 0}
   m_AdjustColorAndIntensity: 0
   m_Color: {r: 0, g: 0, b: 0, a: 0}
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4939198182775381624}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2338a082da6aff4882c3cf6168d7a5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 880990aef4ce9964a8211c5005dc2b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_TriggerAnimator: {fileID: 4939198182775381626}

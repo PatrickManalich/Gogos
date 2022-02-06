@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Gogos
 {
-    public class BombBlastedEffect : AbstractBlastedEffect, ITriggerAnimationObserver
+    public class BombBlastedEffect : AbstractBlastedEffect
     {
         [SerializeField]
         private Rigidbody m_Rigidbody;
@@ -24,12 +23,18 @@ namespace Gogos
         private BlastTrigger m_BlastTrigger;
 
         [SerializeField]
-        private TriggerAnimationSubject m_TriggerAnimationSubject;
+        private TriggerAnimationsReference m_TriggerAnimationsReference;
 
-        public void Notify()
+        protected override void Start()
         {
-            m_TriggerAnimationSubject.RemoveObserverForAnimationFinished(this, TriggerAnimation.Expand);
-            Destroy(m_Rigidbody.gameObject);
+            base.Start();
+            m_TriggerAnimationsReference.AnimationFinished += TriggerAnimationsReference_OnAnimationFinished;
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            m_TriggerAnimationsReference.AnimationFinished -= TriggerAnimationsReference_OnAnimationFinished;
         }
 
         protected override void OnBlasted()
@@ -39,8 +44,15 @@ namespace Gogos
             m_Visuals.SetActive(false);
             m_TriggerRangeRefresher.enabled = false;
 
-            m_TriggerAnimationSubject.AddObserverForAnimationFinished(this, TriggerAnimation.Expand);
             m_BlastTrigger.Blast(m_RangeTierTracker, m_BlastPowerTierTracker);
+        }
+
+        private void TriggerAnimationsReference_OnAnimationFinished(object sender, TriggerAnimationEventArgs e)
+        {
+            if (e.TriggerAnimation == TriggerAnimation.Expand)
+            {
+                Destroy(m_Rigidbody.gameObject);
+            }
         }
     }
 }

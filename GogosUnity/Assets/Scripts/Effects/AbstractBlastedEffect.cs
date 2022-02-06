@@ -9,12 +9,12 @@ namespace Gogos
         [SerializeField]
         private BlastableAttribute m_BlastableAttribute;
 
-        private void Start()
+        protected virtual void Start()
         {
             m_BlastableAttribute.Blasted += BlastableAttribute_OnBlasted;
         }
 
-        private void OnDestroy()
+        protected virtual void OnDestroy()
         {
             m_BlastableAttribute.Blasted -= BlastableAttribute_OnBlasted;
         }

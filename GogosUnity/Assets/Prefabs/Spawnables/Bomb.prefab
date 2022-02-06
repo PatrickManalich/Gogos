@@ -103,7 +103,7 @@ MonoBehaviour:
   m_RangeTierTracker: {fileID: 1889452499747304834}
   m_BlastPowerTierTracker: {fileID: 1889452499747304837}
   m_BlastTrigger: {fileID: 649036867061962224}
-  m_TriggerAnimationSubject: {fileID: 1906532210327379048}
+  m_TriggerAnimationsReference: {fileID: 1906532210327379048}
 --- !u!1 &1889452499249531704
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,7 +576,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1906532210327379051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2338a082da6aff4882c3cf6168d7a5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 880990aef4ce9964a8211c5005dc2b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &649036867061962224 stripped

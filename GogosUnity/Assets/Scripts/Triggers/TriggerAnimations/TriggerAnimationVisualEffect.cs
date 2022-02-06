@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Gogos
 {
-    public class TriggerAnimationVisualEffect : MonoBehaviour, ITriggerAnimationObserver
+    public class TriggerAnimationVisualEffect : MonoBehaviour
     {
         [SerializeField]
-        private TriggerAnimationSubject m_TriggerAnimationSubject;
+        private TriggerAnimationsReference m_TriggerAnimationsReference;
 
         [SerializeField]
         private GameObject m_VisualEffect;
@@ -38,18 +37,21 @@ namespace Gogos
                 }
             }
 
-            m_TriggerAnimationSubject.AddObserverForAnimationStarted(this, TriggerAnimation.Expand);
+            m_TriggerAnimationsReference.AnimationStarted += TriggerAnimationsReference_OnAnimationStarted;
         }
 
         private void OnDestroy()
         {
-            m_TriggerAnimationSubject.RemoveObserverForAnimationStarted(this, TriggerAnimation.Expand);
+            m_TriggerAnimationsReference.AnimationStarted -= TriggerAnimationsReference_OnAnimationStarted;
         }
 
-        public void Notify()
+        private void TriggerAnimationsReference_OnAnimationStarted(object sender, TriggerAnimationEventArgs e)
         {
-            m_VisualEffect.SetActive(false);
-            m_VisualEffect.SetActive(true);
+            if (e.TriggerAnimation == TriggerAnimation.Expand)
+            {
+                m_VisualEffect.SetActive(false);
+                m_VisualEffect.SetActive(true);
+            }
         }
     }
 }
