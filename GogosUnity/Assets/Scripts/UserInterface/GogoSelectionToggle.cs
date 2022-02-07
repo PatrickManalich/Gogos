@@ -20,7 +20,7 @@ namespace Gogos
         private NicknameText m_NicknameText;
 
         [SerializeField]
-        private GogoVariantIcon m_GogoVariantIcon;
+        private GogoClassIcon m_GogoVariantIcon;
 
         [SerializeField]
         private Portrait m_Portrait;
@@ -32,7 +32,7 @@ namespace Gogos
             var scriptableGogo = IdentifiableGogo.ScriptableGogo;
             var situation = GogoSituationDatabase.GetSituation(IdentifiableGogo);
             m_NicknameText.SetText(scriptableGogo.Nickname, scriptableGogo.RarityTier);
-            m_GogoVariantIcon.SetIcon(scriptableGogo.GogoVariant);
+            m_GogoVariantIcon.SetIcon(scriptableGogo.GogoClass);
             m_Portrait.SetPortrait(scriptableGogo.Portrait, situation);
             m_Toggle.interactable = situation == Situation.Available;
         }

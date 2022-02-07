@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 7786499999478449903}
   - component: {fileID: 5479806355183998766}
   m_Layer: 5
-  m_Name: GogoVariantIcon
+  m_Name: GogoClassIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581632b3da8f5a74ba6abe8874c29876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IconsByVariant:
+  m_IconsByClass:
     m_val: 7
     m_keys: 000000000100000002000000
     m_values:

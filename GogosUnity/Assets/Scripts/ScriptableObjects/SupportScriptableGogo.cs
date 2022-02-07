@@ -5,7 +5,7 @@ namespace Gogos
     [CreateAssetMenu(fileName = "SupportGogo", menuName = "Gogos/Scriptable Gogo/Support")]
     public class SupportScriptableGogo : AbstractScriptableGogo
     {
-        public override GogoVariant GogoVariant => GogoVariant.Support;
+        public override GogoClass GogoClass => GogoClass.Support;
 
         [SerializeField]
         private Groups m_Groups;

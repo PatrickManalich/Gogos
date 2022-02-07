@@ -60,9 +60,9 @@ namespace Gogos
             m_ShieldDetails.SetActive(false);
             m_SupportDetails.SetActive(false);
 
-            switch (scriptableGogo.GogoVariant)
+            switch (scriptableGogo.GogoClass)
             {
-                case GogoVariant.Blast:
+                case GogoClass.Blast:
                     m_BlastDetails.SetActive(true);
                     var blastScriptableGogo = (BlastScriptableGogo)scriptableGogo;
                     var blastPowerTierTracker = (BlastPowerTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastPower);
@@ -70,7 +70,7 @@ namespace Gogos
                     m_BlastShapeIllustration.SetIllustration(blastScriptableGogo.BlastShapeSprites);
                     break;
 
-                case GogoVariant.Shield:
+                case GogoClass.Shield:
                     // Account for Broken tier
                     m_ShieldDetails.SetActive(true);
                     var shieldScriptableGogo = (ShieldScriptableGogo)scriptableGogo;
@@ -79,7 +79,7 @@ namespace Gogos
                     m_ShieldAbilityText.SetText(shieldScriptableGogo.ShieldResponsesByGroups);
                     break;
 
-                case GogoVariant.Support:
+                case GogoClass.Support:
                     m_SupportDetails.SetActive(true);
                     var supportScriptableGogo = (SupportScriptableGogo)scriptableGogo;
                     m_SupportAbilityText.SetText(supportScriptableGogo.Groups, supportScriptableGogo.SupportAbilityTierVariant, supportScriptableGogo.SupportAbilityTierModifier);

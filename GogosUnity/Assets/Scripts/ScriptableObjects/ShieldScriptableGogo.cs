@@ -5,7 +5,7 @@ namespace Gogos
     [CreateAssetMenu(fileName = "ShieldGogo", menuName = "Gogos/Scriptable Gogo/Shield")]
     public class ShieldScriptableGogo : AbstractScriptableGogo
     {
-        public override GogoVariant GogoVariant => GogoVariant.Shield;
+        public override GogoClass GogoClass => GogoClass.Shield;
 
         [SerializeField]
         private ShieldStrengthTier m_ShieldStrengthTier;

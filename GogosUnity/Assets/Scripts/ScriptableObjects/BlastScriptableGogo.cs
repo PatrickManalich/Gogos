@@ -5,7 +5,7 @@ namespace Gogos
     [CreateAssetMenu(fileName = "BlastGogo", menuName = "Gogos/Scriptable Gogo/Blast")]
     public class BlastScriptableGogo : AbstractScriptableGogo
     {
-        public override GogoVariant GogoVariant => GogoVariant.Blast;
+        public override GogoClass GogoClass => GogoClass.Blast;
 
         [SerializeField]
         private BlastPowerTier m_BlastPowerTier;
