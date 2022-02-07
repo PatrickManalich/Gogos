@@ -1,4 +1,5 @@
 ﻿using Cinemachine;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Gogos
@@ -29,12 +30,21 @@ namespace Gogos
         [SerializeField]
         private LaunchedGogoObserver m_LaunchedGogoObserver;
 
+        private static readonly Dictionary<RangeTier, Vector3> FollowOffsetsByRangeTier = new Dictionary<RangeTier, Vector3>()
+        {
+            { RangeTier.Small, new Vector3(5, 10, -25) },
+            { RangeTier.Medium, new Vector3(5, 15, -35) },
+            { RangeTier.Large, new Vector3(5, 20, -45) },
+        };
+
         private CinemachineComposer m_SelectingComposer;
+        private CinemachineTransposer m_SettlingTransposer;
         private Vector3 m_LastHitPointPosition;
 
         private void Awake()
         {
             m_SelectingComposer = m_SelectingVirtualCamera.GetCinemachineComponent<CinemachineComposer>();
+            m_SettlingTransposer = m_SettlingVirtualCamera.GetCinemachineComponent<CinemachineTransposer>();
 
             m_SpawningVirtualCamera.gameObject.SetActive(true);
             m_SelectingVirtualCamera.gameObject.SetActive(false);
@@ -99,6 +109,8 @@ namespace Gogos
 
         private void LaunchedGogoObserver_OnStartedExpanding()
         {
+            var rangeTierTracker = (RangeTierTracker)m_LaunchedGogoObserver.LaunchedGogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range);
+            m_SettlingTransposer.m_FollowOffset = FollowOffsetsByRangeTier[rangeTierTracker.Tier];
             m_SettlingVirtualCamera.gameObject.SetActive(true);
             m_LaunchingVirtualCamera.gameObject.SetActive(false);
         }
