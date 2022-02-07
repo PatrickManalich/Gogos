@@ -12,6 +12,8 @@ namespace Gogos
 
         public event Action Collected;
 
+        public AbstractGogo LaunchedGogo { get; private set; }
+
         [SerializeField]
         private Launcher m_Launcher;
 
@@ -63,16 +65,20 @@ namespace Gogos
 
         private void GetComponentsAndSubscribe(GameObject launcherProjectile)
         {
-            m_TriggerAnimationsReference = launcherProjectile.GetComponentInChildren<TriggerAnimationsReference>();
+            LaunchedGogo = launcherProjectile.GetComponent<AbstractGogo>();
+
+            m_TriggerAnimationsReference = LaunchedGogo.GetComponentInChildren<TriggerAnimationsReference>();
             m_TriggerAnimationsReference.AnimationStarted += TriggerAnimationsReference_OnAnimationStarted;
             m_TriggerAnimationsReference.AnimationFinished += TriggerAnimationsReference_OnAnimationFinished;
 
-            m_CollectableAttribute = launcherProjectile.GetComponentInChildren<CollectableAttribute>();
+            m_CollectableAttribute = LaunchedGogo.GetComponentInChildren<CollectableAttribute>();
             m_CollectableAttribute.Collected += CollectableAttribute_OnCollected;
         }
 
         private void ClearComponentsAndUnsubscribe()
         {
+            LaunchedGogo = null;
+
             if (m_TriggerAnimationsReference != null)
             {
                 m_TriggerAnimationsReference.AnimationFinished -= TriggerAnimationsReference_OnAnimationFinished;
