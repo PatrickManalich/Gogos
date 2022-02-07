@@ -43,7 +43,7 @@ namespace Gogos
         private IEnumerator FlashTextAndReturnRoutine()
         {
             m_Announcement.gameObject.SetActive(true);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
 
             var playersGogos = FindObjectsOfType<AbstractGogo>().Where(g => g.Player == PlayerTracker.Player);
             foreach (var playerGogo in playersGogos)
