@@ -1,8 +1,6 @@
 ﻿// Copyright 2020-2021 Barron Associates, Inc.
 // Proprietary Information - All Rights Reserved
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Gogos
 {
@@ -10,9 +8,6 @@ namespace Gogos
     {
         [SerializeField]
         private NicknameText m_NicknameText;
-
-        [SerializeField]
-        private GogoVariantIcon m_GogoVariantIcon;
 
         [SerializeField]
         private PlayerNameText m_PlayerNameText;
@@ -55,7 +50,6 @@ namespace Gogos
             var scriptableGogo = gogo.IdentifiableGogo.ScriptableGogo;
 
             m_NicknameText.SetText(scriptableGogo.Nickname, scriptableGogo.RarityTier);
-            m_GogoVariantIcon.SetIcon(scriptableGogo.GogoVariant);
             m_PlayerNameText.SetText(gogo.Player);
             var weightTierTracker = (WeightTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.Weight);
             m_WeightTierDetails.SetSlots(weightTierTracker.Tier, scriptableGogo.WeightTier);
