@@ -25,7 +25,7 @@ namespace Gogos
 
         private void OnDestroy()
         {
-            UnsubscribeFromProjectileEvents();
+            ClearComponentsAndUnsubscribe();
             PhaseTracker.PhaseChanged -= PhaseTracker_OnPhaseChanged;
         }
 
@@ -34,7 +34,7 @@ namespace Gogos
             if (PhaseTracker.Phase == Phase.Launching)
             {
                 var launcherProjectile = m_Launcher.ProjectileRigidbody.gameObject;
-                SubscribeToProjectileEvents(launcherProjectile);
+                GetComponentsAndSubscribe(launcherProjectile);
             }
         }
 
@@ -50,18 +50,18 @@ namespace Gogos
         {
             if (e.TriggerAnimation == TriggerAnimation.Expand)
             {
-                UnsubscribeFromProjectileEvents();
+                ClearComponentsAndUnsubscribe();
                 StartCoroutine(InvokeExpandedAfterDelayRoutine());
             }
         }
 
         private void CollectableAttribute_OnCollected()
         {
-            UnsubscribeFromProjectileEvents();
+            ClearComponentsAndUnsubscribe();
             Collected?.Invoke();
         }
 
-        private void SubscribeToProjectileEvents(GameObject launcherProjectile)
+        private void GetComponentsAndSubscribe(GameObject launcherProjectile)
         {
             m_TriggerAnimationsReference = launcherProjectile.GetComponentInChildren<TriggerAnimationsReference>();
             m_TriggerAnimationsReference.AnimationStarted += TriggerAnimationsReference_OnAnimationStarted;
@@ -71,7 +71,7 @@ namespace Gogos
             m_CollectableAttribute.Collected += CollectableAttribute_OnCollected;
         }
 
-        private void UnsubscribeFromProjectileEvents()
+        private void ClearComponentsAndUnsubscribe()
         {
             if (m_TriggerAnimationsReference != null)
             {
