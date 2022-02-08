@@ -13,6 +13,9 @@ namespace Gogos
         private PlayerNameText m_PlayerNameText;
 
         [SerializeField]
+        private GogoClassText m_GogoClassText;
+
+        [SerializeField]
         private TierDetails m_WeightTierDetails;
 
         [SerializeField]
@@ -51,6 +54,7 @@ namespace Gogos
 
             m_NicknameText.SetText(scriptableGogo.Nickname, scriptableGogo.RarityTier);
             m_PlayerNameText.SetText(gogo.Player);
+            m_GogoClassText.SetText(gogo.IdentifiableGogo.ScriptableGogo.GogoClass);
             var weightTierTracker = (WeightTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.Weight);
             m_WeightTierDetails.SetSlots(weightTierTracker.Tier, scriptableGogo.WeightTier);
             var rangeTierTracker = (RangeTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range);
