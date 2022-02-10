@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Gogos
 {
-    public class GameObjectToggler : MonoBehaviour
+    public class OnEnableToggler : MonoBehaviour
     {
         [SerializeField]
         private List<GameObject> m_GameObjects;
