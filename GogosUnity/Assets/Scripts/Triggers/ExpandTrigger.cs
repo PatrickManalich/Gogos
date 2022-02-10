@@ -22,6 +22,11 @@ namespace Gogos
 
         private const string ExpandName = "Expand";
 
+        private void Awake()
+        {
+            m_Collider.enabled = false;
+        }
+
         public void SetPlayer(Player player)
         {
             Player = player;
