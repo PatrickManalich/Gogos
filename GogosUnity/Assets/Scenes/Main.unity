@@ -4922,6 +4922,7 @@ GameObject:
   m_Component:
   - component: {fileID: 875094591}
   - component: {fileID: 875094590}
+  - component: {fileID: 875094592}
   m_Layer: 8
   m_Name: SettlingVirtualCamera
   m_TagString: Untagged
@@ -4979,6 +4980,22 @@ Transform:
   m_Father: {fileID: 1765518841}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &875094592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875094589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0177b7b378a6144ab7bb85b25da9705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VirtualCamera: {fileID: 875094590}
+  m_StartAngle: 4.71
+  m_OrbitRadius: 25
+  m_MouseOrbitSpeed: 0.05
 --- !u!1 &910543773
 GameObject:
   m_ObjectHideFlags: 0
@@ -5781,7 +5798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: -25, y: 25, z: -25}
+  m_FollowOffset: {x: 28.28, y: 25, z: -28.28}
   m_XDamping: 2
   m_YDamping: 2
   m_ZDamping: 2
@@ -8491,7 +8508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 5, y: 10, z: -25}
+  m_FollowOffset: {x: 0, y: 10, z: -25}
   m_XDamping: 2
   m_YDamping: 2
   m_ZDamping: 2
@@ -12091,6 +12108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2074938245}
   - component: {fileID: 2074938246}
+  - component: {fileID: 2074938247}
   m_Layer: 8
   m_Name: SelectingVirtualCamera
   m_TagString: Untagged
@@ -12148,6 +12166,22 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1085769003}
+--- !u!114 &2074938247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074938244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0177b7b378a6144ab7bb85b25da9705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VirtualCamera: {fileID: 2074938246}
+  m_StartAngle: 5.49
+  m_OrbitRadius: 40
+  m_MouseOrbitSpeed: 0.05
 --- !u!1 &2077586319
 GameObject:
   m_ObjectHideFlags: 0
@@ -12275,6 +12309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2093054238}
   - component: {fileID: 2093054237}
+  - component: {fileID: 2093054239}
   m_Layer: 8
   m_Name: LaunchingVirtualCamera
   m_TagString: Untagged
@@ -12332,6 +12367,22 @@ Transform:
   m_Father: {fileID: 1765518841}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2093054239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093054236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0177b7b378a6144ab7bb85b25da9705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VirtualCamera: {fileID: 2093054237}
+  m_StartAngle: 4.71
+  m_OrbitRadius: 10
+  m_MouseOrbitSpeed: 0.05
 --- !u!4 &2101529747 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 112939605059054953, guid: 9a78a6cbbd1861749bb18a8d80fe8e51,
