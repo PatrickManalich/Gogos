@@ -7,7 +7,7 @@
         protected override void Awake()
         {
             base.Awake();
-            Turn = 0;
+            Turn = 1;
         }
 
         private void Start()

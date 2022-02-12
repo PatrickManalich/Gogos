@@ -45,7 +45,7 @@ namespace Gogos
         {
             if (PhaseTracker.Phase == Phase.Spawning)
             {
-                if (TurnTracker.Turn % TurnsToSpawn == 0)
+                if ((TurnTracker.Turn % TurnsToSpawn) - 1 == 0)
                 {
                     StartCoroutine(SpawnRoutine());
                 }
