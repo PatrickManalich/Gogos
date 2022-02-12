@@ -9,9 +9,6 @@ namespace Gogos
         private TriggerRangeRefresher m_TriggerRangeRefresher;
 
         [SerializeField]
-        private RotationAligner m_TriggerRangeRotationAligner;
-
-        [SerializeField]
         private List<BlastTrigger> m_BlastTriggers;
 
         private Vector3 m_StartedMovingPosition;

@@ -17,7 +17,6 @@ MonoBehaviour:
   m_Accelerometer: {fileID: 4378255741607174297}
   m_TriggerRange: {fileID: 256999965922282365}
   m_TriggerRangeRefresher: {fileID: 4282728269017090885}
-  m_TriggerRangeRotationAligner: {fileID: 25436058178282595}
   m_BlastTriggers:
   - {fileID: 6040586050711054379}
 --- !u!114 &8819823901546428843
@@ -33,18 +32,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Tier: 0
---- !u!114 &25436058178282595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 256999965922282365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 660d72e256a205f4087a9e7a9238478e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &225641144686127414
 PrefabInstance:
   m_ObjectHideFlags: 0
