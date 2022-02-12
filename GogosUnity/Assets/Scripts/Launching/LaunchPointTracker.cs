@@ -24,7 +24,7 @@ namespace Gogos
             {
                 var randomStartingCheckpoint = startingCheckpoints[Random.Range(0, startingCheckpoints.Count)];
                 randomStartingCheckpoint.SetPlayer(player);
-                randomStartingCheckpoint.SetTurnReached(TurnTracker.Turn);
+                randomStartingCheckpoint.SetTurnReached(0);
                 startingCheckpoints.Remove(randomStartingCheckpoint);
             }
 
