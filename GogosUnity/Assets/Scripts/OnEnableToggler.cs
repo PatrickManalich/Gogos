@@ -23,6 +23,7 @@ namespace Gogos
         private IEnumerator ToggleAfterDelayRoutine()
         {
             yield return new WaitForSeconds(m_Delay);
+            m_GameObjects.ForEach(g => g.SetActive(!m_Value));  // Resets objects like visual effects
             m_GameObjects.ForEach(g => g.SetActive(m_Value));
         }
     }
