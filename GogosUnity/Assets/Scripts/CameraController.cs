@@ -76,7 +76,11 @@ namespace Gogos
 
                 m_LastHitPointPosition = m_HitPoint.transform.position;
             }
-            else if (PhaseTracker.Phase == Phase.Launching || PhaseTracker.Phase == Phase.Settling)
+        }
+
+        private void FixedUpdate()
+        {
+            if (PhaseTracker.Phase == Phase.Launching || PhaseTracker.Phase == Phase.Settling)
             {
                 if (m_Launcher.ProjectileRigidbody != null)
                 {
