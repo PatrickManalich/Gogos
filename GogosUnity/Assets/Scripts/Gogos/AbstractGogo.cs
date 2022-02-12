@@ -12,6 +12,8 @@ namespace Gogos
 
         public TierTrackerReference TierTrackerReference => m_TierTrackerReference;
 
+        protected GameObject TriggerRange => m_TriggerRange;
+
         [SerializeField]
         private AttributesReference m_AttributesReference;
 

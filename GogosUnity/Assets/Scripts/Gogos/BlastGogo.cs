@@ -14,14 +14,7 @@ namespace Gogos
         [SerializeField]
         private List<BlastTrigger> m_BlastTriggers;
 
-        private Launcher m_Launcher;
-        private Quaternion m_LauncherAlignedRotation;
-
-        protected override void Start()
-        {
-            base.Start();
-            m_Launcher = FindObjectOfType<Launcher>();
-        }
+        private Vector3 m_StartedMovingPosition;
 
         public override void SetPlayer(Player player)
         {
@@ -38,14 +31,14 @@ namespace Gogos
 
         protected override void OnStartedMoving()
         {
-            m_LauncherAlignedRotation = Quaternion.Euler(new Vector3(0, m_Launcher.transform.rotation.eulerAngles.y, 0));
+            m_StartedMovingPosition = transform.position;
         }
 
         protected override void OnStoppedMoving()
         {
             m_TriggerRangeRefresher.enabled = false;
-            m_TriggerRangeRotationAligner.AlignWithRotation(m_LauncherAlignedRotation);
             UnparentTriggerRange();
+            TriggerRange.transform.rotation = Quaternion.LookRotation(TriggerRange.transform.position - m_StartedMovingPosition);
 
             var rangeTierTracker = (RangeTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range);
             var blastPowerTierTracker = (BlastPowerTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastPower);
