@@ -16,22 +16,6 @@ MonoBehaviour:
   - {fileID: 7419662280396065119}
   m_Value: 1
   m_Delay: 0.8
---- !u!114 &1992988074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7419662279604981016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02fad9f79302cb849b9e38344dceea4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_GameObjects:
-  - {fileID: 7419662280396065119}
-  m_Value: 0
-  m_Delay: 0
 --- !u!1001 &701881447436859938
 PrefabInstance:
   m_ObjectHideFlags: 0
