@@ -91,6 +91,7 @@ namespace Gogos
         protected void ReparentTriggerRange()
         {
             m_TriggerRange.transform.parent = m_TriggerRangeParent;
+            m_TriggerRange.transform.localPosition = Vector3.zero;
         }
 
         private void Accelerometer_OnStartedMoving()
