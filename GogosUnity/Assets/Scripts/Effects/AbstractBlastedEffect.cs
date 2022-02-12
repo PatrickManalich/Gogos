@@ -4,7 +4,7 @@ namespace Gogos
 {
     public abstract class AbstractBlastedEffect : MonoBehaviour
     {
-        protected abstract void OnBlasted();
+        protected abstract void OnBlasted(BlastTriggerEventArgs e);
 
         [SerializeField]
         private BlastableAttribute m_BlastableAttribute;
@@ -19,9 +19,9 @@ namespace Gogos
             m_BlastableAttribute.Blasted -= BlastableAttribute_OnBlasted;
         }
 
-        private void BlastableAttribute_OnBlasted()
+        private void BlastableAttribute_OnBlasted(object sender, BlastTriggerEventArgs e)
         {
-            OnBlasted();
+            OnBlasted(e);
         }
     }
 }

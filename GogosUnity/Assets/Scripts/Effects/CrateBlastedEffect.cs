@@ -13,7 +13,7 @@ namespace Gogos
         [SerializeField]
         private GameObject[] m_PointCubes;
 
-        protected override void OnBlasted()
+        protected override void OnBlasted(BlastTriggerEventArgs e)
         {
             for (int i = 0; i < m_CapacityTierTracker.Capacity; i++)
             {

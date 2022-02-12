@@ -37,7 +37,7 @@ namespace Gogos
             m_TriggerAnimationsReference.AnimationFinished -= TriggerAnimationsReference_OnAnimationFinished;
         }
 
-        protected override void OnBlasted()
+        protected override void OnBlasted(BlastTriggerEventArgs e)
         {
             m_Rigidbody.transform.rotation = Quaternion.identity;
             m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;

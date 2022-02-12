@@ -6,7 +6,7 @@ namespace Gogos
 {
     public class BlastableAttribute : AbstractAttribute
     {
-        public event Action Blasted;
+        public event EventHandler<BlastTriggerEventArgs> Blasted;
 
         [SerializeField]
         private Rigidbody m_Rigidbody;
@@ -30,7 +30,7 @@ namespace Gogos
                 return;
             }
 
-            Blasted?.Invoke();
+            Blasted?.Invoke(this, new BlastTriggerEventArgs(blastTrigger));
             var centerPosition = blastTrigger.CenterPosition;
             var distance = Vector3.Distance(transform.position, centerPosition);
             var radius = blastTrigger.RangeTierTracker.Range / 2;
