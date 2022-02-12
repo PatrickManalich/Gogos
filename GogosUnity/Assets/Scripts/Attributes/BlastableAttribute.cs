@@ -37,6 +37,7 @@ namespace Gogos
 
             var blastOutwardPower = distance.ConvertValueToDifferentRange(0, radius, blastTrigger.BlastPowerTierTracker.BlastOutwardPower, MinBlastOutwardPower);
             var outwardDirection = (transform.position - centerPosition).normalized;
+            outwardDirection = outwardDirection.WithY(Mathf.Abs(outwardDirection.y));   // Prevent downward blasts
             var outwardForce = outwardDirection * blastOutwardPower;
 
             var blastUpwardPower = distance.ConvertValueToDifferentRange(0, radius, blastTrigger.BlastPowerTierTracker.BlastUpwardPower, MinBlastUpwardPower);
