@@ -145,16 +145,16 @@ namespace Gogos.Extensions
         }
 
         /// <summary>
-        /// Returns this euler angle clamped between 0 and 360 degrees.
+        /// Returns this angle (degrees) clamped between 0 and 360 degrees.
         /// </summary>
-        public static float ClampAngle(this float eulerAngle)
+        public static float ClampDegreeAngle(this float degreeAngle)
         {
-            eulerAngle -= Mathf.CeilToInt(eulerAngle / 360f) * 360f;
-            if (eulerAngle < 0)
+            degreeAngle -= Mathf.CeilToInt(degreeAngle / 360f) * 360f;
+            if (degreeAngle < 0)
             {
-                eulerAngle += 360f;
+                degreeAngle += 360f;
             }
-            return eulerAngle;
+            return degreeAngle;
         }
 
         /// <summary>
