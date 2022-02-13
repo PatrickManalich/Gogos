@@ -11,7 +11,7 @@ namespace Gogos
         [SerializeField]
         private GameObject m_ForcePoint;
 
-        private const float DeflectPower = 10;
+        private const float DeflectPower = 20;
         private const float MinAttractPower = 0;
         private const float MaxAttractPower = 10;
 
