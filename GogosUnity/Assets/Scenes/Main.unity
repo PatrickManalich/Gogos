@@ -2496,6 +2496,10 @@ MonoBehaviour:
       type: 3}
     m_SpawnChance: 10
   m_SpawnableGogos: {fileID: 11400000, guid: 9c0248e4044baf640bbe7dc1d21d36a5, type: 2}
+  m_GoldenGogoPrefabs:
+  - {fileID: 2908259253764332333, guid: 3379df0d63e6539479e03a53375dac59, type: 3}
+  - {fileID: 3801579007444896063, guid: a4f29bcf5c6ab3644a06acea9326abbf, type: 3}
+  - {fileID: 8190798114809376189, guid: 6fd8d4a66e92fe540a3b50575c568f99, type: 3}
 --- !u!4 &514499565
 Transform:
   m_ObjectHideFlags: 0

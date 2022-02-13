@@ -21,6 +21,9 @@ namespace Gogos
         [SerializeField]
         private ScriptableGogoBucket m_SpawnableGogos;
 
+        [SerializeField]
+        private GameObject[] m_GoldenGogoPrefabs;
+
         private const int TurnsToSpawn = PlayerTracker.PlayerCount * 3 + 1;
         private const int MaxSpawners = PlayerTracker.PlayerCount;
         private const int MinSpawners = 6;
@@ -86,6 +89,11 @@ namespace Gogos
                 activeSpawner.ShowSpawnMarker();
                 yield return activeSpawner.RandomlySpawn(m_Spawnables);
                 activeSpawner.Spawn(m_SpawnableGogos.GetRandomScriptableGogo());
+                if (activeSpawners.Count == 0)
+                {
+                    var randomGoldenGogo = m_GoldenGogoPrefabs[UnityEngine.Random.Range(0, m_GoldenGogoPrefabs.Length)];
+                    activeSpawner.Spawn(randomGoldenGogo);
+                }
                 activeSpawner.HideSpawnMarker();
             }
 
