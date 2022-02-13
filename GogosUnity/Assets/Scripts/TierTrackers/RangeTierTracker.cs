@@ -2,7 +2,7 @@
 
 namespace Gogos
 {
-    public enum RangeTier { Small, Medium, Large }
+    public enum RangeTier { Disabled, Small, Medium, Large }
 
     public class RangeTierTracker : AbstractTierTracker<RangeTier>
     {
@@ -11,6 +11,7 @@ namespace Gogos
 
         private static readonly Dictionary<RangeTier, float> RangesByTier = new Dictionary<RangeTier, float>()
         {
+            { RangeTier.Disabled, 0 },
             { RangeTier.Small, 20 },
             { RangeTier.Medium, 30 },
             { RangeTier.Large, 40 },

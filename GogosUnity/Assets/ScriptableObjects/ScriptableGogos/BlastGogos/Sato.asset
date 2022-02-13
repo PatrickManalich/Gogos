@@ -19,7 +19,7 @@ MonoBehaviour:
   m_Number: 3
   m_RarityTier: 0
   m_WeightTier: 0
-  m_RangeTier: 0
+  m_RangeTier: 1
   m_BlastPowerTier: 0
   m_BlastShapeSprites:
   - {fileID: 21300000, guid: ab233da5ab9fcd041bcd0f3cf7cc9865, type: 3}

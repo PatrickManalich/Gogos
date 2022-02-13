@@ -13,7 +13,7 @@ namespace Gogos
 
         private static readonly Dictionary<ShieldStrengthTier, RangeTier> RangeTiersByShieldStrengthTier = new Dictionary<ShieldStrengthTier, RangeTier>()
         {
-            { ShieldStrengthTier.Broken, RangeTier.Small },
+            { ShieldStrengthTier.Broken, RangeTier.Disabled },
             { ShieldStrengthTier.Weak, RangeTier.Small },
             { ShieldStrengthTier.Medium, RangeTier.Medium },
             { ShieldStrengthTier.Strong, RangeTier.Large },

@@ -19,7 +19,7 @@ MonoBehaviour:
   m_Number: 34
   m_RarityTier: 0
   m_WeightTier: 0
-  m_RangeTier: 1
+  m_RangeTier: 2
   m_ShieldStrengthTier: 2
   m_GroupsByShieldResponse:
     m_val: 7

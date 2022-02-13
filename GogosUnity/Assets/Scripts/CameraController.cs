@@ -32,6 +32,7 @@ namespace Gogos
 
         private static readonly Dictionary<RangeTier, Vector3> FollowOffsetsByRangeTier = new Dictionary<RangeTier, Vector3>()
         {
+            { RangeTier.Disabled, new Vector3(5, 10, -25) },
             { RangeTier.Small, new Vector3(5, 10, -25) },
             { RangeTier.Medium, new Vector3(5, 15, -35) },
             { RangeTier.Large, new Vector3(5, 20, -45) },

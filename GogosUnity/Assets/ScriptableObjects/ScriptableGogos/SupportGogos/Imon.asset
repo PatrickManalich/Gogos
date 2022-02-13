@@ -19,7 +19,7 @@ MonoBehaviour:
   m_Number: 33
   m_RarityTier: 0
   m_WeightTier: 0
-  m_RangeTier: 0
+  m_RangeTier: 1
   m_Groups: 1
   m_SupportAbilityTierVariant: 4
   m_SupportAbilityTierModifier: 1
