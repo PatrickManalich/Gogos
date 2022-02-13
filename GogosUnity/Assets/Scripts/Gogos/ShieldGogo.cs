@@ -46,12 +46,14 @@ namespace Gogos
 
         protected override void OnStoppedMoving()
         {
-            if (!m_ShieldStrengthTierTracker.IsShieldBroken)
+            if (m_ShieldStrengthTierTracker.IsShieldBroken)
             {
-                m_TriggerRangeGroundSnapper.SnapToGround();
-                UnparentTriggerRange();
-                m_ShieldTrigger.EnableShield(m_RangeTierTracker, m_ShieldStrengthTierTracker, m_ShieldAbility);
+                return;
             }
+
+            m_TriggerRangeGroundSnapper.SnapToGround();
+            UnparentTriggerRange();
+            m_ShieldTrigger.EnableShield(m_RangeTierTracker, m_ShieldStrengthTierTracker, m_ShieldAbility);
         }
     }
 }
