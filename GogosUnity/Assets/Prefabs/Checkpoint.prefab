@@ -81,6 +81,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3904783147869048356}
   - component: {fileID: 4406314597976273316}
+  - component: {fileID: 7277699201671556951}
   m_Layer: 2
   m_Name: Refreshers
   m_TagString: Untagged
@@ -116,6 +117,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RangeTierTracker: {fileID: 1571913275080787009}
   m_TriggerRange: {fileID: 6274660093370568594}
+--- !u!114 &7277699201671556951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2554220972794180442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2086556be93ca743a449a5ef90f59c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShieldStrengthTierTracker: {fileID: 6126695293900059214}
+  m_ShieldVisual: {fileID: 7320351723148692940}
 --- !u!1 &6274660093370568594
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,3 +477,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1deda4d5988548e40aa650a5f72330d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7320351723148692940 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2060347306123067252, guid: 7ccc0cac7b79f584c88fc0e50b6f00b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8719197500073292472}
+  m_PrefabAsset: {fileID: 0}
