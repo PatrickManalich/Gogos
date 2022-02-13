@@ -13,7 +13,7 @@ namespace Gogos
         {
             { WeightTier.Lightweight, 0.75f },
             { WeightTier.Middleweight, 1 },
-            { WeightTier.Heavyweight, 1.25f },
+            { WeightTier.Heavyweight, 1.5f },
         };
     }
 }
