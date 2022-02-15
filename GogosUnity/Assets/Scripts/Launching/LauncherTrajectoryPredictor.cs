@@ -1,4 +1,5 @@
-﻿using TrajectoryPrediction;
+﻿using Gogos.Extensions;
+using TrajectoryPrediction;
 using UnityEngine;
 
 namespace Gogos
@@ -13,6 +14,15 @@ namespace Gogos
 
         [SerializeField]
         private GameObject m_HitPoint;
+
+        [SerializeField]
+        private GameObject m_EnvironmentCenter;
+
+        [SerializeField]
+        private float m_MaxDistanceFromCenter;
+
+        [SerializeField]
+        private float m_MaxHitPointHeight;
 
         private void Awake()
         {
@@ -35,7 +45,10 @@ namespace Gogos
 
                 if (m_TrajectoryPredictor.hitInfo3D.collider != null)
                 {
-                    m_HitPoint.transform.position = m_TrajectoryPredictor.hitInfo3D.point;
+                    var trajectoryPoint = m_TrajectoryPredictor.hitInfo3D.point;
+                    var distanceFromCenter = Vector3.Distance(trajectoryPoint.WithY(0), m_EnvironmentCenter.transform.position.WithY(0));
+                    var hitPointHeight = distanceFromCenter.ConvertValueToDifferentRange(0, m_MaxDistanceFromCenter, m_MaxHitPointHeight, 0);
+                    m_HitPoint.transform.position = trajectoryPoint.WithY(hitPointHeight);
                 }
             }
         }

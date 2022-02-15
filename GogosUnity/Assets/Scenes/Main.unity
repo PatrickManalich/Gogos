@@ -14764,6 +14764,9 @@ MonoBehaviour:
   m_Launcher: {fileID: 1638789070}
   m_TrajectoryPredictor: {fileID: 8326469070779933968}
   m_HitPoint: {fileID: 1722694538}
+  m_EnvironmentCenter: {fileID: 2077586319}
+  m_MaxDistanceFromCenter: 160
+  m_MaxHitPointHeight: 16
 --- !u!4 &8326469070304722191
 Transform:
   m_ObjectHideFlags: 0
