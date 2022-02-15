@@ -18,7 +18,10 @@ namespace Gogos
         private void Awake()
         {
             GroupTag = GroupExtensions.GetGroupTag(m_TriggerListener.tag);
+        }
 
+        private void Start()
+        {
             m_TriggerListener.Entered += TriggerListener_OnEntered;
             m_TriggerListener.Exited += TriggerListener_OnExited;
         }
