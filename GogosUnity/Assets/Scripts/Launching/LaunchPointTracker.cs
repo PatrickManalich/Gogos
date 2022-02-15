@@ -11,7 +11,6 @@ namespace Gogos
         [SerializeField]
         private PlayerGogoReturner m_PlayerGogoReturner;
 
-        [SerializeField]
         private Checkpoint[] m_Checkpoints;
 
         private void Start()
@@ -19,6 +18,7 @@ namespace Gogos
             m_PlayerGogoReturner.Returned += GetLaunchPoints;
             m_PlayerGogoReturner.Skipped += GetLaunchPoints;
 
+            m_Checkpoints = FindObjectsOfType<Checkpoint>();
             var startingCheckpoints = m_Checkpoints.Where(c => c.IsStartingCheckpoint).ToList();
             foreach (var player in PlayerTracker.Players)
             {
