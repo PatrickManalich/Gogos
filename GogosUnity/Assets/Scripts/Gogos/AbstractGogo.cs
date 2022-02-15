@@ -10,6 +10,8 @@ namespace Gogos
 
         public int TurnLaunched { get; private set; }
 
+        public AttributesReference AttributesReference => m_AttributesReference;
+
         public TierTrackerReference TierTrackerReference => m_TierTrackerReference;
 
         protected GameObject TriggerRange => m_TriggerRange;
