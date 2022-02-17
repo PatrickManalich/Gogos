@@ -41,19 +41,11 @@ namespace Gogos
         {
             LaunchPoints.Clear();
 
-            var playersGogos = FindObjectsOfType<AbstractGogo>().Where(g => g.Player == PlayerTracker.Player);
-            var launchedPlayerGogos = playersGogos.Where(p => GogoSituationDatabase.GetSituation(p.IdentifiableGogo) == Situation.Launched);
-            foreach (var launchedPlayerGogo in launchedPlayerGogos)
-            {
-                LaunchPoints.Add(new LaunchPoint(launchedPlayerGogo.TurnLaunched, launchedPlayerGogo.transform.position));
-            }
-
             var playerTriggers = m_LaunchPointTriggers.Where(c => c.Player == PlayerTracker.Player);
             foreach (var playerTrigger in playerTriggers)
             {
                 LaunchPoints.Add(new LaunchPoint(playerTrigger.TurnReached, playerTrigger.transform.position));
             }
-
             LaunchPoints = LaunchPoints.OrderByDescending(l => l.Turn).ToList();
         }
     }
