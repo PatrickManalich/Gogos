@@ -11,21 +11,21 @@ namespace Gogos
         [SerializeField]
         private PlayerGogoReturner m_PlayerGogoReturner;
 
-        private Checkpoint[] m_Checkpoints;
+        private LaunchPointTrigger[] m_LaunchPointTriggers;
 
         private void Start()
         {
             m_PlayerGogoReturner.Returned += GetLaunchPoints;
             m_PlayerGogoReturner.Skipped += GetLaunchPoints;
 
-            m_Checkpoints = FindObjectsOfType<Checkpoint>();
-            var startingCheckpoints = m_Checkpoints.Where(c => c.IsStartingCheckpoint).ToList();
+            m_LaunchPointTriggers = FindObjectsOfType<LaunchPointTrigger>();
+            var startingTriggers = m_LaunchPointTriggers.Where(c => c.IsStartingTrigger).ToList();
             foreach (var player in PlayerTracker.Players)
             {
-                var randomStartingCheckpoint = startingCheckpoints[Random.Range(0, startingCheckpoints.Count)];
-                randomStartingCheckpoint.SetPlayer(player);
-                randomStartingCheckpoint.SetTurnReached(0);
-                startingCheckpoints.Remove(randomStartingCheckpoint);
+                var randomStartingTrigger = startingTriggers[Random.Range(0, startingTriggers.Count)];
+                randomStartingTrigger.SetPlayer(player);
+                randomStartingTrigger.SetTurnReached(0);
+                startingTriggers.Remove(randomStartingTrigger);
             }
 
             GetLaunchPoints();
@@ -48,10 +48,10 @@ namespace Gogos
                 LaunchPoints.Add(new LaunchPoint(launchedPlayerGogo.TurnLaunched, launchedPlayerGogo.transform.position));
             }
 
-            var checkpoints = m_Checkpoints.Where(c => c.Player == PlayerTracker.Player);
-            foreach (var checkpoint in checkpoints)
+            var playerTriggers = m_LaunchPointTriggers.Where(c => c.Player == PlayerTracker.Player);
+            foreach (var playerTrigger in playerTriggers)
             {
-                LaunchPoints.Add(new LaunchPoint(checkpoint.TurnReached, checkpoint.transform.position));
+                LaunchPoints.Add(new LaunchPoint(playerTrigger.TurnReached, playerTrigger.transform.position));
             }
 
             LaunchPoints = LaunchPoints.OrderByDescending(l => l.Turn).ToList();

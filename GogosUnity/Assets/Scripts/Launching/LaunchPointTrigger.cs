@@ -2,19 +2,19 @@
 
 namespace Gogos
 {
-    public class Checkpoint : MonoBehaviour
+    public class LaunchPointTrigger : MonoBehaviour
     {
         public Player Player { get; private set; }
 
         public int TurnReached { get; private set; }
 
-        public bool IsStartingCheckpoint => m_IsStartingCheckpoint;
+        public bool IsStartingTrigger => m_IsStartingTrigger;
 
         [SerializeField]
         private TriggerListener m_TriggerListener;
 
         [SerializeField]
-        private GameObject m_CheckpointMarker;
+        private GameObject m_LaunchPointMarker;
 
         [SerializeField]
         private ShieldAbility m_ShieldAbility;
@@ -26,7 +26,7 @@ namespace Gogos
         private ShieldTrigger m_ShieldTrigger;
 
         [SerializeField]
-        private bool m_IsStartingCheckpoint;
+        private bool m_IsStartingTrigger;
 
         private void Start()
         {
@@ -42,7 +42,7 @@ namespace Gogos
         {
             Player = player;
             m_TriggerListener.DisableTrigger();
-            m_CheckpointMarker.SetActive(false);
+            m_LaunchPointMarker.SetActive(false);
 
             m_ShieldAbility.SetPlayer(Player);
             m_ShieldTrigger.SetPlayer(Player);

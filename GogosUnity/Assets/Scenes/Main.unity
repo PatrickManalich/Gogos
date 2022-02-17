@@ -1289,7 +1289,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint5
+      value: LaunchPointTrigger5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -1829,7 +1829,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint2
+      value: LaunchPointTrigger2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -1861,7 +1861,7 @@ GameObject:
   m_Component:
   - component: {fileID: 371930564}
   m_Layer: 0
-  m_Name: CheckpointCircle2
+  m_Name: LaunchPointTriggerCircle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2077,7 +2077,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint3
+      value: LaunchPointTrigger3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -2152,7 +2152,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint8
+      value: LaunchPointTrigger8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -2944,7 +2944,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint2
+      value: LaunchPointTrigger2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -3212,7 +3212,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint8
+      value: LaunchPointTrigger8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -3287,7 +3287,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint6
+      value: LaunchPointTrigger6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -4266,7 +4266,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7852144428581920720, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
-      propertyPath: m_IsStartingCheckpoint
+      propertyPath: m_IsStartingTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7852144428581920721, guid: e6c1b3f7a48b00b41a0414810759b060,
@@ -4327,7 +4327,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint5
+      value: LaunchPointTrigger5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -4926,7 +4926,7 @@ GameObject:
   m_Component:
   - component: {fileID: 910543774}
   m_Layer: 0
-  m_Name: CheckpointCircle4
+  m_Name: LaunchPointTriggerCircle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5102,7 +5102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 947721447}
   m_Layer: 0
-  m_Name: CheckpointCircle1
+  m_Name: LaunchPointTriggerCircle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5195,7 +5195,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint3
+      value: LaunchPointTrigger3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -5276,7 +5276,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint2
+      value: LaunchPointTrigger2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -5351,7 +5351,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint4
+      value: LaunchPointTrigger4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -6028,7 +6028,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7852144428581920720, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
-      propertyPath: m_IsStartingCheckpoint
+      propertyPath: m_IsStartingTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7852144428581920721, guid: e6c1b3f7a48b00b41a0414810759b060,
@@ -6089,7 +6089,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint4
+      value: LaunchPointTrigger4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -6164,7 +6164,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint1
+      value: LaunchPointTrigger1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -6862,7 +6862,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint4
+      value: LaunchPointTrigger4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -7358,7 +7358,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint1
+      value: LaunchPointTrigger1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -8147,7 +8147,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7852144428581920720, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
-      propertyPath: m_IsStartingCheckpoint
+      propertyPath: m_IsStartingTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7852144428581920721, guid: e6c1b3f7a48b00b41a0414810759b060,
@@ -8208,7 +8208,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint8
+      value: LaunchPointTrigger8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -8321,7 +8321,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7852144428581920720, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
-      propertyPath: m_IsStartingCheckpoint
+      propertyPath: m_IsStartingTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7852144428581920721, guid: e6c1b3f7a48b00b41a0414810759b060,
@@ -8382,7 +8382,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint6
+      value: LaunchPointTrigger6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -8457,7 +8457,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint7
+      value: LaunchPointTrigger7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -8532,7 +8532,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint4
+      value: LaunchPointTrigger4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -8755,7 +8755,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7852144428581920720, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
-      propertyPath: m_IsStartingCheckpoint
+      propertyPath: m_IsStartingTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7852144428581920721, guid: e6c1b3f7a48b00b41a0414810759b060,
@@ -8816,7 +8816,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint2
+      value: LaunchPointTrigger2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -9201,7 +9201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1642196411}
   m_Layer: 0
-  m_Name: CheckpointCircle3
+  m_Name: LaunchPointTriggerCircle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10698,7 +10698,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint5
+      value: LaunchPointTrigger5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -10717,7 +10717,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7852144428581920720, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
-      propertyPath: m_IsStartingCheckpoint
+      propertyPath: m_IsStartingTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7852144428581920721, guid: e6c1b3f7a48b00b41a0414810759b060,
@@ -10778,7 +10778,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint1
+      value: LaunchPointTrigger1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -11080,7 +11080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1942253900}
   m_Layer: 0
-  m_Name: CheckpointCircles
+  m_Name: LaunchPointTriggerCircles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11335,7 +11335,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint1
+      value: LaunchPointTrigger1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -11582,7 +11582,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint3
+      value: LaunchPointTrigger3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -11763,7 +11763,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint7
+      value: LaunchPointTrigger7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -12129,7 +12129,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint6
+      value: LaunchPointTrigger6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -12240,7 +12240,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7852144428581920720, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
-      propertyPath: m_IsStartingCheckpoint
+      propertyPath: m_IsStartingTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7852144428581920721, guid: e6c1b3f7a48b00b41a0414810759b060,
@@ -12301,7 +12301,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint7
+      value: LaunchPointTrigger7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}
@@ -14133,7 +14133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7852144428581920720, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
-      propertyPath: m_IsStartingCheckpoint
+      propertyPath: m_IsStartingTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7852144428581920721, guid: e6c1b3f7a48b00b41a0414810759b060,
@@ -14194,7 +14194,7 @@ PrefabInstance:
     - target: {fileID: 7852144428581920726, guid: e6c1b3f7a48b00b41a0414810759b060,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint3
+      value: LaunchPointTrigger3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c1b3f7a48b00b41a0414810759b060, type: 3}

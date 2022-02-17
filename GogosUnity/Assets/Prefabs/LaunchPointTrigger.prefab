@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 7852144428581920720}
   - component: {fileID: 8318675119412135644}
   m_Layer: 2
-  m_Name: Checkpoint
+  m_Name: LaunchPointTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -329,15 +329,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7852144428581920726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68fd81682b04d3746be711735d5e89a3, type: 3}
+  m_Script: {fileID: 11500000, guid: c94d833d4be2f064384aa3c823c3010c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_TriggerListener: {fileID: 7852144428581920722}
-  m_CheckpointMarker: {fileID: 7852144428910407451}
+  m_LaunchPointMarker: {fileID: 7852144428910407451}
   m_ShieldAbility: {fileID: 8318675119412135644}
   m_TierTrackerReference: {fileID: 3926905672466462734}
   m_ShieldTrigger: {fileID: 8277500893824130483}
-  m_IsStartingCheckpoint: 0
+  m_IsStartingTrigger: 0
 --- !u!114 &8318675119412135644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,7 +364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7852144428910407450}
   m_Layer: 2
-  m_Name: CheckpointMarker
+  m_Name: LaunchPointMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
