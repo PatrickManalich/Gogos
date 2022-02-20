@@ -22,9 +22,6 @@ namespace Gogos
         private Launcher m_Launcher;
 
         [SerializeField]
-        private GameObject m_HitPoint;
-
-        [SerializeField]
         private GameObject m_ProjectilePoint;
 
         [SerializeField]
@@ -40,7 +37,6 @@ namespace Gogos
 
         private CinemachineComposer m_SelectingComposer;
         private CinemachineTransposer m_SettlingTransposer;
-        private Vector3 m_LastHitPointPosition;
 
         private void Awake()
         {
@@ -69,13 +65,20 @@ namespace Gogos
         {
             if (PhaseTracker.Phase == Phase.Selecting)
             {
-                var isHitPointMoving = m_HitPoint.transform.position != m_LastHitPointPosition;
-                m_SelectingComposer.m_DeadZoneWidth = isHitPointMoving ? 0 : 0.5f;
-                m_SelectingComposer.m_DeadZoneHeight = isHitPointMoving ? 0 : 0.5f;
-                m_SelectingComposer.m_SoftZoneWidth = isHitPointMoving ? 0.3f : 1;
-                m_SelectingComposer.m_SoftZoneHeight = isHitPointMoving ? 0.3f : 1;
-
-                m_LastHitPointPosition = m_HitPoint.transform.position;
+                if (m_Launcher.IsTurning || m_Launcher.IsPowering)
+                {
+                    m_SelectingComposer.m_DeadZoneWidth = Mathf.Max(m_SelectingComposer.m_DeadZoneWidth - Time.deltaTime, 0);
+                    m_SelectingComposer.m_DeadZoneHeight = Mathf.Max(m_SelectingComposer.m_DeadZoneHeight - Time.deltaTime, 0);
+                    m_SelectingComposer.m_SoftZoneWidth = Mathf.Max(m_SelectingComposer.m_SoftZoneWidth - Time.deltaTime, 0.3f);
+                    m_SelectingComposer.m_SoftZoneHeight = Mathf.Max(m_SelectingComposer.m_SoftZoneHeight - Time.deltaTime, 0.3f);
+                }
+                else
+                {
+                    m_SelectingComposer.m_DeadZoneWidth = 0.25f;
+                    m_SelectingComposer.m_DeadZoneHeight = 0.25f;
+                    m_SelectingComposer.m_SoftZoneWidth = 0.5f;
+                    m_SelectingComposer.m_SoftZoneHeight = 0.5f;
+                }
             }
         }
 

@@ -10247,7 +10247,6 @@ MonoBehaviour:
   m_LaunchingVirtualCamera: {fileID: 2093054237}
   m_SettlingVirtualCamera: {fileID: 875094590}
   m_Launcher: {fileID: 1638789070}
-  m_HitPoint: {fileID: 1722694538}
   m_ProjectilePoint: {fileID: 1724622126}
   m_LaunchedGogoObserver: {fileID: 1972480346}
 --- !u!1001 &1775890549
