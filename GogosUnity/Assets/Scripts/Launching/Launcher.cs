@@ -1,5 +1,6 @@
 ﻿using Gogos.Extensions;
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Gogos
@@ -11,8 +12,15 @@ namespace Gogos
         public event Action Launched;
 
         public Vector3 LaunchPoint => transform.position;
+
         public Vector3 LaunchForce => transform.forward * m_LaunchPower;
+
         public Rigidbody ProjectileRigidbody => m_ProjectileRigidbody;
+
+        public bool IsTurning { get; private set; }
+
+        public bool IsPowering { get; private set; }
+
         public bool ReadyForLaunch { get; private set; }
 
         [SerializeField]
@@ -41,6 +49,8 @@ namespace Gogos
 
         private float m_LaunchPower;
         private Rigidbody m_ProjectileRigidbody;
+        private Coroutine m_StopTurningCoroutine;
+        private Coroutine m_StopPoweringCoroutine;
 
         private void OnEnable()
         {
@@ -90,12 +100,24 @@ namespace Gogos
         private void Turn(int direction)
         {
             transform.Rotate(direction * m_TurnSpeed * Time.deltaTime * Vector3.up, Space.World);
+            IsTurning = true;
+            if (m_StopTurningCoroutine != null)
+            {
+                StopCoroutine(m_StopTurningCoroutine);
+            }
+            m_StopTurningCoroutine = StartCoroutine(StopTurningRoutine());
         }
 
         private void ChangeLaunchPower(int direction)
         {
             m_LaunchPower += Time.deltaTime * m_LaunchPowerDelta * direction;
             m_LaunchPower = Mathf.Clamp(m_LaunchPower, m_MinLaunchPower, m_MaxLaunchPower);
+            IsPowering = true;
+            if (m_StopPoweringCoroutine != null)
+            {
+                StopCoroutine(m_StopPoweringCoroutine);
+            }
+            m_StopPoweringCoroutine = StartCoroutine(StopPoweringRoutine());
         }
 
         private void CycleLaunchPoint(int direction)
@@ -107,6 +129,20 @@ namespace Gogos
 
             transform.position = launchPoint.Position.WithY(launchPoint.Position.y + m_VerticalOffset);
             transform.rotation = Quaternion.Euler(m_LaunchAngle, launchPoint.TurnAngle, 0);
+        }
+
+        private IEnumerator StopTurningRoutine()
+        {
+            yield return null;
+            yield return null;
+            IsTurning = false;
+        }
+
+        private IEnumerator StopPoweringRoutine()
+        {
+            yield return null;
+            yield return null;
+            IsPowering = false;
         }
     }
 }
