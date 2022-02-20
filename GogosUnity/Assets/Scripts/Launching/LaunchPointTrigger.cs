@@ -9,8 +9,6 @@ namespace Gogos
 
         public Player Player { get; private set; }
 
-        public int TurnReached { get; private set; }
-
         public bool IsStartingTrigger => m_IsStartingTrigger;
 
         [SerializeField]
@@ -54,11 +52,6 @@ namespace Gogos
             m_ShieldTrigger.EnableShield(rangeTierTracker, shieldStrengthTierTracker, m_ShieldAbility);
         }
 
-        public void SetTurnReached(int turnReached)
-        {
-            TurnReached = turnReached;
-        }
-
         private void TriggerListener_OnEntered(object sender, TriggerEventArgs e)
         {
             var gogo = e.OtherCollider.GetComponent<AbstractGogo>();
@@ -73,7 +66,6 @@ namespace Gogos
             }
 
             SetPlayer(gogo.Player);
-            SetTurnReached(TurnTracker.Turn);
             Triggered?.Invoke(this, EventArgs.Empty);
         }
     }

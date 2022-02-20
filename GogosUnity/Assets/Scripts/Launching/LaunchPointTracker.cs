@@ -28,9 +28,8 @@ namespace Gogos
                 var randomStartingTrigger = startingTriggers[Random.Range(0, startingTriggers.Count)];
                 startingTriggers.Remove(randomStartingTrigger);
                 randomStartingTrigger.SetPlayer(player);
-                randomStartingTrigger.SetTurnReached(0);
 
-                var launchPoint = new LaunchPoint(randomStartingTrigger.TurnReached, randomStartingTrigger.transform.position);
+                var launchPoint = new LaunchPoint(randomStartingTrigger.transform.position);
                 m_LaunchPointsByPlayer[randomStartingTrigger.Player].Add(launchPoint);
             }
 
@@ -51,7 +50,7 @@ namespace Gogos
         private void LaunchPointTrigger_OnTriggered(object sender, System.EventArgs e)
         {
             var launchPointTrigger = (LaunchPointTrigger)sender;
-            var launchPoint = new LaunchPoint(launchPointTrigger.TurnReached, launchPointTrigger.transform.position);
+            var launchPoint = new LaunchPoint(launchPointTrigger.transform.position);
             m_LaunchPointsByPlayer[launchPointTrigger.Player].Add(launchPoint);
         }
     }
