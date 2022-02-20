@@ -19,9 +19,6 @@ namespace Gogos
         private GameObject m_ForcePoint;
 
         [SerializeField]
-        private GameObject m_EnvironmentCenter;
-
-        [SerializeField]
         private LaunchPointTracker m_LaunchPointTracker;
 
         [SerializeField]
@@ -109,9 +106,7 @@ namespace Gogos
             var launchPoint = m_LaunchPointTracker.LaunchPoint;
 
             transform.position = launchPoint.Position.WithY(launchPoint.Position.y + m_VerticalOffset);
-            var lookAtTarget = m_LaunchPointIndex == 0 ? m_EnvironmentCenter.transform.position : m_LaunchPointTracker.LaunchPoints[m_LaunchPointIndex - 1].Position;
-            transform.LookAt(lookAtTarget);
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.WithX(m_LaunchAngle));
+            transform.rotation = Quaternion.Euler(m_LaunchAngle, launchPoint.TurnAngle, 0);
         }
     }
 }

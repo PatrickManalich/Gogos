@@ -9153,7 +9153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ForcePoint: {fileID: 1283564788}
-  m_EnvironmentCenter: {fileID: 2077586319}
   m_LaunchPointTracker: {fileID: 1258243681}
   m_VerticalOffset: 3
   m_LaunchAngle: -45
