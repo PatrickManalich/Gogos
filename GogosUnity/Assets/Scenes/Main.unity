@@ -8876,10 +8876,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739d8ce65cfc5ff49b04720c636278d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Slideout: {fileID: 1842149141}
   m_OpenButton: {fileID: 1604354605}
   m_CloseButton: {fileID: 4154288254624433809}
   m_CollectionGogoDetailsPanel: {fileID: 2018693975}
   m_CollectionScrollView: {fileID: 598835347}
+  m_Launcher: {fileID: 1638789070}
 --- !u!1001 &1573266095
 PrefabInstance:
   m_ObjectHideFlags: 0

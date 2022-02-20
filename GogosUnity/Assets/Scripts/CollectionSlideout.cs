@@ -6,6 +6,9 @@ namespace Gogos
     public class CollectionSlideout : MonoBehaviour
     {
         [SerializeField]
+        private GameObject m_Slideout;
+
+        [SerializeField]
         private Button m_OpenButton;
 
         [SerializeField]
@@ -17,6 +20,9 @@ namespace Gogos
         [SerializeField]
         private GameObject m_CollectionScrollView;
 
+        [SerializeField]
+        private Launcher m_Launcher;
+
         private void Start()
         {
             m_OpenButton.onClick.AddListener(OpenButton_OnClick);
@@ -27,6 +33,11 @@ namespace Gogos
         {
             m_CloseButton.onClick.RemoveListener(CloseButton_OnClick);
             m_OpenButton.onClick.RemoveListener(OpenButton_OnClick);
+        }
+
+        private void Update()
+        {
+            m_Slideout.SetActive(!m_Launcher.IsTurning && !m_Launcher.IsPowering);
         }
 
         private void OpenButton_OnClick()
