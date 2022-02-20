@@ -12,7 +12,7 @@ namespace Gogos
         private float m_StartAngle;
 
         [SerializeField]
-        private float m_OrbitRadius;
+        private Vector3 m_OrbitOffset;
 
         [SerializeField]
         private float m_MouseOrbitSpeed;
@@ -67,9 +67,9 @@ namespace Gogos
 
         private void AlignWithAngle()
         {
-            var x = m_OrbitRadius * Mathf.Cos(m_Angle);
-            var y = m_Transposer.m_FollowOffset.y;
-            var z = m_OrbitRadius * Mathf.Sin(m_Angle);
+            var x = m_OrbitOffset.x * Mathf.Cos(m_Angle);
+            var y = m_OrbitOffset.y;
+            var z = m_OrbitOffset.z * Mathf.Sin(m_Angle);
             m_Transposer.m_FollowOffset = new Vector3(x, y, z);
         }
     }
