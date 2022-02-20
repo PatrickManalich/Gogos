@@ -12,10 +12,10 @@ namespace Gogos
         private TextMeshProUGUI m_PointsText;
 
         [SerializeField]
-        private ScriptableColorPalette m_ScriptableColorPalette;
+        private GameObject m_SelectedIndicator;
 
         [SerializeField]
-        private GameObject m_SelectedIndicator;
+        private ScriptableColorPalette m_ScriptableColorPalette;
 
         private const float NormalFontSize = 28;
         private const float SelectedFontSize = 38;

@@ -55,9 +55,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NameText: {fileID: 5926414287721993854}
   m_PointsText: {fileID: 367683716253482630}
+  m_SelectedIndicator: {fileID: 7763689531863480757}
   m_ScriptableColorPalette: {fileID: 11400000, guid: b11d06455fb6dc245a9d3bf1bf8f6e9b,
     type: 2}
-  m_SelectedIndicator: {fileID: 7763689531863480757}
 --- !u!1 &7763689531765249766
 GameObject:
   m_ObjectHideFlags: 0
