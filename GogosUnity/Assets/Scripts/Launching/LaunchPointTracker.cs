@@ -6,8 +6,11 @@ namespace Gogos
 {
     public class LaunchPointTracker : MonoBehaviour
     {
+        public LaunchPoint LaunchPoint => LaunchPoints[m_LaunchPointIndicesByPlayer[PlayerTracker.Player]];
+
         public List<LaunchPoint> LaunchPoints => m_LaunchPointsByPlayer[PlayerTracker.Player];
 
+        private Dictionary<Player, int> m_LaunchPointIndicesByPlayer = new Dictionary<Player, int>();
         private Dictionary<Player, List<LaunchPoint>> m_LaunchPointsByPlayer = new Dictionary<Player, List<LaunchPoint>>();
         private LaunchPointTrigger[] m_LaunchPointTriggers;
 
@@ -15,6 +18,7 @@ namespace Gogos
         {
             foreach (var player in PlayerTracker.Players)
             {
+                m_LaunchPointIndicesByPlayer.Add(player, 0);
                 m_LaunchPointsByPlayer.Add(player, new List<LaunchPoint>());
             }
         }
@@ -45,6 +49,23 @@ namespace Gogos
             {
                 launchPointTrigger.Triggered -= LaunchPointTrigger_OnTriggered;
             }
+        }
+
+        public void CycleLaunchPoint(int direction)
+        {
+            var launchPointIndex = m_LaunchPointIndicesByPlayer[PlayerTracker.Player];
+            var launchPoints = m_LaunchPointsByPlayer[PlayerTracker.Player];
+
+            launchPointIndex += direction;
+            if (launchPointIndex > launchPoints.Count - 1)
+            {
+                launchPointIndex = 0;
+            }
+            else if (launchPointIndex < 0)
+            {
+                launchPointIndex = launchPoints.Count - 1;
+            }
+            m_LaunchPointIndicesByPlayer[PlayerTracker.Player] = launchPointIndex;
         }
 
         private void LaunchPointTrigger_OnTriggered(object sender, System.EventArgs e)

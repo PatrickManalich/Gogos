@@ -43,7 +43,6 @@ namespace Gogos
         private float m_TurnSpeed;
 
         private float m_LaunchPower;
-        private int m_LaunchPointIndex;
         private Rigidbody m_ProjectileRigidbody;
 
         private void OnEnable()
@@ -106,18 +105,10 @@ namespace Gogos
         {
             m_LaunchPower = m_MinLaunchPower;
 
-            m_LaunchPointIndex += direction;
-            if (m_LaunchPointIndex > m_LaunchPointTracker.LaunchPoints.Count - 1)
-            {
-                m_LaunchPointIndex = 0;
-            }
-            else if (m_LaunchPointIndex < 0)
-            {
-                m_LaunchPointIndex = m_LaunchPointTracker.LaunchPoints.Count - 1;
-            }
+            m_LaunchPointTracker.CycleLaunchPoint(direction);
+            var launchPoint = m_LaunchPointTracker.LaunchPoint;
 
-            transform.position = m_LaunchPointTracker.LaunchPoints[m_LaunchPointIndex].Position;
-            transform.position = transform.position.WithY(transform.position.y + m_VerticalOffset);
+            transform.position = launchPoint.Position.WithY(launchPoint.Position.y + m_VerticalOffset);
             var lookAtTarget = m_LaunchPointIndex == 0 ? m_EnvironmentCenter.transform.position : m_LaunchPointTracker.LaunchPoints[m_LaunchPointIndex - 1].Position;
             transform.LookAt(lookAtTarget);
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.WithX(m_LaunchAngle));
