@@ -38,10 +38,7 @@ namespace Gogos
                 var randomStartingTrigger = startingTriggers[Random.Range(0, startingTriggers.Count)];
                 startingTriggers.Remove(randomStartingTrigger);
                 randomStartingTrigger.SetPlayer(player);
-                var lookAtEnvironmentCenterRotation = Quaternion.LookRotation(m_EnvironmentCenter.transform.position - randomStartingTrigger.transform.position);
-                var turnAngle = lookAtEnvironmentCenterRotation.eulerAngles.y;
-                var launchPoint = new LaunchPoint(randomStartingTrigger.transform.position, turnAngle);
-                m_LaunchPointsByPlayer[randomStartingTrigger.Player].Add(launchPoint);
+                CreateLaunchPoint(randomStartingTrigger);
             }
 
             m_Launcher.Launched += Launcher_OnLaunched;
@@ -84,7 +81,11 @@ namespace Gogos
 
         private void LaunchPointTrigger_OnTriggered(object sender, System.EventArgs e)
         {
-            var launchPointTrigger = (LaunchPointTrigger)sender;
+            CreateLaunchPoint((LaunchPointTrigger)sender);
+        }
+
+        private void CreateLaunchPoint(LaunchPointTrigger launchPointTrigger)
+        {
             var lookAtEnvironmentCenterRotation = Quaternion.LookRotation(m_EnvironmentCenter.transform.position - launchPointTrigger.transform.position);
             var turnAngle = lookAtEnvironmentCenterRotation.eulerAngles.y;
             var launchPoint = new LaunchPoint(launchPointTrigger.transform.position, turnAngle);
