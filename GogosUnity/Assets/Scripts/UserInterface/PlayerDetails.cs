@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Gogos
 {
@@ -15,10 +16,15 @@ namespace Gogos
         private GameObject m_SelectedIndicator;
 
         [SerializeField]
+        private Image m_FillImage;
+
+        [SerializeField]
         private ScriptableColorPalette m_ScriptableColorPalette;
 
         private const float NormalFontSize = 28;
         private const float SelectedFontSize = 38;
+        private static readonly Color NormalFillColor = new Color(0.9f, 0.9f, 0.9f);
+        private static readonly Color SelectedFillColor = Color.white;
 
         private Player m_Player;
 
@@ -49,6 +55,7 @@ namespace Gogos
             var isSelected = m_Player == PlayerTracker.Player;
             m_NameText.fontSize = isSelected ? SelectedFontSize : NormalFontSize;
             m_SelectedIndicator.SetActive(isSelected);
+            m_FillImage.color = isSelected ? SelectedFillColor : NormalFillColor;
         }
 
         private void RefreshPointsText()
