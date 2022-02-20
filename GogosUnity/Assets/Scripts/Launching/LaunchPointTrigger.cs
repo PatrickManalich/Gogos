@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Gogos
 {
     public class LaunchPointTrigger : MonoBehaviour
     {
+        public event EventHandler Triggered;
+
         public Player Player { get; private set; }
 
         public int TurnReached { get; private set; }
@@ -71,6 +74,7 @@ namespace Gogos
 
             SetPlayer(gogo.Player);
             SetTurnReached(TurnTracker.Turn);
+            Triggered?.Invoke(this, EventArgs.Empty);
         }
     }
 }
