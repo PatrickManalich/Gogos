@@ -65,6 +65,12 @@ namespace Gogos
             }
         }
 
+        public void SetOrbitOffset(Vector3 orbitOffset)
+        {
+            m_OrbitOffset = orbitOffset;
+            AlignWithAngle();
+        }
+
         private void AlignWithAngle()
         {
             var x = m_OrbitOffset.x * Mathf.Cos(m_Angle);
