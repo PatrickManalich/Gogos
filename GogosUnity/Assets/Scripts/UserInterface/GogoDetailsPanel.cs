@@ -57,8 +57,9 @@ namespace Gogos
             m_GogoClassText.SetText(gogo.IdentifiableGogo.ScriptableGogo.GogoClass);
             var weightTierTracker = (WeightTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.Weight);
             m_WeightTierDetails.SetSlots(weightTierTracker.Tier, scriptableGogo.WeightTier);
+            // Account for Disabled tier
             var rangeTierTracker = (RangeTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range);
-            m_RangeTierDetails.SetSlots(rangeTierTracker.Tier, scriptableGogo.RangeTier);
+            m_RangeTierDetails.SetSlots(rangeTierTracker.Tier - 1, scriptableGogo.RangeTier - 1);
 
             m_BlastDetails.SetActive(false);
             m_ShieldDetails.SetActive(false);
