@@ -10,6 +10,12 @@ namespace Gogos
 
         public List<LaunchPoint> LaunchPoints => m_LaunchPointsByPlayer[PlayerTracker.Player];
 
+        [SerializeField]
+        private Launcher m_Launcher;
+
+        [SerializeField]
+        private GameObject m_EnvironmentCenter;
+
         private Dictionary<Player, int> m_LaunchPointIndicesByPlayer = new Dictionary<Player, int>();
         private Dictionary<Player, List<LaunchPoint>> m_LaunchPointsByPlayer = new Dictionary<Player, List<LaunchPoint>>();
         private LaunchPointTrigger[] m_LaunchPointTriggers;
@@ -32,11 +38,13 @@ namespace Gogos
                 var randomStartingTrigger = startingTriggers[Random.Range(0, startingTriggers.Count)];
                 startingTriggers.Remove(randomStartingTrigger);
                 randomStartingTrigger.SetPlayer(player);
-
-                var launchPoint = new LaunchPoint(randomStartingTrigger.transform.position);
+                var lookAtEnvironmentCenterRotation = Quaternion.LookRotation(m_EnvironmentCenter.transform.position - randomStartingTrigger.transform.position);
+                var turnAngle = lookAtEnvironmentCenterRotation.eulerAngles.y;
+                var launchPoint = new LaunchPoint(randomStartingTrigger.transform.position, turnAngle);
                 m_LaunchPointsByPlayer[randomStartingTrigger.Player].Add(launchPoint);
             }
 
+            m_Launcher.Launched += Launcher_OnLaunched;
             foreach (var launchPointTrigger in m_LaunchPointTriggers)
             {
                 launchPointTrigger.Triggered += LaunchPointTrigger_OnTriggered;
@@ -49,6 +57,7 @@ namespace Gogos
             {
                 launchPointTrigger.Triggered -= LaunchPointTrigger_OnTriggered;
             }
+            m_Launcher.Launched -= Launcher_OnLaunched;
         }
 
         public void CycleLaunchPoint(int direction)
@@ -68,10 +77,17 @@ namespace Gogos
             m_LaunchPointIndicesByPlayer[PlayerTracker.Player] = launchPointIndex;
         }
 
+        private void Launcher_OnLaunched()
+        {
+            LaunchPoint.TurnAngle = m_Launcher.transform.rotation.eulerAngles.y;
+        }
+
         private void LaunchPointTrigger_OnTriggered(object sender, System.EventArgs e)
         {
             var launchPointTrigger = (LaunchPointTrigger)sender;
-            var launchPoint = new LaunchPoint(launchPointTrigger.transform.position);
+            var lookAtEnvironmentCenterRotation = Quaternion.LookRotation(m_EnvironmentCenter.transform.position - launchPointTrigger.transform.position);
+            var turnAngle = lookAtEnvironmentCenterRotation.eulerAngles.y;
+            var launchPoint = new LaunchPoint(launchPointTrigger.transform.position, turnAngle);
             m_LaunchPointsByPlayer[launchPointTrigger.Player].Add(launchPoint);
         }
     }
