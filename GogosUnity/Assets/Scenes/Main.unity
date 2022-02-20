@@ -9157,7 +9157,7 @@ MonoBehaviour:
   m_VerticalOffset: 3
   m_LaunchAngle: -45
   m_MinLaunchPower: 5
-  m_MaxLaunchPower: 20
+  m_MaxLaunchPower: 21
   m_LaunchPowerDelta: 10
   m_TurnSpeed: 60
 --- !u!114 &1638789071
