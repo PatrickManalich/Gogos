@@ -60,13 +60,11 @@ namespace Gogos
                 return;
             }
 
-            if (Player != null || gogo.Player == null)
+            if (Player == null && gogo.Player != null)
             {
-                return;
+                SetPlayer(gogo.Player);
+                Triggered?.Invoke(this, EventArgs.Empty);
             }
-
-            SetPlayer(gogo.Player);
-            Triggered?.Invoke(this, EventArgs.Empty);
         }
     }
 }
