@@ -15,7 +15,7 @@ namespace Gogos
         private TriggerListener m_TriggerListener;
 
         [SerializeField]
-        private GameObject m_LaunchPointMarker;
+        private GameObject m_UnclaimedVisual;
 
         [SerializeField]
         private bool m_IsStartingTrigger;
@@ -23,6 +23,8 @@ namespace Gogos
         private void Start()
         {
             m_TriggerListener.Entered += TriggerListener_OnEntered;
+
+            m_UnclaimedVisual.SetActive(true);
         }
 
         private void OnDestroy()
@@ -34,7 +36,7 @@ namespace Gogos
         {
             Player = player;
             m_TriggerListener.DisableTrigger();
-            m_LaunchPointMarker.SetActive(false);
+            m_UnclaimedVisual.SetActive(false);
         }
 
         private void TriggerListener_OnEntered(object sender, TriggerEventArgs e)
