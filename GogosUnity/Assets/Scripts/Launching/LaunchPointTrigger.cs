@@ -18,6 +18,12 @@ namespace Gogos
         private GameObject m_UnclaimedVisual;
 
         [SerializeField]
+        private GameObject m_ClaimedVisual;
+
+        [SerializeField]
+        private ScriptableColorPalette m_ScriptableColorPalette;
+
+        [SerializeField]
         private bool m_IsStartingTrigger;
 
         private void Start()
@@ -25,6 +31,7 @@ namespace Gogos
             m_TriggerListener.Entered += TriggerListener_OnEntered;
 
             m_UnclaimedVisual.SetActive(true);
+            m_ClaimedVisual.SetActive(false);
         }
 
         private void OnDestroy()
@@ -37,6 +44,19 @@ namespace Gogos
             Player = player;
             m_TriggerListener.DisableTrigger();
             m_UnclaimedVisual.SetActive(false);
+
+            var playerColor = m_ScriptableColorPalette.GetColorForPlayerColor(Player.PlayerColor);
+            var renderers = m_ClaimedVisual.GetComponentsInChildren<Renderer>(true);
+            foreach (var renderer in renderers)
+            {
+                foreach (var material in renderer.materials)
+                {
+                    material.SetColor("_TintColor", playerColor);
+                    material.SetColor("_Color", playerColor);
+                    material.SetColor("_RimColor", playerColor);
+                }
+            }
+            m_ClaimedVisual.SetActive(true);
         }
 
         private void TriggerListener_OnEntered(object sender, TriggerEventArgs e)
