@@ -14,7 +14,7 @@ namespace Gogos
         [SerializeField]
         private GameObject m_SpawnMarker;
 
-        private void Start()
+        private void Awake()
         {
             m_SpawnMarker.transform.localScale = 2 * m_SpawnRadius * Vector3.one;
         }
