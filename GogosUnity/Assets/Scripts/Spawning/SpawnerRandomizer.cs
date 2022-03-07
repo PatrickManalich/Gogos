@@ -36,7 +36,7 @@ namespace Gogos
             PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
 
             m_IsFirstSpawn = true;
-            m_Spawners.ToList().ForEach(s => s.HideSpawnMarker());
+            m_Spawners.ToList().ForEach(s => s.HideVisual());
         }
 
         private void OnDestroy()
@@ -86,7 +86,7 @@ namespace Gogos
             while (activeSpawners.Count > 0)
             {
                 var activeSpawner = activeSpawners.Dequeue();
-                activeSpawner.ShowSpawnMarker();
+                activeSpawner.ShowVisual();
                 yield return activeSpawner.RandomlySpawn(m_Spawnables);
                 activeSpawner.Spawn(m_SpawnableGogos.GetRandomScriptableGogo());
                 if (activeSpawners.Count == 0)
@@ -94,7 +94,7 @@ namespace Gogos
                     var randomGoldenGogo = m_GoldenGogoPrefabs[UnityEngine.Random.Range(0, m_GoldenGogoPrefabs.Length)];
                     activeSpawner.Spawn(randomGoldenGogo);
                 }
-                activeSpawner.HideSpawnMarker();
+                activeSpawner.HideVisual();
             }
 
             Spawned?.Invoke();

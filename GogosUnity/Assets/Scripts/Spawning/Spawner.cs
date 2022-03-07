@@ -12,21 +12,26 @@ namespace Gogos
         private float m_SpawnRadius;
 
         [SerializeField]
-        private GameObject m_SpawnMarker;
+        private GameObject m_SpawnArea;
+
+        [SerializeField]
+        private Animator m_VisualAnimator;
+
+        private const string SpawnName = "Spawn";
 
         private void Awake()
         {
-            m_SpawnMarker.transform.localScale = 2 * m_SpawnRadius * Vector3.one;
+            m_SpawnArea.transform.localScale = 2 * m_SpawnRadius * Vector3.one;
         }
 
-        public void ShowSpawnMarker()
+        public void ShowVisual()
         {
-            m_SpawnMarker.SetActive(true);
+            m_VisualAnimator.SetBool(SpawnName, true);
         }
 
-        public void HideSpawnMarker()
+        public void HideVisual()
         {
-            m_SpawnMarker.SetActive(false);
+            m_VisualAnimator.SetBool(SpawnName, false);
         }
 
         public void Spawn(AbstractScriptableGogo scriptableGogo)
