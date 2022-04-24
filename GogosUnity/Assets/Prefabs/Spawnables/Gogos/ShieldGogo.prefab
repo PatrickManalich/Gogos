@@ -259,6 +259,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShieldGogo
       objectReference: {fileID: 0}
+    - target: {fileID: 7497070938184674771, guid: e0c3b9d766d30904595df1c04f4d7038,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 396b6bdb67572864f92ae09ccbc0bfc6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0c3b9d766d30904595df1c04f4d7038, type: 3}
 --- !u!1 &44363290614975272 stripped

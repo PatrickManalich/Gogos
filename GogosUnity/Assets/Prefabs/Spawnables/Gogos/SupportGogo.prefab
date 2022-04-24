@@ -225,6 +225,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SupportGogo
       objectReference: {fileID: 0}
+    - target: {fileID: 7497070938184674771, guid: e0c3b9d766d30904595df1c04f4d7038,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1761c204770e1624bbfd4f28253e8b32, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0c3b9d766d30904595df1c04f4d7038, type: 3}
 --- !u!1 &7593893646385154079 stripped

@@ -184,7 +184,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: aaeb0504061c9ff4d85d16945398f111, type: 2}
+      objectReference: {fileID: 2100000, guid: fd8f0460a94022d46aedc52cc4421cd4, type: 2}
     - target: {fileID: 8848050977278057027, guid: 914e2e53c22a9114b9f4e8cf235f4b30,
         type: 3}
       propertyPath: m_Collider
