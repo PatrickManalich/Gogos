@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Prefab: {fileID: 3856074390450277342, guid: 09becdc4331af484e88682a3dead3cb4,
     type: 3}
   m_Nickname: Sumon
-  m_Portrait: {fileID: 21300000, guid: 9bf82fcda23a8564e9b4cd05c9e662df, type: 3}
+  m_Portrait: {fileID: 21300000, guid: 09a65acd28cd55b46bdc091186d13dd3, type: 3}
   m_Number: 35
   m_RarityTier: 0
   m_WeightTier: 1

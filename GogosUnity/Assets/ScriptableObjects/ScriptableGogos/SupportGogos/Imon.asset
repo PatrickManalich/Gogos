@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Prefab: {fileID: 5181704997759323776, guid: 2cfa8366edd9a1c4a8e8e070294dd996,
     type: 3}
   m_Nickname: Imon
-  m_Portrait: {fileID: 21300000, guid: 9de60a7546d85c3408401db05fc73cf2, type: 3}
+  m_Portrait: {fileID: 21300000, guid: fbdf23147ffe0da48a5d9eecba5474eb, type: 3}
   m_Number: 33
   m_RarityTier: 0
   m_WeightTier: 0

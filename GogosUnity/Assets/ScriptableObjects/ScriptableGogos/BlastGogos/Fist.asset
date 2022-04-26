@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Prefab: {fileID: 6077309463641512144, guid: f1d0f9665f6e1204b8bedcc8ca39d0ae,
     type: 3}
   m_Nickname: Fist
-  m_Portrait: {fileID: 21300000, guid: 9bf82fcda23a8564e9b4cd05c9e662df, type: 3}
+  m_Portrait: {fileID: 21300000, guid: 20eecaba95919184682a31dcf7436f1c, type: 3}
   m_Number: 38
   m_RarityTier: 0
   m_WeightTier: 1

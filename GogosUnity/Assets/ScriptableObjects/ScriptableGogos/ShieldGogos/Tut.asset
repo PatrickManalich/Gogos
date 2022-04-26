@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Prefab: {fileID: 1226803167018861954, guid: 9b4623be8f688da4db178cc33c8b772c,
     type: 3}
   m_Nickname: Tut
-  m_Portrait: {fileID: 21300000, guid: da44a7d2d9c9750438a7a9853226a9c5, type: 3}
+  m_Portrait: {fileID: 21300000, guid: 9a868dc56ae70844d9eddae2b748ecee, type: 3}
   m_Number: 63
   m_RarityTier: 0
   m_WeightTier: 1

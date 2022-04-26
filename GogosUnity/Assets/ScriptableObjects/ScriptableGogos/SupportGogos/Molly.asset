@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Prefab: {fileID: 7446804729452260876, guid: 9e0dfd7d6bbac4040989f4a4d9bef648,
     type: 3}
   m_Nickname: Molly
-  m_Portrait: {fileID: 21300000, guid: 9de60a7546d85c3408401db05fc73cf2, type: 3}
+  m_Portrait: {fileID: 21300000, guid: 8929405b3acbae14c99412f1dc105a8f, type: 3}
   m_Number: 19
   m_RarityTier: 0
   m_WeightTier: 0

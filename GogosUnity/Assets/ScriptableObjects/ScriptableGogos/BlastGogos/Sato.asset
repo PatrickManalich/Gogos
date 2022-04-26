@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Prefab: {fileID: 3782179996502974070, guid: dc2750be0b2606b4a8fc0d3c3a4d1ddd,
     type: 3}
   m_Nickname: Sato
-  m_Portrait: {fileID: 21300000, guid: 9bf82fcda23a8564e9b4cd05c9e662df, type: 3}
+  m_Portrait: {fileID: 21300000, guid: 9aa1d987b4d91794a8c0cdee785a1bf9, type: 3}
   m_Number: 3
   m_RarityTier: 0
   m_WeightTier: 0

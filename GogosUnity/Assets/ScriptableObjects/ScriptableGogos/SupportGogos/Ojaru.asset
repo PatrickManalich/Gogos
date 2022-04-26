@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Prefab: {fileID: 6980433723709038099, guid: 60c72ece632e42144b065eb969c14856,
     type: 3}
   m_Nickname: Ojaru
-  m_Portrait: {fileID: 21300000, guid: 9de60a7546d85c3408401db05fc73cf2, type: 3}
+  m_Portrait: {fileID: 21300000, guid: 0f046af6b44bc5d4a90473d1409e9013, type: 3}
   m_Number: 42
   m_RarityTier: 0
   m_WeightTier: 0

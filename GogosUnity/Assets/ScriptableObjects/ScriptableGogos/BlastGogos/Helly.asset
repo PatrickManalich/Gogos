@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Prefab: {fileID: 2485102741077893549, guid: 737a4851ba04f1b49a7b411773adf60f,
     type: 3}
   m_Nickname: Helly
-  m_Portrait: {fileID: 21300000, guid: 9bf82fcda23a8564e9b4cd05c9e662df, type: 3}
+  m_Portrait: {fileID: 21300000, guid: 686ab0c745e04634fb49c0a3ed993e57, type: 3}
   m_Number: 6
   m_RarityTier: 0
   m_WeightTier: 0

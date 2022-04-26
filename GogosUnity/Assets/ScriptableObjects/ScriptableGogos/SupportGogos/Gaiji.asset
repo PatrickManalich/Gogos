@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Prefab: {fileID: 3193427335665120418, guid: 9552091e12edacc439e4fcbcdd46b519,
     type: 3}
   m_Nickname: Gaiji
-  m_Portrait: {fileID: 21300000, guid: 9de60a7546d85c3408401db05fc73cf2, type: 3}
+  m_Portrait: {fileID: 21300000, guid: 87e0a0ee41afd8f46a57c754c702094e, type: 3}
   m_Number: 30
   m_RarityTier: 0
   m_WeightTier: 0
