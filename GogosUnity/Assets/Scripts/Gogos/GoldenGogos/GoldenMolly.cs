@@ -13,20 +13,6 @@ namespace Gogos
         [SerializeField]
         private SupportTrigger m_SupportTrigger;
 
-        public override void SetPlayer(Player player)
-        {
-            base.SetPlayer(player);
-            m_SupportAbility.SetPlayer(Player);
-            m_SupportTrigger.SetPlayer(Player);
-        }
-
-        public override void SetTiers(IdentifiableGogo identifiableGogo)
-        {
-            base.SetTiers(identifiableGogo);
-            var supportScriptableGogo = (SupportScriptableGogo)IdentifiableGogo.ScriptableGogo;
-            m_SupportAbility.SetAbility(supportScriptableGogo.Groups, supportScriptableGogo.SupportAbilityTierVariant, supportScriptableGogo.SupportAbilityTierModifier);
-        }
-
         protected override void OnStartedMoving()
         {
             ReparentTriggerRange();
