@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b561f0a7fcebdce41b78235539e3adbb, type: 3}
+  m_Name: GoldenMolly
+  m_EditorClassIdentifier: 
+  m_Prefab: {fileID: 8190798114809376189, guid: 6fd8d4a66e92fe540a3b50575c568f99,
+    type: 3}
+  m_Nickname: Golden Molly
+  m_Portrait: {fileID: 21300000, guid: 3af31322044adad4e85b1b7b2732e000, type: 3}
+  m_Number: 19
+  m_RarityTier: 3
+  m_WeightTier: 1
+  m_RangeTier: 1
