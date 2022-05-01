@@ -2,7 +2,7 @@
 
 namespace Gogos
 {
-    public enum GogoClass { Blast, Shield, Support }
+    public enum GogoClass { Blast, Shield, Support, Golden }
 
     public abstract class AbstractScriptableGogo : ScriptableObject
     {
