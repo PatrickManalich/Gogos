@@ -39,7 +39,7 @@ namespace Gogos
             var identifiableGogo = new IdentifiableGogo(scriptableGogo);
             var gogo = Spawn(identifiableGogo.ScriptableGogo.Prefab).GetComponent<AbstractGogo>();
             gogo.SetTiers(identifiableGogo);
-            gogo.enabled = false;
+            gogo.enabled = identifiableGogo.ScriptableGogo.GogoClass == GogoClass.Golden;
         }
 
         public Coroutine RandomlySpawn(Spawnable[] spawnables)
