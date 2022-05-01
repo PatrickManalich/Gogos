@@ -62,20 +62,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShieldStrengthTierTracker: {fileID: 2764710976784829213}
   m_ShieldVisual: {fileID: 4203903217458786451}
---- !u!114 &5168116620744846463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6887428759383744255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66603157ca0ddba4c9816e02e10a400f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CollectableAttribute: {fileID: 9025339294154995987}
-  m_Gogo: {fileID: 5018871198931018577}
 --- !u!114 &8491893478094934885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +245,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShieldGogo
       objectReference: {fileID: 0}
+    - target: {fileID: 6182260738314962843, guid: e0c3b9d766d30904595df1c04f4d7038,
+        type: 3}
+      propertyPath: m_Gogo
+      value: 
+      objectReference: {fileID: 5018871198931018577}
     - target: {fileID: 7497070938184674771, guid: e0c3b9d766d30904595df1c04f4d7038,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -296,18 +287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70fc5066323a5794ba221afe3057ec3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9025339294154995987 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5333113720034043056, guid: e0c3b9d766d30904595df1c04f4d7038,
-    type: 3}
-  m_PrefabInstance: {fileID: 3982155039872359843}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8353158567c6047458b39194ad536959, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3639557176181340297 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 414675445500126506, guid: e0c3b9d766d30904595df1c04f4d7038,
@@ -329,12 +308,6 @@ MonoBehaviour:
 --- !u!1 &6335265555903588524 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6964841683158119695, guid: e0c3b9d766d30904595df1c04f4d7038,
-    type: 3}
-  m_PrefabInstance: {fileID: 3982155039872359843}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6887428759383744255 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7554360794729612124, guid: e0c3b9d766d30904595df1c04f4d7038,
     type: 3}
   m_PrefabInstance: {fileID: 3982155039872359843}
   m_PrefabAsset: {fileID: 0}
