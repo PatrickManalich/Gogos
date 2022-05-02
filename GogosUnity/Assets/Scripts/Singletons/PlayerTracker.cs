@@ -36,7 +36,7 @@ namespace Gogos
             s_PlayerIndex = 0;
         }
 
-        public void TransitionToNextPlayer()
+        public static void TransitionToNextPlayer()
         {
             s_PlayerIndex = (s_PlayerIndex + 1) % PlayerCount;
             PlayerChanged?.Invoke();

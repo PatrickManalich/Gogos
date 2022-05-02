@@ -47,7 +47,7 @@ namespace Gogos
             }
             else
             {
-                PlayerTracker.Instance.TransitionToNextPlayer();
+                PlayerTracker.TransitionToNextPlayer();
             }
 
             m_AnnouncementText.text = $"{PlayerTracker.Player.Name}'s Turn!";
