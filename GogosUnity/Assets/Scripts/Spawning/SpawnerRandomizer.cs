@@ -24,32 +24,41 @@ namespace Gogos
         [SerializeField]
         private ScriptableGogoBucket m_GoldenGogos;
 
-        private const int TurnsToSpawn = PlayerTracker.PlayerCount * 3 + 1;
         private const int MaxSpawners = PlayerTracker.PlayerCount;
         private const int MinSpawners = 6;
 
         private bool m_IsFirstSpawn;
+        private bool m_ReadyToSpawn;
         private Queue<Spawner> m_UnusedSpawners = new Queue<Spawner>();
 
         private void Start()
         {
             PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
+            ObjectiveTracker.ObjectiveChanged += ObjectiveTracker_OnObjectiveChanged;
 
             m_IsFirstSpawn = true;
+            m_ReadyToSpawn = true;
             m_Spawners.ToList().ForEach(s => s.HideVisual());
         }
 
         private void OnDestroy()
         {
+            ObjectiveTracker.ObjectiveChanged -= ObjectiveTracker_OnObjectiveChanged;
             PhaseTracker.PhaseChanged -= PhaseTracker_OnPhaseChanged;
+        }
+
+        private void ObjectiveTracker_OnObjectiveChanged()
+        {
+            m_ReadyToSpawn = true;
         }
 
         private void PhaseTracker_OnPhaseChanged()
         {
             if (PhaseTracker.Phase == Phase.Spawning)
             {
-                if ((TurnTracker.Turn % TurnsToSpawn) - 1 == 0)
+                if (m_ReadyToSpawn)
                 {
+                    m_ReadyToSpawn = false;
                     StartCoroutine(SpawnRoutine());
                 }
                 else
