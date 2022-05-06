@@ -47,7 +47,7 @@ namespace Gogos
             return StartCoroutine(RandomlySpawnRoutine(spawnables));
         }
 
-        public GameObject Spawn(GameObject prefab)
+        private GameObject Spawn(GameObject prefab)
         {
             var instance = Instantiate(prefab, transform);
             instance.name = instance.name.Replace("(Clone)", "");
