@@ -65,7 +65,7 @@ namespace Gogos
                 if (randomChance <= randomSpawnable.SpawnChance)
                 {
                     Spawn(randomSpawnable.Prefab);
-                    yield return new WaitForSeconds(0.1f);
+                    yield return new WaitForSeconds(0.01f);
                 }
             }
         }

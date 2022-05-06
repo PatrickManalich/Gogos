@@ -104,6 +104,7 @@ namespace Gogos
                 }
                 activeSpawner.HideVisual();
             }
+            yield return new WaitForSeconds(2);
 
             Spawned?.Invoke();
         }
