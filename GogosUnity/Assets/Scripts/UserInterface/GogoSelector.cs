@@ -63,7 +63,7 @@ namespace Gogos
                 Destroy(child.gameObject);
             }
 
-            var identifiableGogos = PlayerTracker.Player.Collection.IdentifiableGogos;
+            var identifiableGogos = PlayerTracker.Player.Collection.IdentifiableGogos.Where(i => i.ScriptableGogo.GogoClass != GogoClass.Golden);
             var orderedIdentifiableGogos = identifiableGogos.OrderBy(i => GogoSituationDatabase.GetSituation(i));
             foreach (var identifiableGogo in orderedIdentifiableGogos)
             {
