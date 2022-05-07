@@ -234,7 +234,7 @@ PrefabInstance:
     - target: {fileID: 2387419334894308411, guid: 50217f59d19a6904abe660e9b2902b8d,
         type: 3}
       propertyPath: m_Name
-      value: Stage2
+      value: Platform2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50217f59d19a6904abe660e9b2902b8d, type: 3}
@@ -340,7 +340,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage3
+      value: Platform3
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -425,7 +425,7 @@ PrefabInstance:
     - target: {fileID: 112939605059054952, guid: 9a78a6cbbd1861749bb18a8d80fe8e51,
         type: 3}
       propertyPath: m_Name
-      value: FinalStage
+      value: FinalPlatform
       objectReference: {fileID: 0}
     - target: {fileID: 112939605059054953, guid: 9a78a6cbbd1861749bb18a8d80fe8e51,
         type: 3}
@@ -623,7 +623,7 @@ PrefabInstance:
     - target: {fileID: 2387419334894308411, guid: 50217f59d19a6904abe660e9b2902b8d,
         type: 3}
       propertyPath: m_Name
-      value: Stage4
+      value: Platform4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50217f59d19a6904abe660e9b2902b8d, type: 3}
@@ -999,7 +999,7 @@ PrefabInstance:
     - target: {fileID: 2387419334894308411, guid: 50217f59d19a6904abe660e9b2902b8d,
         type: 3}
       propertyPath: m_Name
-      value: Stage5
+      value: Platform5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50217f59d19a6904abe660e9b2902b8d, type: 3}
@@ -1019,7 +1019,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage1
+      value: Platform1
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -1169,7 +1169,7 @@ PrefabInstance:
     - target: {fileID: 2387419334894308411, guid: 50217f59d19a6904abe660e9b2902b8d,
         type: 3}
       propertyPath: m_Name
-      value: Stage8
+      value: Platform8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50217f59d19a6904abe660e9b2902b8d, type: 3}
@@ -1520,7 +1520,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage8
+      value: Platform8
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -1855,7 +1855,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage4
+      value: Platform4
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -1940,7 +1940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 402763537}
   m_Layer: 0
-  m_Name: StageCircle1
+  m_Name: PlatformCircle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2541,7 +2541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 569485367}
   m_Layer: 0
-  m_Name: StageCircle2
+  m_Name: PlatformCircle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2807,7 +2807,7 @@ PrefabInstance:
     - target: {fileID: 2387419334894308411, guid: 50217f59d19a6904abe660e9b2902b8d,
         type: 3}
       propertyPath: m_Name
-      value: Stage7
+      value: Platform7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50217f59d19a6904abe660e9b2902b8d, type: 3}
@@ -3310,7 +3310,7 @@ PrefabInstance:
     - target: {fileID: 2387419334894308411, guid: 50217f59d19a6904abe660e9b2902b8d,
         type: 3}
       propertyPath: m_Name
-      value: Stage1
+      value: Platform1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50217f59d19a6904abe660e9b2902b8d, type: 3}
@@ -3342,7 +3342,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage6
+      value: Platform6
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -3427,7 +3427,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage8
+      value: Platform8
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -3855,7 +3855,7 @@ GameObject:
   m_Component:
   - component: {fileID: 686763802}
   m_Layer: 0
-  m_Name: StageCircle3
+  m_Name: PlatformCircle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4413,7 +4413,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage7
+      value: Platform7
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -4548,7 +4548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 775239570}
   m_Layer: 0
-  m_Name: StageCircle4
+  m_Name: PlatformCircle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4586,7 +4586,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage5
+      value: Platform5
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -4736,7 +4736,7 @@ PrefabInstance:
     - target: {fileID: 2387419334894308411, guid: 50217f59d19a6904abe660e9b2902b8d,
         type: 3}
       propertyPath: m_Name
-      value: Stage3
+      value: Platform3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50217f59d19a6904abe660e9b2902b8d, type: 3}
@@ -5148,7 +5148,7 @@ PrefabInstance:
     - target: {fileID: 2387419334894308411, guid: 50217f59d19a6904abe660e9b2902b8d,
         type: 3}
       propertyPath: m_Name
-      value: Stage3
+      value: Platform3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50217f59d19a6904abe660e9b2902b8d, type: 3}
@@ -5437,7 +5437,7 @@ PrefabInstance:
     - target: {fileID: 112939605059054952, guid: 9a78a6cbbd1861749bb18a8d80fe8e51,
         type: 3}
       propertyPath: m_Name
-      value: Stage4
+      value: Platform4
       objectReference: {fileID: 0}
     - target: {fileID: 112939605059054953, guid: 9a78a6cbbd1861749bb18a8d80fe8e51,
         type: 3}
@@ -5612,7 +5612,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage7
+      value: Platform7
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -6226,7 +6226,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage6
+      value: Platform6
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -6376,7 +6376,7 @@ PrefabInstance:
     - target: {fileID: 2387419334894308411, guid: 50217f59d19a6904abe660e9b2902b8d,
         type: 3}
       propertyPath: m_Name
-      value: Stage2
+      value: Platform2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50217f59d19a6904abe660e9b2902b8d, type: 3}
@@ -6396,7 +6396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1203570355}
   m_Layer: 0
-  m_Name: StagesCircles
+  m_Name: PlatformsCircles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7012,7 +7012,7 @@ PrefabInstance:
     - target: {fileID: 2387419334894308411, guid: 50217f59d19a6904abe660e9b2902b8d,
         type: 3}
       propertyPath: m_Name
-      value: Stage6
+      value: Platform6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50217f59d19a6904abe660e9b2902b8d, type: 3}
@@ -7169,7 +7169,7 @@ PrefabInstance:
     - target: {fileID: 112939605059054952, guid: 9a78a6cbbd1861749bb18a8d80fe8e51,
         type: 3}
       propertyPath: m_Name
-      value: Stage3
+      value: Platform3
       objectReference: {fileID: 0}
     - target: {fileID: 112939605059054953, guid: 9a78a6cbbd1861749bb18a8d80fe8e51,
         type: 3}
@@ -7284,7 +7284,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage2
+      value: Platform2
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -7487,7 +7487,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage7
+      value: Platform7
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -7769,7 +7769,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage4
+      value: Platform4
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -8159,7 +8159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1416855773}
   m_Layer: 0
-  m_Name: StageCircle5
+  m_Name: PlatformCircle5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8733,7 +8733,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage4
+      value: Platform4
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -8818,7 +8818,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage2
+      value: Platform2
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -8903,7 +8903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1545403673}
   m_Layer: 0
-  m_Name: StageCircle6
+  m_Name: PlatformCircle6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9072,7 +9072,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage2
+      value: Platform2
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -9503,7 +9503,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage5
+      value: Platform5
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -9766,7 +9766,7 @@ PrefabInstance:
     - target: {fileID: 112939605059054952, guid: 9a78a6cbbd1861749bb18a8d80fe8e51,
         type: 3}
       propertyPath: m_Name
-      value: Stage2
+      value: Platform2
       objectReference: {fileID: 0}
     - target: {fileID: 112939605059054953, guid: 9a78a6cbbd1861749bb18a8d80fe8e51,
         type: 3}
@@ -9920,7 +9920,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage3
+      value: Platform3
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -10524,7 +10524,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage1
+      value: Platform1
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -10609,7 +10609,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage8
+      value: Platform8
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -10694,7 +10694,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage6
+      value: Platform6
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -10925,7 +10925,7 @@ PrefabInstance:
     - target: {fileID: 2387419334894308411, guid: 50217f59d19a6904abe660e9b2902b8d,
         type: 3}
       propertyPath: m_Name
-      value: Stage4
+      value: Platform4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50217f59d19a6904abe660e9b2902b8d, type: 3}
@@ -11100,7 +11100,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage3
+      value: Platform3
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -11185,7 +11185,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage5
+      value: Platform5
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
@@ -13317,7 +13317,7 @@ PrefabInstance:
     - target: {fileID: 112939605059054952, guid: 9a78a6cbbd1861749bb18a8d80fe8e51,
         type: 3}
       propertyPath: m_Name
-      value: Stage1
+      value: Platform1
       objectReference: {fileID: 0}
     - target: {fileID: 112939605059054953, guid: 9a78a6cbbd1861749bb18a8d80fe8e51,
         type: 3}
@@ -13469,7 +13469,7 @@ PrefabInstance:
     - target: {fileID: 2387419334894308411, guid: 50217f59d19a6904abe660e9b2902b8d,
         type: 3}
       propertyPath: m_Name
-      value: Stage1
+      value: Platform1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50217f59d19a6904abe660e9b2902b8d, type: 3}
@@ -14689,7 +14689,7 @@ PrefabInstance:
     - target: {fileID: 8757579914340101056, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
       propertyPath: m_Name
-      value: Stage1
+      value: Platform1
       objectReference: {fileID: 0}
     - target: {fileID: 8757579914340101057, guid: 53c07fd0c6c7a624a8b2090202d5e728,
         type: 3}
