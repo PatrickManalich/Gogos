@@ -70,6 +70,14 @@ namespace Gogos
             m_ClaimedVisual.SetActive(true);
         }
 
+        public void ClearPlayer()
+        {
+            Player = null;
+            m_TriggerListener.EnableTrigger();
+            m_UnclaimedVisual.SetActive(true);
+            m_ClaimedVisual.SetActive(false);
+        }
+
         private void TriggerListener_OnEntered(object sender, TriggerEventArgs e)
         {
             var gogo = e.OtherCollider.GetComponent<AbstractGogo>();
