@@ -31,6 +31,13 @@ namespace Gogos
         [SerializeField]
         private bool m_IsCollectTrigger;
 
+        private Renderer[] m_ClaimedVisualRenderers;
+
+        private void Awake()
+        {
+            m_ClaimedVisualRenderers = m_ClaimedVisual.GetComponentsInChildren<Renderer>(true);
+        }
+
         private void Start()
         {
             m_TriggerListener.Entered += TriggerListener_OnEntered;
@@ -51,8 +58,7 @@ namespace Gogos
             m_UnclaimedVisual.SetActive(false);
 
             var playerColor = m_ScriptableColorPalette.GetColorForPlayerColor(Player.PlayerColor);
-            var renderers = m_ClaimedVisual.GetComponentsInChildren<Renderer>(true);
-            foreach (var renderer in renderers)
+            foreach (var renderer in m_ClaimedVisualRenderers)
             {
                 foreach (var material in renderer.materials)
                 {
