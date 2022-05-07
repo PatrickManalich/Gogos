@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +11,7 @@ namespace Gogos
         private TextMeshProUGUI m_NameText;
 
         [SerializeField]
-        private TextMeshProUGUI m_PointsText;
+        private TextMeshProUGUI m_GoldenGogosText;
 
         [SerializeField]
         private GameObject m_SelectedIndicator;
@@ -32,7 +33,7 @@ namespace Gogos
         {
             if (m_Player != null)
             {
-                m_Player.PointsAdded -= RefreshPointsText;
+                m_Player.Collection.GogoAdded -= PlayerCollection_OnGogoAdded;
             }
             PlayerTracker.PlayerChanged -= RefreshSelectedElements;
         }
@@ -46,8 +47,13 @@ namespace Gogos
             PlayerTracker.PlayerChanged += RefreshSelectedElements;
             RefreshSelectedElements();
 
-            m_Player.PointsAdded += RefreshPointsText;
-            RefreshPointsText();
+            m_Player.Collection.GogoAdded += PlayerCollection_OnGogoAdded;
+            RefreshGoldenGogosText();
+        }
+
+        private void PlayerCollection_OnGogoAdded(object sender, IdentifiableGogoEventArgs e)
+        {
+            RefreshGoldenGogosText();
         }
 
         private void RefreshSelectedElements()
@@ -58,9 +64,10 @@ namespace Gogos
             m_FillImage.color = isSelected ? SelectedFillColor : NormalFillColor;
         }
 
-        private void RefreshPointsText()
+        private void RefreshGoldenGogosText()
         {
-            m_PointsText.text = m_Player.Points.ToString();
+            var goldenGogosCount = m_Player.Collection.IdentifiableGogos.Count(i => i.ScriptableGogo.GogoClass == GogoClass.Golden);
+            m_GoldenGogosText.text = goldenGogosCount.ToString();
         }
     }
 }
