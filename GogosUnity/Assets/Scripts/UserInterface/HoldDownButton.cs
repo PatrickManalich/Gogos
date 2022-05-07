@@ -18,11 +18,11 @@ namespace Gogos
                 return;
             }
 
-            if (InputKeys.SubmitKeyDown)
+            if (InputKeys.User.SubmitKeyDown)
             {
                 RestartEndlessHold();
             }
-            else if (InputKeys.SubmitKeyUp)
+            else if (InputKeys.User.SubmitKeyUp)
             {
                 StopEndlessHold();
             }
