@@ -43,11 +43,11 @@ namespace Gogos
             m_NameText.text = m_Player.Name;
             m_NameText.color = m_ScriptableColorPalette.GetColorForPlayerColor(m_Player.PlayerColor);
 
-            RefreshSelectedElements();
             PlayerTracker.PlayerChanged += RefreshSelectedElements;
+            RefreshSelectedElements();
 
-            RefreshPointsText();
             m_Player.PointsAdded += RefreshPointsText;
+            RefreshPointsText();
         }
 
         private void RefreshSelectedElements()
