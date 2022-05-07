@@ -17,5 +17,11 @@ namespace Gogos
             public static bool SubmitKeyDown => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return);
             public static bool SubmitKeyUp => Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.Return);
         }
+
+        public static class Dev
+        {
+            public static bool IsInDevMode => Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftAlt) && Input.GetKey(KeyCode.LeftShift);
+            public static bool SwitchObjectivesKeyDown => IsInDevMode && Input.GetKeyDown(KeyCode.O);
+        }
     }
 }
