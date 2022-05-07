@@ -38,6 +38,12 @@ namespace Gogos
             TurnTracker.TurnChanged -= TurnTracker_OnTurnChanged;
         }
 
+        public static void OverrideObjective(Objective objective)
+        {
+            Objective = objective;
+            ObjectiveChanged?.Invoke();
+        }
+
         private void TurnTracker_OnTurnChanged()
         {
             if (Objective == Objective.Collect && TurnTracker.Turn == m_SwitchObjectivesTurn)
