@@ -16,6 +16,9 @@ namespace Gogos
         private Spawner[] m_Spawners;
 
         [SerializeField]
+        private Spawner m_GoldenSpawner;
+
+        [SerializeField]
         private Spawnable[] m_Spawnables;
 
         [SerializeField]
@@ -24,19 +27,13 @@ namespace Gogos
         [SerializeField]
         private ScriptableGogoBucket m_GoldenGogos;
 
-        private const int MaxSpawners = PlayerTracker.PlayerCount;
-        private const int MinSpawners = 6;
-
-        private bool m_IsFirstSpawn;
         private bool m_ReadyToSpawn;
-        private Queue<Spawner> m_UnusedSpawners = new Queue<Spawner>();
 
         private void Start()
         {
             PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
             ObjectiveTracker.ObjectiveChanged += ObjectiveTracker_OnObjectiveChanged;
 
-            m_IsFirstSpawn = true;
             m_ReadyToSpawn = true;
             m_Spawners.ToList().ForEach(s => s.HideVisual());
         }
@@ -70,38 +67,24 @@ namespace Gogos
 
         private IEnumerator SpawnRoutine()
         {
-            var activeSpawners = new Queue<Spawner>();
-            if (m_IsFirstSpawn)
+            if (ObjectiveTracker.Objective == Objective.Collect)
             {
-                m_Spawners.ToList().ForEach(s => activeSpawners.Enqueue(s));
-                m_IsFirstSpawn = false;
+                var activeSpawners = new Queue<Spawner>(m_Spawners);
+                while (activeSpawners.Count > 0)
+                {
+                    var activeSpawner = activeSpawners.Dequeue();
+                    activeSpawner.ShowVisual();
+                    yield return activeSpawner.RandomlySpawn(m_Spawnables);
+                    activeSpawner.Spawn(m_SpawnableGogos.GetRandomScriptableGogo());
+                    activeSpawner.HideVisual();
+                }
             }
             else
             {
-                var randomSpawnerCount = UnityEngine.Random.Range(MinSpawners, MaxSpawners + 1);
-                for (int i = 0; i < randomSpawnerCount; i++)
-                {
-                    if (m_UnusedSpawners.Count == 0)
-                    {
-                        var random = new System.Random();
-                        m_UnusedSpawners = new Queue<Spawner>(m_Spawners.OrderBy(s => random.Next()));
-                    }
-
-                    var activeSpawner = m_UnusedSpawners.Dequeue();
-                    activeSpawners.Enqueue(activeSpawner);
-                }
-            }
-
-            while (activeSpawners.Count > 0)
-            {
-                var activeSpawner = activeSpawners.Dequeue();
+                var activeSpawner = m_GoldenSpawner;
                 activeSpawner.ShowVisual();
                 yield return activeSpawner.RandomlySpawn(m_Spawnables);
-                activeSpawner.Spawn(m_SpawnableGogos.GetRandomScriptableGogo());
-                if (activeSpawners.Count == 0)
-                {
-                    activeSpawner.Spawn(m_GoldenGogos.GetRandomScriptableGogo());
-                }
+                activeSpawner.Spawn(m_GoldenGogos.GetRandomScriptableGogo());
                 activeSpawner.HideVisual();
             }
             yield return new WaitForSeconds(2);
