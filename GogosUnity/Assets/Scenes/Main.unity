@@ -1470,6 +1470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18979fb0c0575e743910e0f2872e6858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PlatformToggler: {fileID: 1203570356}
   m_SpawnerRandomizer: {fileID: 514499564}
   m_PlayerTransitioner: {fileID: 1478736919}
   m_Launcher: {fileID: 1638789070}
@@ -6430,8 +6431,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1203570355}
+  - component: {fileID: 1203570356}
   m_Layer: 0
-  m_Name: PlatformsCircles
+  m_Name: PlatformToggler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6453,6 +6455,20 @@ Transform:
   m_Father: {fileID: 2077586320}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1203570356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203570354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a62a34aafa86f4aa852ca160237086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollectPlatformContainer: {fileID: 276873224}
+  m_DefeatPlatformContainer: {fileID: 1931922565}
 --- !u!1 &1219470881
 GameObject:
   m_ObjectHideFlags: 0

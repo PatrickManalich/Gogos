@@ -13,6 +13,9 @@ namespace Gogos
         public static Phase Phase { get; private set; }
 
         [SerializeField]
+        private PlatformToggler m_PlatformToggler;
+
+        [SerializeField]
         private SpawnerRandomizer m_SpawnerRandomizer;
 
         [SerializeField]
@@ -33,11 +36,13 @@ namespace Gogos
         protected override void Awake()
         {
             base.Awake();
-            Phase = Phase.PlayerTransitioning;
+            Phase = Phase.PlatformToggling;
         }
 
         private void Start()
         {
+            m_PlatformToggler.Toggled += PlatformToggler_OnFinished;
+            m_PlatformToggler.Skipped += PlatformToggler_OnFinished;
             m_SpawnerRandomizer.Spawned += SpawnerRandomizer_OnFinished;
             m_SpawnerRandomizer.Skipped += SpawnerRandomizer_OnFinished;
             m_PlayerTransitioner.Transitioned += PlayerTransitioner_OnTransitioned;
@@ -60,6 +65,13 @@ namespace Gogos
             m_PlayerTransitioner.Transitioned -= PlayerTransitioner_OnTransitioned;
             m_SpawnerRandomizer.Skipped -= SpawnerRandomizer_OnFinished;
             m_SpawnerRandomizer.Spawned -= SpawnerRandomizer_OnFinished;
+            m_PlatformToggler.Skipped -= PlatformToggler_OnFinished;
+            m_PlatformToggler.Toggled -= PlatformToggler_OnFinished;
+        }
+
+        private void PlatformToggler_OnFinished()
+        {
+            ChangePhase(Phase.Spawning);
         }
 
         private void SpawnerRandomizer_OnFinished()
@@ -89,7 +101,7 @@ namespace Gogos
 
         private void AccelerometerSettlingWatcher_OnSettled()
         {
-            ChangePhase(Phase.Spawning);
+            ChangePhase(Phase.PlatformToggling);
         }
 
         private void ChangePhase(Phase phase)
