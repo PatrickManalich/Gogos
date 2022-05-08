@@ -64,7 +64,12 @@ namespace Gogos
 
         private void Update()
         {
-            if (PhaseTracker.Phase == Phase.Selecting)
+            if (PhaseTracker.Phase == Phase.PlatformToggling)
+            {
+                var isCollectObjective = ObjectiveTracker.Objective == Objective.Collect;
+                m_PlatformTogglingVirtualCamera.transform.position = isCollectObjective ? new Vector3(200, 100, -200) : new Vector3(68, 50, -68);
+            }
+            else if (PhaseTracker.Phase == Phase.Selecting)
             {
                 if (m_Launcher.IsTurning || m_Launcher.IsPowering)
                 {
