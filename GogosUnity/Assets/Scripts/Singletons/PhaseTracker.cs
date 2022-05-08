@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Gogos
 {
-    public enum Phase { Spawning, PlayerTransitioning, GogoReturning, Selecting, Launching, Settling }
+    public enum Phase { PlatformToggling, Spawning, PlayerTransitioning, GogoReturning, Selecting, Launching, Settling }
 
     public class PhaseTracker : AbstractSingleton<PhaseTracker>
     {
