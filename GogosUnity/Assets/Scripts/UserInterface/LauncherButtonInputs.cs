@@ -9,7 +9,7 @@ namespace Gogos
         private Launcher m_Launcher;
 
         [SerializeField]
-        private LaunchPointTracker m_LaunchPointTracker;
+        private LaunchPointToggler m_LaunchPointToggler;
 
         [SerializeField]
         private HoldDownButton m_TurnLeftButton;
@@ -45,7 +45,7 @@ namespace Gogos
 
         private void OnEnable()
         {
-            var hasMultipleLaunchPoints = m_LaunchPointTracker.LaunchPoints.Count > 1;
+            var hasMultipleLaunchPoints = m_LaunchPointToggler.LaunchPoints.Count > 1;
             m_CyclePreviousLaunchPointButton.gameObject.SetActive(hasMultipleLaunchPoints);
             m_CycleNextLaunchPointButton.gameObject.SetActive(hasMultipleLaunchPoints);
         }

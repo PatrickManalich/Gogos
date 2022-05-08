@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Gogos
 {
-    public class LaunchPointTracker : MonoBehaviour
+    public class LaunchPointToggler : MonoBehaviour
     {
         public LaunchPoint LaunchPoint => LaunchPoints[m_LaunchPointIndicesByPlayer[PlayerTracker.Player]];
 

@@ -2488,7 +2488,7 @@ Transform:
   - {fileID: 723676123}
   - {fileID: 196227976}
   m_Father: {fileID: 2077586320}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &526935429
 PrefabInstance:
@@ -5122,7 +5122,7 @@ Transform:
   m_LocalScale: {x: 1000, y: 1, z: 1000}
   m_Children: []
   m_Father: {fileID: 2077586320}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &930825548
 MonoBehaviour:
@@ -5677,7 +5677,7 @@ Transform:
   m_Children:
   - {fileID: 441618276}
   m_Father: {fileID: 2077586320}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1054398249
 MonoBehaviour:
@@ -6518,7 +6518,7 @@ Transform:
   - {fileID: 276873225}
   - {fileID: 1931922566}
   m_Father: {fileID: 2077586320}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1203570356
 MonoBehaviour:
@@ -7138,52 +7138,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1256877507}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1258243679
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1258243680}
-  - component: {fileID: 1258243681}
-  m_Layer: 0
-  m_Name: LaunchPointTracker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1258243680
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1258243679}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2077586320}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1258243681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1258243679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ca868292434e4842845d280ef596923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PlatformToggler: {fileID: 1203570356}
-  m_Launcher: {fileID: 1638789070}
-  m_EnvironmentCenter: {fileID: 2077586319}
 --- !u!1 &1268544536
 GameObject:
   m_ObjectHideFlags: 0
@@ -9480,7 +9434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ForcePoint: {fileID: 1283564788}
-  m_LaunchPointTracker: {fileID: 1258243681}
+  m_LaunchPointToggler: {fileID: 1942253901}
   m_VerticalOffset: 3
   m_LaunchAngle: -45
   m_MinLaunchPower: 5
@@ -11555,8 +11509,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1942253900}
+  - component: {fileID: 1942253901}
   m_Layer: 0
-  m_Name: LaunchPointTriggerCircles
+  m_Name: LaunchPointTracker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11578,8 +11533,23 @@ Transform:
   - {fileID: 1642196411}
   - {fileID: 910543774}
   m_Father: {fileID: 2077586320}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1942253901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942253899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ca868292434e4842845d280ef596923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlatformToggler: {fileID: 1203570356}
+  m_Launcher: {fileID: 1638789070}
+  m_EnvironmentCenter: {fileID: 2077586319}
 --- !u!1001 &1953890200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11966,7 +11936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Launcher: {fileID: 1638789070}
-  m_LaunchPointTracker: {fileID: 1258243681}
+  m_LaunchPointToggler: {fileID: 1942253901}
   m_TurnLeftButton: {fileID: 7666120206535448255}
   m_TurnRightButton: {fileID: 1355671952}
   m_DecreaseLaunchPowerButton: {fileID: 445400105}
@@ -12377,7 +12347,6 @@ Transform:
   m_Children:
   - {fileID: 1972480345}
   - {fileID: 36416108}
-  - {fileID: 1258243680}
   - {fileID: 1054398248}
   - {fileID: 1203570355}
   - {fileID: 1942253900}

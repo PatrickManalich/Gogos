@@ -27,7 +27,7 @@ namespace Gogos
         private GameObject m_ForcePoint;
 
         [SerializeField]
-        private LaunchPointTracker m_LaunchPointTracker;
+        private LaunchPointToggler m_LaunchPointToggler;
 
         [SerializeField]
         private float m_VerticalOffset;
@@ -54,7 +54,7 @@ namespace Gogos
 
         private void OnEnable()
         {
-            if (m_LaunchPointTracker.LaunchPoints.Count > 0)
+            if (m_LaunchPointToggler.LaunchPoints.Count > 0)
             {
                 CycleLaunchPoint(0);
             }
@@ -124,8 +124,8 @@ namespace Gogos
         {
             m_LaunchPower = m_MinLaunchPower;
 
-            m_LaunchPointTracker.CycleLaunchPoint(direction);
-            var launchPoint = m_LaunchPointTracker.LaunchPoint;
+            m_LaunchPointToggler.CycleLaunchPoint(direction);
+            var launchPoint = m_LaunchPointToggler.LaunchPoint;
 
             transform.position = launchPoint.Position.WithY(launchPoint.Position.y + m_VerticalOffset);
             transform.rotation = Quaternion.Euler(m_LaunchAngle, launchPoint.TurnAngle, 0);
