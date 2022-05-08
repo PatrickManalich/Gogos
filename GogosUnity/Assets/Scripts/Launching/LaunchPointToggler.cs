@@ -7,9 +7,9 @@ namespace Gogos
 {
     public class LaunchPointToggler : MonoBehaviour
     {
-        public LaunchPoint LaunchPoint => LaunchPoints[m_LaunchPointIndicesByPlayer[PlayerTracker.Player]];
+        public LaunchPoint LaunchPoint => LaunchPoints.Count > 0 ? LaunchPoints[m_LaunchPointIndicesByPlayer[PlayerTracker.Player]] : null;
 
-        public List<LaunchPoint> LaunchPoints => m_LaunchPointsByPlayer[PlayerTracker.Player];
+        public List<LaunchPoint> LaunchPoints => m_LaunchPointsByPlayer.ContainsKey(PlayerTracker.Player) ? m_LaunchPointsByPlayer[PlayerTracker.Player] : new List<LaunchPoint>();
 
         [SerializeField]
         private PlatformToggler m_PlatformToggler;
