@@ -6480,7 +6480,7 @@ GameObject:
   - component: {fileID: 1219470883}
   - component: {fileID: 1219470882}
   m_Layer: 8
-  m_Name: SpawningVirtualCamera
+  m_Name: PlatformTogglingVirtualCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10552,7 +10552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e379864d6d6272e4db2e1b1811af76e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SpawningVirtualCamera: {fileID: 1219470882}
+  m_PlatformTogglingVirtualCamera: {fileID: 1219470882}
   m_SelectingVirtualCamera: {fileID: 2074938246}
   m_LaunchingVirtualCamera: {fileID: 2093054237}
   m_SettlingVirtualCamera: {fileID: 875094590}

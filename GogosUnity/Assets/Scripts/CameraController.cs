@@ -7,7 +7,7 @@ namespace Gogos
     public class CameraController : MonoBehaviour
     {
         [SerializeField]
-        private CinemachineVirtualCamera m_SpawningVirtualCamera;
+        private CinemachineVirtualCamera m_PlatformTogglingVirtualCamera;
 
         [SerializeField]
         private CinemachineVirtualCamera m_SelectingVirtualCamera;
@@ -44,7 +44,7 @@ namespace Gogos
         {
             m_SelectingComposer = m_SelectingVirtualCamera.GetCinemachineComponent<CinemachineComposer>();
 
-            m_SpawningVirtualCamera.gameObject.SetActive(true);
+            m_PlatformTogglingVirtualCamera.gameObject.SetActive(true);
             m_SelectingVirtualCamera.gameObject.SetActive(false);
             m_LaunchingVirtualCamera.gameObject.SetActive(false);
             m_SettlingVirtualCamera.gameObject.SetActive(false);
@@ -97,15 +97,15 @@ namespace Gogos
 
         private void PhaseTracker_OnPhaseChanged()
         {
-            if (PhaseTracker.Phase == Phase.Spawning)
+            if (PhaseTracker.Phase == Phase.PlatformToggling)
             {
-                m_SpawningVirtualCamera.gameObject.SetActive(true);
+                m_PlatformTogglingVirtualCamera.gameObject.SetActive(true);
                 m_SettlingVirtualCamera.gameObject.SetActive(false);
             }
             else if (PhaseTracker.Phase == Phase.Selecting)
             {
                 m_SelectingVirtualCamera.gameObject.SetActive(true);
-                m_SpawningVirtualCamera.gameObject.SetActive(false);
+                m_PlatformTogglingVirtualCamera.gameObject.SetActive(false);
             }
             else if (PhaseTracker.Phase == Phase.Launching)
             {
