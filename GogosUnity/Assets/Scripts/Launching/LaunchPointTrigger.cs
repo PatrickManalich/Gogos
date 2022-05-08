@@ -11,6 +11,8 @@ namespace Gogos
 
         public bool IsStartingTrigger => m_IsStartingTrigger;
 
+        public bool IsCollectTrigger => m_IsCollectTrigger;
+
         [SerializeField]
         private TriggerListener m_TriggerListener;
 
@@ -25,6 +27,9 @@ namespace Gogos
 
         [SerializeField]
         private bool m_IsStartingTrigger;
+
+        [SerializeField]
+        private bool m_IsCollectTrigger;
 
         private void Start()
         {

@@ -110,6 +110,7 @@ MonoBehaviour:
   m_ScriptableColorPalette: {fileID: 11400000, guid: b11d06455fb6dc245a9d3bf1bf8f6e9b,
     type: 2}
   m_IsStartingTrigger: 0
+  m_IsCollectTrigger: 0
 --- !u!1 &7852144428910407451
 GameObject:
   m_ObjectHideFlags: 0
