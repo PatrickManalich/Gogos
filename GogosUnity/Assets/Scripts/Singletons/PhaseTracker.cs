@@ -16,6 +16,9 @@ namespace Gogos
         private SpawnerRandomizer m_SpawnerRandomizer;
 
         [SerializeField]
+        private PlayerTransitioner m_PlayerTransitioner;
+
+        [SerializeField]
         private Launcher m_Launcher;
 
         [SerializeField]
@@ -27,9 +30,6 @@ namespace Gogos
         [SerializeField]
         private PlayerGogoReturner m_PlayerGogoReturner;
 
-        [SerializeField]
-        private PlayerTransitioner m_PlayerTransitioner;
-
         protected override void Awake()
         {
             base.Awake();
@@ -40,24 +40,24 @@ namespace Gogos
         {
             m_SpawnerRandomizer.Spawned += SpawnerRandomizer_OnFinished;
             m_SpawnerRandomizer.Skipped += SpawnerRandomizer_OnFinished;
+            m_PlayerTransitioner.Transitioned += PlayerTransitioner_OnTransitioned;
             m_PlayerGogoReturner.Returned += PlayerGogoReturner_OnFinished;
             m_PlayerGogoReturner.Skipped += PlayerGogoReturner_OnFinished;
             m_Launcher.Launched += Launcher_OnLaunched;
             m_LaunchedGogoObserver.Expanded += LaunchedGogoObserver_OnFinished;
             m_LaunchedGogoObserver.Collected += LaunchedGogoObserver_OnFinished;
             m_AccelerometerSettlingWatcher.Settled += AccelerometerSettlingWatcher_OnSettled;
-            m_PlayerTransitioner.Transitioned += PlayerTransitioner_OnTransitioned;
         }
 
         private void OnDestroy()
         {
-            m_PlayerTransitioner.Transitioned -= PlayerTransitioner_OnTransitioned;
             m_AccelerometerSettlingWatcher.Settled -= AccelerometerSettlingWatcher_OnSettled;
             m_LaunchedGogoObserver.Collected -= LaunchedGogoObserver_OnFinished;
             m_LaunchedGogoObserver.Expanded -= LaunchedGogoObserver_OnFinished;
             m_Launcher.Launched -= Launcher_OnLaunched;
             m_PlayerGogoReturner.Skipped -= PlayerGogoReturner_OnFinished;
             m_PlayerGogoReturner.Returned -= PlayerGogoReturner_OnFinished;
+            m_PlayerTransitioner.Transitioned -= PlayerTransitioner_OnTransitioned;
             m_SpawnerRandomizer.Skipped -= SpawnerRandomizer_OnFinished;
             m_SpawnerRandomizer.Spawned -= SpawnerRandomizer_OnFinished;
         }
@@ -65,6 +65,11 @@ namespace Gogos
         private void SpawnerRandomizer_OnFinished()
         {
             ChangePhase(Phase.Transitioning);
+        }
+
+        private void PlayerTransitioner_OnTransitioned()
+        {
+            ChangePhase(Phase.Returning);
         }
 
         private void PlayerGogoReturner_OnFinished()
@@ -85,11 +90,6 @@ namespace Gogos
         private void AccelerometerSettlingWatcher_OnSettled()
         {
             ChangePhase(Phase.Spawning);
-        }
-
-        private void PlayerTransitioner_OnTransitioned()
-        {
-            ChangePhase(Phase.Returning);
         }
 
         private void ChangePhase(Phase phase)
