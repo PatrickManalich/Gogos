@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Gogos
 {
-    public enum Phase { Transitioning, Spawning, Returning, Selecting, Launching, Settling }
+    public enum Phase { Spawning, Transitioning, Returning, Selecting, Launching, Settling }
 
     public class PhaseTracker : AbstractSingleton<PhaseTracker>
     {
@@ -64,7 +64,7 @@ namespace Gogos
 
         private void SpawnerRandomizer_OnFinished()
         {
-            ChangePhase(Phase.Returning);
+            ChangePhase(Phase.Transitioning);
         }
 
         private void PlayerGogoReturner_OnFinished()
@@ -84,12 +84,12 @@ namespace Gogos
 
         private void AccelerometerSettlingWatcher_OnSettled()
         {
-            ChangePhase(Phase.Transitioning);
+            ChangePhase(Phase.Spawning);
         }
 
         private void PlayerTransitioner_OnTransitioned()
         {
-            ChangePhase(Phase.Spawning);
+            ChangePhase(Phase.Returning);
         }
 
         private void ChangePhase(Phase phase)

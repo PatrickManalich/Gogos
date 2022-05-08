@@ -36,6 +36,7 @@ namespace Gogos
 
             m_ReadyToSpawn = true;
             m_Spawners.ToList().ForEach(s => s.HideVisual());
+            StartCoroutine(SpawnRoutine());
         }
 
         private void OnDestroy()

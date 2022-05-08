@@ -22,7 +22,6 @@ namespace Gogos
             PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
 
             m_IsFirstTransition = true;
-            StartCoroutine(FlashTextAndTransitionRoutine());
         }
 
         private void OnDestroy()
