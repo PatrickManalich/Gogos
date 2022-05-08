@@ -31,7 +31,7 @@ namespace Gogos
 
         private void PhaseTracker_OnPhaseChanged()
         {
-            if (PhaseTracker.Phase == Phase.Transitioning)
+            if (PhaseTracker.Phase == Phase.PlayerTransitioning)
             {
                 StartCoroutine(FlashTextAndTransitionRoutine());
             }

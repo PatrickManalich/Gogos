@@ -26,7 +26,7 @@ namespace Gogos
 
         private void PhaseTracker_OnPhaseChanged()
         {
-            if (PhaseTracker.Phase == Phase.Returning)
+            if (PhaseTracker.Phase == Phase.GogoReturning)
             {
                 var identifiableGogos = PlayerTracker.Player.Collection.IdentifiableGogos;
                 if (!identifiableGogos.Any(i => GogoSituationDatabase.GetSituation(i) == Situation.Available))
