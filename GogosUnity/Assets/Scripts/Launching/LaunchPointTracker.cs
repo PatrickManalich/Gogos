@@ -84,12 +84,12 @@ namespace Gogos
             CreateLaunchPoint((LaunchPointTrigger)sender);
         }
 
-        private void CreateLaunchPoint(LaunchPointTrigger launchPointTrigger)
+        private void CreateLaunchPoint(LaunchPointTrigger trigger)
         {
-            var lookAtEnvironmentCenterRotation = Quaternion.LookRotation(m_EnvironmentCenter.transform.position - launchPointTrigger.transform.position);
+            var lookAtEnvironmentCenterRotation = Quaternion.LookRotation(m_EnvironmentCenter.transform.position - trigger.transform.position);
             var turnAngle = lookAtEnvironmentCenterRotation.eulerAngles.y;
-            var launchPoint = new LaunchPoint(launchPointTrigger.transform.position, turnAngle);
-            m_LaunchPointsByPlayer[launchPointTrigger.Player].Add(launchPoint);
+            var launchPoint = new LaunchPoint(trigger.transform.position, turnAngle);
+            m_LaunchPointsByPlayer[trigger.Player].Add(launchPoint);
         }
     }
 }
