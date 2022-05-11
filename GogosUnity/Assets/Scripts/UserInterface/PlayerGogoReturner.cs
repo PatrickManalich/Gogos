@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -14,14 +15,23 @@ namespace Gogos
         [SerializeField]
         private GameObject m_Announcement;
 
+        private List<Player> m_PlayersReadyToReturn = new List<Player>();
+
         private void Start()
         {
+            ObjectiveTracker.ObjectiveChanged += ObjectiveTracker_OnObjectiveChanged;
             PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
         }
 
         private void OnDestroy()
         {
             PhaseTracker.PhaseChanged -= PhaseTracker_OnPhaseChanged;
+            ObjectiveTracker.ObjectiveChanged -= ObjectiveTracker_OnObjectiveChanged;
+        }
+
+        private void ObjectiveTracker_OnObjectiveChanged()
+        {
+            m_PlayersReadyToReturn = PlayerTracker.Players.ToList();
         }
 
         private void PhaseTracker_OnPhaseChanged()
@@ -30,8 +40,9 @@ namespace Gogos
             {
                 var identifiableGogos = PlayerTracker.Player.Collection.IdentifiableGogos;
                 var areAnyGogosAvailable = identifiableGogos.Any(i => GogoSituationDatabase.GetSituation(i) == Situation.Available);
-                if (!areAnyGogosAvailable)
+                if (!areAnyGogosAvailable || m_PlayersReadyToReturn.Contains(PlayerTracker.Player))
                 {
+                    m_PlayersReadyToReturn.Remove(PlayerTracker.Player);
                     StartCoroutine(FlashTextAndReturnRoutine());
                 }
                 else
