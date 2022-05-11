@@ -31,8 +31,8 @@ namespace Gogos
 
         private void Start()
         {
-            PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
             ObjectiveTracker.ObjectiveChanged += ObjectiveTracker_OnObjectiveChanged;
+            PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
 
             m_ReadyToSpawn = true;
             m_Spawners.ToList().ForEach(s => s.HideVisual());
@@ -40,8 +40,8 @@ namespace Gogos
 
         private void OnDestroy()
         {
-            ObjectiveTracker.ObjectiveChanged -= ObjectiveTracker_OnObjectiveChanged;
             PhaseTracker.PhaseChanged -= PhaseTracker_OnPhaseChanged;
+            ObjectiveTracker.ObjectiveChanged -= ObjectiveTracker_OnObjectiveChanged;
         }
 
         private void ObjectiveTracker_OnObjectiveChanged()

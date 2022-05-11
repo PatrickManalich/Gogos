@@ -22,8 +22,8 @@ namespace Gogos
 
         private void Start()
         {
-            PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
             ObjectiveTracker.ObjectiveChanged += ObjectiveTracker_OnObjectiveChanged;
+            PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
 
             m_CollectPlatformContainer.SetActive(false);
             m_DefeatPlatformContainer.SetActive(false);
@@ -32,8 +32,8 @@ namespace Gogos
 
         private void OnDestroy()
         {
-            ObjectiveTracker.ObjectiveChanged -= ObjectiveTracker_OnObjectiveChanged;
             PhaseTracker.PhaseChanged -= PhaseTracker_OnPhaseChanged;
+            ObjectiveTracker.ObjectiveChanged -= ObjectiveTracker_OnObjectiveChanged;
         }
 
         private void ObjectiveTracker_OnObjectiveChanged()
