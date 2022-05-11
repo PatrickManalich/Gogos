@@ -11,7 +11,7 @@ namespace Gogos
 
         protected override void OnCollected()
         {
-            if (PhaseTracker.Phase == Phase.Spawning)
+            if (PhaseTracker.Phase != Phase.Settling)
             {
                 return;
             }
