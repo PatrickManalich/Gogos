@@ -29,7 +29,8 @@ namespace Gogos
             if (PhaseTracker.Phase == Phase.GogoReturning)
             {
                 var identifiableGogos = PlayerTracker.Player.Collection.IdentifiableGogos;
-                if (!identifiableGogos.Any(i => GogoSituationDatabase.GetSituation(i) == Situation.Available))
+                var areAnyGogosAvailable = identifiableGogos.Any(i => GogoSituationDatabase.GetSituation(i) == Situation.Available);
+                if (!areAnyGogosAvailable)
                 {
                     StartCoroutine(FlashTextAndReturnRoutine());
                 }
