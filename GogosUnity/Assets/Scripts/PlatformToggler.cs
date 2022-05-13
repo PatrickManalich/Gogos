@@ -16,7 +16,7 @@ namespace Gogos
         private GameObject m_CollectPlatformContainer;
 
         [SerializeField]
-        private GameObject m_DefeatPlatformContainer;
+        private GameObject m_KnockOutPlatformContainer;
 
         private bool m_ReadyToToggle;
 
@@ -26,7 +26,7 @@ namespace Gogos
             PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
 
             m_CollectPlatformContainer.SetActive(false);
-            m_DefeatPlatformContainer.SetActive(false);
+            m_KnockOutPlatformContainer.SetActive(false);
             StartCoroutine(ToggleRoutine());
         }
 
@@ -65,11 +65,11 @@ namespace Gogos
             if (ObjectiveTracker.Objective == Objective.Collect)
             {
                 m_CollectPlatformContainer.SetActive(true);
-                m_DefeatPlatformContainer.SetActive(false);
+                m_KnockOutPlatformContainer.SetActive(false);
             }
             else
             {
-                m_DefeatPlatformContainer.SetActive(true);
+                m_KnockOutPlatformContainer.SetActive(true);
                 m_CollectPlatformContainer.SetActive(false);
             }
             yield return new WaitForSeconds(2);

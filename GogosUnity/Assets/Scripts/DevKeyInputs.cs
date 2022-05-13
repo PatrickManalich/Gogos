@@ -8,7 +8,7 @@ namespace Gogos
         {
             if (InputKeys.Dev.SwitchObjectivesKeyDown)
             {
-                var nextObjective = ObjectiveTracker.Objective == Objective.Collect ? Objective.Defeat : Objective.Collect;
+                var nextObjective = ObjectiveTracker.Objective == Objective.Collect ? Objective.KnockOut : Objective.Collect;
                 ObjectiveTracker.OverrideObjective(nextObjective);
             }
         }

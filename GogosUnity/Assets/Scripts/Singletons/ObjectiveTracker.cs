@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Gogos
 {
-    public enum Objective { Collect, Defeat }
+    public enum Objective { Collect, KnockOut }
 
     public class ObjectiveTracker : AbstractSingleton<TurnTracker>
     {
@@ -48,14 +48,14 @@ namespace Gogos
         {
             if (Objective == Objective.Collect && TurnTracker.Turn == m_SwitchObjectivesTurn)
             {
-                Objective = Objective.Defeat;
+                Objective = Objective.KnockOut;
                 ObjectiveChanged?.Invoke();
             }
         }
 
         private void SpawnerRandomizer_OnSpawned()
         {
-            if (Objective == Objective.Defeat && m_GoldenGogoCollectableAttribute == null)
+            if (Objective == Objective.KnockOut && m_GoldenGogoCollectableAttribute == null)
             {
                 FindAttributeAndSubscribe();
             }

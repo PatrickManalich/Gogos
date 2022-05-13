@@ -6533,7 +6533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CollectPlatformContainer: {fileID: 276873224}
-  m_DefeatPlatformContainer: {fileID: 1931922565}
+  m_KnockOutPlatformContainer: {fileID: 1931922565}
 --- !u!1 &1219470881
 GameObject:
   m_ObjectHideFlags: 0
@@ -11381,7 +11381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1931922566}
   m_Layer: 0
-  m_Name: DefeatPlatformContainer
+  m_Name: KnockOutPlatformContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
