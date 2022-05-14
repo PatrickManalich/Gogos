@@ -17,10 +17,5 @@ namespace Gogos
             m_IdentifiableGogosById.Add(identifiableGogo.Id, identifiableGogo);
             GogoAdded?.Invoke(this, new IdentifiableGogoEventArgs(identifiableGogo));
         }
-
-        public IdentifiableGogo Get(string id)
-        {
-            return m_IdentifiableGogosById[id];
-        }
     }
 }
