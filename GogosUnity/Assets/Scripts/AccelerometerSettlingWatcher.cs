@@ -9,9 +9,12 @@ namespace Gogos
     {
         public event Action Settled;
 
+        private const float SettledTimeout = 1;
+
         private bool m_IsWatching;
         private List<Accelerometer> m_Accelerometers = new List<Accelerometer>();
         private int m_AccelerometersMoving;
+        private float m_Timer;
 
         private void Start()
         {
@@ -26,11 +29,22 @@ namespace Gogos
 
         private void Update()
         {
-            if (m_IsWatching && m_AccelerometersMoving == 0)
+            if (m_IsWatching)
             {
-                m_IsWatching = false;
-                ForgetAllAccelerometers();
-                Settled?.Invoke();
+                if (m_AccelerometersMoving == 0)
+                {
+                    m_Timer += Time.deltaTime;
+                    if (m_Timer >= SettledTimeout)
+                    {
+                        m_IsWatching = false;
+                        ForgetAllAccelerometers();
+                        Settled?.Invoke();
+                    }
+                }
+                else
+                {
+                    m_Timer = 0;
+                }
             }
         }
 
@@ -38,6 +52,7 @@ namespace Gogos
         {
             if (PhaseTracker.Phase == Phase.Settling)
             {
+                m_Timer = 0;
                 WatchAllAccelerometers();
                 m_IsWatching = true;
             }
