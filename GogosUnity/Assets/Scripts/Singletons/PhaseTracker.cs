@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Gogos
 {
-    public enum Phase { PlatformToggling, Spawning, PlayerTransitioning, GogoReturning, Selecting, Launching, Settling }
+    public enum Phase { PlatformToggling, Spawning, PlayerTransitioning, GogoReturning, Selecting, Launching, Settling, TurnChanging }
 
     public class PhaseTracker : AbstractSingleton<PhaseTracker>
     {
@@ -52,10 +52,12 @@ namespace Gogos
             m_LaunchedGogoObserver.Expanded += LaunchedGogoObserver_OnFinished;
             m_LaunchedGogoObserver.Collected += LaunchedGogoObserver_OnFinished;
             m_AccelerometerSettlingWatcher.Settled += AccelerometerSettlingWatcher_OnSettled;
+            TurnTracker.TurnChanged += TurnTracker_OnTurnChanged;
         }
 
         private void OnDestroy()
         {
+            TurnTracker.TurnChanged -= TurnTracker_OnTurnChanged;
             m_AccelerometerSettlingWatcher.Settled -= AccelerometerSettlingWatcher_OnSettled;
             m_LaunchedGogoObserver.Collected -= LaunchedGogoObserver_OnFinished;
             m_LaunchedGogoObserver.Expanded -= LaunchedGogoObserver_OnFinished;
@@ -100,6 +102,11 @@ namespace Gogos
         }
 
         private void AccelerometerSettlingWatcher_OnSettled()
+        {
+            ChangePhase(Phase.TurnChanging);
+        }
+
+        private void TurnTracker_OnTurnChanged()
         {
             ChangePhase(Phase.PlatformToggling);
         }

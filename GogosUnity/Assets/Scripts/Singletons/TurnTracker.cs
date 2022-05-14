@@ -16,18 +16,21 @@ namespace Gogos
 
         private void Start()
         {
-            PlayerTracker.PlayerChanged += PlayerTracker_OnPlayerChanged;
+            PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
         }
 
         private void OnDestroy()
         {
-            PlayerTracker.PlayerChanged -= PlayerTracker_OnPlayerChanged;
+            PhaseTracker.PhaseChanged -= PhaseTracker_OnPhaseChanged;
         }
 
-        private void PlayerTracker_OnPlayerChanged()
+        private void PhaseTracker_OnPhaseChanged()
         {
-            Turn++;
-            TurnChanged?.Invoke();
+            if (PhaseTracker.Phase == Phase.TurnChanging)
+            {
+                Turn++;
+                TurnChanged?.Invoke();
+            }
         }
     }
 }
