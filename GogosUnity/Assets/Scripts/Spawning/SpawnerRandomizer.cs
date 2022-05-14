@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gogos.Extensions;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace Gogos
         public event Action Spawned;
 
         public event Action Skipped;
+
+        public AbstractScriptableGogo GoldenScriptableGogo { get; private set; }
 
         [SerializeField]
         private Spawner[] m_Spawners;
@@ -28,6 +31,12 @@ namespace Gogos
         private ScriptableGogoBucket m_GoldenGogos;
 
         private bool m_ReadyToSpawn;
+        private List<AbstractScriptableGogo> m_UnusedGoldenScriptableGogos = new List<AbstractScriptableGogo>();
+
+        private void Awake()
+        {
+            SetGoldenScriptableGogo();
+        }
 
         private void Start()
         {
@@ -47,6 +56,10 @@ namespace Gogos
         private void ObjectiveTracker_OnObjectiveChanged()
         {
             m_ReadyToSpawn = true;
+            if (ObjectiveTracker.Objective == Objective.Collect)
+            {
+                SetGoldenScriptableGogo();
+            }
         }
 
         private void PhaseTracker_OnPhaseChanged()
@@ -84,12 +97,21 @@ namespace Gogos
                 var activeSpawner = m_GoldenSpawner;
                 activeSpawner.ShowVisual();
                 yield return activeSpawner.RandomlySpawn(m_Spawnables);
-                activeSpawner.Spawn(m_GoldenGogos.GetRandomScriptableGogo());
+                activeSpawner.Spawn(GoldenScriptableGogo);
                 activeSpawner.HideVisual();
             }
             yield return new WaitForSeconds(2);
 
             Spawned?.Invoke();
+        }
+
+        private void SetGoldenScriptableGogo()
+        {
+            if (m_UnusedGoldenScriptableGogos.Count == 0)
+            {
+                m_UnusedGoldenScriptableGogos = m_GoldenGogos.ScriptableGogos.ToList();
+            }
+            GoldenScriptableGogo = m_UnusedGoldenScriptableGogos.GetRandomAndRemove();
         }
     }
 }
