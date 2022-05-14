@@ -36,7 +36,6 @@ namespace Gogos
                     m_Timer += Time.deltaTime;
                     if (m_Timer >= SettledTimeout)
                     {
-                        m_IsWatching = false;
                         ForgetAllAccelerometers();
                         Settled?.Invoke();
                     }
@@ -54,7 +53,6 @@ namespace Gogos
             {
                 m_Timer = 0;
                 WatchAllAccelerometers();
-                m_IsWatching = true;
             }
         }
 
@@ -80,6 +78,7 @@ namespace Gogos
                     m_AccelerometersMoving++;
                 }
             }
+            m_IsWatching = true;
         }
 
         private void ForgetAllAccelerometers()
@@ -91,6 +90,7 @@ namespace Gogos
             }
             m_Accelerometers.Clear();
             m_AccelerometersMoving = 0;
+            m_IsWatching = false;
         }
     }
 }
