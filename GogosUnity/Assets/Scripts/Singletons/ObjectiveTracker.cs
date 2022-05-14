@@ -12,17 +12,18 @@ namespace Gogos
 
         public static Objective Objective { get; private set; }
 
+        public static int SwitchObjectivesTurn { get; private set; }
+
         [SerializeField]
         private SpawnerRandomizer m_SpawnerRandomizer;
 
-        private int m_SwitchObjectivesTurn;
         private CollectableAttribute m_GoldenGogoCollectableAttribute;
 
         protected override void Awake()
         {
             base.Awake();
             Objective = Objective.Collect;
-            m_SwitchObjectivesTurn = PlayerTracker.PlayerCount * 3 + 1;
+            SwitchObjectivesTurn = PlayerTracker.PlayerCount * 3 + 1;
         }
 
         private void Start()
@@ -46,7 +47,7 @@ namespace Gogos
 
         private void TurnTracker_OnTurnChanged()
         {
-            if (Objective == Objective.Collect && TurnTracker.Turn == m_SwitchObjectivesTurn)
+            if (Objective == Objective.Collect && TurnTracker.Turn == SwitchObjectivesTurn)
             {
                 Objective = Objective.KnockOut;
                 ObjectiveChanged?.Invoke();
@@ -64,7 +65,7 @@ namespace Gogos
         private void GoldenGogoCollectableAttribute_OnCollected()
         {
             ClearAttributeAndUnsubscribe();
-            m_SwitchObjectivesTurn = TurnTracker.Turn + PlayerTracker.PlayerCount * 3 + 1;
+            SwitchObjectivesTurn = TurnTracker.Turn + PlayerTracker.PlayerCount * 3 + 1;
             Objective = Objective.Collect;
             ObjectiveChanged?.Invoke();
         }
