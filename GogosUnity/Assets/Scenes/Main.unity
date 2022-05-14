@@ -5067,7 +5067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_VirtualCamera: {fileID: 875094590}
-  m_StartAngle: 3.92
+  m_StartAngle: 5.49
   m_OrbitOffset: {x: 25, y: 10, z: 25}
   m_MouseOrbitSpeed: 0.05
 --- !u!1 &910543773
@@ -12448,7 +12448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_VirtualCamera: {fileID: 2093054237}
-  m_StartAngle: 3.92
+  m_StartAngle: 5.49
   m_OrbitOffset: {x: 10, y: 5, z: 10}
   m_MouseOrbitSpeed: 0.05
 --- !u!4 &2101529747 stripped
