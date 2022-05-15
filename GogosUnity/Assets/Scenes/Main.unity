@@ -2456,13 +2456,30 @@ MonoBehaviour:
   - {fileID: 627939892}
   m_GoldenSpawner: {fileID: 196227977}
   m_Spawnables:
-  - m_Prefab: {fileID: 6783706880317593178, guid: 5b6c9159e3fce8045b97e800611ffa08,
+  - m_Prefab: {fileID: 4253437344822993292, guid: 286bf5507ace1fd489bc003761fc7e94,
       type: 3}
     m_SpawnChance: 50
-  - m_Prefab: {fileID: 3180862765779083075, guid: 01caad0a7ae713f4196a41706177475d,
+  - m_Prefab: {fileID: 3433058545437274444, guid: f31d522b82d2db74c9c811cf55824543,
+      type: 3}
+    m_SpawnChance: 50
+  - m_Prefab: {fileID: 1976627696777385735, guid: 90b31bf057554c6488db48ae265f7e11,
+      type: 3}
+    m_SpawnChance: 50
+  - m_Prefab: {fileID: 843956002073430753, guid: 3a864f110252253488b9f13e45d17e9c,
       type: 3}
     m_SpawnChance: 30
-  - m_Prefab: {fileID: 8170206028113113337, guid: a75896cdeb0b19d4dbfd79eb48ae63b7,
+  - m_Prefab: {fileID: 5171415367405239710, guid: bca90f4db420bef49b9605b34f7f3d3e,
+      type: 3}
+    m_SpawnChance: 30
+  - m_Prefab: {fileID: 731168257458011687, guid: f53f5ed0bf7acbd48abbdacf07755148,
+      type: 3}
+    m_SpawnChance: 30
+  - m_Prefab: {fileID: 6644822388652469762, guid: 2ad99e19b1ed7814188dbd6b53b8940a,
+      type: 3}
+    m_SpawnChance: 10
+  - m_Prefab: {fileID: 7182200146169169, guid: aeac4a2194cffb74e847225706066ede, type: 3}
+    m_SpawnChance: 10
+  - m_Prefab: {fileID: 2868736901502754028, guid: c1244a6c4c67a6d46809aa5e5f586973,
       type: 3}
     m_SpawnChance: 10
   - m_Prefab: {fileID: 4318178237187457172, guid: 79f449c13dbcf4543a415b83e506137e,
