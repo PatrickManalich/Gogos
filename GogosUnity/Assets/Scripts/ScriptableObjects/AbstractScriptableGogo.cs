@@ -34,6 +34,8 @@ namespace Gogos
 
         public PointValueTier PointValueTier => (PointValueTier)WeightTier;
 
+        public GemValueTier GemValueTier => (GemValueTier)WeightTier;
+
         [SerializeField]
         private RangeTier m_RangeTier;
         public RangeTier RangeTier => m_RangeTier;
