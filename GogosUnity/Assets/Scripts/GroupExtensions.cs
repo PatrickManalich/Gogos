@@ -3,9 +3,9 @@
 namespace Gogos
 {
     [Flags]
-    public enum Groups { AllyGogos = 1, EnemyGogos = 2, UnclaimedGogos = 4, PointCubes = 8, Bombs = 16, Crates = 32 } // Index 0 is for "Nothing" in the editor
+    public enum Groups { AllyGogos = 1, EnemyGogos = 2, UnclaimedGogos = 4, Gems = 8, Bombs = 16, Crates = 32 } // Index 0 is for "Nothing" in the editor
 
-    public enum GroupTag { None, Gogo, PointCube, Bomb, Crate }
+    public enum GroupTag { None, Gogo, Gem, Bomb, Crate }
 
     public static class GroupExtensions
     {
@@ -16,8 +16,8 @@ namespace Gogos
                 case "Gogo":
                     return GroupTag.Gogo;
 
-                case "PointCube":
-                    return GroupTag.PointCube;
+                case "Gem":
+                    return GroupTag.Gem;
 
                 case "Bomb":
                     return GroupTag.Bomb;
@@ -40,8 +40,8 @@ namespace Gogos
                     var isInUnclaimedGogosGroup = groups.HasFlag(Groups.UnclaimedGogos) && player == null;
                     return isInAllyGogosGroup || isInEnemyGogosGroup || isInUnclaimedGogosGroup;
 
-                case GroupTag.PointCube:
-                    return groups.HasFlag(Groups.PointCubes);
+                case GroupTag.Gem:
+                    return groups.HasFlag(Groups.Gems);
 
                 case GroupTag.Bomb:
                     return groups.HasFlag(Groups.Bombs);
