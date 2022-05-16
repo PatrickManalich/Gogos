@@ -11,15 +11,15 @@ namespace Gogos
         private CapacityTierTracker m_CapacityTierTracker;
 
         [SerializeField]
-        private GameObject[] m_PointCubes;
+        private GameObject[] m_Gems;
 
         protected override void OnBlasted(BlastTriggerEventArgs e)
         {
             for (int i = 0; i < m_CapacityTierTracker.Capacity; i++)
             {
-                var pointCube = m_PointCubes[i];
-                pointCube.SetActive(true);
-                pointCube.transform.parent = m_Root.transform.parent;
+                var gem = m_Gems[i];
+                gem.SetActive(true);
+                gem.transform.parent = m_Root.transform.parent;
             }
             Destroy(m_Root);
         }
