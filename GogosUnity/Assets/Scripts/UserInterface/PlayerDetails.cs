@@ -20,6 +20,15 @@ namespace Gogos
         private Image m_FillImage;
 
         [SerializeField]
+        private TextMeshProUGUI m_BlastGemsText;
+
+        [SerializeField]
+        private TextMeshProUGUI m_ShieldGemsText;
+
+        [SerializeField]
+        private TextMeshProUGUI m_SupportGemsText;
+
+        [SerializeField]
         private ScriptableColorPalette m_ScriptableColorPalette;
 
         private const float NormalFontSize = 28;
@@ -33,6 +42,7 @@ namespace Gogos
         {
             if (m_Player != null)
             {
+                m_Player.Collection.GemsAdded -= RefreshGemTexts;
                 m_Player.Collection.GogoAdded -= PlayerCollection_OnGogoAdded;
             }
             PlayerTracker.PlayerChanged -= RefreshSelectedElements;
@@ -48,7 +58,9 @@ namespace Gogos
             RefreshSelectedElements();
 
             m_Player.Collection.GogoAdded += PlayerCollection_OnGogoAdded;
+            m_Player.Collection.GemsAdded += RefreshGemTexts;
             RefreshGoldenGogosText();
+            RefreshGemTexts();
         }
 
         private void PlayerCollection_OnGogoAdded(object sender, IdentifiableGogoEventArgs e)
@@ -68,6 +80,14 @@ namespace Gogos
         {
             var goldenGogosCount = m_Player.Collection.IdentifiableGogos.Count(i => i.ScriptableGogo.GogoClass == GogoClass.Golden);
             m_GoldenGogosText.text = goldenGogosCount.ToString();
+        }
+
+        private void RefreshGemTexts()
+        {
+            var collection = m_Player.Collection;
+            m_BlastGemsText.text = collection.GetGemsForGogoClass(GogoClass.Blast).ToString();
+            m_ShieldGemsText.text = collection.GetGemsForGogoClass(GogoClass.Shield).ToString();
+            m_SupportGemsText.text = collection.GetGemsForGogoClass(GogoClass.Support).ToString();
         }
     }
 }
