@@ -55,10 +55,10 @@ namespace Gogos
             m_NameText.color = m_ScriptableColorPalette.GetColorForPlayerColor(m_Player.PlayerColor);
 
             PlayerTracker.PlayerChanged += RefreshSelectedElements;
-            RefreshSelectedElements();
-
             m_Player.Collection.GogoAdded += PlayerCollection_OnGogoAdded;
             m_Player.Collection.GemsAdded += RefreshGemTexts;
+
+            RefreshSelectedElements();
             RefreshGoldenGogosText();
             RefreshGemTexts();
         }
