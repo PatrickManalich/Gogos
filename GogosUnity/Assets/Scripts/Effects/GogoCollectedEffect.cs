@@ -7,7 +7,6 @@ namespace Gogos
         [SerializeField]
         private AbstractGogo m_Gogo;
 
-        private const int EnemyGogoPointValue = 500;
         private const int EnemyGogoGemMultiplier = 3;
 
         protected override void OnCollected()
@@ -23,7 +22,6 @@ namespace Gogos
             }
             else if (m_Gogo.Player != PlayerTracker.Player)
             {
-                PlayerTracker.Player.AddPoints(EnemyGogoPointValue);
                 var gogoClass = m_Gogo.IdentifiableGogo.ScriptableGogo.GogoClass;
                 var gemValueTierTracker = (GemValueTierTracker)m_Gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.GemValue);
                 var gems = gemValueTierTracker.GemValue * EnemyGogoGemMultiplier;

@@ -32,8 +32,6 @@ namespace Gogos
         private WeightTier m_WeightTier;
         public WeightTier WeightTier => m_WeightTier;
 
-        public PointValueTier PointValueTier => (PointValueTier)WeightTier;
-
         public GemValueTier GemValueTier => (GemValueTier)WeightTier;
 
         [SerializeField]

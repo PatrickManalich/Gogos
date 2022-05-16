@@ -7,13 +7,9 @@ namespace Gogos
 
     public class Player
     {
-        public event Action PointsAdded;
-
         public string Name { get; }
 
         public PlayerColor PlayerColor { get; }
-
-        public int Points { get; private set; }
 
         public Collection Collection { get; }
 
@@ -22,12 +18,6 @@ namespace Gogos
             Name = name;
             PlayerColor = playerColor;
             Collection = new Collection();
-        }
-
-        public void AddPoints(int points)
-        {
-            Points += Mathf.Max(0, points);
-            PointsAdded?.Invoke();
         }
     }
 }
