@@ -37,7 +37,7 @@ namespace Gogos
             m_RaycastHitVisual.SetActive(false);
 
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            var hits = Physics.RaycastAll(ray, 100, LayerMasks.Triggerable);
+            var hits = Physics.RaycastAll(ray, 1000, LayerMasks.Triggerable);
             var gogoHits = hits.Where(h => h.collider.GetComponent<AbstractGogo>() != null);
             var firstGogo = gogoHits.OrderBy(h => h.distance).Select(h => h.collider.GetComponent<AbstractGogo>()).FirstOrDefault();
             if (firstGogo != null)
