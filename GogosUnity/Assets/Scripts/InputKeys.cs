@@ -16,6 +16,7 @@ namespace Gogos
             public static bool LaunchGogoKeyDown => Input.GetKeyDown(KeyCode.Space);
             public static bool SubmitKeyDown => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return);
             public static bool SubmitKeyUp => Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.Return);
+            public static bool PauseKeyDown => Input.GetKeyDown(KeyCode.Escape);
         }
 
         public static class Dev
