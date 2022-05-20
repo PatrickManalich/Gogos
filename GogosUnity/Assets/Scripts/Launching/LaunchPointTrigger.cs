@@ -36,14 +36,13 @@ namespace Gogos
         private void Awake()
         {
             m_ClaimedVisualRenderers = m_ClaimedVisual.GetComponentsInChildren<Renderer>(true);
+            m_UnclaimedVisual.SetActive(true);
+            m_ClaimedVisual.SetActive(false);
         }
 
         private void Start()
         {
             m_TriggerListener.Entered += TriggerListener_OnEntered;
-
-            m_UnclaimedVisual.SetActive(true);
-            m_ClaimedVisual.SetActive(false);
         }
 
         private void OnDestroy()
