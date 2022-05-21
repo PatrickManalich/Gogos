@@ -14,7 +14,7 @@ namespace Gogos
         [SerializeField]
         private Rigidbody m_Rigidbody;
 
-        private const float MovementThreshold = 1;
+        private const float MovementThreshold = 4;
         private const float RestThreshold = 0.0001f;
 
         private void FixedUpdate()
