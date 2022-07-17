@@ -8,8 +8,8 @@ namespace Gogos
         public override GogoClass GogoClass => GogoClass.Shield;
 
         [SerializeField]
-        private ShieldStrengthTier m_ShieldStrengthTier;
-        public ShieldStrengthTier ShieldStrengthTier => m_ShieldStrengthTier;
+        private ShieldDurabilityTier m_ShieldDurabilityTier;
+        public ShieldDurabilityTier ShieldDurabilityTier => m_ShieldDurabilityTier;
 
         [SerializeField]
         private GroupsByShieldResponse m_GroupsByShieldResponse;

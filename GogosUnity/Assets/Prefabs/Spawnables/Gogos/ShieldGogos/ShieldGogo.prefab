@@ -44,24 +44,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3639557176181340297}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9323ce256f7fff45bfb234bc6bd72ec, type: 3}
+  m_Script: {fileID: 11500000, guid: f4c44f589c116594dae40f5fe1f3cf89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Tier: 0
---- !u!114 &4513764341289084881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6335265555903588524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2086556be93ca743a449a5ef90f59c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShieldStrengthTierTracker: {fileID: 2764710976784829213}
-  m_ShieldVisual: {fileID: 4203903217458786451}
 --- !u!114 &8491893478094934885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,6 +62,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_VerticalOffset: 0
   m_SnapOnEnable: 0
+--- !u!114 &4513764341289084881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6335265555903588524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2086556be93ca743a449a5ef90f59c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShieldDurabilityTierTracker: {fileID: 2764710976784829213}
+  m_ShieldVisual: {fileID: 4203903217458786451}
 --- !u!114 &2006272384350187118
 MonoBehaviour:
   m_ObjectHideFlags: 0

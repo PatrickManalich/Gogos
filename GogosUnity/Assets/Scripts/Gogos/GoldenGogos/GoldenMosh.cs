@@ -14,13 +14,13 @@ namespace Gogos
         private ShieldTrigger m_ShieldTrigger;
 
         private RangeTierTracker m_RangeTierTracker;
-        private ShieldStrengthTierTracker m_ShieldStrengthTierTracker;
+        private ShieldDurabilityTierTracker m_ShieldDurabilityTierTracker;
 
         protected override void Start()
         {
             base.Start();
             m_RangeTierTracker = (RangeTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range);
-            m_ShieldStrengthTierTracker = (ShieldStrengthTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength);
+            m_ShieldDurabilityTierTracker = (ShieldDurabilityTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldDurability);
         }
 
         protected override void OnStartedMoving()
@@ -31,14 +31,14 @@ namespace Gogos
 
         protected override void OnStoppedMoving()
         {
-            if (m_ShieldStrengthTierTracker.IsShieldBroken)
+            if (m_ShieldDurabilityTierTracker.IsShieldBroken)
             {
                 return;
             }
 
             m_TriggerRangeGroundSnapper.SnapToGround();
             UnparentTriggerRange();
-            m_ShieldTrigger.EnableShield(m_RangeTierTracker, m_ShieldStrengthTierTracker, m_ShieldAbility);
+            m_ShieldTrigger.EnableShield(m_RangeTierTracker, m_ShieldDurabilityTierTracker, m_ShieldAbility);
         }
     }
 }

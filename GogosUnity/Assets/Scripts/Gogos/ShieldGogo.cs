@@ -14,13 +14,13 @@ namespace Gogos
         private ShieldTrigger m_ShieldTrigger;
 
         private RangeTierTracker m_RangeTierTracker;
-        private ShieldStrengthTierTracker m_ShieldStrengthTierTracker;
+        private ShieldDurabilityTierTracker m_ShieldDurabilityTierTracker;
 
         protected override void Start()
         {
             base.Start();
             m_RangeTierTracker = (RangeTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range);
-            m_ShieldStrengthTierTracker = (ShieldStrengthTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength);
+            m_ShieldDurabilityTierTracker = (ShieldDurabilityTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldDurability);
         }
 
         public override void SetPlayer(Player player)
@@ -34,7 +34,7 @@ namespace Gogos
         {
             base.SetTiers(identifiableGogo);
             var shieldScriptableGogo = (ShieldScriptableGogo)IdentifiableGogo.ScriptableGogo;
-            TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength).SetTier((int)shieldScriptableGogo.ShieldStrengthTier);
+            TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldDurability).SetTier((int)shieldScriptableGogo.ShieldDurabilityTier);
             m_ShieldAbility.SetAbility(shieldScriptableGogo.ShieldResponsesByGroups);
         }
 
@@ -46,14 +46,14 @@ namespace Gogos
 
         protected override void OnStoppedMoving()
         {
-            if (m_ShieldStrengthTierTracker.IsShieldBroken)
+            if (m_ShieldDurabilityTierTracker.IsShieldBroken)
             {
                 return;
             }
 
             m_TriggerRangeGroundSnapper.SnapToGround();
             UnparentTriggerRange();
-            m_ShieldTrigger.EnableShield(m_RangeTierTracker, m_ShieldStrengthTierTracker, m_ShieldAbility);
+            m_ShieldTrigger.EnableShield(m_RangeTierTracker, m_ShieldDurabilityTierTracker, m_ShieldAbility);
         }
     }
 }

@@ -23,8 +23,8 @@ namespace Gogos
                 return;
             }
 
-            var shieldStrengthTierTracker = shieldTrigger.ShieldStrengthTierTracker;
-            if (shieldStrengthTierTracker.IsShieldBroken)
+            var shieldDurabilityTierTracker = shieldTrigger.ShieldDurabilityTierTracker;
+            if (shieldDurabilityTierTracker.IsShieldBroken)
             {
                 return;
             }
@@ -36,10 +36,10 @@ namespace Gogos
                 var outwardForce = outwardDirection * DeflectPower;
                 m_Rigidbody.AddForceAtPosition(outwardForce, m_ForcePoint.transform.position, ForceMode.Impulse);
 
-                var modifiedThisTurn = shieldStrengthTierTracker.LastTurnModified == TurnTracker.Turn;
-                if (!shieldStrengthTierTracker.IsShieldUnbreakable && GroupTag == GroupTag.Gogo && !modifiedThisTurn)
+                var modifiedThisTurn = shieldDurabilityTierTracker.LastTurnModified == TurnTracker.Turn;
+                if (!shieldDurabilityTierTracker.IsShieldUnbreakable && GroupTag == GroupTag.Gogo && !modifiedThisTurn)
                 {
-                    shieldStrengthTierTracker.ModifyTier(-1);
+                    shieldDurabilityTierTracker.ModifyTier(-1);
                 }
             }
             else if (shieldAbility.CanAttract(GroupTag, Player))

@@ -20,7 +20,7 @@ MonoBehaviour:
   m_RarityTier: 0
   m_WeightTier: 0
   m_RangeTier: 1
-  m_ShieldStrengthTier: 2
+  m_ShieldDurabilityTier: 2
   m_GroupsByShieldResponse:
     m_val: 7
     m_keys: 00000000

@@ -4,14 +4,14 @@
     {
         public RangeTierTracker RangeTierTracker { get; private set; }
 
-        public ShieldStrengthTierTracker ShieldStrengthTierTracker { get; private set; }
+        public ShieldDurabilityTierTracker ShieldDurabilityTierTracker { get; private set; }
 
         public ShieldAbility ShieldAbility { get; private set; }
 
-        public void EnableShield(RangeTierTracker rangeTierTracker, ShieldStrengthTierTracker shieldStrengthTierTracker, ShieldAbility shieldAbility)
+        public void EnableShield(RangeTierTracker rangeTierTracker, ShieldDurabilityTierTracker shieldDurabilityTierTracker, ShieldAbility shieldAbility)
         {
             RangeTierTracker = rangeTierTracker;
-            ShieldStrengthTierTracker = shieldStrengthTierTracker;
+            ShieldDurabilityTierTracker = shieldDurabilityTierTracker;
             ShieldAbility = shieldAbility;
             Expand();
         }

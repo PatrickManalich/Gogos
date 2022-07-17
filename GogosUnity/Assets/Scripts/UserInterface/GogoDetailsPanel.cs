@@ -36,7 +36,7 @@ namespace Gogos
         private GameObject m_ShieldDetails;
 
         [SerializeField]
-        private TierDetails m_ShieldStrengthTierDetails;
+        private TierDetails m_ShieldDurabilityTierDetails;
 
         [SerializeField]
         private ShieldAbilityText m_ShieldAbilityText;
@@ -79,8 +79,8 @@ namespace Gogos
                     // Account for Broken tier
                     m_ShieldDetails.SetActive(true);
                     var shieldScriptableGogo = (ShieldScriptableGogo)scriptableGogo;
-                    var shieldStrengthTierTracker = (ShieldStrengthTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldStrength);
-                    m_ShieldStrengthTierDetails.SetSlots(shieldStrengthTierTracker.Tier - 1, shieldScriptableGogo.ShieldStrengthTier - 1);
+                    var shieldDurabilityTierTracker = (ShieldDurabilityTierTracker)gogo.TierTrackerReference.GetTierTrackerForVariant(TierVariant.ShieldDurability);
+                    m_ShieldDurabilityTierDetails.SetSlots(shieldDurabilityTierTracker.Tier - 1, shieldScriptableGogo.ShieldDurabilityTier - 1);
                     m_ShieldAbilityText.SetText(shieldScriptableGogo.ShieldResponsesByGroups);
                     break;
 

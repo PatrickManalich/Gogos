@@ -111,7 +111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 202.5, y: -220}
+  m_AnchoredPosition: {x: 202.5, y: -225}
   m_SizeDelta: {x: 405, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5205727020720406448
@@ -463,7 +463,7 @@ MonoBehaviour:
   m_BlastPowerTierDetails: {fileID: 7640100244159076785}
   m_BlastShapeIllustration: {fileID: 2873206169748402164}
   m_ShieldDetails: {fileID: 4154288253831935395}
-  m_ShieldStrengthTierDetails: {fileID: 7640100243818261455}
+  m_ShieldDurabilityTierDetails: {fileID: 7640100243818261455}
   m_ShieldAbilityText: {fileID: 2388450791745490369}
   m_SupportDetails: {fileID: 4154288254543495328}
   m_SupportAbilityText: {fileID: 528612582982379696}
@@ -2127,7 +2127,7 @@ PrefabInstance:
     - target: {fileID: 4258663197151747708, guid: 60b2e5dbdd8f9694298ca579971deee4,
         type: 3}
       propertyPath: m_text
-      value: 'Shield Strength:'
+      value: 'Shield Durability:'
       objectReference: {fileID: 0}
     - target: {fileID: 4258663197151747708, guid: 60b2e5dbdd8f9694298ca579971deee4,
         type: 3}
@@ -2152,7 +2152,7 @@ PrefabInstance:
     - target: {fileID: 4258663197151747708, guid: 60b2e5dbdd8f9694298ca579971deee4,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 16
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4258663197151747711, guid: 60b2e5dbdd8f9694298ca579971deee4,
         type: 3}
@@ -2217,7 +2217,7 @@ PrefabInstance:
     - target: {fileID: 8774127021121508776, guid: 60b2e5dbdd8f9694298ca579971deee4,
         type: 3}
       propertyPath: m_Name
-      value: ShieldStrengthTierDetails
+      value: ShieldDurabilityTierDetails
       objectReference: {fileID: 0}
     - target: {fileID: 8774127021121508779, guid: 60b2e5dbdd8f9694298ca579971deee4,
         type: 3}
