@@ -9,8 +9,14 @@ namespace Gogos
         [System.Serializable]
         private class ColorsByPlayerColor : SerializableDictionary<PlayerColor, Color> { }
 
+        [System.Serializable]
+        private class ColorsByRarityTier : SerializableDictionary<RarityTier, Color> { }
+
         [SerializeField]
         private ColorsByPlayerColor m_ColorsByPlayerColor;
+
+        [SerializeField]
+        private ColorsByRarityTier m_ColorsByRarityTier;
 
         [SerializeField]
         private Color m_Grey;
@@ -19,6 +25,11 @@ namespace Gogos
         public Color GetColorForPlayerColor(PlayerColor playerColor)
         {
             return m_ColorsByPlayerColor[playerColor];
+        }
+
+        public Color GetColorForRarityTier(RarityTier rarityTier)
+        {
+            return m_ColorsByRarityTier[rarityTier];
         }
     }
 }
