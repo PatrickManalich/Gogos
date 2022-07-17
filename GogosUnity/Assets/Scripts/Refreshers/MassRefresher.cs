@@ -22,7 +22,7 @@ namespace Gogos
             m_WeightTierTracker.TierChanged -= Refresh;
         }
 
-        public void Refresh()
+        private void Refresh()
         {
             m_Rigidbody.mass = m_WeightTierTracker.Weight;
         }

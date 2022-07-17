@@ -22,7 +22,7 @@ namespace Gogos
             m_RangeTierTracker.TierChanged -= Refresh;
         }
 
-        public void Refresh()
+        private void Refresh()
         {
             var triggerRangeParent = m_TriggerRange.transform.parent;
             m_TriggerRange.transform.parent = null; // Work around for changing global scale

@@ -22,7 +22,7 @@ namespace Gogos
             m_ShieldDurabilityTierTracker.TierChanged -= Refresh;
         }
 
-        public void Refresh()
+        private void Refresh()
         {
             m_ShieldVisual.gameObject.SetActive(!m_ShieldDurabilityTierTracker.IsShieldBroken);
         }

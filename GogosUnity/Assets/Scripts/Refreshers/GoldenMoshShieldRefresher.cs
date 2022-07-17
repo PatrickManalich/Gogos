@@ -32,7 +32,7 @@ namespace Gogos
             m_ShieldDurabilityTierTracker.TierChanged -= Refresh;
         }
 
-        public void Refresh()
+        private void Refresh()
         {
             var rangeTier = RangeTiersByShieldDurabilityTier[m_ShieldDurabilityTierTracker.Tier];
             m_RangeTierTracker.SetTier((int)rangeTier);
