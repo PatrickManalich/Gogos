@@ -13,14 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Text: {fileID: 7053940758187531103}
-  m_ColorsByTier:
-    m_val: 7
-    m_keys: 00000000010000000200000003000000
-    m_values:
-    - {r: 0.23921569, g: 0.8235294, b: 0.043137256, a: 1}
-    - {r: 0.23529412, g: 0.5568628, b: 1, a: 1}
-    - {r: 1, g: 0.2971698, b: 1, a: 1}
-    - {r: 1, g: 0.84313726, b: 0, a: 1}
+  m_ScriptableColorPalette: {fileID: 11400000, guid: b11d06455fb6dc245a9d3bf1bf8f6e9b,
+    type: 2}
 --- !u!1001 &6369305540298793203
 PrefabInstance:
   m_ObjectHideFlags: 0
