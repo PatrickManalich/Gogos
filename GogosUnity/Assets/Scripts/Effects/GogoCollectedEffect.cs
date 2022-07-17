@@ -7,6 +7,9 @@ namespace Gogos
         [SerializeField]
         private AbstractGogo m_Gogo;
 
+        [SerializeField]
+        private SparkleVisual m_SparkleVisual;
+
         private const int EnemyGogoGemMultiplier = 3;
 
         protected override void OnCollected()
@@ -28,6 +31,7 @@ namespace Gogos
                 PlayerTracker.Player.Collection.Add(gogoClass, gems);
             }
             GogoSituationDatabase.SetSituation(m_Gogo.IdentifiableGogo, Situation.Available);
+            m_SparkleVisual.StopAndDestroy();
         }
     }
 }

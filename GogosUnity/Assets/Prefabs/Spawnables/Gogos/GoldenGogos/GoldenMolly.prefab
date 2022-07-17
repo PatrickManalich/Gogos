@@ -500,6 +500,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 578891400629361537, guid: 47787d002c01dd1419e5acae7149d21b,
+        type: 3}
+      propertyPath: m_Gogo
+      value: 
+      objectReference: {fileID: 1527071057}
     - target: {fileID: 1964740477361649931, guid: 47787d002c01dd1419e5acae7149d21b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

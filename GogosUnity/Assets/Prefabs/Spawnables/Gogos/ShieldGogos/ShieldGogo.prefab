@@ -185,6 +185,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1901844812094826050, guid: e0c3b9d766d30904595df1c04f4d7038,
+        type: 3}
+      propertyPath: m_Gogo
+      value: 
+      objectReference: {fileID: 5018871198931018577}
     - target: {fileID: 2402235902985540194, guid: e0c3b9d766d30904595df1c04f4d7038,
         type: 3}
       propertyPath: m_RootOrder
