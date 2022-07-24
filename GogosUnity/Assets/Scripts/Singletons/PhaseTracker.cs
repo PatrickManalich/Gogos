@@ -46,6 +46,7 @@ namespace Gogos
             m_SpawnerRandomizer.Spawned += SpawnerRandomizer_OnFinished;
             m_SpawnerRandomizer.Skipped += SpawnerRandomizer_OnFinished;
             m_PlayerTransitioner.Transitioned += PlayerTransitioner_OnTransitioned;
+            m_PlayerTransitioner.Skipped += PlayerTransitioner_OnSkipped;
             m_PlayerGogoReturner.Returned += PlayerGogoReturner_OnFinished;
             m_PlayerGogoReturner.Skipped += PlayerGogoReturner_OnFinished;
             m_Launcher.Launched += Launcher_OnLaunched;
@@ -64,6 +65,7 @@ namespace Gogos
             m_Launcher.Launched -= Launcher_OnLaunched;
             m_PlayerGogoReturner.Skipped -= PlayerGogoReturner_OnFinished;
             m_PlayerGogoReturner.Returned -= PlayerGogoReturner_OnFinished;
+            m_PlayerTransitioner.Skipped -= PlayerTransitioner_OnSkipped;
             m_PlayerTransitioner.Transitioned -= PlayerTransitioner_OnTransitioned;
             m_SpawnerRandomizer.Skipped -= SpawnerRandomizer_OnFinished;
             m_SpawnerRandomizer.Spawned -= SpawnerRandomizer_OnFinished;
@@ -82,6 +84,11 @@ namespace Gogos
         }
 
         private void PlayerTransitioner_OnTransitioned()
+        {
+            ChangePhase(Phase.GogoReturning);
+        }
+
+        private void PlayerTransitioner_OnSkipped()
         {
             ChangePhase(Phase.GogoReturning);
         }

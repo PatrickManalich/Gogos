@@ -9,19 +9,17 @@ namespace Gogos
     {
         public event Action Transitioned;
 
+        public event Action Skipped;
+
         [SerializeField]
         private GameObject m_Announcement;
 
         [SerializeField]
         private TextMeshProUGUI m_AnnouncementText;
 
-        private bool m_IsFirstTransition;
-
         private void Start()
         {
             PhaseTracker.PhaseChanged += PhaseTracker_OnPhaseChanged;
-
-            m_IsFirstTransition = true;
         }
 
         private void OnDestroy()
@@ -39,22 +37,24 @@ namespace Gogos
 
         private IEnumerator FlashTextAndTransitionRoutine()
         {
-            // Skip transitioning for the first transition since first player is already set
-            if (m_IsFirstTransition)
+            if (TurnTracker.Turn % 2 == 0)
             {
-                m_IsFirstTransition = false;
+                Skipped?.Invoke();
             }
             else
             {
-                PlayerTracker.TransitionToNextPlayer();
+                if (TurnTracker.Turn != 1)  // On first turn, correct player is already set
+                {
+                    PlayerTracker.TransitionToNextPlayer();
+                }
+
+                m_AnnouncementText.text = $"{PlayerTracker.Player.Name}'s Turn!";
+                m_Announcement.SetActive(true);
+                yield return new WaitForSeconds(2);
+
+                m_Announcement.gameObject.SetActive(false);
+                Transitioned?.Invoke();
             }
-
-            m_AnnouncementText.text = $"{PlayerTracker.Player.Name}'s Turn!";
-            m_Announcement.SetActive(true);
-            yield return new WaitForSeconds(2);
-
-            m_Announcement.gameObject.SetActive(false);
-            Transitioned?.Invoke();
         }
     }
 }
