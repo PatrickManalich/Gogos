@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using UnityEditor;
+using UnityEditor.Experimental.SceneManagement;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ namespace GogosEditor
         private string m_ReplacementTerm;
         private string m_PrefixTerm;
         private string m_PostfixTerm;
-        private int m_StartNumber;
+        private int m_StartNumber = 1;
         private int m_CurrentIncrement;
 
         [MenuItem("Gogos/Window/Rename")]
@@ -52,13 +53,25 @@ namespace GogosEditor
             }
             EditorGUILayout.Space();
 
-            EditorGUILayout.LabelField("Append Increment", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("Increment", EditorStyles.boldLabel);
             m_StartNumber = EditorGUILayout.IntField("Start Number: ", m_StartNumber);
             if (GUILayout.Button("Append Increment"))
             {
                 m_CurrentIncrement = m_StartNumber;
                 // Removes Unity increment if present, e.g. GameObject (1)
                 RenameSelectedObjects(s => Regex.Replace(s, @"[\d\s()]", string.Empty) + m_CurrentIncrement++);
+            }
+            if (GUILayout.Button("Remove Increment"))
+            {
+                RenameSelectedObjects(s => Regex.Replace(s, @"[\d\s()]", string.Empty));
+            }
+            EditorGUILayout.Space();
+
+            EditorGUILayout.LabelField("Remove Variant Postfix", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("Example: Prefab Variant → Prefab");
+            if (GUILayout.Button("Remove"))
+            {
+                RenameSelectedObjects(s => s.Replace(" Variant", string.Empty));
             }
             EditorGUILayout.Space();
         }
@@ -74,23 +87,32 @@ namespace GogosEditor
             var renamedCount = 0;
             for (int i = 0; i < Selection.objects.Length; i++)
             {
-                var obj = Selection.objects[i];
-                var oldName = obj.name;
+                var selectedObject = Selection.objects[i];
+                var oldName = selectedObject.name;
                 var newName = rename(oldName);
 
                 if (oldName != newName)
                 {
-                    var assetPath = AssetDatabase.GetAssetPath(obj);
+                    var assetPath = AssetDatabase.GetAssetPath(selectedObject);
                     if (assetPath != string.Empty)   // Selected object is an asset
                     {
                         AssetDatabase.RenameAsset(assetPath, newName);
-                        assetPath = AssetDatabase.GetAssetPath(obj);    // Name has changed, so path has too
+                        assetPath = AssetDatabase.GetAssetPath(selectedObject);    // Name has changed, so path has too
                         AssetDatabase.ForceReserializeAssets(new string[] { assetPath });
                     }
                     else   // Selected object is a game object in an open scene
                     {
-                        obj.name = newName;
-                        EditorSceneManager.MarkAllScenesDirty();
+                        selectedObject.name = newName;
+
+                        var currentPrefabStage = PrefabStageUtility.GetCurrentPrefabStage();
+                        if (currentPrefabStage != null)
+                        {
+                            EditorSceneManager.MarkSceneDirty(currentPrefabStage.scene);
+                        }
+                        else
+                        {
+                            EditorSceneManager.MarkSceneDirty(((GameObject)selectedObject).scene);
+                        }
                     }
                     renamedCount++;
                 }
