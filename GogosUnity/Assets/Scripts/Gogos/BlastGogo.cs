@@ -33,6 +33,8 @@ namespace Gogos
 
         protected override void OnStoppedMoving()
         {
+            UnsubscribeFromMovementEvents();
+
             m_TriggerRangeRefresher.enabled = false;
             UnparentTriggerRange();
             TriggerRange.transform.rotation = Quaternion.LookRotation(TriggerRange.transform.position - m_StartedMovingPosition);
@@ -40,8 +42,6 @@ namespace Gogos
             var rangeTierTracker = (RangeTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.Range);
             var blastPowerTierTracker = (BlastPowerTierTracker)TierTrackerReference.GetTierTrackerForVariant(TierVariant.BlastPower);
             m_BlastTriggers.ForEach(t => t.Blast(rangeTierTracker, blastPowerTierTracker));
-
-            UnsubscribeFromMovementEvents();
         }
     }
 }
