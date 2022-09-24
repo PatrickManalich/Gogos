@@ -2691,7 +2691,7 @@ GameObject:
   - component: {fileID: 2046958977}
   - component: {fileID: 2046958976}
   m_Layer: 0
-  m_Name: DemoBlastTriggerBlaster
+  m_Name: DemoBlast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2739,7 +2739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2077586320}
   m_Layer: 0
-  m_Name: Ring
+  m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3095,7 +3095,7 @@ GameObject:
   - component: {fileID: 2144196427}
   - component: {fileID: 2144196428}
   m_Layer: 0
-  m_Name: RingVirtualCamera
+  m_Name: VirtualCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
