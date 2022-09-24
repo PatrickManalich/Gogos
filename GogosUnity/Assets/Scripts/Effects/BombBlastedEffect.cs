@@ -39,6 +39,8 @@ namespace Gogos
 
         protected override void OnBlasted(BlastTriggerEventArgs e)
         {
+            UnsubscribeFromBlastedEvent();
+
             m_Rigidbody.transform.rotation = Quaternion.identity;
             m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
             m_Visuals.SetActive(false);

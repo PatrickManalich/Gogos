@@ -23,6 +23,8 @@ namespace Gogos
 
         protected override void OnBlasted(BlastTriggerEventArgs e)
         {
+            UnsubscribeFromBlastedEvent();
+
             m_ChildRigidbodyConstrainer.Release();
             foreach (var gemPoint in m_GemPoints)
             {

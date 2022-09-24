@@ -15,6 +15,8 @@ namespace Gogos
 
         protected override void OnBlasted(BlastTriggerEventArgs e)
         {
+            UnsubscribeFromBlastedEvent();
+
             for (int i = 0; i < m_CapacityTierTracker.Capacity; i++)
             {
                 var gem = m_Gems[i];
