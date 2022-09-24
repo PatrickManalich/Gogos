@@ -11,10 +11,20 @@ namespace Gogos
 
         protected virtual void Start()
         {
-            m_BlastableAttribute.Blasted += BlastableAttribute_OnBlasted;
+            SubscribeToBlastedEvent();
         }
 
         protected virtual void OnDestroy()
+        {
+            UnsubscribeFromBlastedEvent();
+        }
+
+        protected void SubscribeToBlastedEvent()
+        {
+            m_BlastableAttribute.Blasted += BlastableAttribute_OnBlasted;
+        }
+
+        protected void UnsubscribeFromBlastedEvent()
         {
             m_BlastableAttribute.Blasted -= BlastableAttribute_OnBlasted;
         }
