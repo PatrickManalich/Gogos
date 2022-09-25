@@ -2712,6 +2712,7 @@ MonoBehaviour:
   m_RangeTierTracker: {fileID: 1757075246}
   m_BlastPowerTierTracker: {fileID: 1757075244}
   m_BlastTrigger: {fileID: 1508549031}
+  m_BlastDelay: 1
 --- !u!4 &2046958977
 Transform:
   m_ObjectHideFlags: 0
