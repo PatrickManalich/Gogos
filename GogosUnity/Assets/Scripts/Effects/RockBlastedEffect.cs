@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace Gogos
 {
@@ -28,16 +29,19 @@ namespace Gogos
 
         protected override void OnBlasted(BlastTriggerEventArgs e)
         {
-            UnsubscribeFromBlastedEvent();
-
-            foreach (var gemSlot in m_GemSlots)
+            foreach (var gemSlot in m_GemSlots.Where(g => !g.HasReleased))
             {
-                gemSlot.Release();
+                gemSlot.ApplyForce(e.Force);
             }
+
             var explosionInstance = Instantiate(m_Explosion, transform.position, transform.rotation);
             explosionInstance.transform.localScale = explosionInstance.transform.localScale * m_ExplosionScalar;
             Destroy(explosionInstance, ExplosionDestroyDelay);
-            Destroy(m_Root);
+
+            if (m_GemSlots.All(g => g.HasReleased))
+            {
+                Destroy(m_Root);
+            }
         }
     }
 }

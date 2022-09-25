@@ -6,6 +6,11 @@ namespace Gogos
     {
         public Transform ReleaseParent { get; set; }
 
+        public bool HasReleased => transform.parent == ReleaseParent;
+
+        [SerializeField]
+        private float m_BondStrength;
+
         private Rigidbody m_Rigidbody;
 
         private void Awake()
@@ -14,10 +19,15 @@ namespace Gogos
             m_Rigidbody.isKinematic = true;
         }
 
-        public void Release()
+        public void ApplyForce(Vector3 force)
         {
-            m_Rigidbody.isKinematic = false;
-            transform.parent = ReleaseParent;
+            m_BondStrength -= force.magnitude;
+
+            if (m_BondStrength <= 0)
+            {
+                m_Rigidbody.isKinematic = false;
+                transform.parent = ReleaseParent;
+            }
         }
     }
 }

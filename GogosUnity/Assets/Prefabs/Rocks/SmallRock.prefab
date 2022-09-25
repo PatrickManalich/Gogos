@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb635748c3353c4459f5cc372dcb5d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_BondStrength: 10
 --- !u!1 &1355082759
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,6 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb635748c3353c4459f5cc372dcb5d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_BondStrength: 10
 --- !u!64 &8294895711656728747
 MeshCollider:
   m_ObjectHideFlags: 0
