@@ -23,7 +23,7 @@ namespace Gogos
         {
             base.Awake();
             Objective = Objective.Collect;
-            SwitchObjectivesTurn = PlayerTracker.PlayerCount * 3 + 1;
+            SwitchObjectivesTurn = PlayerTracker.PlayerCount * 6 + 1;
         }
 
         private void Start()
@@ -65,7 +65,7 @@ namespace Gogos
         private void GoldenGogoCollectableAttribute_OnCollected()
         {
             ClearAttributeAndUnsubscribe();
-            SwitchObjectivesTurn = TurnTracker.Turn + PlayerTracker.PlayerCount * 3 + 1;
+            SwitchObjectivesTurn = TurnTracker.Turn + PlayerTracker.PlayerCount * 6 + 1;
             Objective = Objective.Collect;
             ObjectiveChanged?.Invoke();
         }
