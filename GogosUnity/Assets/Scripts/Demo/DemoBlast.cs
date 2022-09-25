@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Gogos
 {
-    public class DemoBlastTriggerBlaster : MonoBehaviour
+    public class DemoBlast : MonoBehaviour
     {
         [SerializeField]
         private RangeTierTracker m_RangeTierTracker;
