@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Gogos
 {
@@ -6,9 +7,12 @@ namespace Gogos
     {
         public BlastTrigger BlastTrigger { get; }
 
-        public BlastTriggerEventArgs(BlastTrigger blastTrigger)
+        public Vector3 Force { get; }
+
+        public BlastTriggerEventArgs(BlastTrigger blastTrigger, Vector3 force)
         {
             BlastTrigger = blastTrigger;
+            Force = force;
         }
     }
 }

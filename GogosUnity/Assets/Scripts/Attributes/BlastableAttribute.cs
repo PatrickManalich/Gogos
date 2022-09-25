@@ -44,7 +44,7 @@ namespace Gogos
 
             var force = outwardForce + upwardForce;
             m_Rigidbody.AddForceAtPosition(force, m_ForcePoint.transform.position, ForceMode.Impulse);
-            Blasted?.Invoke(this, new BlastTriggerEventArgs(blastTrigger));
+            Blasted?.Invoke(this, new BlastTriggerEventArgs(blastTrigger, force));
         }
 
         protected override void OnTriggerExited(TriggerEventArgs e)
