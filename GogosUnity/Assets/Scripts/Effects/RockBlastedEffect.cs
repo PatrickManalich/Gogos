@@ -8,10 +8,7 @@ namespace Gogos
         private GameObject m_Root;
 
         [SerializeField]
-        private ChildRigidbodyConstrainer m_ChildRigidbodyConstrainer;
-
-        [SerializeField]
-        private GameObject[] m_GemPoints;
+        private GemSlot[] m_GemSlots;
 
         [SerializeField]
         private GameObject m_Explosion;
@@ -21,15 +18,21 @@ namespace Gogos
 
         private const float ExplosionDestroyDelay = 2;
 
+        private void Awake()
+        {
+            foreach (var gemSlot in m_GemSlots)
+            {
+                gemSlot.ReleaseParent = m_Root.transform.parent;
+            }
+        }
+
         protected override void OnBlasted(BlastTriggerEventArgs e)
         {
             UnsubscribeFromBlastedEvent();
 
-            m_ChildRigidbodyConstrainer.Release();
-            foreach (var gemPoint in m_GemPoints)
+            foreach (var gemSlot in m_GemSlots)
             {
-                var gem = gemPoint.transform.GetChild(0);
-                gem.transform.parent = m_Root.transform.parent;
+                gemSlot.Release();
             }
             var explosionInstance = Instantiate(m_Explosion, transform.position, transform.rotation);
             explosionInstance.transform.localScale = explosionInstance.transform.localScale * m_ExplosionScalar;

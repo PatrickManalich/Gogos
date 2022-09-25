@@ -375,9 +375,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2360943795800463183}
-  - component: {fileID: 5766156399717316561}
   m_Layer: 10
-  m_Name: GemPoints
+  m_Name: GemSlots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -397,18 +396,6 @@ Transform:
   m_Father: {fileID: 1401456608369144895}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5766156399717316561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5980111306441906994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07fab1be905e34845a13e49d2366abe5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6161748547527937127
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,8 +473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BlastableAttribute: {fileID: 7376462650469188263}
   m_Root: {fileID: 700703321542129250}
-  m_ChildRigidbodyConstrainer: {fileID: 5766156399717316561}
-  m_GemPoints: []
+  m_GemSlots: []
   m_Explosion: {fileID: 6418686529413753158, guid: d46f14aec16294b4ca401f2438d10cae,
     type: 3}
   m_ExplosionScalar: 0
