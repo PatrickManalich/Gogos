@@ -30,7 +30,6 @@ namespace Gogos
                 return;
             }
 
-            Blasted?.Invoke(this, new BlastTriggerEventArgs(blastTrigger));
             var centerPosition = blastTrigger.CenterPosition;
             var distance = Vector3.Distance(transform.position, centerPosition);
             var radius = blastTrigger.RangeTierTracker.Range / 2;
@@ -45,6 +44,7 @@ namespace Gogos
 
             var force = outwardForce + upwardForce;
             m_Rigidbody.AddForceAtPosition(force, m_ForcePoint.transform.position, ForceMode.Impulse);
+            Blasted?.Invoke(this, new BlastTriggerEventArgs(blastTrigger));
         }
 
         protected override void OnTriggerExited(TriggerEventArgs e)
